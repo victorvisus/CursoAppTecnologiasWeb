@@ -13,12 +13,12 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#ff1919">
 
-
-
-
-
     <link rel="shortcut icon" href="./img/HTML5_logo_and_wordmark.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* aqui irian los estilos, pero los pongo en un archivo (style.css) aparte */
+    </style>
 
 </head>
 
@@ -31,44 +31,52 @@
             <li class="menu-item"><a href="#subtitulo">subtitulo</a></li>
         </ul>
     </nav>
-    <main>
+    <header>
         <h1 id="inicio" class="titulo">Titulo primario</h1>
-        <section class="intro">
-            <h2 id="seccion">Titulo de sección</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum animi necessitatibus, in
-                nulla ex
-                veniam sit facere iste! Rem dolorem ex corrupti ducimus excepturi ad! Velit beatae nulla cupiditate!</p>
-            <div class="apartado">
-                <h3 id="subtitulo">Enlaces de interes</h3>
-                <div class="content">
-                    <p class="description">A continuación enumero varios enlaces de posible interes
-                    </p>
-                    <ul class="links">
-                        <li>Cód. de estado de HTTP: <a
-                                href="https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Status" target="_blank"
-                                rel="noopener noreferrer nofollow">Mozilla</a></li>
-                        <li>Asincronia: <a href="https://es.wikipedia.org/wiki/E/S_as%C3%ADncrona" target="_blank"
-                                rel="noopener noreferrer nofollow"></a>wikipedia</li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="content">
-                    <p class="description">Definiciones</p>
-                    <ul class="links">
-                        <li>DOM -> Document Object Model</li>
-                        <li>Debugar es el proceso de identificar, analizar y corregir errores o fallos (conocidos como
-                            bugs) en un programa</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <img src="./img/cmk55297200ju07799ijnblxw.jpg" alt="imagen web" title="Imagen de adorno">
+    </header>
+    <main>
+        <article>
+            <section class="intro">
 
-            </div>
-        </section>
+                <h2 id="seccion">Titulo de sección</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum animi necessitatibus, in
+                    nulla ex
+                    veniam sit facere iste! Rem dolorem ex corrupti ducimus excepturi ad! Velit beatae nulla cupiditate!
+                </p>
+                <section class="apartado">
+                    <h3 id="subtitulo">Enlaces de interes</h3>
+                    <section class="content">
+                        <p class="description">A continuación enumero varios enlaces de posible interes
+                        </p>
+                        <ul class="links">
+                            <li>Cód. de estado de HTTP: <a
+                                    href="https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Status"
+                                    target="_blank" rel="noopener noreferrer nofollow">Mozilla</a></li>
+                            <li>Asincronia: <a href="https://es.wikipedia.org/wiki/E/S_as%C3%ADncrona" target="_blank"
+                                    rel="noopener noreferrer nofollow">wikipedia</a></li>
+                        </ul>
+                    </section>
+                    <section class="content">
+                        <p class="description">Definiciones</p>
+                        <ul class="links">
+                            <li>DOM -> Document Object Model</li>
+                            <li>Debugar es el proceso de identificar, analizar y corregir errores o fallos (conocidos
+                                como
+                                bugs) en un programa</li>
+                        </ul>
+                    </section>
+                    <img src="./img/cmk55297200ju07799ijnblxw.jpg" alt="imagen web" title="Imagen de adorno">
+                </section>
+            </section>
+            <aside>
+                <ol>
+                    <li>HTML</li>
+                    <li>Cuestiones de accesibilidad</li>
+                    <li>Introducción al uso de </li>
+                    <li>Ordenación numerada</li>
+                </ol>
+            </aside>
+        </article>
     </main>
 
     <footer>
