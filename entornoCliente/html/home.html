@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="HTML, estructura, semantica, tags, atributos, elementos">
+    <meta name="author" content="Victor Visús">
+    <meta name="description" content="Documento html correectamente formado semanticamente, sin estilos">
+    <title>HTML Semantico</title>
+
+    <link rel="shortcut icon" href="./img/superhero.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="./img/superheroe.png" alt="superlogo" width="10%" height="auto">
+            <ul role="menubar" type="">
+                <li role="menuitem"><a href="#definicion">definicion</a></li>
+                <li role="menuitem"><a href="#beneficios-seo">beneficios-seo</a></li>
+                <li role="menuitem"><a href="#etiquetas">etiquetas</a></li>
+                <li role="menuitem"><a href="#no-usar-solo-div">no-usar-solo-div</a></li>
+                <li role="menuitem"><a href="#contacto">contacto</a></li>
+            </ul>
+        </nav>
+
+        <h1>
+            HTML Semantico
+        </h1>
+    </header>
+
+    <main>
+
+        <section>
+            <header>
+                <h2>Fundamentos de la Semántica Web</h2>
+            </header>
+
+            <article id="definicion">
+                <div role="group">
+                    <h3>¿Qué es el HTML Semántico?</h3>
+                    <p>
+                        El HTML semántico es el uso de etiquetas que <strong>comunican claramente su
+                            significado</strong> tanto a los navegadores como a los desarrolladores. En lugar de usar
+                        etiquetas genéricas, <mark>utilizamos elementos que describen el contenido</mark> que albergan
+                        de forma precisa.
+                    </p>
+                    <h4>El valor de la accesibilidad</h4>
+                    <p>
+                        Utilizar etiquetas correctas permite que las tecnologías de asistencia comprendan la
+                        <em>jerarquía y la importancia</em> de cada parte de la página. Esto es <strong>vital</strong>
+                        para que personas con discapacidad visual naveguen de forma autónoma.
+                    </p>
+                    <figure>
+                        <img src="https://via.placeholder.com/600x400"
+                            alt="Diagrama comparativo entre estructura de divs y estructura semántica">
+                        <figcaption>Diferencia entre un diseño <em lang="en">div-based</em> y uno puramente semántico.
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <article id="beneficios-seo">
+                <div role="group">
+                    <h3>Beneficios para el SEO</h3>
+                    <h4>Indexación inteligente</h4>
+                    <p>
+                        Los motores de búsqueda <mark>priorizan las páginas bien estructuradas</mark>. Al usar etiquetas
+                        como <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code>, estamos indicando qué partes
+                        del contenido son <strong>relevantes</strong>, mejorando así el posicionamiento orgánico.
+                        <em>¡No lo ignores!</em>
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h2>Estructura de Bloque y Organización</h2>
+            </header>
+
+            <article id="etiquetas">
+                <div role="group">
+                    <h3>Principales etiquetas de organización</h3>
+                    <ul>
+                        <li><strong>Seccionamiento:</strong> Elementos como <code>&lt;main&gt;</code> y
+                            <code>&lt;nav&gt;</code> que definen las grandes áreas de la interfaz.
+                        </li>
+                        <li><strong>Contenido independiente:</strong> El uso de <code>&lt;article&gt;</code> para
+                            bloques que tienen <em>sentido completo por sí mismos</em>.</li>
+                        <li>
+                            <mark>Estructuras de agrupación comunes:</mark>
+                            <ul>
+                                <li><code>&lt;header&gt;</code>: Contiene habitualmente títulos, logos o navegación.
+                                </li>
+                                <li><code>&lt;footer&gt;</code>: Información de <em>copyright</em>, enlaces legales o
+                                    redes sociales.</li>
+                                <li><code>&lt;aside&gt;</code>: Contenido <strong>tangencial</strong> o barras laterales
+                                    relacionadas de forma indirecta.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h2>Comparativa: Estructura Tradicional vs. Semántica</h2>
+            </header>
+
+            <article id="no-usar-solo-div">
+                <div role="group">
+                    <h3>¿Por qué dejar de usar solo divs?</h3>
+                    <p>
+                        Antiguamente, la estructura de una web dependía exclusivamente de etiquetas
+                        <code>&lt;div&gt;</code>. Hoy, <mark>el estándar moderno prioriza el significado</mark>.
+                    </p>
+
+                    <table border="1"
+                        summary="Comparación entre las etiquetas div antiguas y las nuevas etiquetas semánticas de HTML5">
+                        <caption>Evolución de etiquetas genéricas a semánticas</caption>
+                        <thead>
+                            <tr>
+                                <th id="col-antigua" scope="col">Elemento Antiguo</th>
+                                <th id="col-moderna" scope="col">Elemento Moderno</th>
+                                <th id="col-proposito" scope="col">Propósito Principal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td headers="col-antigua"><code>&lt;div id="header"&gt;</code></td>
+                                <td headers="col-moderna"><code>&lt;header&gt;</code></td>
+                                <td headers="col-proposito">Cabecera de <strong>página o sección</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td headers="col-antigua"><code>&lt;div class="nav"&gt;</code></td>
+                                <td headers="col-moderna"><code>&lt;nav&gt;</code></td>
+                                <td headers="col-proposito">Contenedor de <em>enlaces de navegación</em>.</td>
+                            </tr>
+                            <tr>
+                                <td headers="col-antigua"><code>&lt;div class="post"&gt;</code></td>
+                                <td headers="col-moderna"><code>&lt;article&gt;</code></td>
+                                <td headers="col-proposito"><mark>Contenido independiente</mark> (noticia, post).</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" align="center">
+                                    <strong>Nota:</strong> Atributos como <code>scope</code> y <code>headers</code>
+                                    mejoran la lectura para <em>screen readers</em>.
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+
+        <section role="form">
+            <header>
+                <h2>¿Tienes dudas sobre Semántica?</h2>
+            </header>
+
+            <article id="contacto">
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend><strong>Información Personal</strong></legend>
+
+                        <p>
+                            <label for="nombre">Nombre completo:</label>
+                            <input type="text" id="nombre" name="user_name" placeholder="Ej. Juan Pérez" required>
+                        </p>
+
+                        <p>
+                            <label for="correo">Correo electrónico:</label>
+                            <input type="email" id="correo" name="user_email" required>
+                            <mark><small>Prometemos no enviar spam.</small></mark>
+                        </p>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend><strong>Detalles del Mensaje</strong></legend>
+
+                        <p>
+                            <label for="interes">Interés principal:</label>
+                            <select id="interes" name="user_interest">
+                                <option value="seo">Optimización SEO</option>
+                                <option value="access">Accesibilidad Web</option>
+                                <option value="tags">Etiquetas de Bloque</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label for="mensaje">Tu mensaje:</label><br>
+                            <textarea id="mensaje" name="user_message" rows="4" cols="50"
+                                placeholder="Escribe aquí tus dudas..."></textarea>
+                        </p>
+
+                        <p>
+                            <input type="checkbox" id="terminos" name="terms" required>
+                            <label for="terminos">He leído y acepto los <em>términos de uso</em>.</label>
+                        </p>
+                    </fieldset>
+
+                    <div role="group" aria-label="Acciones del formulario">
+                        <button type="submit"><strong>Enviar Formulario</strong></button>
+                        <button type="reset"><em>Limpiar campos</em></button>
+                    </div>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <br>
+    <hr>
+
+    <aside>
+        <h3>Recursos Adicionales</h3>
+        <p>Si quieres profundizar en el mundo de la <strong>semántica web</strong>, te recomendamos los siguientes
+            enlaces:</p>
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/es/docs/Glossary/Semantics" rel="external" target="_blank"
+                    title="Documentación oficial de MDN sobre semántica">
+                    MDN Web Docs: Semántica
+                </a>
+            </li>
+            <li>
+                <a href="https://www.w3.org/TR/html5-aria/" rel="nofollow" target="_blank">
+                    W3C: Uso de <em lang="en">ARIA in HTML</em>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <hr>
+
+    <footer>
+        <div role="contentinfo">
+            <p>
+                &copy; 2026 <strong>Ejercicio de HTML Semántico</strong>.
+                Creado con <mark>fines educativos</mark> por <em>Victor</em>.
+            </p>
+            <address>
+                Puedes contactarme vía <a href="mailto:victorvg.tmp@gmail.com">victorvg.tmp@gmail.com</a> <br>
+                Zaragoza, España.
+            </address>
+        </div>
+    </footer>
+</body>
+
+</html>
