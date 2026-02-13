@@ -120,9 +120,14 @@
                         <code>&lt;div&gt;</code>. Hoy, <mark>el estándar moderno prioriza el significado</mark>.
                     </p>
 
-                    <table border="1"
+                    <table border="1" align="center" cellpadding="5" cellspacing="10" bgcolor="#f0f0f0"
                         summary="Comparación entre las etiquetas div antiguas y las nuevas etiquetas semánticas de HTML5">
                         <caption>Evolución de etiquetas genéricas a semánticas</caption>
+                        <colgroup>
+                            <col width="30%">
+                            <col width="20%">
+                            <col width="50%">
+                        </colgroup>
                         <thead>
                             <tr>
                                 <th id="col-antigua" scope="col">Elemento Antiguo</th>
@@ -144,7 +149,7 @@
                             <tr>
                                 <td headers="col-antigua"><code>&lt;div class="post"&gt;</code></td>
                                 <td headers="col-moderna"><code>&lt;article&gt;</code></td>
-                                <td headers="col-proposito"><mark>Contenido independiente</mark> (noticia, post).</td>
+                                <td headers="col-proposito">Contenido independiente (noticia, post).</td>
                             </tr>
                         </tbody>
                         <tfoot>
@@ -263,6 +268,12 @@
             </address>
         </div>
     </footer>
+
+    <div>
+        <button id="return" style="position: fixed; bottom: 10px; right: 10px; background-color: brown;"><a
+                href="./index.html" style="color: aliceblue; font-weight: 600; text-decoration: none;"><em>Ir
+                    a index</em></a></button>
+    </div>
 </body>
 
 </html>

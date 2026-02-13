@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Formulario</title>
+
+
+    <style>
+        /* aqui irian los estilos, pero los pongo en un archivo (style.css) aparte */
+        div[role="group"] {
+            margin: 10px;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Contacto</h1>
+        <section>
+            <article>
+                <header>
+                    <h2>Formulario</h2>
+                </header>
+                <form action="/action_page.php" method="">
+                    <div role="group" class="form-item">
+                        <label for="fname">Nombre</label></br>
+                        <input type="text" name="name" id="fname" placeholder="Tu nombre aqui">
+
+                    </div>
+                    <div role="group" class="form-item">
+                        <label for="coments_id">Comentarios</label><br>
+                        <textarea name="coments" id="coments_id" rows="12" cols="100"></textarea>
+                    </div>
+
+                    <!-- añadimos elementos de formulario: -->
+                    <!--el usuario debe elegir método preferido de contacto (y solo uno) entre correo postal, e-mail, teléfono o Whastapp -->
+                    <div role="group" class="form-item">
+                        <label for="pref_contacto_id">Método de contacto preferido - <strong>Con
+                                radiobutton</strong></label><br>
+                        <input type="radio" name="pref_contacto" id="pref_contacto_id" value="Correo Postal">
+                        <label for="pref_contacto_id">Correo Postal</label>
+                        <input type="radio" name="pref_contacto" id="pref_contacto_id" value="e-mail">
+                        <label for="pref_contacto_id">e-mail</label>
+                        <input type="radio" name="pref_contacto" id="pref_contacto_id" value="Teléfono">
+                        <label for="pref_contacto_id">Teléfono</label>
+                        <input type="radio" name="pref_contacto" id="pref_contacto_id" value="Whastapp">
+                        <label for="pref_contacto_id">Whastapp</label>
+                    </div>
+
+                    <div role="group" class="form-item">
+                        <label for="pref_contacto_id">Método de contacto preferido - <strong>Con select</strong></Con>
+                        </label><br>
+                        <select name="pref_contacto" id="pref_contacto_id">
+                            <option value="Correo Postal">Correo Postal</option>
+                            <option value="Correo Postal">e-mail</option>
+                            <option value="Correo Postal">Teléfono</option>
+                            <option value="Correo Postal">Whastapp</option>
+                        </select>
+                    </div>
+
+                    <!-- el usuario debe explicar las razones para anular la suscripción al servicio -->
+                    <div role="group" class="form-item">
+                        <label for="razones_id">Razones para anular la suscripción al servicio</label><br>
+                        <textarea name="razones" id="razones_id" rows="12" cols="100"></textarea>
+                    </div>
+
+                    <!-- el usuario debe iniciar sesión -->
+                    <fieldset>
+                        <legend>Iniciar sesión</legend>
+                        <div role="group" class="form-item">
+                            <label for="user_name_id">Usuario</label>
+                            <input type="text" name="user_name" id="user_name_id" value="" placeholder="Usuario">
+                        </div>
+                        <div role="group" class="form-item">
+                            <label for="user_pass_id">Contraseña</label>
+                            <input type="password" name="user_pass" id="user_pass_id" value="" placeholder="Contraseña">
+                        </div>
+                    </fieldset>
+
+                    <!-- Al usuario se le pone la opción de enviar documento para acreditar sus motivaciones -->
+                    <div role="group" class="form-item">
+                        <label for="user_doc_id">Documento</label>
+                        <input type="file" name="user_doc" id="user_doc_id" value="" placeholder="Documento">
+                    </div>
+
+                    <!-- El usuario debe poner su fecha de nacimiento -->
+                    <div role="group" class="form-item">
+                        <label for="user_bday_id">Fecha de nacimiento</label>
+                        <input type="date" name="user_bday" id="user_bday_id" value=""
+                            placeholder="Fecha de nacimiento">
+                    </div>
+
+
+
+                    <!-- Envio del formulario -->
+                    <div role="group" class="form-item">
+                        <input type="checkbox" name="rgpd" id="rgpd_id">
+                        <label for="rgpd_id">Acepto los terminos y condiciones</label>
+                    </div>
+                    <input type="submit" value="Enviar">
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+
+    <div>
+        <button id="return" style="position: fixed; bottom: 10px; right: 10px; background-color: brown;"><a
+                href="./index.html" style="color: aliceblue; font-weight: 600; text-decoration: none;"><em>Ir
+                    a index</em></a></button>
+    </div>
+</body>
+
+</html>
