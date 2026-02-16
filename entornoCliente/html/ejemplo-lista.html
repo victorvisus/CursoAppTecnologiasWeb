@@ -1,101 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
-        ol {
-            list-style-type: none;
-            counter-reset: item;
-        }
+      ol {
+        list-style-type: none;
+        counter-reset: item;
+      }
 
-        ol li {
-            display: block;
-        }
+      ol li {
+        display: block;
+      }
 
-        ol li::before {
-            content: counters(item, ".") ". ";
-            counter-increment: item;
-            font-weight: bold;
-        }
+      ol li::before {
+        content: counters(item, ".") ". ";
+        counter-increment: item;
+        font-weight: bold;
+      }
     </style>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <header>
-        <h1>Tortilla de patatas</h1>
+      <h1>Tortilla de patatas</h1>
     </header>
 
     <main>
-        <section>
-            <article>
-                <h2>Ingredientes</h2>
+      <section>
+        <article>
+          <h2>Ingredientes</h2>
 
-                <ul>
-                    <li>1,5 kg de patatas</li>
-                    <li>10 huevos medianos</li>
-                    <li>2 cebollas</li>
-                    <li>Sal</li>
-                </ul>
-            </article>
+          <ul>
+            <li>1,5 kg de patatas</li>
+            <li>10 huevos medianos</li>
+            <li>2 cebollas</li>
+            <li>Sal</li>
+          </ul>
+        </article>
 
-            <article>
-                <header>
-                    <h2>Instrucciones</h2>
-                </header>
+        <article>
+          <header>
+            <h2>Instrucciones</h2>
+          </header>
 
-                <ol>
-                    <li>
-                        <ol type="">
-                            <li>Pelamos las patatas.</li>
-                            <li>Pasamos por agua.</li>
-                            <li>Cortamos en láminas finas las patatas.</li>
-                            <li>Las ponemos a freír en una sartén alta con abundante aceite de oliva
-                                virgen extra
-                                caliente.</li>
-                        </ol>
-                    </li>
-                    <li>Salamos y dejamos a fuego medio alto removiendo casi constantemente.</li>
-                    <li>Cortamos las cebollas en juliana y las añadimos. Dejamos freír.</li>
-                    <li>
-                        <ol>
-                            <li>Batimos los huevos con un pellizco de sal y,</li>
-                            <li>cuando la patata esté bien tierna, la añadimos. Mezclamos bien</li>
-                            <li>dejamos reposar cinco minutos.</li>
-                        </ol>
-                    </li>
-                    <li>
-                        <ol type="">
-                            <li>Pasado ese tiempo,</li>
-                            <li>lo volcamos sobre la sartén, que debe estar caliente y dejamos al gusto.</li>
-                            <li>Cuando empieza a cuajar,</li>
-                            <li>le damos la vuelta con ayuda de un plato mojado.</li>
-                            <li>Retiramos cuando esté a nuestro gusto.</li>
-                        </ol>
-                    </li>
-                </ol>
-            </article>
+          <ol>
+            <li>
+              <ol type="">
+                <li>Pelamos las patatas.</li>
+                <li>Pasamos por agua.</li>
+                <li>Cortamos en láminas finas las patatas.</li>
+                <li>
+                  Las ponemos a freír en una sartén alta con abundante aceite de
+                  oliva virgen extra caliente.
+                </li>
+              </ol>
+            </li>
+            <li>
+              Salamos y dejamos a fuego medio alto removiendo casi
+              constantemente.
+            </li>
+            <li>
+              Cortamos las cebollas en juliana y las añadimos. Dejamos freír.
+            </li>
+            <li>
+              <ol>
+                <li>Batimos los huevos con un pellizco de sal y,</li>
+                <li>
+                  cuando la patata esté bien tierna, la añadimos. Mezclamos bien
+                </li>
+                <li>dejamos reposar cinco minutos.</li>
+              </ol>
+            </li>
+            <li>
+              <ol type="">
+                <li>Pasado ese tiempo,</li>
+                <li>
+                  lo volcamos sobre la sartén, que debe estar caliente y dejamos
+                  al gusto.
+                </li>
+                <li>Cuando empieza a cuajar,</li>
+                <li>le damos la vuelta con ayuda de un plato mojado.</li>
+                <li>Retiramos cuando esté a nuestro gusto.</li>
+              </ol>
+            </li>
+          </ol>
+        </article>
 
-            <article>
-                <ul>
-                    <li>Tiempo de preparación: 25 minuto(s)</li>
-                    <li>Tiempo de cocción: 20 minuto(s)</li>
-                    <li>N mero de comensales: 4</li>
-                </ul>
-            </article>
-        </section>
+        <article>
+          <ul>
+            <li>Tiempo de preparación: 25 minuto(s)</li>
+            <li>Tiempo de cocción: 20 minuto(s)</li>
+            <li>N mero de comensales: 4</li>
+          </ul>
+        </article>
+      </section>
     </main>
 
     <div>
-        <button id="return" style="position: fixed; bottom: 10px; right: 10px; background-color: brown;"><a
-                href="../index.html" style="color: aliceblue; font-weight: 600; text-decoration: none;"><em>Ir
-                    a index</em></a></button>
+      <button
+        id="return"
+        style="
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+          background-color: brown;
+        "
+      >
+        <a
+          href="../index.html"
+          style="color: aliceblue; font-weight: 600; text-decoration: none"
+          ><em>Ir a index</em></a
+        >
+      </button>
     </div>
-</body>
-
+  </body>
 </html>

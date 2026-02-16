@@ -1,0 +1,4 @@
+Aquí tienes el plan de ruta para tus ramas de Git:
+- MF0491_3 (Entorno Cliente): UF1841-maquetacion, UF1842-js-guion, UF1843-usabilidad.
+- MF0492_3 (Entorno Servidor): UF1844-servidor, UF1845-acceso-datos, UF1846-distribuidas.
+- MF0493_3 (Implantación): MF0493-despliegue.
