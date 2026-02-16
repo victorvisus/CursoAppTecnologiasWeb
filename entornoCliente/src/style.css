@@ -21,26 +21,25 @@
 }
   */
 
-
 @import "tailwindcss";
 
 @theme {
-    --color-negro-carbon: #0E0E11;
-    --color-gris-antracita: #1C1E22;
-    --color-gris-acero: #3A3D42;
-    --color-gris-tecnico: #B5B8BE;
-    --color-verde-criptico: #3AFF7A;
-    --color-blanco-tecnico: #F2F3F5;
+  --color-negro-carbon: #0e0e11;
+  --color-gris-antracita: #1c1e22;
+  --color-gris-acero: #3a3d42;
+  --color-gris-tecnico: #b5b8be;
+  --color-verde-criptico: #3aff7a;
+  --color-blanco-tecnico: #f2f3f5;
 }
 
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 h1,
 h2,
 h3 {
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 h4,
@@ -53,15 +52,15 @@ label,
 input,
 textarea,
 select {
-    font-family: "Source Sans 3", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
 }
-
+/* 
 header.hero-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    margin: auto;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+} */

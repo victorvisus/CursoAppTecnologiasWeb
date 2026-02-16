@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .site-main {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: red;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        div.imagen {
+            text-align: center;
+        }
+
+        img {
+            max-width: 75%;
+            margin: auto;
+
+        }
+
+        p {
+            color: blue;
+            font-size: 18px;
+            background-color: orange;
+        }
+
+        p.especial {
+            background-color: yellow;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+
+        p:nth-child(5) {
+            background-color: burlywood;
+            color: red;
+        }
+
+        #cabecera {
+            border: 2px solid #666;
+            padding: 0.5em;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <title>Document</title>
+    </head>
+
+    <body>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Sección</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main id="main" class="site-main">
+            <header id="cabecera">
+                <h1>Titulo principal</h1>
+            </header>
+
+            <section>
+                <h2>Titulo de sección</h2>
+
+                <h3>Parrafo 1</h3>
+                <p class="especial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum animi
+                    necessitatibus, in
+                    nulla ex veniam sit facere iste! Rem dolorem ex corrupti ducimus excepturi ad! Velit beatae nulla
+                    cupiditate!</p>
+
+                <h3>Parrafo 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum animi necessitatibus, in
+                    nulla ex veniam sit facere iste! Rem dolorem ex corrupti ducimus excepturi ad! Velit beatae nulla
+                    cupiditate!</p>
+
+                <h3>Parrafo 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum animi necessitatibus, in
+                    nulla ex veniam sit facere iste! Rem dolorem ex corrupti ducimus excepturi ad! Velit beatae nulla
+                    cupiditate!</p>
+
+                <h3>Parrafo 4</h3>
+                <p class="especial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum animi
+                    necessitatibus, in
+                    nulla ex veniam sit facere iste! Rem dolorem ex corrupti ducimus excepturi ad! Velit beatae nulla
+                    cupiditate!</p>
+            </section>
+            <section>
+                <h2>Otra sección</h2>
+                <div class="imagen">
+                    <img src="../html/img/pen_ash-superb-fairywren-10069195_1280.jpg" alt="imagen para pruebas"
+                        title="Imagen de pruebas CSS" width="100%">
+                </div>
+            </section>
+        </main>
+
+        <div>
+            <button id="return" style="position: fixed; bottom: 10px; right: 10px; background-color: brown;"><a
+                    href="../index.html" style="color: aliceblue; font-weight: 600; text-decoration: none;"><em>Ir
+                        a index</em></a></button>
+        </div>
+    </body>
+
+</html>

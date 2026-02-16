@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Introducción completa a CSS: Hojas de Estilo en Cascada, su historia, evolución y conceptos fundamentales">
+    <title>Introducción a CSS - Hojas de Estilo en Cascada</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Sans+3:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'negro-carbon': '#0E0E11',
+                        'gris-antracita': '#1C1E22',
+                        'gris-acero': '#3A3D42',
+                        'gris-tecnico': '#B5B8BE',
+                        'verde-criptico': '#3AFF7A',
+                        'blanco-tecnico': '#F2F3F5',
+                    },
+                    fontFamily: {
+                        'title': ['Inter', 'sans-serif'],
+                        'body': ['Source Sans 3', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --color-negro-carbon: #0E0E11;
+            --color-gris-antracita: #1C1E22;
+            --color-gris-acero: #3A3D42;
+            --color-gris-tecnico: #B5B8BE;
+            --color-verde-criptico: #3AFF7A;
+            --color-blanco-tecnico: #F2F3F5;
+        }
+
+        body {
+            font-family: "Source Sans 3", sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Inter", sans-serif;
+        }
+
+        h5,
+        h6 {
+            font-family: "Source Sans 3", sans-serif;
+        }
+
+        /* Configuración personalizada */
+        @layer utilities {
+            .gradient-bg {
+                background: linear-gradient(135deg, var(--color-gris-antracita) 0%, var(--color-negro-carbon) 100%);
+            }
+
+            .gradient-text {
+                background: linear-gradient(135deg, var(--color-verde-criptico) 0%, #2dd45f 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .glow-green {
+                box-shadow: 0 0 20px rgba(58, 255, 122, 0.3);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-negro-carbon text-blanco-tecnico font-body">
+
+    <!-- Header -->
+    <header class="gradient-bg text-blanco-tecnico py-16 shadow-lg border-b-2 border-verde-criptico">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl font-bold text-center mb-4 font-title">Introducción a CSS</h1>
+            <p class="text-xl text-center text-gris-tecnico">Hojas de Estilo en Cascada</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Sección: ¿Qué es CSS? -->
+        <section class="mb-16">
+            <article class="bg-gris-antracita rounded-lg shadow-lg p-8 border border-gris-acero">
+                <h2 class="text-3xl font-bold mb-6 gradient-text font-title">CSS: Hojas de Estilo en Cascada</h2>
+                <p class="text-lg leading-relaxed mb-4 text-gris-tecnico">
+                    CSS (Cascading Style Sheets o Hojas de Estilo en Cascada) es un lenguaje utilizado en el desarrollo
+                    web para definir la presentación y el aspecto visual de los documentos HTML. Gracias a CSS, se puede
+                    separar el contenido de una página web, que se estructura con HTML, de su diseño y estilo visual.
+                </p>
+            </article>
+        </section>
+
+        <!-- Sección: ¿Qué permite controlar? -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center gradient-text font-title">¿Qué permite controlar?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <article
+                    class="bg-gris-antracita rounded-lg shadow-lg p-6 hover:shadow-xl hover:glow-green transition-all duration-300 border-t-4 border-verde-criptico">
+                    <div class="text-4xl mb-4 text-center">🎨</div>
+                    <h3 class="text-xl font-bold mb-3 text-center text-verde-criptico font-title">1</h3>
+                    <p class="text-center text-gris-tecnico">Colores, fuentes, espaciados</p>
+                </article>
+
+                <article
+                    class="bg-gris-antracita rounded-lg shadow-lg p-6 hover:shadow-xl hover:glow-green transition-all duration-300 border-t-4 border-verde-criptico">
+                    <div class="text-4xl mb-4 text-center">📐</div>
+                    <h3 class="text-xl font-bold mb-3 text-center text-verde-criptico font-title">2</h3>
+                    <p class="text-center text-gris-tecnico">Layouts y posicionamiento</p>
+                </article>
+
+                <article
+                    class="bg-gris-antracita rounded-lg shadow-lg p-6 hover:shadow-xl hover:glow-green transition-all duration-300 border-t-4 border-verde-criptico">
+                    <div class="text-4xl mb-4 text-center">📱</div>
+                    <h3 class="text-xl font-bold mb-3 text-center text-verde-criptico font-title">3</h3>
+                    <p class="text-center text-gris-tecnico">Adaptación a diferentes dispositivos</p>
+                </article>
+
+                <article
+                    class="bg-gris-antracita rounded-lg shadow-lg p-6 hover:shadow-xl hover:glow-green transition-all duration-300 border-t-4 border-verde-criptico">
+                    <div class="text-4xl mb-4 text-center">✨</div>
+                    <h3 class="text-xl font-bold mb-3 text-center text-verde-criptico font-title">4</h3>
+                    <p class="text-center text-gris-tecnico">Animaciones y efectos visuales</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Sección: Historia y Evolución -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center gradient-text font-title">Historia y Evolución de CSS</h2>
+            <div class="bg-gris-antracita rounded-lg shadow-lg p-8 border border-gris-acero">
+                <div class="space-y-8">
+
+                    <article class="flex items-start gap-6 pb-8 border-b border-gris-acero">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-20 h-20 rounded-full bg-gris-acero flex items-center justify-center border-2 border-verde-criptico">
+                                <span class="text-2xl font-bold text-verde-criptico font-title">1996</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-2 text-verde-criptico font-title">CSS 1</h3>
+                            <p class="text-gris-tecnico">Primeras especificaciones básicas</p>
+                        </div>
+                    </article>
+
+                    <article class="flex items-start gap-6 pb-8 border-b border-gris-acero">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-20 h-20 rounded-full bg-gris-acero flex items-center justify-center border-2 border-verde-criptico">
+                                <span class="text-2xl font-bold text-verde-criptico font-title">1998</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-2 text-verde-criptico font-title">CSS 2</h3>
+                            <p class="text-gris-tecnico">Posicionamiento y nuevas propiedades</p>
+                        </div>
+                    </article>
+
+                    <article class="flex items-start gap-6 pb-8 border-b border-gris-acero">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-20 h-20 rounded-full bg-gris-acero flex items-center justify-center border-2 border-verde-criptico">
+                                <span class="text-2xl font-bold text-verde-criptico font-title">2011</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-2 text-verde-criptico font-title">CSS 2.1</h3>
+                            <p class="text-gris-tecnico">Corrección de errores y estandarización</p>
+                        </div>
+                    </article>
+
+                    <article class="flex items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-20 h-20 rounded-full bg-gris-acero flex items-center justify-center border-2 border-verde-criptico glow-green">
+                                <span class="text-lg font-bold text-verde-criptico font-title">Actual</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-2 text-verde-criptico font-title">CSS 3+</h3>
+                            <p class="text-gris-tecnico mb-2">Sistema modular con múltiples especificaciones</p>
+                            <p class="text-sm text-gris-tecnico italic">Flexbox, Grid, Animaciones...</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Importancia -->
+        <section class="mb-16">
+            <article class="bg-gris-antracita rounded-lg shadow-lg p-8 border-l-4 border-verde-criptico glow-green">
+                <h2 class="text-2xl font-bold mb-4 text-verde-criptico font-title">💡 Importancia</h2>
+                <p class="text-lg leading-relaxed mb-4 text-gris-tecnico">
+                    CSS es un estándar fundamental del desarrollo web mantenido por el <strong
+                        class="text-blanco-tecnico">W3C (World Wide Web Consortium)</strong>, lo que garantiza su
+                    evolución y uso común en la web. Gracias a estos estándares, la compatibilidad entre los distintos
+                    navegadores es cada vez mayor, permitiendo que los estilos se muestren de forma coherente en
+                    diferentes plataformas.
+                </p>
+                <p class="text-lg leading-relaxed text-gris-tecnico">
+                    Además, CSS se actualiza de manera constante, incorporando nuevas características que amplían sus
+                    posibilidades y facilitan la creación de diseños modernos y adaptables.
+                </p>
+            </article>
+        </section>
+
+        <!-- Sección: Anatomía básica de CSS -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center gradient-text font-title">Anatomía básica de CSS</h2>
+            <article class="bg-gris-antracita rounded-lg shadow-lg p-8 border border-gris-acero">
+                <p class="text-lg leading-relaxed mb-6 text-gris-tecnico">
+                    Para trabajar con CSS de forma eficaz es importante conocer su anatomía básica, es decir, los
+                    elementos que componen una regla de estilo. Comprender estos componentes es fundamental para
+                    escribir hojas de estilo claras, organizadas y fáciles de mantener.
+                </p>
+
+                <div
+                    class="bg-gris-acero text-blanco-tecnico rounded-lg p-6 font-mono text-sm overflow-x-auto mb-4 border border-gris-tecnico">
+                    <pre><code><span class="text-yellow-400">selector</span> {
+    <span class="text-blue-400">propiedad</span>: <span class="text-verde-criptico">valor</span>;
+    <span class="text-blue-400">otra-propiedad</span>: <span class="text-verde-criptico">otro-valor</span>;
+}</code></pre>
+                </div>
+
+                <div class="bg-gris-acero border-l-4 border-verde-criptico p-4 rounded">
+                    <p class="text-sm text-blanco-tecnico">
+                        <strong class="text-verde-criptico">Nota:</strong> Los espacios en blanco son ignorados, pero
+                        ayudan a la legibilidad.
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sección: Formas de incluir CSS -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center gradient-text font-title">Formas de incluir CSS en HTML</h2>
+            <p class="text-lg text-center mb-8 text-gris-tecnico max-w-4xl mx-auto">
+                Existen tres formas principales con las que incluir CSS en HTML para que las reglas de estilo se
+                apliquen. Aunque vamos a ver a continuación las tres maneras y aprenderemos a usarlas, la gran mayoría
+                del tiempo siempre utilizaremos la tercera (CSS Externo). Solamente cuando exista una razón de peso
+                optaremos por alguna de las otras posibilidades.
+            </p>
+
+            <div class="grid lg:grid-cols-3 gap-6 mb-8">
+
+                <article class="bg-gris-antracita rounded-lg shadow-lg p-6 border-t-4 border-red-500">
+                    <h3 class="text-xl font-bold mb-4 text-red-400 font-title">CSS Inline (en línea)</h3>
+                    <div
+                        class="bg-negro-carbon text-blanco-tecnico rounded p-4 font-mono text-xs overflow-x-auto border border-gris-acero">
+                        <pre><code>&lt;p <span class="text-yellow-400">style</span>=<span class="text-verde-criptico">"color: blue;"</span>&gt;
+  Texto azul
+&lt;/p&gt;</code></pre>
+                    </div>
+                </article>
+
+                <article class="bg-gris-antracita rounded-lg shadow-lg p-6 border-t-4 border-yellow-500">
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400 font-title">CSS Interno (dentro de head)</h3>
+                    <div
+                        class="bg-negro-carbon text-blanco-tecnico rounded p-4 font-mono text-xs overflow-x-auto border border-gris-acero">
+                        <pre><code>&lt;<span class="text-red-400">style</span>&gt;
+  <span class="text-yellow-400">p</span> {
+    <span class="text-blue-400">color</span>: <span class="text-verde-criptico">blue</span>;
+  }
+&lt;/<span class="text-red-400">style</span>&gt;</code></pre>
+                    </div>
+                </article>
+
+                <article class="bg-gris-antracita rounded-lg shadow-lg p-6 border-t-4 border-verde-criptico glow-green">
+                    <h3 class="text-xl font-bold mb-4 text-verde-criptico font-title">CSS Externo (archivo separado)
+                    </h3>
+                    <div
+                        class="bg-negro-carbon text-blanco-tecnico rounded p-4 font-mono text-xs overflow-x-auto border border-gris-acero">
+                        <pre><code>&lt;<span class="text-red-400">link</span> 
+  <span class="text-yellow-400">rel</span>=<span class="text-verde-criptico">"stylesheet"</span>
+  <span class="text-yellow-400">href</span>=<span class="text-verde-criptico">"styles.css"</span>&gt;</code></pre>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Sección: Comparativa de Métodos -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center gradient-text font-title">Comparativa de Métodos CSS</h2>
+
+            <div class="space-y-6">
+
+                <!-- CSS Inline -->
+                <article class="bg-gris-antracita rounded-lg shadow-lg p-6 border border-gris-acero">
+                    <h3 class="text-2xl font-bold mb-4 text-red-400 font-title">CSS Inline</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-verde-criptico mb-2">✅ Ventajas</h4>
+                            <ul class="space-y-2 text-gris-tecnico">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-verde-criptico mt-1">•</span>
+                                    <span>Prioridad máxima (sobrescribe otros estilos).</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 mt-1">•</span>
+                                    <span>Útil para cambios muy específicos.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-400 mb-2">❌ Desventajas</h4>
+                            <ul class="space-y-2 text-gris-tecnico">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-400 mt-1">•</span>
+                                    <span>Mezcla contenido y presentación.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-500 mt-1">•</span>
+                                    <span>No reutilizable, difícil de mantener.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CSS Interno -->
+                <article class="bg-gris-antracita rounded-lg shadow-lg p-6 border border-gris-acero">
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-400 font-title">CSS Interno</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-green-600 mb-2">✅ Ventajas</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 mt-1">•</span>
+                                    <span>No requiere archivos adicionales.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 mt-1">•</span>
+                                    <span>Útil para páginas únicas con estilos específicos.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-600 mb-2">❌ Desventajas</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-500 mt-1">•</span>
+                                    <span>No separación completa de contenido y presentación.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-500 mt-1">•</span>
+                                    <span>Se descarga con cada página, no se cachea.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CSS Externo (Recomendado) -->
+                <article class="bg-gris-antracita rounded-lg shadow-lg p-6 border-2 border-verde-criptico glow-green">
+                    <div class="flex items-center gap-3 mb-4">
+                        <h3 class="text-2xl font-bold text-verde-criptico font-title">CSS Externo</h3>
+                        <span
+                            class="bg-verde-criptico text-negro-carbon px-3 py-1 rounded-full text-sm font-semibold">Recomendado</span>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-green-600 mb-2">✅ Ventajas</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 mt-1">•</span>
+                                    <span>Separación total de contenido y presentación.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 mt-1">•</span>
+                                    <span>Reutilizable en múltiples páginas.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 mt-1">•</span>
+                                    <span>Facilita el mantenimiento.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-500 mt-1">•</span>
+                                    <span>Se cachea y mejora el rendimiento.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-600 mb-2">❌ Desventajas</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-500 mt-1">•</span>
+                                    <span>Requiere una solicitud HTTP adicional.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Sección: Comentarios en CSS -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center gradient-text font-title">Comentarios en CSS</h2>
+            <article class="bg-gris-antracita rounded-lg shadow-lg p-8 border border-gris-acero">
+                <p class="text-lg leading-relaxed mb-6 text-gris-tecnico">
+                    Los comentarios en CSS se utilizan para añadir aclaraciones o notas dentro del código sin que
+                    afecten al diseño de la página web. Son útiles para explicar estilos, organizar el código o
+                    facilitar su comprensión y mantenimiento. En CSS, los comentarios se escriben entre <code
+                        class="bg-gris-acero px-2 py-1 rounded text-sm text-verde-criptico">/*</code> y <code
+                        class="bg-gris-acero px-2 py-1 rounded text-sm text-verde-criptico">*/</code> y pueden ocupar
+                    una o varias líneas.
+                </p>
+
+                <div
+                    class="bg-negro-carbon text-blanco-tecnico rounded-lg p-6 font-mono text-sm overflow-x-auto mb-6 border border-gris-acero">
+                    <pre><code><span class="text-gris-tecnico">/* Este es un comentario de una línea */</span>
+
+<span class="text-gris-tecnico">/* 
+ * Este es un comentario
+ * de múltiples líneas
+ */</span>
+
+<span class="text-yellow-400">.ejemplo</span> {
+    <span class="text-blue-400">color</span>: <span class="text-verde-criptico">blue</span>; <span class="text-gris-tecnico">/* Color del texto */</span>
+}</code></pre>
+                </div>
+
+                <div class="bg-gris-acero rounded-lg p-6 border-l-4 border-verde-criptico">
+                    <h3 class="text-xl font-bold mb-4 text-verde-criptico font-title">📝 Importancia de los comentarios
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="text-verde-criptico text-xl flex-shrink-0">•</span>
+                            <span class="text-blanco-tecnico">Documentar el propósito del código.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-500 text-xl flex-shrink-0">•</span>
+                            <span class="text-gray-700">Explicar decisiones de diseño.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-500 text-xl flex-shrink-0">•</span>
+                            <span class="text-gray-700">Deshabilitar temporalmente ciertas reglas.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-500 text-xl flex-shrink-0">•</span>
+                            <span class="text-gray-700">Organizar secciones de código.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-500 text-xl flex-shrink-0">•</span>
+                            <span class="text-gray-700">Facilitar el trabajo en equipo.</span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-blanco-tecnico py-8 mt-16 border-t-2 border-verde-criptico">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg mb-2 font-title">Introducción a CSS - Hojas de Estilo en Cascada</p>
+            <p class="text-sm text-gris-tecnico">Desarrollado con HTML semántico y Tailwind CSS</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ejemplo de formulario</title>
+
+    <style>
+      .form-fields {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+      .form-fields label {
+        margin-bottom: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <article>
+        <section>
+          <header>
+            <h2>Formulario Contacto</h2>
+            <form action="/" method="post">
+              <fieldset style="border-width: 2px; border-style: inset">
+                <legend>Datos personales</legend>
+                <div class="form-fields" role="group">
+                  <label for="fname_id">Nombre:</label>
+                  <input
+                    type="text"
+                    id="user_name_id"
+                    name="user-name-field"
+                    placeholder="Nombre y apellidos"
+                    required />
+                </div>
+                <div class="form-fields" role="group">
+                  <label for="email_id">Correo electrónico:</label>
+                  <input
+                    type="email"
+                    id="user_email_id"
+                    name="user-email-field"
+                    placeholder="Correo electrónico"
+                    required />
+                </div>
+                <div class="form-fields" role="group">
+                  <label for="tel_id">Tel&eacute;fono:</label>
+                  <input
+                    type="tel"
+                    id="user_tel_id"
+                    name="user-tel-field"
+                    placeholder="Tel&eacute;fono"
+                    pattern="[0-9]{9}"
+                    required />
+                </div>
+                <div class="form-fields" role="group">
+                  <h2>Preguntas frecuentes</h2>
+                  <details>
+                    <summary>¿Qué estudios tienes?</summary>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Obcaecati optio ipsam unde dolores facilis maiores tempore
+                      neque expedita! Illo repellendus optio dolores ab maxime.
+                      Placeat eveniet earum ex sed dignissimos!
+                    </p>
+                  </details>
+
+                  <details open>
+                    <summary>¿Qu&eacute; te gusta hacer?</summary>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ipsum recusandae eius numquam corrupti nesciunt, nisi
+                      ratione. Libero quas labore esse? Soluta ad labore itaque
+                      expedita quia maiores voluptas, tempora iure.
+                    </p>
+                  </details>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Mensaje</legend>
+                <textarea id="user_msg_id" name="user-msg-field"></textarea>
+              </fieldset>
+
+              <input type="submit" value="Enviar Contacto" />
+            </form>
+          </header>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <p>
+        &copy; 2026 <strong>Ejemplo de formulario</strong>. Creado con fines
+        educativos por <em>Victor</em>.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,40 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> <!-- codificacion de texto -->
-    <meta name="viewport" content="width=device-width"> <!-- la dice la anchura del dispositivo que se ve -->
-    <meta name="description" content="Primera website del curso">
-    <meta name="author" content="Victor">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <!-- codificacion de texto -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- la dice la anchura del dispositivo que se ve -->
+    <meta name="description" content="Primera website del curso" />
+    <meta name="author" content="Victor" />
 
     <title>Primera pág. del curso</title>
 
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#ff1919">
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0E0E11" />
 
-    <link rel="shortcut icon" href="./img/HTML5_logo_and_wordmark.svg" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./img/HTML5_logo_and_wordmark.svg"
+      type="image/x-icon" />
 
     <!-- CSS -->
     <!-- <link rel="stylesheet" href="./src/preflight.css"> -->
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/style.css" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet" />
 
     <!-- Frameword Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style type="text/tailwindcss">
-        /*
+      /*
         @theme {
             --color-negro-carbon: #0E0E11;
             --color-gris-antracita: #1C1E22;
@@ -45,154 +50,363 @@
         }
             */
     </style>
-</head>
+  </head>
 
-<body id="page">
-    <header id="" class="hero-header">
-        <h1 class="text-5xl font-bold border-b-2 pb-2 mb-15">Comenzamos</h1>
-        <h2
-            class="text-2xl font-semibold text-[#F2F3F5] p-2 mb-5 rounded-md bg-[#3A3D42] outline outline-offset-2 outline-[#B5B8BE] shadow-xl">
-            Menu de navegacion</h2>
+  <body id="page">
+    <header
+      id=""
+      class="hero-header mt-15 w-full flex flex-nowrap flex-col justify-center content-center">
+      <h1
+        class="w-fit text-5xl font-bold border-b-2 pb-2 mr-auto ml-auto mb-10">
+        Indice desarrollo app. web
+      </h1>
+      <h2
+        class="text-2xl font-semibold text-[#F2F3F5] p-2 max-w-fit mr-auto ml-auto mb-15 rounded-md bg-[#3A3D42] outline outline-offset-2 outline-[#B5B8BE] shadow-xl">
+        Menu de navegacion
+      </h2>
+      <!-- nav para acceder a los ejercicios de HTML -->
+      <section
+        id="seccion-html"
+        class="mr-auto ml-auto mb-5 p-5 border w-full md:max-w-7xl">
         <!-- nav para acceder a los ejercicios de HTML -->
         <nav id="menu-html" class="navbar">
-            <h3 class="text-3xl font-semibold basis-auto">Ejercicios HTML5</h3>
-            <ul role="menubar" CLASS="flex flex-wrap basis-full">
-                <li role="menuitem"
-                    class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./html/ejercicio-html.html"
-                        title="Primer ejercicio">Ejercicio
-                        html</a>
-                </li>
-                <li role="menuitem"
-                    class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./html/ejemplo-rutas.html"
-                        title="Ejercicio rutas relativas y absolutas">Ejercicio rutas</a>
-                </li>
-                <li role="menuitem"
-                    class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./html/ejemplo-lista.html"
-                        title="Pruebas con listas">Ejercicio
-                        lista</a>
-                </li>
-                <li role="menuitem"
-                    class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./html/html-semantico.html"
-                        title="HTML semantico, buenas practicas">HTML
-                        semantico</a>
-                </li>
-                <li role="menuitem"
-                    class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./html/formulario.html" title="Formulario">Formulario</a>
-                </li>
-                <li role="menuitem"
-                    class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="#contact-form" title="Formulario">Ver formulario</a>
-                </li>
-                <li role="menuitem"
-                    class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./html/curriculum/index.html"
-                        title="Curriculum">Curriculum</a>
-                </li>
-            </ul>
+          <h3 class="text-center text-3xl mb-5 font-semibold basis-auto">
+            Temas HTML5
+          </h3>
+          <h4 class="text-center text-2xl font-semibold basis-auto">
+            Teoria HTML5
+          </h4>
+          <ul
+            role="menubar"
+            id="nav-teoria-html"
+            class="flex flex-wrap basis-full">
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a class="menulink transition-all" href="#" title=""
+                >Pendiente de añadir teoria</a>
+            </li>
+          </ul>
+          <h4 class="text-center text-2xl font-semibold basis-auto">
+            Ejercicios HTML5
+          </h4>
+          <ul
+            role="menubar"
+            id="nav-ejercicios-html"
+            class="flex flex-wrap basis-full">
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./html/ejercicio-html.html"
+                title="Primer ejercicio"
+                >Ejercicio html</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./html/ejemplo-rutas.html"
+                title="Ejercicio rutas relativas y absolutas"
+                >Ejercicio rutas</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./html/ejemplo-lista.html"
+                title="Pruebas con listas"
+                >Ejercicio lista</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./html/html-semantico.html"
+                title="HTML semantico, buenas practicas"
+                >HTML semantico</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./html/formulario.html"
+                title="Formulario"
+                >Formulario</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./html/ejemplo_form.html"
+                title="Otro Formulario"
+                >Otro Formulario</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="#contact-form"
+                title="Formulario"
+                >Ver formulario</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./html/curriculum/index.html"
+                title="Curriculum"
+                >Curriculum</a
+              >
+            </li>
+          </ul>
         </nav>
-        <!-- nav para acceder a los ejercicios de CSS -->
+      </section>
+      <!-- nav para acceder a los ejercicios de CSS -->
+      <section
+        id="seccion-css"
+        class="mr-auto ml-auto mb-5 p-5 border w-full md:max-w-7xl">
         <nav id="menu-css" class="navbar">
-            <h3 class="text-3xl font-semibold basis-auto">Ejercicios CSS3</h3>
-            <ul role="menubar" CLASS="flex flex-wrap basis-full">
-                <li role="menuitem"
-                    class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./tema_css/" title="Primer ejercicio">futuro ejercicio
-                        CSS</a>
-                </li>
-            </ul>
+          <h3 class="text-center text-3xl mb-5 font-semibold basis-auto">
+            Temas CSS3
+          </h3>
+          <h4 class="text-center text-2xl font-semibold basis-auto">
+            Teoria CSS3
+          </h4>
+          <ul
+            role="menubar"
+            id="nav-teoria-css"
+            class="flex flex-wrap basis-full">
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./tema_css/introduccion-css/introduccion-css.html"
+                title="Introduccion a CSS3"
+                >Introduccion a CSS3</a
+              >
+            </li>
+          </ul>
+          <h4 class="text-center text-2xl font-semibold basis-auto">
+            Ejercicios CSS3
+          </h4>
+          <ul
+            role="menubar"
+            id="nav-ejercicios-css"
+            class="flex flex-wrap basis-full">
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./tema_css/ejercicio_first_css.html"
+                title="Primer ejercicio"
+                >futuro ejercicio CSS</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="./tema_css/tarea-menuRestaurante.html"
+                title="Ejercicio menu Restaurante"
+                >Ejercicio menu Restaurante</a
+              >
+            </li>
+          </ul>
         </nav>
+      </section>
+      <!-- Enlaces de interes -->
+      <section
+        id="others-links"
+        class="mr-auto ml-auto mb-5 p-5 border w-full md:max-w-7xl">
+        <nav id="menu-links" class="navbar">
+          <h3 class="text-center text-3xl mb-5 font-semibold basis-auto">
+            Enlaces de interes
+          </h3>
+          <ul
+            role="menubar"
+            id="nav-others-links"
+            class="flex flex-wrap basis-full">
+            <li
+              role="menuitem"
+              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              <a
+                class="menulink transition-all"
+                href="../git-reference/git-reference.html"
+                title="Git cheat sheet"
+                >Guía de referencia rápida · Git</a>
+            </li>
+        </nav>
+      </section>
     </header>
 
     <!------------------------->
     <!-- Contenido principal -->
     <!------------------------->
-    <main id="main" class="site-main p-5 container">
-        <article id="post-01" class="post flex justify-center">
-            <section id="contact-form" class="contact flex flex-nowrap justify-around basis-[1200px] xs:flex-wrap">
-                <header class="presentacion flex-none basis-1/4 p-2">
-                    <h3 class="text-3xl font-semibold basis-auto">Tienes dudas?</h3>
-                    <p class="basis-full">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos omnis porro voluptatem
-                        nihil
-                        non ut consectetur aliquam libero, nam autem consequatur illum similique minus quos atque
-                        laboriosam, veritatis quae mollitia!
-                    </p>
-                </header>
-                <form class="flex flex-wrap justify-around basis-3/4 p-2" action="/" method="post" name="contacto">
-                    <header id="form-header" class="form-header basis-full">
-                        <h4 class="text-2xl font-semibold">Contacto</h4>
-                    </header>
+    <main id="main" class="site-main p-5 container m-auto w-full md:max-w-7xl">
+      <article id="post-01" class="post flex justify-center">
+        <section
+          id="contact-form"
+          class="contact flex justify-around flex-wrap md:flex-nowrap">
+          <header class="presentacion flex-none p-2 basis-full md:basis-1/4">
+            <h3 class="text-3xl font-semibold basis-auto">Tienes dudas?</h3>
+            <p class="basis-full">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Dignissimos omnis porro voluptatem nihil non ut consectetur
+              aliquam libero, nam autem consequatur illum similique minus quos
+              atque laboriosam, veritatis quae mollitia!
+            </p>
+          </header>
+          <form
+            class="flex flex-wrap justify-around p-2 basis-full md:basis-3/4"
+            action="/"
+            method="post"
+            name="contacto">
+            <header id="form-header" class="form-header basis-full">
+              <h4 class="text-2xl font-semibold">Contacto</h4>
+            </header>
 
-                    <div id="name-field" class="form-field-group p-1 md:basis-1/4" role="group">
-                        <label class="form-field block mb-1" for="user_name_id">Nombre y apellidos</label>
-                        <input type="text" name="user_name" id="user_name_id" value="" required
-                            placeholder="Nombre y apellidos" class="border p-1 w-full">
-                    </div>
-                    <div id="email-field" class="form-field-group p-1 md:basis-1/4" role="group">
-                        <label class="form-field block mb-1" for="user_mail_id">Correo electrónico</label>
-                        <input type="text" name="user_mail" id="user_mail_id" value="" required placeholder="e-mail"
-                            class="border p-1 w-full">
-                    </div>
-                    <div id="tel-field" class="form-field-group p-1 md:basis-1/4" role="group">
-                        <label class="form-field block mb-1" for="user_tel_id">Teléfono</label>
-                        <input type="tel" name="user_tel" id="user_tel_id" value="" placeholder="Teléfono"
-                            class="border p-1 w-full">
-                    </div>
-                    <div id="city-field" class="form-field-group p-1 md:basis-1/4" role="group">
-                        <label class="form-field block mb-1" for="user_city_id">Ciudad</label>
-                        <input id="user_city_id" list="user_city_list_id" class="border p-1 w-full">
-                        <datalist id="user_city_list_id" name="user_city">
-                            <option value="Madrid">
-                            <option value="Barcelona">
-                            <option value="Valencia">
-                            <option value="Sevilla">
-                            <option value="Zaragoza">
-                        </datalist>
-                    </div>
-                    <div id="msg-field" class="form-field-group p-1 basis-full" role="group">
-                        <label class="form-field block mb-1" for="user_message_id">Mensaje</label>
-                        <textarea name="user_message" id="user_message_id" maxlength="500" placeholder="Aqui tu Mensaje"
-                            class="border p-1 w-full"></textarea>
-                    </div>
-                    <div id="send-field" class="form-field-group p-1 basis-full" role="group">
-                        <input class="form-field mr-2 mb-1" type="checkbox" name="rgpd" id="rgpd_id" value=""
-                            required>Acepto los terminos y condiciones
-                        <input
-                            class="block font-semibold text-[#F2F3F5] mt-5 mb-5 pl-10 pr-10 pb-2 pt-2 rounded-md bg-[#1C1E22] outline outline-offset-2 outline-[#3AFF7A] shadow-xl transition-all hover:bg-[#3AFF7A] hover:text-[#1C1E22]"
-                            id="enviar" type="submit" value="Enviar">
-                    </div>
-                </form>
-
-            </section>
-        </article>
+            <div
+              id="name-field"
+              class="form-field-group p-1 basis-full md:basis-1/4"
+              role="group">
+              <label class="form-field block mb-1" for="user_name_id"
+                >Nombre y apellidos</label>
+              <input
+                type="text"
+                name="user_name"
+                id="user_name_id"
+                value=""
+                required
+                placeholder="Nombre y apellidos"
+                class="border p-1 w-full" />
+            </div>
+            <div
+              id="email-field"
+              class="form-field-group p-1 basis-full md:basis-1/4"
+              role="group">
+              <label class="form-field block mb-1" for="user_mail_id"
+                >Correo electrónico</label>
+              <input
+                type="text"
+                name="user_mail"
+                id="user_mail_id"
+                value=""
+                required
+                placeholder="e-mail"
+                class="border p-1 w-full" />
+            </div>
+            <div
+              id="tel-field"
+              class="form-field-group p-1 basis-full md:basis-1/4"
+              role="group">
+              <label class="form-field block mb-1" for="user_tel_id"
+                >Teléfono</label>
+              <input
+                type="tel"
+                name="user_tel"
+                id="user_tel_id"
+                value=""
+                placeholder="Teléfono"
+                class="border p-1 w-full" />
+            </div>
+            <div
+              id="city-field"
+              class="form-field-group p-1 basis-full md:basis-1/4"
+              role="group">
+              <label class="form-field block mb-1" for="user_city_id"
+                >Ciudad</label
+              >
+              <input
+                id="user_city_id"
+                list="user_city_list_id"
+                class="border p-1 w-full" />
+              <datalist id="user_city_list_id" name="user_city">
+                <option value="Madrid"></option>
+                <option value="Barcelona"></option>
+                <option value="Valencia"></option>
+                <option value="Sevilla"></option>
+                <option value="Zaragoza"></option>
+              </datalist>
+            </div>
+            <div
+              id="msg-field"
+              class="form-field-group p-1 basis-full"
+              role="group">
+              <label class="form-field block mb-1" for="user_message_id"
+                >Mensaje</label>
+              <textarea
+                name="user_message"
+                id="user_message_id"
+                maxlength="500"
+                placeholder="Aqui tu Mensaje"
+                class="border p-1 w-full"></textarea>
+            </div>
+            <div
+              id="send-field"
+              class="form-field-group p-1 basis-full"
+              role="group">
+              <input
+                class="form-field mr-2 mb-1"
+                type="checkbox"
+                name="rgpd"
+                id="rgpd_id"
+                value=""
+                required />Acepto los terminos y condiciones
+              <input
+                class="block font-semibold text-[#F2F3F5] mt-5 mb-5 pl-10 pr-10 pb-2 pt-2 rounded-md bg-[#1C1E22] outline outline-offset-2 outline-[#3AFF7A] shadow-xl transition-all hover:bg-[#3AFF7A] hover:text-[#1C1E22]"
+                id="enviar"
+                type="submit"
+                value="Enviar" />
+            </div>
+          </form>
+        </section>
+      </article>
     </main>
 
-    <aside>
-
-    </aside>
+    <aside></aside>
 
     <footer class="bg-[#1C1E22] p-4 pt-4 pb-4 text-[#F2F3F5]">
-        <div class="container mx-auto flex flex-wrap justify-center">
-            <p class="basis-1/2 md:basis-1/2">
-                &copy; 2022 <strong>Ejercicio de HTML</strong>. Creado con fines educativos por <em>Victor</em>.
-            </p>
-            <address class="basis-1/2 md:basis-1/2">
-                <p>Puedes contactarme vía <a href="mailto:victorvg.tmp@gmail.com">victorvg.tmp@gmail.com</a> en
-                    Zaragoza, España.</p>
-            </address>
-        </div>
+      <div class="container mx-auto flex flex-wrap justify-center">
+        <p class="basis-1/2 md:basis-1/2">
+          &copy; 2022 <strong>Ejercicio de HTML</strong>. Creado con fines
+          educativos por <em>Victor</em>.
+        </p>
+        <address class="basis-1/2 md:basis-1/2">
+          <p>
+            Puedes contactarme vía
+            <a href="mailto:victorvg.tmp@gmail.com">victorvg.tmp@gmail.com</a>
+            en Zaragoza, España.
+          </p>
+        </address>
+      </div>
     </footer>
 
     <div>
-        <button id="return" style="position: fixed; bottom: 10px; right: 10px;"
-            class="font-semibold text-[#F2F3F5] pl-4 pr-4 pb-2 pt-2 rounded-md bg-[#1C1E22] outline outline-offset-2 outline-[#B5B8BE] shadow-xl transition-all hover:bg-[#3AFF7A] hover:text-[#1C1E22]">
-            <a href="#page">Ir Arriba</a></button>
+      <button
+        id="return"
+        style="position: fixed; bottom: 10px; right: 10px"
+        class="font-semibold text-[#F2F3F5] pl-4 pr-4 pb-2 pt-2 rounded-md bg-[#1C1E22] outline outline-offset-2 outline-[#B5B8BE] shadow-xl transition-all hover:bg-[#3AFF7A] hover:text-[#1C1E22]">
+        <a href="#page">Ir Arriba</a>
+      </button>
     </div>
-</body>
-
+  </body>
 </html>

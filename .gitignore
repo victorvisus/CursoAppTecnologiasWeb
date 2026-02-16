@@ -12,6 +12,17 @@ desktop.ini
 *.sln
 *.swp
 
+# --- Extensiones y Configuración de VS Code ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# --- Historial local de VS Code ---
+.history/
+
 # --- Lenguajes de Marcas y Web ---
 # Si usas Node.js para alguna herramienta de compilación (SASS, etc.)
 node_modules/

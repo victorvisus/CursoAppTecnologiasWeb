@@ -1,0 +1,226 @@
+<!-- 
+Crea un documento HTML, usando estilos CSS, que incluya: 
+
+- Hacer un menú en el qué se separen claramente primeros de segundos platos (listas ordenadas) y postres (listas no ordenadas) a través de color de fondo.
+- También se incluirá un estilo específico para el precio (cursiva y 2px más pequeño que el nombre de los platos).
+- Además en el pie del menú con letra roja aparecerá los suplementos.
+- Se incluirá una lista con dos hipervínculos
+- y dos párrafos explicativos a otros dos restaurantes de la cadena, teniendo los elementos de esta lista un estilo de fuente Courier.
+- Se incluirá también una tabla de alergenos con color de letra verde para los origen vegetal y naranja para los de origen animal.
+
+Los selectores se tomarán de tipo conveniente teniendo en cuenta que puede modificarse el menú, retirando o incluyendo platos.
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      html {
+        font-size: 14px;
+        font-family:
+          "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        color: #333;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      ul,
+      ol {
+        font-size: 1.2rem;
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+      #main {
+        width: calc(((100% / 4) * 3) - 2%);
+        max-width: 1500px;
+        margin: auto;
+        float: left;
+        padding: 1%;
+      }
+      #complementos {
+        width: calc(((100% / 4) * 1) - 2%);
+        float: right;
+        padding: 1%;
+      }
+      div.both {
+        clear: both;
+      }
+      .menus {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .menus .menu-restaurante {
+        flex: 1 1 auto;
+        max-width: 30%;
+        padding: 1%;
+      }
+      .primeros {
+        background-color: rgba(255, 0, 0, 0.3);
+      }
+      .segundos {
+        background-color: rgba(0, 128, 0, 0.3);
+      }
+      .postres {
+        background-color: rgba(255, 255, 0, 0.3);
+      }
+      .precio {
+        font-style: italic;
+        font-size: 0.8em;
+        margin-left: 1em;
+        display: inline-block;
+        width: 4em;
+        text-align: right;
+      }
+
+      /*       ol li,
+      ul li {
+        display: flex;
+        justify-content: space-around;
+      } */
+      .suplementos {
+        color: rgb(255, 0, 0);
+      }
+
+      .otros-restaurantes p {
+        font-family: "Courier New", Courier, monospace;
+      }
+      .vegetal {
+        color: green;
+      }
+      .animal {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="header-pag">Restaurante</h1>
+      <h2>Menú</h2>
+    </header>
+
+    <main id="main">
+      <article class="menus">
+        <section id="primeros-platos" class="primeros menu-restaurante">
+          <h3>Primeros Platos</h3>
+          <ol class="">
+            <li><a href="#">plato1</a> <span class="precio">5€</span></li>
+            <li><a href="#">plato2</a> <span class="precio">15€</span></li>
+            <li><a href="#">plato3</a> <span class="precio">5.88€</span></li>
+            <li><a href="#">plato4</a> <span class="precio">6€</span></li>
+          </ol>
+        </section>
+        <section id="segundos-platos" class="segundos menu-restaurante">
+          <h3>Segundos Platos</h3>
+          <ol class="">
+            <li><a href="#">plato1</a> <span class="precio">5€</span></li>
+            <li><a href="#">plato2</a> <span class="precio">15€</span></li>
+            <li><a href="#">plato3</a> <span class="precio">5.88€</span></li>
+            <li><a href="#">plato4</a> <span class="precio">6€</span></li>
+          </ol>
+        </section>
+        <section id="postres-platos" class="postres menu-restaurante">
+          <h3>Postres</h3>
+          <ul class="">
+            <li><a href="">postre1</a> <span class="precio">5€</span></li>
+            <li><a href="">postre2</a> <span class="precio">16€</span></li>
+            <li><a href="">postre3</a> <span class="precio">3€</span></li>
+            <li><a href="">postre4</a> <span class="precio">5€</span></li>
+          </ul>
+        </section>
+      </article>
+
+      <article>
+        <section class="otros-restaurantes">
+          <h2>Otros restaurantes</h2>
+
+          <h3>Restaurante 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+            alias est, doloremque perspiciatis eaque ea ad odit distinctio
+            quidem veniam officia delectus molestiae illum veritatis reiciendis
+            pariatur consectetur, a commodi.
+          </p>
+
+          <h3>Restaurante 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
+            praesentium vel unde, earum totam, veniam id modi cupiditate quis
+            placeat aperiam repellendus ratione harum, fugiat magnam sit dolor!
+            Ad, eligendi.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <aside id="complementos">
+      <article>
+        <section id="suplementos-platos" class="suplementos menu-restaurante">
+          <header><h2>Suplementos</h2></header>
+          <ul>
+            <li>Suplemento 1</li>
+            <li>Suplemento 2</li>
+            <li>Suplemento 3</li>
+            <li>Suplemento 4</li>
+            <li>Suplemento 5</li>
+          </ul>
+        </section>
+      </article>
+
+      <article>
+        <section class="alergenos">
+          <table class="alergenos-tabla" border="2">
+            <thead>
+              <tr>
+                <th>Tipo de alergeno</th>
+                <th>Origen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="vegetal">
+                <td>Gluten</td>
+                <td>Vegetal</td>
+              </tr>
+              <tr class="animal">
+                <td>Lactosa</td>
+                <td>Animal</td>
+              </tr>
+              <tr class="animal">
+                <td>Huevo</td>
+                <td>Animal</td>
+              </tr>
+              <tr class="vegetal">
+                <td>Fructosa</td>
+                <td>Vegetal</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </article>
+    </aside>
+    <div class="both"></div>
+
+    <footer>
+      <nav id="menu-nav">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#primeros-platos">Primeros Platos</a></li>
+          <li><a href="#segundos-platos">Segundos Platos</a></li>
+          <li><a href="#postres-platos">Postres</a></li>
+          <li><a href="#suplementos-platos">Suplementos</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
