@@ -53,53 +53,64 @@
         <h2
             class="text-2xl font-semibold text-[#F2F3F5] p-2 mb-5 rounded-md bg-[#3A3D42] outline outline-offset-2 outline-[#B5B8BE] shadow-xl">
             Menu de navegacion</h2>
-
+        <!-- nav para acceder a los ejercicios de HTML -->
         <nav id="menu-html" class="navbar">
             <h3 class="text-3xl font-semibold basis-auto">Ejercicios HTML5</h3>
             <ul role="menubar" CLASS="flex flex-wrap basis-full">
                 <li role="menuitem"
                     class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./ejercicio-html.html" title="Primer ejercicio">Ejercicio
+                    <a class="menulink transition-all" href="./html/ejercicio-html.html"
+                        title="Primer ejercicio">Ejercicio
                         html</a>
                 </li>
                 <li role="menuitem"
                     class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./ejemplo-rutas.html"
+                    <a class="menulink transition-all" href="./html/ejemplo-rutas.html"
                         title="Ejercicio rutas relativas y absolutas">Ejercicio rutas</a>
                 </li>
                 <li role="menuitem"
                     class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./ejemplo-lista.html" title="Pruebas con listas">Ejercicio
+                    <a class="menulink transition-all" href="./html/ejemplo-lista.html"
+                        title="Pruebas con listas">Ejercicio
                         lista</a>
                 </li>
                 <li role="menuitem"
                     class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./html-semantico.html"
+                    <a class="menulink transition-all" href="./html/html-semantico.html"
                         title="HTML semantico, buenas practicas">HTML
                         semantico</a>
                 </li>
                 <li role="menuitem"
                     class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./formulario.html" title="Formulario">Formulario</a>
+                    <a class="menulink transition-all" href="./html/formulario.html" title="Formulario">Formulario</a>
                 </li>
                 <li role="menuitem"
                     class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
                     <a class="menulink transition-all" href="#contact-form" title="Formulario">Ver formulario</a>
                 </li>
+                <li role="menuitem"
+                    class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+                    <a class="menulink transition-all" href="./html/curriculum/index.html"
+                        title="Curriculum">Curriculum</a>
+                </li>
             </ul>
         </nav>
-
+        <!-- nav para acceder a los ejercicios de CSS -->
         <nav id="menu-css" class="navbar">
             <h3 class="text-3xl font-semibold basis-auto">Ejercicios CSS3</h3>
             <ul role="menubar" CLASS="flex flex-wrap basis-full">
                 <li role="menuitem"
                     class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-                    <a class="menulink transition-all" href="./" title="Primer ejercicio">futuro ejercicio CSS</a>
+                    <a class="menulink transition-all" href="./tema_css/" title="Primer ejercicio">futuro ejercicio
+                        CSS</a>
                 </li>
             </ul>
         </nav>
     </header>
 
+    <!------------------------->
+    <!-- Contenido principal -->
+    <!------------------------->
     <main id="main" class="site-main p-5 container">
         <article id="post-01" class="post flex justify-center">
             <section id="contact-form" class="contact flex flex-nowrap justify-around basis-[1200px] xs:flex-wrap">
@@ -112,7 +123,7 @@
                         laboriosam, veritatis quae mollitia!
                     </p>
                 </header>
-                <form class="flex flex-wrap justify-around p-2" action="/" method="post" name="contacto">
+                <form class="flex flex-wrap justify-around basis-3/4 p-2" action="/" method="post" name="contacto">
                     <header id="form-header" class="form-header basis-full">
                         <h4 class="text-2xl font-semibold">Contacto</h4>
                     </header>
@@ -140,6 +151,7 @@
                             <option value="Barcelona">
                             <option value="Valencia">
                             <option value="Sevilla">
+                            <option value="Zaragoza">
                         </datalist>
                     </div>
                     <div id="msg-field" class="form-field-group p-1 basis-full" role="group">
@@ -166,12 +178,12 @@
 
     <footer class="bg-[#1C1E22] p-4 pt-4 pb-4 text-[#F2F3F5]">
         <div class="container mx-auto flex flex-wrap justify-center">
-            <p class="basis-1/2 md:basis-1/4">
+            <p class="basis-1/2 md:basis-1/2">
                 &copy; 2022 <strong>Ejercicio de HTML</strong>. Creado con fines educativos por <em>Victor</em>.
             </p>
-            <address class="basis-1/2 md:basis-1/4">
-                Puedes contactarme vía <a href="mailto:victorvg.tmp@gmail.com">victorvg.tmp@gmail.com</a> <br>
-                Zaragoza, España.
+            <address class="basis-1/2 md:basis-1/2">
+                <p>Puedes contactarme vía <a href="mailto:victorvg.tmp@gmail.com">victorvg.tmp@gmail.com</a> en
+                    Zaragoza, España.</p>
             </address>
         </div>
     </footer>
