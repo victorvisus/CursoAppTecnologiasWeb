@@ -1,168 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> <!-- codificacion de texto -->
-    <meta name="viewport" content="width=device-width"> <!-- la dice la anchura del dispositivo que se ve -->
-    <meta name="description" content="Primera website del curso">
-    <meta name="author" content="Victor">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <!-- codificacion de texto -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- la dice la anchura del dispositivo que se ve -->
+    <meta name="description" content="Primera website del curso" />
+    <meta name="author" content="Victor" />
 
     <title>Primera pág. del curso</title>
 
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#ff1919">
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ff1919" />
 
-    <link rel="shortcut icon" href="./img/HTML5_logo_and_wordmark.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./src/style-ejercicio.css">
+    <link
+      rel="shortcut icon"
+      href="./img/HTML5_logo_and_wordmark.svg"
+      type="image/x-icon" />
+    <link rel="stylesheet" href="./src/style-ejercicio.css" />
 
     <style>
-        /* aqui irian los estilos, pero los pongo en un archivo (style.css) aparte */
+      /* aqui irian los estilos, pero los pongo en un archivo (style.css) aparte */
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header>
+      <nav id="menu_nav">
+        <img
+          src="./img/HTML5_logo_and_wordmark.svg"
+          alt="logo"
+          style="max-width: 32px" />
+        <ul id="prime-nav" class="main_nav">
+          <li class="menu-item"><a href="#inicio">inicio</a></li>
+          <li class="menu-item"><a href="#seccion">seccion</a></li>
+          <li class="menu-item"><a href="#subtitulo">subtitulo</a></li>
+        </ul>
+      </nav>
 
-        <nav id="menu_nav">
-            <img src="./img/HTML5_logo_and_wordmark.svg" alt="logo" style="max-width: 32px;">
-            <ul id="prime-nav" class="main_nav">
-                <li class="menu-item"><a href="#inicio">inicio</a></li>
-                <li class="menu-item"><a href="#seccion">seccion</a></li>
-                <li class="menu-item"><a href="#subtitulo">subtitulo</a></li>
-            </ul>
-        </nav>
-
-        <h1 id="header-pag" class="titulo">Titulo <span style="font-size: 0.5em; color:black">(header)</span> primario
-        </h1>
-
+      <h1 id="header-pag" class="titulo">
+        Titulo
+        <span style="font-size: 0.5em; color: black">(header)</span> primario
+      </h1>
     </header>
 
     <main>
-        <section class="block-content">
-            <header>
-                <h2 id="seccion">Titulo de sección</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum animi necessitatibus, in
-                    nulla ex veniam sit facere iste! Rem dolorem ex corrupti ducimus excepturi ad! Velit beatae nulla
-                    cupiditate!
-                </p>
-            </header>
-            <section class="block-content-inner">
-                <h3 id="subtitulo">Enlaces de interes</h3>
+      <section class="block-content">
+        <header>
+          <h2 id="seccion">Titulo de sección</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+            dolorum animi necessitatibus, in nulla ex veniam sit facere iste!
+            Rem dolorem ex corrupti ducimus excepturi ad! Velit beatae nulla
+            cupiditate!
+          </p>
+        </header>
+        <section class="block-content-inner">
+          <h3 id="subtitulo">Enlaces de interes</h3>
 
-                <article class="content">
-                    <p class="description">A continuación enumero varios enlaces de posible interes</p>
-                    <ul class="links">
-                        <li>Cód. de estado de HTTP: <a
-                                href="https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Status" target="_blank"
-                                rel="noreferrer nofollow">Mozilla</a></li>
-                        <li>Asincronia: <a href="https://es.wikipedia.org/wiki/E/S_as%C3%ADncrona" target="_blank"
-                                rel="noreferrer nofollow">wikipedia</a></li>
-                        <li>Layout web: <a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html"
-                                target="_blank" rel="noreferrer nofollow">Click aqui</a></li>
-                    </ul>
-                </article>
+          <article class="content">
+            <p class="description">
+              A continuación enumero varios enlaces de posible interes
+            </p>
+            <ul class="links">
+              <li>
+                Cód. de estado de HTTP:
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Status"
+                  target="_blank"
+                  rel="noreferrer nofollow"
+                  >Mozilla</a
+                >
+              </li>
+              <li>
+                Asincronia:
+                <a
+                  href="https://es.wikipedia.org/wiki/E/S_as%C3%ADncrona"
+                  target="_blank"
+                  rel="noreferrer nofollow"
+                  >wikipedia</a
+                >
+              </li>
+              <li>
+                Layout web:
+                <a
+                  href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html"
+                  target="_blank"
+                  rel="noreferrer nofollow"
+                  >Click aqui</a
+                >
+              </li>
+            </ul>
+          </article>
 
-                <article class="content">
-                    <p class="description">Definiciones</p>
-                    <ul class="links">
-                        <li>DOM -> Document Object Model</li>
-                        <li>Debugar es el proceso de identificar, analizar y corregir errores o fallos (conocidos
-                            como
-                            bugs) en un programa</li>
-                    </ul>
-
-                </article>
-            </section>
+          <article class="content">
+            <p class="description">Definiciones</p>
+            <ul class="links">
+              <li>DOM -> Document Object Model</li>
+              <li>
+                Debugar es el proceso de identificar, analizar y corregir
+                errores o fallos (conocidos como bugs) en un programa
+              </li>
+            </ul>
+          </article>
         </section>
+      </section>
 
-        <section id="html-help" class="block-content">
-            <header>
-                <h2>Ayudas para HTML5</h2>
-            </header>
+      <section id="html-help" class="block-content">
+        <header>
+          <h2>Ayudas para HTML5</h2>
+        </header>
 
-            <article class="content">
-                <p class="description">A continuación enumero varios enlaces de posible interes referente a HTML</p>
-                <ul class="links">
-                    <li>W3Schools: <a href="https://www.w3schools.com/html/default.asp" target="_blank"
-                            rel="noreferrer nofollow">Página oficial</a></li>
-                    <li>MDN Web Docs: <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank"
-                            rel="noreferrer nofollow">Documentación oficial</a></li>
-                    <li>HTML Tutorial: <a href="https://www.tutorialspoint.com/html/index.htm" target="_blank"
-                            rel="noreferrer nofollow">Tutorialspoint</a></li>
-                    <li>W3C HTML: <a href="https://www.w3.org/TR/html5/" target="_blank"
-                            rel="noreferrer nofollow">Especificación oficial</a></li>
-                    <li>Atributo role para div: <a
-                            href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles"
-                            target="_blank" rel="noreferrer nofollow">Lista de role</a></li>
-                    <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp">HTML Semantic Elements</a>
-                    </li>
-                </ul>
-            </article>
-        </section>
+        <article class="content">
+          <p class="description">
+            A continuación enumero varios enlaces de posible interes referente a
+            HTML
+          </p>
+          <ul class="links">
+            <li>
+              W3Schools:
+              <a
+                href="https://www.w3schools.com/html/default.asp"
+                target="_blank"
+                rel="noreferrer nofollow"
+                >Página oficial</a
+              >
+            </li>
+            <li>
+              MDN Web Docs:
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML"
+                target="_blank"
+                rel="noreferrer nofollow"
+                >Documentación oficial</a
+              >
+            </li>
+            <li>
+              HTML Tutorial:
+              <a
+                href="https://www.tutorialspoint.com/html/index.htm"
+                target="_blank"
+                rel="noreferrer nofollow"
+                >Tutorialspoint</a
+              >
+            </li>
+            <li>
+              W3C HTML:
+              <a
+                href="https://www.w3.org/TR/html5/"
+                target="_blank"
+                rel="noreferrer nofollow"
+                >Especificación oficial</a
+              >
+            </li>
+            <li>
+              Atributo role para div:
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles"
+                target="_blank"
+                rel="noreferrer nofollow"
+                >Lista de role</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.w3schools.com/html/html5_semantic_elements.asp"
+                >HTML Semantic Elements</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
 
-        <section id="img-web" class="block-content">
-            <article class="content">
-                <h2>Seccion para una imagen</h2>
-                <img src="./img/cmk55297200ju07799ijnblxw.jpg" alt="imagen web" title="Imagen de adorno">
-            </article>
-        </section>
+      <section id="img-web" class="block-content">
+        <article class="content">
+          <h2>Seccion para una imagen</h2>
+          <img
+            src="./img/cmk55297200ju07799ijnblxw.jpg"
+            alt="imagen web"
+            title="Imagen de adorno" />
+        </article>
+      </section>
 
-        <section id="test-img">
-            <article class="content">
-                <h2>Ejercicio con imagenes</h2>
-                <div role="group">
-                    <h3>Imagenes cargadas localmente</h3>
-                    <img src="./img/pen_ash-superb-fairywren-10069195_1280.jpg" alt="imagen pajarico" title="Pajarico"
-                        width="45%" height="auto">
-                    <img src="./img/beasternchen-letter-10088050_640.jpg" alt="imagen carta" title="Carta" width="45%"
-                        height="auto">
-                </div>
-                <div role="group">
-                    <h3>Imagenes externas</h3>
-                    <img src="https://www.rutaenfamilia.com/wp-content/uploads/2023/12/Castillo-Belmonte-recreacion-historica-1024x675.jpeg"
-                        alt="imagen castillo externa" title="Castillo" width="100%" height="auto">
-                    <img src="https://www.aragon.es/documents/20127/91885548/Parque_Natural_Moncayo.jpg" alt="Moncayo"
-                        title="Moncayo" width="100%" height="auto">
-                </div>
+      <section id="test-img">
+        <article class="content">
+          <h2>Ejercicio con imagenes</h2>
+          <div role="group">
+            <h3>Imagenes cargadas localmente</h3>
+            <img
+              src="./img/pen_ash-superb-fairywren-10069195_1280.jpg"
+              alt="imagen pajarico"
+              title="Pajarico"
+              width="45%"
+              height="auto" />
+            <img
+              src="./img/beasternchen-letter-10088050_640.jpg"
+              alt="imagen carta"
+              title="Carta"
+              width="45%"
+              height="auto" />
+          </div>
+          <div role="group">
+            <h3>Imagenes externas</h3>
+            <img
+              src="https://www.rutaenfamilia.com/wp-content/uploads/2023/12/Castillo-Belmonte-recreacion-historica-1024x675.jpeg"
+              alt="imagen castillo externa"
+              title="Castillo"
+              width="100%"
+              height="auto" />
+            <img
+              src="https://www.aragon.es/documents/20127/91885548/Parque_Natural_Moncayo.jpg"
+              alt="Moncayo"
+              title="Moncayo"
+              width="100%"
+              height="auto" />
+          </div>
 
-                <a download href="img/beasternchen-letter-10088050_640.jpg">descargar la imagen</a>
-            </article>
-        </section>
+          <a download href="img/beasternchen-letter-10088050_640.jpg"
+            >descargar la imagen</a
+          >
+        </article>
+      </section>
 
-        <!-- Seccion con informacion complementaria -->
-        <aside>
-            <h3>Info complementaria de la sección</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor eligendi accusamus similique
-                laboriosam laudantium reprehenderit quod, hic, maxime voluptatum id cumque. Magnam labore accusamus
-                totam molestiae, incidunt officiis qui.</p>
-        </aside>
+      <!-- Seccion con informacion complementaria -->
+      <aside>
+        <h3>Info complementaria de la sección</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor
+          eligendi accusamus similique laboriosam laudantium reprehenderit quod,
+          hic, maxime voluptatum id cumque. Magnam labore accusamus totam
+          molestiae, incidunt officiis qui.
+        </p>
+      </aside>
 
-        <div role="button">pseudoboton</div>
+      <div role="button">pseudoboton</div>
     </main>
 
     <footer>
-        <section class="">
-            <img src="./img/HTML5_logo_and_wordmark.svg" alt="logo" style="max-width: 32px;">
-            <address>
-                <ul>
-                    <li>Victor - 2022</li>
-                    <li>Correo: <a href="mailto:victorvg.tmp@gmail.com">victor@victor.com</a></li>
-                    <li>Teléfono: <a href="tel:1234567890">1234567890</a></li>
-                    <li>WhatsApp: <a href="https://wa.me/1234567890?text=Hola" target="_blank"
-                            rel="noreferrer nofollow">1234567890</a></li>
-                </ul>
-
-            </address>
-        </section>
-
+      <section class="">
+        <img
+          src="./img/HTML5_logo_and_wordmark.svg"
+          alt="logo"
+          style="max-width: 32px" />
+        <address>
+          <ul>
+            <li>Victor - 2022</li>
+            <li>
+              Correo:
+              <a href="mailto:victorvg.tmp@gmail.com">victor@victor.com</a>
+            </li>
+            <li>Teléfono: <a href="tel:1234567890">1234567890</a></li>
+            <li>
+              WhatsApp:
+              <a
+                href="https://wa.me/1234567890?text=Hola"
+                target="_blank"
+                rel="noreferrer nofollow"
+                >1234567890</a
+              >
+            </li>
+          </ul>
+        </address>
+      </section>
     </footer>
 
     <div>
-        <button id="return" style="position: fixed; bottom: 10px; right: 10px; background-color: brown;"><a
-                href="../index.html" style="color: aliceblue; font-weight: 600; text-decoration: none;"><em>Ir
-                    a index</em></a></button>
+      <button
+        id="return"
+        style="
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+          background-color: #3aff7a;
+        ">
+        <a
+          href="../index.html"
+          style="color: aliceblue; font-weight: 600; text-decoration: none"
+          ><em>Ir a index</em></a
+        >
+      </button>
     </div>
-</body>
-
+  </body>
 </html>

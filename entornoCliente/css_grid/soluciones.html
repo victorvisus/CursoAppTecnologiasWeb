@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones - CSS Grid</title>
+    <link rel="stylesheet" href="soluciones.css" />
+  </head>
+  <body>
+    <header>
+      <h1>✅ Soluciones de los Ejercicios</h1>
+      <p class="subtitle">Compara tus soluciones con estas respuestas</p>
+      <nav class="header-nav">
+        <a href="index.html">← Volver a la Guía</a>
+        <a href="ejercicios.html">← Volver a Ejercicios</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="warning-box">
+        <h3>⚠️ Importante</h3>
+        <p>
+          Intenta resolver los ejercicios por ti mismo antes de ver las
+          soluciones. ¡Aprendes más equivocándote y corrigiendo!
+        </p>
+        <p>
+          Recuerda: en CSS Grid hay múltiples formas de lograr el mismo
+          resultado. Si tu solución funciona, ¡es válida!
+        </p>
+      </div>
+
+      <!-- NIVEL PRINCIPIANTE -->
+      <section class="level-section beginner">
+        <h2>🟢 Nivel Principiante</h2>
+
+        <!-- Solución 1 -->
+        <article class="solution">
+          <h3>Ejercicio 1: Grid de 3 Columnas</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución:</h4>
+              <pre><code>.ejercicio-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li><code>display: grid</code> - Activa el modo Grid</li>
+                  <li>
+                    <code>repeat(3, 1fr)</code> - Crea 3 columnas de igual
+                    tamaño
+                  </li>
+                  <li><code>gap: 20px</code> - Espacio de 20px entre items</li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-1">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Solución 2 -->
+        <article class="solution">
+          <h3>Ejercicio 2: Columnas con Diferentes Tamaños</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución:</h4>
+              <pre><code>.ejercicio-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 15px;
+}</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li>
+                    <code>1fr 2fr 1fr</code> - La columna central es el doble de
+                    ancha
+                  </li>
+                  <li>
+                    Total: 4 fracciones (1+2+1), la del medio ocupa 2/4 = 50%
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-2">
+                <div class="item">1fr</div>
+                <div class="item">2fr</div>
+                <div class="item">1fr</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Solución 3 -->
+        <article class="solution">
+          <h3>Ejercicio 3: Grid con Filas Definidas</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución:</h4>
+              <pre><code>.ejercicio-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px 150px;
+    gap: 15px;
+}</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li>
+                    <code>grid-template-rows</code> - Define la altura de las
+                    filas
+                  </li>
+                  <li>Primera fila: 100px, Segunda fila: 150px</li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-3">
+                <div class="item">100px</div>
+                <div class="item">100px</div>
+                <div class="item">150px</div>
+                <div class="item">150px</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- NIVEL INTERMEDIO -->
+      <section class="level-section intermediate">
+        <h2>🟡 Nivel Intermedio</h2>
+
+        <!-- Solución 4 -->
+        <article class="solution">
+          <h3>Ejercicio 4: Item que Ocupa 2 Columnas</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución 1 (con span):</h4>
+              <pre><code>.ejercicio-4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.ejercicio-4 .item:first-child {
+    grid-column: span 2;
+}</code></pre>
+              <h4>Solución 2 (con líneas):</h4>
+              <pre><code>.ejercicio-4 .item:first-child {
+    grid-column: 1 / 3;
+    /* De la línea 1 a la línea 3 */
+}</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li><code>span 2</code> - Expande el item 2 columnas</li>
+                  <li>
+                    <code>1 / 3</code> - Desde línea 1 hasta línea 3 (2
+                    columnas)
+                  </li>
+                  <li>Ambas soluciones son válidas</li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-4">
+                <div class="item">Item 1 (2 columnas)</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Solución 5 -->
+        <article class="solution">
+          <h3>Ejercicio 5: Layout de Blog</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución 1 (con grid-template-areas):</h4>
+              <pre><code>.ejercicio-5 {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 80px 1fr;
+    gap: 15px;
+    min-height: 400px;
+}
+
+.ejercicio-5 .item:nth-child(1) { grid-area: header; }
+.ejercicio-5 .item:nth-child(2) { grid-area: sidebar; }
+.ejercicio-5 .item:nth-child(3) { grid-area: main; }</code></pre>
+              <h4>Solución 2 (con grid-column):</h4>
+              <pre><code>.ejercicio-5 {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 15px;
+}
+
+.ejercicio-5 .item:first-child {
+    grid-column: 1 / 3;
+}</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li>Grid areas es más semántico y legible</li>
+                  <li>Grid column es más directo para layouts simples</li>
+                  <li>El header ocupa ambas columnas</li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-5">
+                <div class="item">Header</div>
+                <div class="item">Sidebar</div>
+                <div class="item">Main Content</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Solución 6 -->
+        <article class="solution">
+          <h3>Ejercicio 6: Galería de Imágenes</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución 1 (auto-fit con minmax):</h4>
+              <pre><code>.ejercicio-6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}</code></pre>
+              <h4>Solución 2 (con media queries):</h4>
+              <pre><code>.ejercicio-6 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .ejercicio-6 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .ejercicio-6 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li>
+                    <code>auto-fit</code> - Ajusta automáticamente las columnas
+                  </li>
+                  <li>
+                    <code>minmax(200px, 1fr)</code> - Mínimo 200px, máximo 1fr
+                  </li>
+                  <li>Media queries dan más control específico</li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-6">
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- NIVEL AVANZADO -->
+      <section class="level-section advanced">
+        <h2>🔴 Nivel Avanzado</h2>
+
+        <!-- Solución 7 -->
+        <article class="solution">
+          <h3>Ejercicio 7: Dashboard Completo</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución (con grid anidado):</h4>
+              <pre><code>.ejercicio-7 {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 80px 1fr 60px;
+    gap: 15px;
+    min-height: 500px;
+}
+
+.ejercicio-7 .item:nth-child(1) { grid-area: header; }
+.ejercicio-7 .item:nth-child(2) { grid-area: sidebar; }
+.ejercicio-7 .item:nth-child(6) { grid-area: footer; }
+
+/* Cards en el área main */
+.ejercicio-7 .item:nth-child(3),
+.ejercicio-7 .item:nth-child(4),
+.ejercicio-7 .item:nth-child(5) {
+    grid-area: main;
+}
+
+/* Grid anidado para las cards */
+.ejercicio-7 {
+    /* Alternativa: usar subgrid o crear contenedor */
+}
+
+/* Solución más simple: */
+.ejercicio-7 {
+    display: grid;
+    grid-template-columns: 200px repeat(3, 1fr);
+    grid-template-rows: 80px 200px 60px;
+    gap: 15px;
+}
+
+.ejercicio-7 .item:nth-child(1) {
+    grid-column: 1 / 5; /* Header */
+}
+
+.ejercicio-7 .item:nth-child(2) {
+    grid-row: 2 / 3; /* Sidebar */
+}
+
+.ejercicio-7 .item:nth-child(6) {
+    grid-column: 1 / 5; /* Footer */
+}</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li>Hay varias formas de resolver este ejercicio</li>
+                  <li>Puedes usar grid anidado o un grid más complejo</li>
+                  <li>La clave es que header y footer ocupen todo el ancho</li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-7">
+                <div class="item">Header</div>
+                <div class="item">Sidebar</div>
+                <div class="item">Card 1</div>
+                <div class="item">Card 2</div>
+                <div class="item">Card 3</div>
+                <div class="item">Footer</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Solución 8 -->
+        <article class="solution">
+          <h3>Ejercicio 8: Masonry Layout</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución:</h4>
+              <pre><code>.ejercicio-8 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 100px;
+    gap: 15px;
+    grid-auto-flow: dense;
+}
+
+.ejercicio-8 .tall {
+    grid-row: span 2;
+}
+
+.ejercicio-8 .wide {
+    grid-column: span 2;
+}
+
+.ejercicio-8 .big {
+    grid-column: span 2;
+    grid-row: span 2;
+}</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li>
+                    <code>grid-auto-rows: 100px</code> - Cada fila mide 100px
+                  </li>
+                  <li>
+                    <code>grid-auto-flow: dense</code> - Rellena huecos
+                    automáticamente
+                  </li>
+                  <li><code>span</code> - Expande items en filas/columnas</li>
+                  <li>
+                    Dense hace que los items pequeños rellenen espacios vacíos
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-8">
+                <div class="item">1</div>
+                <div class="item tall">2 (alto)</div>
+                <div class="item">3</div>
+                <div class="item wide">4 (ancho)</div>
+                <div class="item">5</div>
+                <div class="item big">6 (grande)</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Solución 9 -->
+        <article class="solution">
+          <h3>Ejercicio 9: Holy Grail Layout</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución:</h4>
+              <pre><code>.ejercicio-9 {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "left main right"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 80px 1fr 60px;
+    gap: 15px;
+    min-height: 400px;
+}
+
+.ejercicio-9 .item:nth-child(1) { grid-area: header; }
+.ejercicio-9 .item:nth-child(2) { grid-area: left; }
+.ejercicio-9 .item:nth-child(3) { grid-area: main; }
+.ejercicio-9 .item:nth-child(4) { grid-area: right; }
+.ejercicio-9 .item:nth-child(5) { grid-area: footer; }</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li>El "Holy Grail" es un layout clásico de 3 columnas</li>
+                  <li>Header y footer ocupan todo el ancho</li>
+                  <li>Contenido central flexible, sidebars fijos</li>
+                  <li>Grid template areas hace el código muy legible</li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-9">
+                <div class="item">Header</div>
+                <div class="item">Left Sidebar</div>
+                <div class="item">Main Content</div>
+                <div class="item">Right Sidebar</div>
+                <div class="item">Footer</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- DESAFÍO FINAL -->
+      <section class="level-section challenge">
+        <h2>🏆 Desafío Final</h2>
+
+        <!-- Solución 10 -->
+        <article class="solution">
+          <h3>Ejercicio 10: Página Web Completa</h3>
+          <div class="solution-content">
+            <div class="code-block">
+              <h4>Solución:</h4>
+              <pre><code>.ejercicio-10 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Header ocupa todo el ancho */
+.ejercicio-10 .item:nth-child(1) {
+    grid-column: 1 / 4;
+}
+
+/* Hero ocupa todo el ancho */
+.ejercicio-10 .item:nth-child(2) {
+    grid-column: 1 / 4;
+    min-height: 200px;
+}
+
+/* Features: 3 columnas (por defecto) */
+/* Items 3, 4, 5 */
+
+/* Testimonios: 2 columnas */
+.ejercicio-10 .item:nth-child(6),
+.ejercicio-10 .item:nth-child(7) {
+    grid-column: span 1.5;
+}
+
+/* Footer ocupa todo el ancho */
+.ejercicio-10 .item:nth-child(8) {
+    grid-column: 1 / 4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ejercicio-10 {
+        grid-template-columns: 1fr;
+    }
+    
+    .ejercicio-10 .item:nth-child(6),
+    .ejercicio-10 .item:nth-child(7) {
+        grid-column: 1;
+    }
+}</code></pre>
+              <div class="explanation">
+                <h4>📖 Explicación:</h4>
+                <ul>
+                  <li>Grid de 3 columnas como base</li>
+                  <li>Header, Hero y Footer ocupan las 3 columnas</li>
+                  <li>Features usan 1 columna cada uno (3 en total)</li>
+                  <li>Testimonios usan 1.5 columnas cada uno (2 en total)</li>
+                  <li>Responsive: todo a 1 columna en móvil</li>
+                </ul>
+              </div>
+            </div>
+            <div class="demo">
+              <h4>Resultado:</h4>
+              <div class="demo-container sol-10">
+                <div class="item">Header (Logo + Nav)</div>
+                <div class="item">Hero Section</div>
+                <div class="item">Feature 1</div>
+                <div class="item">Feature 2</div>
+                <div class="item">Feature 3</div>
+                <div class="item">Testimonio 1</div>
+                <div class="item">Testimonio 2</div>
+                <div class="item">Footer (4 columnas)</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- TIPS ADICIONALES -->
+      <section class="tips-section">
+        <h2>💡 Tips y Mejores Prácticas</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <h3>🎯 Usa Grid Template Areas</h3>
+            <p>
+              Para layouts complejos, <code>grid-template-areas</code> hace el
+              código más legible y mantenible.
+            </p>
+          </div>
+          <div class="tip-card">
+            <h3>📱 Piensa en Responsive</h3>
+            <p>
+              Usa <code>auto-fit</code> y <code>minmax()</code> para grids que
+              se adaptan automáticamente.
+            </p>
+          </div>
+          <div class="tip-card">
+            <h3>🔍 Usa DevTools</h3>
+            <p>
+              Las DevTools de Chrome/Firefox tienen visualización de Grid.
+              ¡Úsala para debuggear!
+            </p>
+          </div>
+          <div class="tip-card">
+            <h3>🎨 Combina con Flexbox</h3>
+            <p>Grid para layouts, Flexbox para componentes. ¡Combínalos!</p>
+          </div>
+          <div class="tip-card">
+            <h3>⚡ Usa FR en vez de %</h3>
+            <p>
+              La unidad <code>fr</code> es más flexible y maneja gaps
+              automáticamente.
+            </p>
+          </div>
+          <div class="tip-card">
+            <h3>🎯 Dense para Masonry</h3>
+            <p>
+              <code>grid-auto-flow: dense</code> rellena huecos automáticamente.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>🎉 ¡Felicidades por completar los ejercicios!</p>
+      <p>
+        <a href="index.html">← Volver a la Guía</a> |
+        <a href="ejercicios.html">← Volver a Ejercicios</a>
+      </p>
+    </footer>
+  </body>
+</html>

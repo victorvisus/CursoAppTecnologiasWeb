@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía Completa de CSS Grid</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>📐 Guía Completa de CSS Grid</h1>
+      <p class="subtitle">De cero a experto - Con ejemplos interactivos</p>
+      <nav class="header-nav">
+        <a href="ejercicios.html">💪 Ir a Ejercicios →</a>
+      </nav>
+    </header>
+
+    <nav class="table-of-contents">
+      <h2>Índice</h2>
+      <ul>
+        <li><a href="#intro">1. Introducción</a></li>
+        <li><a href="#basico">2. Conceptos Básicos</a></li>
+        <li><a href="#columnas-filas">3. Definir Columnas y Filas</a></li>
+        <li><a href="#gaps">4. Espaciado (Gaps)</a></li>
+        <li><a href="#posicionamiento">5. Posicionamiento de Items</a></li>
+        <li><a href="#areas">6. Grid Template Areas</a></li>
+        <li><a href="#alineacion">7. Alineación</a></li>
+        <li><a href="#responsive">8. Diseño Responsive</a></li>
+        <li><a href="#avanzado">9. Técnicas Avanzadas</a></li>
+        <li><a href="#grid-vs-flex">10. Grid vs Flexbox</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- SECCIÓN 1: INTRODUCCIÓN -->
+      <section id="intro" class="section">
+        <h2>1. Introducción a CSS Grid</h2>
+        <p>
+          CSS Grid es un sistema de layout bidimensional que te permite crear
+          diseños complejos con filas y columnas simultáneamente.
+        </p>
+
+        <div class="comparison">
+          <div class="comparison-item">
+            <h3>Flexbox</h3>
+            <p>✅ Unidimensional (fila O columna)</p>
+            <p>✅ Perfecto para componentes</p>
+            <p>✅ Alineación de items</p>
+          </div>
+          <div class="comparison-item">
+            <h3>Grid</h3>
+            <p>✅ Bidimensional (filas Y columnas)</p>
+            <p>✅ Perfecto para layouts completos</p>
+            <p>✅ Control preciso de posición</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: CONCEPTOS BÁSICOS -->
+      <section id="basico" class="section">
+        <h2>2. Conceptos Básicos</h2>
+        <p>
+          Para usar Grid, necesitas un <strong>contenedor</strong> con
+          <code>display: grid</code> y sus <strong>items hijos</strong>.
+        </p>
+
+        <div class="code-example">
+          <h3>Ejemplo 1: Tu primer Grid</h3>
+          <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}</code></pre>
+          <div class="demo-container grid-basic">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h4>🔑 Conceptos clave:</h4>
+          <ul>
+            <li>
+              <strong>Grid Container:</strong> El elemento padre con
+              <code>display: grid</code>
+            </li>
+            <li>
+              <strong>Grid Items:</strong> Los hijos directos del contenedor
+            </li>
+            <li><strong>Grid Lines:</strong> Las líneas que dividen el grid</li>
+            <li>
+              <strong>Grid Tracks:</strong> El espacio entre dos líneas (filas o
+              columnas)
+            </li>
+            <li>
+              <strong>Grid Cell:</strong> La intersección de una fila y columna
+            </li>
+            <li>
+              <strong>Grid Area:</strong> Espacio formado por varias celdas
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: COLUMNAS Y FILAS -->
+      <section id="columnas-filas" class="section">
+        <h2>3. Definir Columnas y Filas</h2>
+
+        <div class="code-example">
+          <h3>Unidad FR (Fracción)</h3>
+          <p>
+            La unidad <code>fr</code> representa una fracción del espacio
+            disponible.
+          </p>
+          <pre><code>.grid-fr {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}</code></pre>
+          <div class="demo-container grid-fr">
+            <div class="item">1fr</div>
+            <div class="item">2fr</div>
+            <div class="item">1fr</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h3>Unidades Mixtas</h3>
+          <p>Puedes combinar diferentes unidades: px, %, fr, auto, etc.</p>
+          <pre><code>.grid-mixed {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+}</code></pre>
+          <div class="demo-container grid-mixed">
+            <div class="item">200px</div>
+            <div class="item">1fr</div>
+            <div class="item">auto</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h3>Función repeat()</h3>
+          <p>Para evitar repetir valores, usa <code>repeat()</code>.</p>
+          <pre><code>.grid-repeat {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}</code></pre>
+          <div class="demo-container grid-repeat">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h3>Definir Filas</h3>
+          <p>
+            Funciona igual que las columnas, pero con
+            <code>grid-template-rows</code>.
+          </p>
+          <pre><code>.grid-rows {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 150px 100px;
+}</code></pre>
+          <div class="demo-container grid-rows">
+            <div class="item">100px alto</div>
+            <div class="item">100px alto</div>
+            <div class="item">100px alto</div>
+            <div class="item">150px alto</div>
+            <div class="item">150px alto</div>
+            <div class="item">150px alto</div>
+            <div class="item">100px alto</div>
+            <div class="item">100px alto</div>
+            <div class="item">100px alto</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: GAPS -->
+      <section id="gaps" class="section">
+        <h2>4. Espaciado (Gaps)</h2>
+
+        <div class="code-example">
+          <h3>Gap entre items</h3>
+          <p>
+            Usa <code>gap</code> para crear espacio entre items sin usar margin.
+          </p>
+          <pre><code>.grid-gap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* row-gap y column-gap */
+}</code></pre>
+          <div class="demo-container grid-gap">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h3>Gap diferenciado</h3>
+          <pre><code>.grid-gap-diff {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    column-gap: 10px;
+}</code></pre>
+          <div class="demo-container grid-gap-diff">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5: POSICIONAMIENTO -->
+      <section id="posicionamiento" class="section">
+        <h2>5. Posicionamiento de Items</h2>
+
+        <div class="code-example">
+          <h3>Grid Column y Grid Row</h3>
+          <p>
+            Controla dónde empieza y termina cada item usando las líneas del
+            grid.
+          </p>
+          <pre><code>.item-1 {
+    grid-column: 1 / 3; /* De línea 1 a 3 */
+    grid-row: 1 / 2;
+}
+
+.item-2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3; /* Ocupa 2 filas */
+}</code></pre>
+          <div class="demo-container grid-positioning">
+            <div class="item item-pos-1">Item 1<br />(col: 1/3)</div>
+            <div class="item item-pos-2">Item 2<br />(row: 1/3)</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h3>Span (Expandir)</h3>
+          <p>Usa <code>span</code> para indicar cuántas celdas ocupar.</p>
+          <pre><code>.item-span {
+    grid-column: span 2; /* Ocupa 2 columnas */
+    grid-row: span 2;    /* Ocupa 2 filas */
+}</code></pre>
+          <div class="demo-container grid-span">
+            <div class="item item-span-1">Span 2 cols</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item item-span-2">Span 2x2</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 6: GRID TEMPLATE AREAS -->
+      <section id="areas" class="section">
+        <h2>6. Grid Template Areas</h2>
+        <p>Una forma visual y semántica de definir layouts complejos.</p>
+
+        <div class="code-example">
+          <h3>Layout típico de página</h3>
+          <pre><code>.layout {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></pre>
+          <div class="demo-container grid-areas">
+            <div class="item area-header">Header</div>
+            <div class="item area-sidebar">Sidebar</div>
+            <div class="item area-main">Main Content</div>
+            <div class="item area-footer">Footer</div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h4>💡 Ventajas de Grid Areas:</h4>
+          <ul>
+            <li>Código más legible y mantenible</li>
+            <li>Visualización clara del layout</li>
+            <li>Fácil de reorganizar para responsive</li>
+            <li>Usa <code>.</code> (punto) para celdas vacías</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 7: ALINEACIÓN -->
+      <section id="alineacion" class="section">
+        <h2>7. Alineación</h2>
+        <p>Similar a Flexbox, pero con más control bidimensional.</p>
+
+        <div class="code-example">
+          <h3>Justify y Align Items</h3>
+          <pre><code>.grid-align {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(2, 150px);
+    justify-items: center; /* horizontal */
+    align-items: center;   /* vertical */
+}</code></pre>
+          <div class="demo-container grid-align-items">
+            <div class="item small">1</div>
+            <div class="item small">2</div>
+            <div class="item small">3</div>
+            <div class="item small">4</div>
+            <div class="item small">5</div>
+            <div class="item small">6</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h3>Justify y Align Content</h3>
+          <p>Alinea todo el grid dentro del contenedor.</p>
+          <pre><code>.grid-content {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}</code></pre>
+          <div class="demo-container grid-align-content">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h4>📊 Valores disponibles:</h4>
+          <ul>
+            <li><code>start</code>, <code>end</code>, <code>center</code></li>
+            <li><code>stretch</code> (por defecto)</li>
+            <li>
+              <code>space-between</code>, <code>space-around</code>,
+              <code>space-evenly</code>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 8: RESPONSIVE -->
+      <section id="responsive" class="section">
+        <h2>8. Diseño Responsive</h2>
+
+        <div class="code-example">
+          <h3>Auto-fit y Auto-fill</h3>
+          <p>
+            Crea grids que se adaptan automáticamente al espacio disponible.
+          </p>
+          <pre><code>.grid-autofit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}</code></pre>
+          <div class="demo-container grid-autofit">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+          </div>
+          <p class="hint">👉 Redimensiona la ventana para ver el efecto</p>
+        </div>
+
+        <div class="code-example">
+          <h3>Diferencia: auto-fit vs auto-fill</h3>
+          <ul>
+            <li>
+              <strong>auto-fit:</strong> Colapsa las columnas vacías,
+              expandiendo las existentes
+            </li>
+            <li>
+              <strong>auto-fill:</strong> Mantiene las columnas vacías, sin
+              expandir
+            </li>
+          </ul>
+        </div>
+
+        <div class="code-example">
+          <h3>Media Queries con Grid</h3>
+          <pre><code>/* Mobile first */
+.responsive-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .responsive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .responsive-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}</code></pre>
+          <div class="demo-container grid-responsive">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+            <div class="item">Item 7</div>
+            <div class="item">Item 8</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 9: TÉCNICAS AVANZADAS -->
+      <section id="avanzado" class="section">
+        <h2>9. Técnicas Avanzadas</h2>
+
+        <div class="code-example">
+          <h3>Grid Implícito vs Explícito</h3>
+          <p>Controla cómo se crean filas/columnas automáticas.</p>
+          <pre><code>.grid-implicit {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px; /* Filas automáticas */
+    gap: 10px;
+}</code></pre>
+          <div class="demo-container grid-implicit">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h3>Minmax()</h3>
+          <p>Define un rango mínimo y máximo para tracks.</p>
+          <pre><code>.grid-minmax {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 10px;
+}</code></pre>
+          <div class="demo-container grid-minmax">
+            <div class="item">Min 150px<br />Max 1fr</div>
+            <div class="item">Min 150px<br />Max 1fr</div>
+            <div class="item">Min 150px<br />Max 1fr</div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h3>Grid Anidado</h3>
+          <p>Puedes crear grids dentro de grids.</p>
+          <pre><code>.outer-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.inner-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}</code></pre>
+          <div class="demo-container grid-nested-outer">
+            <div class="item">Columna 1</div>
+            <div class="grid-nested-inner">
+              <div class="item nested">A</div>
+              <div class="item nested">B</div>
+              <div class="item nested">C</div>
+              <div class="item nested">D</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 10: GRID VS FLEX -->
+      <section id="grid-vs-flex" class="section">
+        <h2>10. Grid vs Flexbox: ¿Cuándo usar cada uno?</h2>
+
+        <div class="comparison-detailed">
+          <div class="comparison-card">
+            <h3>Usa Grid cuando:</h3>
+            <ul>
+              <li>✅ Necesitas control bidimensional (filas Y columnas)</li>
+              <li>✅ El layout es complejo y estructurado</li>
+              <li>✅ Quieres posicionar items en lugares específicos</li>
+              <li>✅ Diseñas layouts de página completa</li>
+              <li>✅ Necesitas overlapping (superposición)</li>
+            </ul>
+            <div class="example-mini grid-example">
+              <div class="mini-item">Header</div>
+              <div class="mini-item">Nav</div>
+              <div class="mini-item">Main</div>
+              <div class="mini-item">Aside</div>
+              <div class="mini-item">Footer</div>
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <h3>Usa Flexbox cuando:</h3>
+            <ul>
+              <li>✅ El layout es unidimensional (fila O columna)</li>
+              <li>✅ Los items deben fluir naturalmente</li>
+              <li>✅ Necesitas alineación de contenido</li>
+              <li>✅ Diseñas componentes pequeños</li>
+              <li>✅ El tamaño de items es dinámico</li>
+            </ul>
+            <div class="example-mini flex-example">
+              <div class="mini-item">Nav 1</div>
+              <div class="mini-item">Nav 2</div>
+              <div class="mini-item">Nav 3</div>
+              <div class="mini-item">Nav 4</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h4>🎯 Regla general:</h4>
+          <p><strong>Grid para layouts, Flexbox para componentes.</strong></p>
+          <p>
+            Pero recuerda: ¡puedes combinarlos! Un grid puede contener flex
+            items y viceversa.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECCIÓN FINAL: RECURSOS -->
+      <section class="section resources">
+        <h2>📚 Recursos Adicionales</h2>
+        <div class="resource-grid">
+          <div class="resource-card">
+            <h3>🎮 Juegos para Practicar</h3>
+            <ul>
+              <li>
+                <a href="https://cssgridgarden.com/" target="_blank"
+                  >Grid Garden</a
+                >
+              </li>
+              <li>
+                <a href="https://gridcritters.com/" target="_blank"
+                  >Grid Critters</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="resource-card">
+            <h3>📖 Documentación</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+                  target="_blank"
+                  >CSS-Tricks Guide</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout"
+                  target="_blank"
+                  >MDN Web Docs</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="resource-card">
+            <h3>🛠️ Herramientas</h3>
+            <ul>
+              <li>
+                <a href="https://grid.layoutit.com/" target="_blank"
+                  >Grid Generator</a
+                >
+              </li>
+              <li>DevTools de Chrome/Firefox</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        💡 <strong>Tip:</strong> Abre las DevTools de tu navegador (F12) y
+        activa la visualización de Grid para ver las líneas y áreas.
+      </p>
+      <p>Creado con ❤️ para aprender CSS Grid</p>
+    </footer>
+  </body>
+</html>

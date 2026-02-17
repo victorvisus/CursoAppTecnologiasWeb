@@ -20,7 +20,7 @@
 
     <!-- CSS -->
     <!-- <link rel="stylesheet" href="./src/preflight.css"> -->
-    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,186 +35,193 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet" />
 
-    <!-- Frameword Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Framework Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "negro-carbon": "#0E0E11",
+              "gris-antracita": "#1C1E22",
+              "gris-acero": "#3A3D42",
+              "gris-tecnico": "#B5B8BE",
+              "verde-criptico": "#3AFF7A",
+              "blanco-tecnico": "#F2F3F5",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              source: ["Source Sans 3", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style></style>
 
-    <style type="text/tailwindcss">
-      /*
-        @theme {
-            --color-negro-carbon: #0E0E11;
-            --color-gris-antracita: #1C1E22;
-            --color-gris-acero: #3A3D42;
-            --color-gris-tecnico: #B5B8BE;
-            --color-verde-criptico: #3AFF7A;
-            --color-blanco-tecnico: #F2F3F5;
-        }
-            */
-    </style>
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
 
-  <body id="page">
-    <header
-      id=""
-      class="hero-header mt-15 w-full flex flex-nowrap flex-col justify-center content-center">
-      <h1
-        class="w-fit text-5xl font-bold border-b-2 pb-2 mr-auto ml-auto mb-10">
-        Indice desarrollo app. web
-      </h1>
-      <h2
-        class="text-2xl font-semibold text-[#F2F3F5] p-2 max-w-fit mr-auto ml-auto mb-15 rounded-md bg-[#3A3D42] outline outline-offset-2 outline-[#B5B8BE] shadow-xl">
-        Menu de navegacion
-      </h2>
+  <body id="page" class="bg-negro-carbon text-blanco-tecnico min-h-screen">
+    <header class="bg-gris-antracita border-b-2 border-verde-criptico py-8">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-verde-criptico mb-2 text-center">
+          Indice desarrollo app. web
+        </h1>
+        <h2 class="text-xl text-gris-tecnico font-source text-center">
+          Menu de navegacion
+        </h2>
+      </div>
       <!-- nav para acceder a los ejercicios de HTML -->
-      <section
-        id="seccion-html"
-        class="mr-auto ml-auto mb-5 p-5 border w-full md:max-w-7xl">
+      <section id="seccion-html" class="container mx-auto px-6 py-8">
         <!-- nav para acceder a los ejercicios de HTML -->
-        <nav id="menu-html" class="navbar">
-          <h3 class="text-center text-3xl mb-5 font-semibold basis-auto">
+        <nav
+          id="menu-html"
+          class="bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+          <h3
+            class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3 text-center">
             Temas HTML5
           </h3>
-          <h4 class="text-center text-2xl font-semibold basis-auto">
+          <h4
+            class="text-xl font-semibold text-blanco-tecnico mb-3 text-center">
             Teoria HTML5
           </h4>
-          <ul
-            role="menubar"
-            id="nav-teoria-html"
-            class="flex flex-wrap basis-full">
+          <ul role="menubar" id="nav-teoria-html" class="">
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
-              <a class="menulink transition-all" href="#" title=""
-                >Pendiente de añadir teoria</a>
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+              <a
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
+                href="#"
+                title="">
+                Pendiente de añadir teoria
+              </a>
             </li>
           </ul>
-          <h4 class="text-center text-2xl font-semibold basis-auto">
+          <h4
+            class="text-xl font-semibold text-blanco-tecnico mb-3 mt-6 text-center">
             Ejercicios HTML5
           </h4>
-          <ul
-            role="menubar"
-            id="nav-ejercicios-html"
-            class="flex flex-wrap basis-full">
+          <ul role="menubar" id="nav-ejercicios-html" class="">
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./html/ejercicio-html.html"
-                title="Primer ejercicio"
-                >Ejercicio html</a
-              >
+                title="Primer ejercicio">
+                Ejercicio html
+              </a>
             </li>
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./html/ejemplo-rutas.html"
-                title="Ejercicio rutas relativas y absolutas"
-                >Ejercicio rutas</a
-              >
+                title="Ejercicio rutas relativas y absolutas">
+                Ejercicio rutas
+              </a>
             </li>
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./html/ejemplo-lista.html"
-                title="Pruebas con listas"
-                >Ejercicio lista</a
-              >
+                title="Pruebas con listas">
+                Ejercicio lista
+              </a>
             </li>
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./html/html-semantico.html"
-                title="HTML semantico, buenas practicas"
-                >HTML semantico</a
-              >
+                title="HTML semantico, buenas practicas">
+                HTML semantico
+              </a>
             </li>
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./html/formulario.html"
-                title="Formulario"
-                >Formulario</a
-              >
+                title="Formulario">
+                Formulario
+              </a>
             </li>
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./html/ejemplo_form.html"
-                title="Otro Formulario"
-                >Otro Formulario</a
-              >
+                title="Otro Formulario">
+                Otro Formulario
+              </a>
             </li>
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="#contact-form"
-                title="Formulario"
-                >Ver formulario</a
-              >
+                title="Formulario">
+                Ver formulario
+              </a>
             </li>
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./html/curriculum/index.html"
-                title="Curriculum"
-                >Curriculum</a
-              >
+                title="Curriculum">
+                Curriculum
+              </a>
             </li>
           </ul>
         </nav>
       </section>
-      <!-- nav para acceder a los ejercicios de CSS -->
-      <section
-        id="seccion-css"
-        class="mr-auto ml-auto mb-5 p-5 border w-full md:max-w-7xl">
-        <nav id="menu-css" class="navbar">
-          <h3 class="text-center text-3xl mb-5 font-semibold basis-auto">
+      <!-- nav para acceder a Teoria de CSS -->
+      <section id="seccion-css" class="container mx-auto px-6 py-8">
+        <nav
+          id="menu-css"
+          class="bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+          <h3
+            class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3 text-center">
             Temas CSS3
           </h3>
-          <h4 class="text-center text-2xl font-semibold basis-auto">
+          <h4
+            class="text-xl font-semibold text-blanco-tecnico mb-3 text-center">
             Teoria CSS3
           </h4>
-          <ul
-            role="menubar"
-            id="nav-teoria-css"
-            class="flex flex-wrap basis-full">
+          <ul role="menubar" id="nav-teoria-css" class="">
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./tema_css/introduccion-css/introduccion-css.html"
                 title="Introduccion a CSS3"
                 >Introduccion a CSS3</a
               >
             </li>
           </ul>
-          <h4 class="text-center text-2xl font-semibold basis-auto">
+          <!-- nav para acceder a Ejercicios de CSS -->
+          <h4
+            class="text-xl font-semibold text-blanco-tecnico mb-3 mt-6 text-center">
             Ejercicios CSS3
           </h4>
-          <ul
-            role="menubar"
-            id="nav-ejercicios-css"
-            class="flex flex-wrap basis-full">
+          <ul role="menubar" id="nav-ejercicios-css" class="">
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./tema_css/ejercicio_first_css.html"
                 title="Primer ejercicio"
                 >futuro ejercicio CSS</a
@@ -222,38 +229,79 @@
             </li>
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="./tema_css/tarea-menuRestaurante.html"
                 title="Ejercicio menu Restaurante"
                 >Ejercicio menu Restaurante</a
               >
             </li>
+            <li
+              role="menuitem"
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+              <a
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
+                href="./tema_css/estilos-para-textos.html"
+                title="Estilos CSS para textos"
+                >Estilos CSS para textos</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+              <a
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
+                href="./tema_css/Ejercicio-textos.html"
+                title="Ejercicio menu Restaurante"
+                >Ejercicio Textos CSS</a
+              >
+            </li>
+            <li
+              role="menuitem"
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+              <a
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
+                href="./tema_css/ejercicio-cafeteria.html"
+                title="Ejercicio menu Restaurante"
+                >Ejercicio Cafeteria</a
+              >
+            </li>
           </ul>
         </nav>
       </section>
+
       <!-- Enlaces de interes -->
-      <section
-        id="others-links"
-        class="mr-auto ml-auto mb-5 p-5 border w-full md:max-w-7xl">
-        <nav id="menu-links" class="navbar">
-          <h3 class="text-center text-3xl mb-5 font-semibold basis-auto">
+      <section id="others-links" class="container mx-auto px-6 py-8">
+        <nav
+          id="menu-links"
+          class="bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+          <h3
+            class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3 text-center">
             Enlaces de interes
           </h3>
-          <ul
-            role="menubar"
-            id="nav-others-links"
-            class="flex flex-wrap basis-full">
+          <ul role="menubar" id="nav-others-links" class="">
             <li
               role="menuitem"
-              class="menuitem pl-10 pr-10 pb-7 pt-7 font-semibold text-[#1C1E22] border-b-2 border-transparent hover:text-[#3AFF7A] hover:border-[#3AFF7A]">
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
               <a
-                class="menulink transition-all"
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
                 href="../git-reference/git-reference.html"
                 title="Git cheat sheet"
-                >Guía de referencia rápida · Git</a>
+                >Guía de referencia rápida · Git</a
+              >
             </li>
+            <li
+              role="menuitem"
+              class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+              <a
+                class="block text-blanco-tecnico hover:text-verde-criptico transition-all"
+                href="./css_grid/index.html"
+                title="CSS Grid"
+                >CSS Grid</a
+              >
+            </li>
+          </ul>
         </nav>
       </section>
     </header>
@@ -261,14 +309,16 @@
     <!------------------------->
     <!-- Contenido principal -->
     <!------------------------->
-    <main id="main" class="site-main p-5 container m-auto w-full md:max-w-7xl">
-      <article id="post-01" class="post flex justify-center">
+    <main id="main" class="container mx-auto px-6 py-12">
+      <article id="post-01" class="post">
         <section
           id="contact-form"
-          class="contact flex justify-around flex-wrap md:flex-nowrap">
-          <header class="presentacion flex-none p-2 basis-full md:basis-1/4">
-            <h3 class="text-3xl font-semibold basis-auto">Tienes dudas?</h3>
-            <p class="basis-full">
+          class="bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+          <header class="mb-6">
+            <h3 class="text-3xl font-bold text-verde-criptico mb-4">
+              ¿Tienes dudas?
+            </h3>
+            <p class="text-blanco-tecnico">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Dignissimos omnis porro voluptatem nihil non ut consectetur
               aliquam libero, nam autem consequatur illum similique minus quos
@@ -276,20 +326,23 @@
             </p>
           </header>
           <form
-            class="flex flex-wrap justify-around p-2 basis-full md:basis-3/4"
+            id="formulario"
             action="/"
             method="post"
-            name="contacto">
-            <header id="form-header" class="form-header basis-full">
-              <h4 class="text-2xl font-semibold">Contacto</h4>
-            </header>
+            name="contacto"
+            class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div id="form-header" class="md:col-span-2 mb-4">
+              <h4 class="text-2xl font-semibold text-blanco-tecnico">
+                Contacto
+              </h4>
+            </div>
 
-            <div
-              id="name-field"
-              class="form-field-group p-1 basis-full md:basis-1/4"
-              role="group">
-              <label class="form-field block mb-1" for="user_name_id"
-                >Nombre y apellidos</label>
+            <div id="name-field" class="form-field-group" role="group">
+              <label
+                class="form-field block mb-2 text-blanco-tecnico"
+                for="user_name_id">
+                Nombre y apellidos
+              </label>
               <input
                 type="text"
                 name="user_name"
@@ -297,48 +350,50 @@
                 value=""
                 required
                 placeholder="Nombre y apellidos"
-                class="border p-1 w-full" />
+                class="bg-gris-acero border border-gris-tecnico text-blanco-tecnico rounded-md p-2 w-full focus:outline-none focus:border-verde-criptico" />
             </div>
-            <div
-              id="email-field"
-              class="form-field-group p-1 basis-full md:basis-1/4"
-              role="group">
-              <label class="form-field block mb-1" for="user_mail_id"
-                >Correo electrónico</label>
+
+            <div id="email-field" class="form-field-group" role="group">
+              <label
+                class="form-field block mb-2 text-blanco-tecnico"
+                for="user_mail_id">
+                Correo electrónico
+              </label>
               <input
-                type="text"
+                type="email"
                 name="user_mail"
                 id="user_mail_id"
                 value=""
                 required
                 placeholder="e-mail"
-                class="border p-1 w-full" />
+                class="bg-gris-acero border border-gris-tecnico text-blanco-tecnico rounded-md p-2 w-full focus:outline-none focus:border-verde-criptico" />
             </div>
-            <div
-              id="tel-field"
-              class="form-field-group p-1 basis-full md:basis-1/4"
-              role="group">
-              <label class="form-field block mb-1" for="user_tel_id"
-                >Teléfono</label>
+
+            <div id="tel-field" class="form-field-group" role="group">
+              <label
+                class="form-field block mb-2 text-blanco-tecnico"
+                for="user_tel_id">
+                Teléfono
+              </label>
               <input
                 type="tel"
                 name="user_tel"
                 id="user_tel_id"
                 value=""
                 placeholder="Teléfono"
-                class="border p-1 w-full" />
+                class="bg-gris-acero border border-gris-tecnico text-blanco-tecnico rounded-md p-2 w-full focus:outline-none focus:border-verde-criptico" />
             </div>
-            <div
-              id="city-field"
-              class="form-field-group p-1 basis-full md:basis-1/4"
-              role="group">
-              <label class="form-field block mb-1" for="user_city_id"
-                >Ciudad</label
-              >
+
+            <div id="city-field" class="form-field-group" role="group">
+              <label
+                class="form-field block mb-2 text-blanco-tecnico"
+                for="user_city_id">
+                Ciudad
+              </label>
               <input
                 id="user_city_id"
                 list="user_city_list_id"
-                class="border p-1 w-full" />
+                class="bg-gris-acero border border-gris-tecnico text-blanco-tecnico rounded-md p-2 w-full focus:outline-none focus:border-verde-criptico" />
               <datalist id="user_city_list_id" name="user_city">
                 <option value="Madrid"></option>
                 <option value="Barcelona"></option>
@@ -347,32 +402,43 @@
                 <option value="Zaragoza"></option>
               </datalist>
             </div>
+
             <div
               id="msg-field"
-              class="form-field-group p-1 basis-full"
+              class="form-field-group md:col-span-2"
               role="group">
-              <label class="form-field block mb-1" for="user_message_id"
-                >Mensaje</label>
+              <label
+                class="form-field block mb-2 text-blanco-tecnico"
+                for="user_message_id">
+                Mensaje
+              </label>
               <textarea
                 name="user_message"
                 id="user_message_id"
                 maxlength="500"
                 placeholder="Aqui tu Mensaje"
-                class="border p-1 w-full"></textarea>
+                rows="4"
+                class="bg-gris-acero border border-gris-tecnico text-blanco-tecnico rounded-md p-2 w-full focus:outline-none focus:border-verde-criptico"></textarea>
             </div>
+
             <div
               id="send-field"
-              class="form-field-group p-1 basis-full"
+              class="form-field-group md:col-span-2 flex flex-col items-center"
               role="group">
+              <div class="mb-4">
+                <input
+                  class="form-field mr-2"
+                  type="checkbox"
+                  name="rgpd"
+                  id="rgpd_id"
+                  value=""
+                  required />
+                <label for="rgpd_id" class="text-blanco-tecnico"
+                  >Acepto los terminos y condiciones</label
+                >
+              </div>
               <input
-                class="form-field mr-2 mb-1"
-                type="checkbox"
-                name="rgpd"
-                id="rgpd_id"
-                value=""
-                required />Acepto los terminos y condiciones
-              <input
-                class="block font-semibold text-[#F2F3F5] mt-5 mb-5 pl-10 pr-10 pb-2 pt-2 rounded-md bg-[#1C1E22] outline outline-offset-2 outline-[#3AFF7A] shadow-xl transition-all hover:bg-[#3AFF7A] hover:text-[#1C1E22]"
+                class="font-semibold text-blanco-tecnico px-10 py-2 rounded-md bg-gris-antracita outline outline-offset-2 outline-verde-criptico shadow-xl transition-all hover:bg-verde-criptico hover:text-negro-carbon cursor-pointer"
                 id="enviar"
                 type="submit"
                 value="Enviar" />
@@ -384,16 +450,20 @@
 
     <aside></aside>
 
-    <footer class="bg-[#1C1E22] p-4 pt-4 pb-4 text-[#F2F3F5]">
-      <div class="container mx-auto flex flex-wrap justify-center">
-        <p class="basis-1/2 md:basis-1/2">
+    <footer class="bg-gris-antracita border-t border-gris-acero py-6 mt-12">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-gris-tecnico mb-2">
           &copy; 2022 <strong>Ejercicio de HTML</strong>. Creado con fines
           educativos por <em>Victor</em>.
         </p>
-        <address class="basis-1/2 md:basis-1/2">
+        <address class="text-gris-tecnico">
           <p>
             Puedes contactarme vía
-            <a href="mailto:victorvg.tmp@gmail.com">victorvg.tmp@gmail.com</a>
+            <a
+              href="mailto:victorvg.tmp@gmail.com"
+              class="text-verde-criptico hover:underline"
+              >victorvg.tmp@gmail.com</a
+            >
             en Zaragoza, España.
           </p>
         </address>
@@ -404,7 +474,7 @@
       <button
         id="return"
         style="position: fixed; bottom: 10px; right: 10px"
-        class="font-semibold text-[#F2F3F5] pl-4 pr-4 pb-2 pt-2 rounded-md bg-[#1C1E22] outline outline-offset-2 outline-[#B5B8BE] shadow-xl transition-all hover:bg-[#3AFF7A] hover:text-[#1C1E22]">
+        class="bg-gris-antracita text-blanco-tecnico font-semibold px-4 py-2 rounded-md border-2 border-gris-tecnico hover:bg-verde-criptico hover:text-negro-carbon hover:border-verde-criptico transition-all shadow-xl">
         <a href="#page">Ir Arriba</a>
       </button>
     </div>

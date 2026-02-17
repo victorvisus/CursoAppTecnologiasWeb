@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios Prácticos - CSS Grid</title>
+    <link rel="stylesheet" href="ejercicios.css" />
+  </head>
+  <body>
+    <header>
+      <h1>💪 Ejercicios Prácticos de CSS Grid</h1>
+      <p class="subtitle">Practica lo aprendido con estos desafíos</p>
+      <nav class="header-nav">
+        <a href="index.html">← Volver a la Guía</a>
+        <a href="soluciones.html">Ver Soluciones →</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- NIVEL PRINCIPIANTE -->
+      <section class="level-section beginner">
+        <div class="level-header">
+          <h2>🟢 Nivel Principiante</h2>
+          <p>Ejercicios básicos para familiarizarte con Grid</p>
+        </div>
+
+        <!-- Ejercicio 1 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 1: Grid de 3 Columnas</h3>
+            <span class="difficulty">Fácil</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>
+                Crea un grid con 3 columnas de igual tamaño y un gap de 20px
+                entre los items.
+              </p>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-3cols">
+                  <div class="item">1</div>
+                  <div class="item">2</div>
+                  <div class="item">3</div>
+                  <div class="item">4</div>
+                  <div class="item">5</div>
+                  <div class="item">6</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>Usa <code>display: grid</code></li>
+                <li>
+                  Usa <code>grid-template-columns</code> con
+                  <code>repeat()</code>
+                </li>
+                <li>Usa <code>gap</code> para el espaciado</li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-1 {
+    /* Escribe tu código aquí */
+    
+    
+    
+}</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-1">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ejercicio 2 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 2: Columnas con Diferentes Tamaños</h3>
+            <span class="difficulty">Fácil</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>
+                Crea un grid con 3 columnas donde la del medio sea el doble de
+                ancha que las laterales.
+              </p>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-121">
+                  <div class="item">1fr</div>
+                  <div class="item">2fr</div>
+                  <div class="item">1fr</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>Usa la unidad <code>fr</code></li>
+                <li>Patrón: 1fr 2fr 1fr</li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-2 {
+    /* Escribe tu código aquí */
+    
+    
+}</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-2">
+                <div class="item">1fr</div>
+                <div class="item">2fr</div>
+                <div class="item">1fr</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ejercicio 3 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 3: Grid con Filas Definidas</h3>
+            <span class="difficulty">Fácil</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>
+                Crea un grid de 2 columnas donde la primera fila tenga 100px de
+                alto y la segunda 150px.
+              </p>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-rows-ex">
+                  <div class="item">100px</div>
+                  <div class="item">100px</div>
+                  <div class="item">150px</div>
+                  <div class="item">150px</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>Usa <code>grid-template-rows</code></li>
+                <li>Define alturas en px</li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-3 {
+    /* Escribe tu código aquí */
+    
+    
+    
+}</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-3">
+                <div class="item">100px</div>
+                <div class="item">100px</div>
+                <div class="item">150px</div>
+                <div class="item">150px</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- NIVEL INTERMEDIO -->
+      <section class="level-section intermediate">
+        <div class="level-header">
+          <h2>🟡 Nivel Intermedio</h2>
+          <p>Ejercicios con posicionamiento y áreas</p>
+        </div>
+
+        <!-- Ejercicio 4 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 4: Item que Ocupa 2 Columnas</h3>
+            <span class="difficulty">Medio</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>
+                Crea un grid de 3 columnas. El primer item debe ocupar 2
+                columnas.
+              </p>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-span-ex">
+                  <div class="item item-wide">Item 1 (2 columnas)</div>
+                  <div class="item">2</div>
+                  <div class="item">3</div>
+                  <div class="item">4</div>
+                  <div class="item">5</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>Usa <code>grid-column: span 2</code> en el primer item</li>
+                <li>O usa <code>grid-column: 1 / 3</code></li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-4 {
+    /* Grid container */
+    
+    
+}
+
+.ejercicio-4 .item:first-child {
+    /* Primer item */
+    
+}</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-4">
+                <div class="item">Item 1 (2 columnas)</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ejercicio 5 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 5: Layout de Blog</h3>
+            <span class="difficulty">Medio</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>
+                Crea un layout de blog con header completo arriba, sidebar a la
+                izquierda (200px) y contenido principal a la derecha.
+              </p>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-blog">
+                  <div class="item header-demo">Header</div>
+                  <div class="item sidebar-demo">Sidebar</div>
+                  <div class="item main-demo">Main Content</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>Usa <code>grid-template-areas</code></li>
+                <li>O usa <code>grid-column</code> para expandir el header</li>
+                <li>Sidebar: 200px, Main: 1fr</li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-5 {
+    /* Escribe tu código aquí */
+    
+    
+    
+    
+}</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-5">
+                <div class="item">Header</div>
+                <div class="item">Sidebar</div>
+                <div class="item">Main Content</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ejercicio 6 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 6: Galería de Imágenes</h3>
+            <span class="difficulty">Medio</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>
+                Crea una galería responsive que muestre 4 columnas en desktop, 2
+                en tablet y 1 en móvil.
+              </p>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-gallery">
+                  <div class="item">📷</div>
+                  <div class="item">📷</div>
+                  <div class="item">📷</div>
+                  <div class="item">📷</div>
+                  <div class="item">📷</div>
+                  <div class="item">📷</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>Usa <code>repeat(auto-fit, minmax(200px, 1fr))</code></li>
+                <li>O usa media queries</li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-6 {
+    /* Escribe tu código aquí */
+    
+    
+}</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-6">
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+                <div class="item">📷</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- NIVEL AVANZADO -->
+      <section class="level-section advanced">
+        <div class="level-header">
+          <h2>🔴 Nivel Avanzado</h2>
+          <p>Desafíos complejos que combinan múltiples conceptos</p>
+        </div>
+
+        <!-- Ejercicio 7 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 7: Dashboard Completo</h3>
+            <span class="difficulty">Difícil</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>
+                Crea un dashboard con: header completo, sidebar vertical, 3
+                cards en el área principal y footer completo.
+              </p>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-dashboard">
+                  <div class="item dash-header">Header</div>
+                  <div class="item dash-sidebar">Sidebar</div>
+                  <div class="item dash-card">Card 1</div>
+                  <div class="item dash-card">Card 2</div>
+                  <div class="item dash-card">Card 3</div>
+                  <div class="item dash-footer">Footer</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>Usa <code>grid-template-areas</code> para claridad</li>
+                <li>
+                  El área principal necesita su propio grid para las 3 cards
+                </li>
+                <li>Considera usar grid anidado</li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-7 {
+    /* Escribe tu código aquí */
+    
+    
+    
+    
+    
+}</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-7">
+                <div class="item">Header</div>
+                <div class="item">Sidebar</div>
+                <div class="item">Card 1</div>
+                <div class="item">Card 2</div>
+                <div class="item">Card 3</div>
+                <div class="item">Footer</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ejercicio 8 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 8: Masonry Layout</h3>
+            <span class="difficulty">Difícil</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>
+                Crea un layout tipo Pinterest donde algunos items ocupen más
+                espacio que otros.
+              </p>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-masonry">
+                  <div class="item">1</div>
+                  <div class="item tall">2 (alto)</div>
+                  <div class="item">3</div>
+                  <div class="item wide">4 (ancho)</div>
+                  <div class="item">5</div>
+                  <div class="item big">6 (grande)</div>
+                  <div class="item">7</div>
+                  <div class="item">8</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>
+                  Usa <code>grid-auto-flow: dense</code> para rellenar huecos
+                </li>
+                <li>Usa <code>span</code> en items específicos</li>
+                <li>
+                  Combina <code>grid-column</code> y <code>grid-row</code>
+                </li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-8 {
+    /* Grid container */
+    
+    
+    
+}
+
+.ejercicio-8 .tall {
+    /* Item alto */
+    
+}
+
+.ejercicio-8 .wide {
+    /* Item ancho */
+    
+}
+
+.ejercicio-8 .big {
+    /* Item grande */
+    
+}</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-8">
+                <div class="item">1</div>
+                <div class="item tall">2 (alto)</div>
+                <div class="item">3</div>
+                <div class="item wide">4 (ancho)</div>
+                <div class="item">5</div>
+                <div class="item big">6 (grande)</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ejercicio 9 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 9: Holy Grail Layout</h3>
+            <span class="difficulty">Difícil</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>
+                Crea el famoso "Holy Grail Layout": header, footer, contenido
+                central con dos sidebars (izquierda y derecha).
+              </p>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-holy-grail">
+                  <div class="item hg-header">Header</div>
+                  <div class="item hg-left">Left Sidebar</div>
+                  <div class="item hg-main">Main Content</div>
+                  <div class="item hg-right">Right Sidebar</div>
+                  <div class="item hg-footer">Footer</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>Usa <code>grid-template-areas</code></li>
+                <li>Sidebars: 200px cada uno</li>
+                <li>Main: 1fr (flexible)</li>
+                <li>Header y Footer ocupan todo el ancho</li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-9 {
+    /* Escribe tu código aquí */
+    
+    
+    
+    
+    
+}</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-9">
+                <div class="item">Header</div>
+                <div class="item">Left Sidebar</div>
+                <div class="item">Main Content</div>
+                <div class="item">Right Sidebar</div>
+                <div class="item">Footer</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- DESAFÍO FINAL -->
+      <section class="level-section challenge">
+        <div class="level-header">
+          <h2>🏆 Desafío Final</h2>
+          <p>Pon a prueba todo lo aprendido</p>
+        </div>
+
+        <!-- Ejercicio 10 -->
+        <article class="exercise">
+          <div class="exercise-header">
+            <h3>Ejercicio 10: Página Web Completa</h3>
+            <span class="difficulty">Experto</span>
+          </div>
+          <div class="exercise-content">
+            <div class="instructions">
+              <h4>📝 Instrucciones:</h4>
+              <p>Crea una página web completa con:</p>
+              <ul>
+                <li>Header con logo y navegación</li>
+                <li>Hero section (ocupa todo el ancho)</li>
+                <li>Sección de features (3 columnas)</li>
+                <li>Sección de testimonios (2 columnas)</li>
+                <li>Footer con 4 columnas de enlaces</li>
+              </ul>
+              <h4>🎯 Objetivo:</h4>
+              <div class="target-image">
+                <div class="demo-target grid-webpage">
+                  <div class="item wp-header">Header (Logo + Nav)</div>
+                  <div class="item wp-hero">Hero Section</div>
+                  <div class="item wp-feature">Feature 1</div>
+                  <div class="item wp-feature">Feature 2</div>
+                  <div class="item wp-feature">Feature 3</div>
+                  <div class="item wp-test">Testimonio 1</div>
+                  <div class="item wp-test">Testimonio 2</div>
+                  <div class="item wp-footer">Footer (4 columnas)</div>
+                </div>
+              </div>
+              <h4>💡 Pistas:</h4>
+              <ul class="hints">
+                <li>Usa múltiples grids anidados</li>
+                <li>
+                  Combina <code>grid-template-areas</code> y
+                  <code>grid-template-columns</code>
+                </li>
+                <li>Piensa en responsive desde el inicio</li>
+                <li>El header puede ser un grid interno (logo + nav)</li>
+              </ul>
+            </div>
+            <div class="workspace">
+              <h4>✏️ Tu código CSS:</h4>
+              <pre><code>.ejercicio-10 {
+    /* Grid principal */
+    
+    
+    
+    
+}
+
+/* Añade más reglas según necesites */</code></pre>
+              <h4>🧪 Resultado:</h4>
+              <div class="result-container ejercicio-10">
+                <div class="item">Header (Logo + Nav)</div>
+                <div class="item">Hero Section</div>
+                <div class="item">Feature 1</div>
+                <div class="item">Feature 2</div>
+                <div class="item">Feature 3</div>
+                <div class="item">Testimonio 1</div>
+                <div class="item">Testimonio 2</div>
+                <div class="item">Footer (4 columnas)</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- INSTRUCCIONES GENERALES -->
+      <section class="instructions-section">
+        <h2>📖 Cómo Usar Estos Ejercicios</h2>
+        <div class="instruction-grid">
+          <div class="instruction-card">
+            <h3>1️⃣ Lee las Instrucciones</h3>
+            <p>
+              Cada ejercicio tiene un objetivo claro y pistas para ayudarte.
+            </p>
+          </div>
+          <div class="instruction-card">
+            <h3>2️⃣ Escribe el Código</h3>
+            <p>
+              Modifica el archivo <code>ejercicios.css</code> con tu solución.
+            </p>
+          </div>
+          <div class="instruction-card">
+            <h3>3️⃣ Comprueba el Resultado</h3>
+            <p>Recarga la página para ver si tu solución funciona.</p>
+          </div>
+          <div class="instruction-card">
+            <h3>4️⃣ Compara con la Solución</h3>
+            <p>Si te atascas, revisa <code>soluciones.html</code>.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>💪 ¡Sigue practicando! La práctica hace al maestro.</p>
+      <p>
+        <a href="index.html">← Volver a la Guía</a> |
+        <a href="soluciones.html">Ver Soluciones →</a>
+      </p>
+    </footer>
+  </body>
+</html>

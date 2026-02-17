@@ -1,0 +1,65 @@
+/*
+1. Crea la estructura HTML con:
+•Elemento raíz 'article'
+•Título principal
+•Subtítulo
+•Párrafos de texto
+•Alguna cita o texto destacado
+•Enlaces
+
+2. Aplica estilos usando:
+•Diferentes familias de fuentes para títulos y texto.
+•Variaciones de tamaño según jerarquía.
+•Distintos pesos para destacar información.
+•Colores apropiados.
+•Decoración de texto donde sea adecuado.
+*/
+
+h1,
+h2,
+h3 {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+p {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cita {
+  font-family: "JetBrains Mono", monospace;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.2;
+  background-color: rgba(255, 0, 255, 0.25);
+  padding: 0.5rem;
+}
+a {
+  transition: all 0.3s ease-in-out;
+  font-style: oblique;
+  color: blueviolet;
+  text-decoration: none;
+  font-weight: 800;
+}
+a:hover {
+  color: cadetblue;
+}
+
+.resizable-div {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  overflow: auto; /* Obligatorio para que resize funcione */
+  resize: both; /* Permite redimensionar horizontal y verticalmente */
+  min-width: 100px;
+  min-height: 100px;
+}

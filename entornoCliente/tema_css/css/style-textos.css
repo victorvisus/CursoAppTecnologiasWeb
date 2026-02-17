@@ -1,0 +1,22 @@
+.text-inline {
+  font:
+    italic 1.2rem/1.44 "Times New Roman",
+    Times,
+    serif;
+}
+.titulo {
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.parrafo {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.destacado {
+  color: #e63946;
+  font-weight: bold;
+}
+.sutil {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 0.8rem;
+}
