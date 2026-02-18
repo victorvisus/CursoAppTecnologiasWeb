@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio hover y fontawesome</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      h1 {
+        transition: all 0.25s ease-in-out;
+        font-weight: normal;
+        cursor: pointer;
+      }
+      h1:hover {
+        font-weight: bold;
+        color: brown;
+      }
+      i {
+        margin-right: 10px;
+        color: brown;
+      }
+
+      .centrado {
+        text-align: center;
+      }
+      .derecha {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Ejemplo Hover</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href=""><i class="fa-solid fa-anchor-lock"></i>Al mar</a>
+        </li>
+        <li>
+          <a href=""><i class="fa-solid fa-atom"></i>Vamonos Atomos</a>
+        </li>
+        <li>
+          <a href=""><i class="fa-solid fa-biohazard"></i>Biohazard</a>
+        </li>
+        <li>
+          <a href=""><i class="fa-solid fa-battery-quarter"></i>Link 4</a>
+        </li>
+        <li>
+          <a href=""><i class="fa-solid fa-book-skull"></i>Link 5</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+        <p class="centrado">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+          nesciunt odit minus iste temporibus eaque vero similique cupiditate
+          accusamus harum! Quos repellat deserunt veniam temporibus dolorem
+          accusamus ea Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Et eum aperiam dolorum officia expedita enim est odio ipsum quis
+          quaerat animi maiores, a aut sint fugiat accusamus exercitationem, id
+          impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Blanditiis eligendi harum totam deleniti voluptas consequuntur, saepe
+          soluta, officia consectetur perspiciatis doloribus placeat adipisci
+          voluptatem recusandae dolorem omnis atque porro autem!
+          <br />
+          <span class="derecha"><em>mollitia span</em></span>
+        </p>
+        <cite class="derecha">Neron cite</cite>
+        <p class="derecha">Neron p</p>
+        <blockquote class="derecha">Neron blockquote</blockquote>
+      </article>
+    </main>
+    <div>
+      <button
+        id="return"
+        style="
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+          background-color: #3aff7a;
+        ">
+        <a
+          href="../index.html"
+          style="color: aliceblue; font-weight: 600; text-decoration: none"
+          ><em>Ir a index</em></a
+        >
+      </button>
+    </div>
+  </body>
+</html>

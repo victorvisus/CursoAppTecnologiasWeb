@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Practica con Selectores CSS</title>
+    <link rel="stylesheet" href="./css/ejemplo-selectores.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Practica con Selectores CSS</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Elementos con clase</h2>
+        <p class="parrafo">2º hijo - Este es un parrafo con clase</p>
+        <p>2º parrafo - Este es un parrafo sin clase</p>
+      </section>
+      <section>
+        <h2>Elementos con identificador</h2>
+        <p id="parrafo-1">2º hijo - Este es un parrafo con identificador</p>
+        <p id="parrafo-2">
+          2º parrafo - Este es otro parrafo con identificador
+        </p>
+      </section>
+      <section>
+        <h2>Elementos con atributo</h2>
+        <p data-atributo="1">2º hijo - Este es un parrafo con atributo</p>
+        <p data-atributo="2">2º parrafo - Este es otro parrafo con atributo</p>
+        <h5>Referencia de un parrafo</h5>
+        <p>Se dice que esta cita no es verdadera</p>
+      </section>
+      <section>
+        <h2>Elementos con hijos</h2>
+        <ul>
+          <li>Este es un item de la lista</li>
+          <li>Este es otro item de la lista</li>
+        </ul>
+      </section>
+
+      <dialog id="dialog">
+        <h1>Modal nuevo</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+          nulla animi consequatur nemo consectetur quidem cumque quo expedita
+          quod id. Laborum nihil nostrum in repudiandae, soluta consectetur
+          ducimus illo corrupti.
+        </p>
+        <button id="cerrar">cerrar</button>
+      </dialog>
+      <button id="show">Ver más info</button>
+      <script>
+        window.show.addEventListener("click", () => {
+          window.dialog.showModal();
+        });
+
+        window.cerrar.addEventListener("click", () => {
+          window.dialog.close();
+        });
+      </script>
+      <div>
+        <button
+          id="return"
+          style="
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #3aff7a;
+          ">
+          <a
+            href="../index.html"
+            style="color: aliceblue; font-weight: 600; text-decoration: none"
+            ><em>Ir a index</em></a
+          >
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
