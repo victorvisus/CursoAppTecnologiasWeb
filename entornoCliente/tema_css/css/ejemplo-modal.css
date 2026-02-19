@@ -1,0 +1,8 @@
+#ventana {
+  box-shadow: 10px 10px 10px rgba(102, 102, 102, 0.6);
+  border-radius: 1em;
+  max-width: 600px;
+}
+#ventana:-internal-dialog-in-top-layer::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+}

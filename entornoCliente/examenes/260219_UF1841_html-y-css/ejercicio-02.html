@@ -1,0 +1,82 @@
+<!-- 2. Escribe la regla CSS (selector y propiedades) necesaria para que: 
+•	Todos los enlaces de una página web aparezcan inicialmente con tipografía Arial, subrayados y sin cursiva y al
+pasar el cursor del ratón por encima de ellos cambien a tipografía Georgia, cursiva y no subrayados. 
+•	Todos los párrafos dentro de un bloque DIV tengan sólo la primera línea en bold (negrita) y el resto en normal.
+Probarlo en un prototipo de página html con enlaces <a> dentro de un <footer> al final de la página y que tengan esos estilos,
+    asegurando que se abren dentro de la propia pestaña de navegación, anclándolos para que vayan al inicio de página.
+ (3 puntos)
+-->
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ejercicio 2 - UF1841 Lenguajes de marcas" />
+    <meta name="author" content="Victor Visús" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ff1919" />
+    <title>Ejercicio 2 - UF1841 Lenguajes de marcas</title>
+    <link
+      rel="shortcut icon"
+      href="./img/HTML5_logo_and_wordmark.svg"
+      type="image/x-icon" />
+
+    <style>
+      a {
+        font-family: "Arial", sans-serif;
+        font-style: unset;
+        text-decoration: underline;
+      }
+      a:hover {
+        font-family: "Georgia", serif;
+        font-style: italic;
+        text-decoration: unset;
+      }
+      /* pongo ancho para que se vea el efecto de first-line*/
+      .parrafos {
+        max-width: 600px;
+        border: 1px solid;
+        padding: 10px;
+      }
+      div p::first-line {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Ejercicio 2:</h1>
+    </header>
+
+    <main id="principio">
+      <article>
+        <section>
+          <div class="parrafos">
+            <h2>Párrafo dentro de bloque div</h2>
+            <p>
+              Este es un párrafo de prueba. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Eligendi quas, maiores sunt beatae
+              voluptates culpa iusto iste, suscipit illo.
+            </p>
+            <p>Este es otro párrafo de prueba <a href="#">otro enlace</a></p>
+          </div>
+          <h2>Parrafo fuera del div</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+            expedita accusamus voluptatem unde ducimus ullam minus deserunt
+            ipsa! Libero minima ipsa maxime vero assumenda excepturi dolorem et
+            ullam nulla cum! <a href="#principio">Volver al principio.</a>
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <a href="#principio" target="_self">Ir al principio</a>
+    </footer>
+  </body>
+</html>

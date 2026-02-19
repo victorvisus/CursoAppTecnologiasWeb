@@ -1,0 +1,78 @@
+<!-- 1. Escribe el código HTML5 de un cuadro de texto de un formulario que debe ser rellenado con
+     los apellidos, edad y NIF del usuario antes de que el formulario pueda ser enviado al servidor.
+     Tener en cuenta adicionalmente que: 
+•	La edad aceptada debe ser mayor de 18 años y por defecto con un valor de 25
+•	Hay que añadir un botón para el envío del formulario.
+•	Hay que limitar la longitud máxima del NIF a 10 caracteres.
+•	Hay que incluir todos los elementos input y los label necesarios y referirlos correctamente.
+•	Hay que añadir una acción sin efecto, al formulario llamada “/”.
+ (4 puntos)
+-->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ejercicio 1 - UF1841 Lenguajes de marcas" />
+    <meta name="author" content="Victor Visús" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ff1919" />
+    <title>Ejercicio 1 - UF1841 Lenguajes de marcas</title>
+    <link
+      rel="shortcut icon"
+      href="./img/HTML5_logo_and_wordmark.svg"
+      type="image/x-icon" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Ejercicio 1:</h1>
+    </header>
+
+    <main>
+      <form action="\">
+        <div role="group">
+          <label for="nombre_id">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            id="nombre_id"
+            placeholder="Nombre" />
+        </div>
+        <div role="group">
+          <label for="apellidos_id">Apellidos</label>
+          <input
+            type="text"
+            name="apellidos"
+            id="apellidos_id"
+            placeholder="Apellidos"
+            required />
+        </div>
+        <div role="group">
+          <label for="edad_id">Edad</label>
+          <input
+            type="number"
+            name="edad"
+            id="edad_id"
+            placeholder="Edad"
+            min="18"
+            value="25"
+            required />
+        </div>
+        <div role="group">
+          <label for="nif_id">NIF</label>
+          <input
+            type="text"
+            name="nif"
+            id="nif_id"
+            placeholder="NIF"
+            maxlength="10"
+            required />
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+  </body>
+</html>

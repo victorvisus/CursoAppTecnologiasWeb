@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ejercicio 3 - UF1841 Lenguajes de marcas" />
+    <meta name="author" content="Victor Visús" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ff1919" />
+    <title>Ejercicio 3 - UF1841 Lenguajes de marcas</title>
+    <link
+      rel="shortcut icon"
+      href="./img/HTML5_logo_and_wordmark.svg"
+      type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      table {
+        width: 50%;
+        margin: auto auto;
+      }
+      table thead tr {
+        background-color: rgba(128, 128, 128, 0.25);
+      }
+      .esp-row {
+        background-color: rgba(128, 128, 128, 0.5);
+      }
+
+      table tbody tr td:first-child {
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+      }
+      .contenedor {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="titulo">
+      <h1>Ejercicio 3:</h1>
+    </header>
+
+    <main id="main">
+      <article class="contenedor">
+        <header><h2>El desempleo en España</h2></header>
+        <section id="presentacion" class="contenido">
+          <p>
+            La siguiente tabla muestra la evolución del desempleo en España,
+            comparado con la media de los 27 países de la Unión Europea, Grecia,
+            que compite con España en ser el primero en esta vergonzosa
+            competición y Estados Unidos y Japón, dos de las primeras economías
+            mundiales.
+          </p>
+        </section>
+        <section id="datos" class="contenido">
+          <table id="tabla">
+            <thead>
+              <tr>
+                <th>País</th>
+                <th>2000</th>
+                <th>2001</th>
+                <th>2002</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>UE (27 países)</td>
+                <td>9.0</td>
+                <td>8.5</td>
+                <td>9.2</td>
+              </tr>
+              <tr class="esp-row">
+                <td>España</td>
+                <td>12.1</td>
+                <td>10.8</td>
+                <td>11.4</td>
+              </tr>
+              <tr>
+                <td>Grecia</td>
+                <td>11.5</td>
+                <td>10.5</td>
+                <td>10.1</td>
+              </tr>
+              <tr>
+                <td>Estados Unidos</td>
+                <td>4.2</td>
+                <td>4.9</td>
+                <td>5.7</td>
+              </tr>
+              <tr>
+                <td>Japón</td>
+                <td>4.5</td>
+                <td>5.1</td>
+                <td>5.3</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

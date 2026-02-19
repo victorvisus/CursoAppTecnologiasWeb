@@ -1,0 +1,158 @@
+/*******************************************************************************/
+/***********************************************************      GENERAL   ****/
+/*******************************************************************************/
+
+html {
+  font-family: var(--font-textos);
+  font-size: var(--font-size-standard);
+}
+body {
+  font-family: var(--font-textos) !important;
+  font-size: 1rem !important;
+  color: var(--color-parrafo);
+  font-weight: var(--weight-regular);
+}
+p,
+a,
+ul,
+li {
+  font-family: var(--font-textos);
+  font-weight: var(--weight-medium);
+  line-height: 1.4;
+  list-style: none;
+  font-size: 1rem;
+  /*font-size: 0.85rem;*/
+  letter-spacing: 0.04em;
+  transition: all var(--transition-vel) ease-in-out;
+}
+i {
+  font-size: 1rem;
+  font-family: "fontawesome";
+  font-style: normal;
+  margin: 0 10px 0 12px;
+  /*font-weight: 500 !important;*/
+  transition: all var(--transition-vel) ease-in-out;
+}
+a,
+p a {
+  color: var(--color-link);
+  font-weight: var(--weight-bold);
+}
+a i {
+  color: var(--color-link);
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover,
+a:hover i,
+a:hover {
+  color: var(--color-link-hover);
+}
+h1 {
+  font-family: var(--font-titulos) !important;
+  color: var(--color-primario);
+  /*font-size: 3rem !important;*/
+  font-size: var(--font-size-title-1) !important;
+  letter-spacing: 0.025em;
+  margin-top: var(--margin-min);
+  margin-bottom: var(--margin-min);
+  line-height: 1;
+  transition: color var(--transition-vel) ease-in-out;
+  font-weight: var(--weight-bold);
+  /*text-transform: uppercase;*/
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-alt);
+  color: var(--color-parrafo);
+  line-height: 1.2;
+  transition: color var(--transition-vel) ease-in-out;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  font-weight: var(--weight-semibold);
+}
+h2 {
+  font-family: var(--font-titulos);
+  font-weight: var(--weight-semibold);
+  /*font-size: 2.3rem;*/
+  font-size: var(--font-size-title-2);
+  color: var(--color-parrafo);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+h3 {
+  color: var(--color-primario);
+  font-size: 1.3rem;
+  line-height: 1.3;
+  font-weight: var(--weight-regular);
+}
+h4 {
+  font-size: 1.2rem;
+  font-family: var(--font-alt);
+}
+h5,
+h6 {
+  font-family: var(--font-alt);
+  font-size: 1.1rem !important;
+}
+h6 {
+  font-size: 1rem !important;
+  font-family: var(--font-textos);
+  font-style: oblique;
+  font-weight: var(--weight-regular);
+}
+ol,
+ul {
+  margin: 1.5em 0 1.5em 0em;
+}
+
+/***********************************************************    ./General   ****/
+
+/*******************************************************************************/
+/***********************************************************  FORMULARIOS   ****/
+/*******************************************************************************/
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  font-family: var(--font-textos) !important;
+  font-size: var(--font-form);
+  color: var(--color-parrafo) !important;
+
+  margin-bottom: 0px;
+  /*border-radius: 5px;*/
+  border: 1px solid var(--color-gris);
+  padding: 2px 10px !important;
+  /*box-shadow: var(--shadow-inset);*/
+  transition: all 0.4s ease-in-out !important;
+  -webkit-transition: all 0.4s ease-in-out !important;
+  -moz-transition: all 0.4s ease-in-out !important;
+  background-color: var(--color-background) !important;
+  width: 100%;
+  min-height: 40px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+select:focus,
+textarea:focus {
+  /*border: 1px solid var(--color-primario) !important;*/
+  border-color: var(--color-primario);
+  outline-style: none;
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+/***********************************************************./formularios   ****/
