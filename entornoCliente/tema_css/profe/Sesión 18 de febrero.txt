@@ -1,0 +1,19 @@
+Sesión 18 de febrero:
+Fuentes para iconos:
+Directamente desde la web de cdjn: https://cdnjs.com/libraries/font-awesome
+podemos seleccionar: 
+
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css 
+
+que se incluye en <head> como una hoja de estilo externa. Se observa el uso de la etiqueta <i> para la inclusión de estos iconos en HTML.
+
+En el CSS, local, se añade habitualmente bajo selectores de tipo clase (depende de CDJN) los que interesen (tras una investigación de cómo son).
+
+El sitio donde buscar los iconos sería (ejemplo para un icono de un árbol): https://fontawesome.com/icons/tree?f=classic&s=regular
+
+En ejercicio de alineación de texto, incluir en cada artículo una cabecera <h4> que esté siempre centrada, de color verde, y separada del contenido del párrafo 1.5 (interlineado)
+
+GUÍA DE SELECTORES CSS:
+https://www.arsys.es/blog/cuales-son-los-selectores-css
+Específicamente en HTML:
+Se propone y resuelve ejercicio con inclusión de etiquetas de video, audio y controles. Así como de <iframe> para la inclusión de sitios web externos. Se incide en el aspec-ratio como propiedad.

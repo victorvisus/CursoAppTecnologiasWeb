@@ -57,6 +57,7 @@ li[role="menuitem"] > a {
 }
 
 @media only screen and (min-width: 48rem) {
+  /* 768px */
   ul[role="menubar"] {
     flex-direction: row;
   }
@@ -65,6 +66,7 @@ li[role="menuitem"] > a {
   }
 }
 @media only screen and (min-width: 64rem) {
+  /* 1024px */
   li[role="menuitem"] {
     flex-basis: calc((100% / 4) * 1);
   }

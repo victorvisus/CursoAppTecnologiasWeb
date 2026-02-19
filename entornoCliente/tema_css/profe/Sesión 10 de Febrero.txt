@@ -1,0 +1,16 @@
+Sesión 10 de Febrero
+
+Códigos HTTP:
+https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Status
+https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP
+
+Guías exhaustivas de HTML:
+https://html.spec.whatwg.org/
+https://www.w3schools.com/html/default.asp
+
+Se presenta el protocolo http para el acceso a la web.
+Se proponen ejemplos para mostrar la diferencia entre web e internet, sincronía-asincronía, cliente-servidor
+Se explica e invita a ejemplificar la diferencia entre descripción, presentación e interacción.
+
+Se propone la creación de una primera página web con las secciones básicas: etiquetas <html>, <head>, <body>,
+<meta>, <p> y las que se autocierran <img> o <input>.

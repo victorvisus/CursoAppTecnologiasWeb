@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+body {
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+  font-family: 'Roboto', sans-serif;
+  /*font-family: sans-serif;*/
+  padding: 20px;
+}
+
+
+
+/* Puede animarse suavemente. Cualquier valor entre 100 y 900 para font-weight */
+h1 {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 300;
+  transition: font-weight 0.8s ease-out;
+}
+/* Cualquier valor entre 100 y 900 para font-weight*/
+h1:hover {
+  font-weight: 700;
+  transition: font-weight 0.8s;
+}
+
+h2 {
+  font-size: 30px;
+}
+h1, h2 {
+  /*font-family: Impact, serif;*/
+  font-family: 'Playfair Display', serif;
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+.menu {
+  width: 80%;
+  background-color: burlywood;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  max-width: 500px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -25px;
+}
+
+hr {
+  height: 2px;
+  background-color: brown;
+  border-color: brown;
+}
+
+.bottom-line {
+  margin-top: 25px;
+}
+
+/* /*Estos 5 selectores se pueden
+reemplzar por la administración de la
+clase item, que permite justificar los
+contenedores que tenga*/ /*
+.item p {
+  display: inline-block;
+}
+
+.flavor, .dessert {
+  text-align: left;
+  width: 75%;
+}
+
+.price {
+  text-align: right;
+  width: 25%;
+}
+*/
+.item {
+    display: flex ;
+    justify-content: space-between;
+}
+
+.established {
+  font-style: italic;
+}
+
+/* FOOTER */
+
+footer {
+  font-size: 14px;
+}
+
+.address {
+  margin-bottom: 5px;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: brown;
+}
+
+a:active {
+  color: rgb(149, 20, 145);
+}

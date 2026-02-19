@@ -1,0 +1,10 @@
+Sesión 12 de febrero
+
+Se procede a explicar los tipos de listas: <ul> y <ol>, no ordenadas y ordenadas, respectivamente. Se propone y sigue la realización de un ejercicio 
+de lista ordenada/desordenada con diferentes opciones (incluyendo ordenaciones indexadas para la introducción de unos primeros conceptos de CSS).
+
+Se propone y monitorizan ejercicios para la prácticas de atributo href y src en contexto de rutas relativas y absolutas.
+
+Se diferencia entre acceso a la página web a través de protocolo interno usando el navegador como explorador de archivos, o bien mediante localhost.
+
+Se introducen los conceptos de etiquetas <div> y <span> y se realizan ejercicios relativos a su uso y diferencias.

@@ -1,0 +1,3 @@
+Serie guiada a la codificación de proyectos de diversa dificultad en HTML y CSS, de FreeCodeCamp:
+
+https://www.freecodecamp.org/learn/2022/responsive-web-design/

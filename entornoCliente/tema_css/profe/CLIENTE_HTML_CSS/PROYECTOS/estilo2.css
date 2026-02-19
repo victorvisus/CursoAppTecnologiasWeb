@@ -1,0 +1,140 @@
+/*
+LA RAÍZ:
+html {
+    font-size: 16px;
+}*/
+
+body {
+    font-size: 16px;
+    /* Tamaño base recomendado */
+}
+
+p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: #1d0897
+    /*Tamaño igual al elemento padre */
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    /* 2 veces el tamaño de la raíz */
+    font-weight: bold;
+}
+
+code {
+    font-family: "Courier New", monospace;
+}
+
+section {
+    margin: 10%;
+}
+
+/*SE ENTIENDE QUE EXISTE UNA class LLAMADA nota-pequeña EN EL HTML*/
+.nota-pequeña {
+    font-size: 0.8em;
+    /*80% del tamaño del elemento padre, 
+    que equivale a 0.8em */
+    font-weight: bold;
+    margin: 20px;
+}
+
+.destacado {
+    font-weight: 600;
+}
+
+.ligero {
+    font-weight: 300;
+}
+
+/*clases para "capitalización" y cursiva*/
+.cita {
+    font-style: italic;
+}
+
+.normal {
+    font-style: normal;
+}
+
+.subtitulo {
+    text-transform: capitalize;
+    /* Primera Letra En Mayúculas */
+}
+
+.titulo {
+    text-transform: uppercase;
+    /* TODO EN MAYÚSCULAS */
+}
+
+/* todo en minúsculas */
+.texto-minusculas {
+    text-transform: lowercase;
+}
+
+p {
+
+    /* Equivale a: */
+    font-style: italic;
+    font-variant: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: sans-serif;
+
+    /* Versión abreviada: */
+    font: italic bold 16px/1.5 Courier;
+
+}
+
+h1 {
+    font: 32px Georgia, sans-serif;
+    /* Solo tamano y familia */
+}
+
+/* Rojo */
+.destacado {
+    color: #e63946;
+}
+
+/* Negro con transparencia */
+.sutil {
+    color: rgba (0, 0, 0, 0.6);
+}
+
+/*los hipervínculos no tendrán subrayado*/
+a {
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: #1d0897
+}
+
+.subrayado {
+    text-decoration: underline;
+}
+
+.tachado {
+    text-decoration: line-through;
+}
+/*tipo estilo y color*/
+.decoracion-completa {
+    text-decoration: underline 0.2em dotted red;
+}
+/*ejemplo de selector descendente: sólo afecta
+a los span dentro de h3*/
+h3 span{
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: underline 0.1em;
+    text-transform: capitalize;
+    color:#e63946;
+}
+
+#comentariosCSS{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#comentariosCSS_fundamentos{
+    font-family:Arial, Helvetica, sans-serif;
+}

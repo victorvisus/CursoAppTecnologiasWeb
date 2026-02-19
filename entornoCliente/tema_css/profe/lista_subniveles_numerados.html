@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 1. Reiniciar el contador en cada lista ordenada */
+        ol {
+            counter-reset: item;
+            list-style-type: none;
+            /* Elimina la numeración predeterminada */
+            padding-left: 20px;
+        }
+
+        /* 2. Incrementar el contador en cada elemento de lista */
+        li {
+            display: block;
+            counter-increment: item;
+        }
+
+        /* 3. Añadir la numeración jerárquica antes de cada elemento */
+        li::before {
+            content: counters(item, ".") ". ";
+            /* Genera 1.1, 1.1.1, etc. */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ol>
+        <li>Elemento principal 1
+            <ol>
+                <li>Sub-elemento 1.1</li>
+                <li>Sub-elemento 1.2
+                    <ol>
+                        <li>Sub-sub-elemento 1.2.1</li>
+                        <li>Sub-sub-elemento 1.2.2</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>Elemento principal 2</li>
+    </ol>
+
+</body>
+
+</html>

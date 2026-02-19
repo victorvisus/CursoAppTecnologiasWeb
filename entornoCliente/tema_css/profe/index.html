@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"> <!--para codificación de la página-->
+    <meta name="viewport" content="width=device-width">
+    <title>Parte Cliente</title>
+    <link type="image/jpg" href="img/imagenWEB.jpg" rel="icon">
+    <meta name="description" content="Curso de la parte cliente del certificado de profesional">
+    <meta property="og:image" content="img/imagenWEB.jpg"> <!--Open Graph para redes sociales-->
+    <!-- a continuación un elemento de CSS-->
+    <style>
+        /*        body {
+            background: rgb(23, 176, 30);
+        }
+  aside {
+            width: 40%;
+            padding-left: 15px;
+            margin-left: 15px;
+            float: left;
+            font-style: italic;
+            background-color: lightgray;
+        }
+*/
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>CURSO Y CONCEPTOS DE LA PARTE CLIENTE: HTML</h1>
+        <!-- intrudicimos un "índice" de navegación-->
+        <nav>
+            <!--A continuación los elementos de ancla o 
+            hipervínculos al interior del documento a otros documentos
+            exteriores, incluso en otros servidores-->
+            <a href="#html_basico">HTML básico y conceptual</a>
+            <a href="#cuestiones_a_u">Cuestiones de accesibilidad y usabilidad</a>
+            <a href="https://www.w3schools.com/html/" target="_blank" rel="noreferrer">W3School</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>José Luis, el docente del curso</h2>
+        <p>Este es el primer día del curso.
+            Se ve la <strong>parte cliente</strong> y cómo se interactúa en ella.
+            A continuación otro párrafo:
+        </p>
+        <p>Este es el primer día del curso.
+            Se puede usar un editor de texto
+            y de desarrollo integrado como VS Code.
+        </p>
+        <h2>Algunos aspectos de la sesión:</h2>
+        <ul>
+            <li class="items-de-clase">Agregar extensiones como Live Preview</li>
+            <li class="items-de-clase"><s><strong>Aprender etiquetas básicas</strong></s></li>
+            <li class="items-de-clase">Distinguir entre etiquetas y elementos</li>
+        </ul>
+
+        <img id="imagen01" height="100" width="100" title="imagen de la web" alt="Imagen de un esquema web"
+            src="img/imagenWEB.jpg">
+        <h3>ESPECIFICACIÓN DEL CONTENIDO: </h3>
+        <aside>
+            <ol>
+                <li>HTML básico y conceptual</li>
+                <li>Cuestiones de accesibilidad y usabilidad</li>
+                <li>Introducción al uso de estilos</li>
+                <li>Ordenación de elementos de modo jeráquico</li>
+            </ol>
+        </aside>
+
+        <span role="button">
+            Siguiente página
+        </span><!--a cambiar por un div o span con role-->
+
+
+        <section>
+            <article>
+                <header>
+                    <h4 id="html_basico">
+                        HTML básico y conceptual
+                    </h4>
+                    <p>
+                        Se trata no sólo de dar estructura aparente al documento,
+                        sino de organizarlo internamente con una lógica que permita
+                        su mantenimiento (poscionamiento, SEO, correcciones evolutivas,
+                        o escalabilidad) a largo plazo.
+                    </p>
+                </header>
+                <footer><small>Hecho con HTML 5</small></footer>
+            </article>
+            <article>
+                <header>
+                    <h4 id="cuestiones_a_u">
+                        Cuestiones de accesibilidad y usabilidad
+                    </h4>
+                    <p>
+                        Para el usuario es esencial una experiencia satisfactoria
+                        de uso y acceso al contenido. En desarrollo se ha pensado
+                        e implementado la forma adecuada para este fin: estructuración
+                        del documento, jerarquía entre contenidos, uso de elementos que
+                        ordenan lo expuesto, etc.
+                    </p>
+                </header>
+            </article>
+            <article>
+                <header>
+                    <h4>
+                        Introducción al uso de estilos
+                    </h4>
+                    <p>
+                        Por ejemplo a un texto como LOREM IPSUM:
+                        <b>
+                            <em>Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                                Quisque faucibus ex sapien vitae pellentesque sem placerat.
+                                In id cursus mi pretium tellus duis convallis.
+                                Tempus leo eu aenean sed diam urna tempor.
+                            </em>
+                        </b>
+                        puede tener un estilo en cursiva, y con letra gótica, un color gris, ...
+                    </p>
+                </header>
+            </article>
+            <article>
+                <header>
+                    <h4>
+                        Ordenación de elementos de modo jeráquico
+                    </h4>
+                    <p>
+                        El orden de importancia de los elementos debe corresponderse con:
+                        indentaciones correctas en codificación, visión de la empresa hacia
+                        sus clientes o usuarios, facilidad para la comprensión del lector
+                        promedio, etc.
+                    </p>
+                </header>
+            </article>
+        </section>
+        <footer>
+            <a href="mailto:abced@gmail.com">correo electrónico</a>
+            <a href="tel:+34878777665">Contactar por teléfono</a>
+            <a href="Whatsapp:\\send?text=Hola Profe">contactar por Whatsapp</a>
+
+        </footer>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+Sesión 13 de febrero
+
+Se explican las tablas en HTML, sus usos y limitaciones. Se proponen ejercicios de ajuste de texto en tablas, distribución de 
+celdas, etiquetas y atributos relacionados. Se incide en la evitación de atributos obsoletos como valign, width, align, etc, proponiendo alternativas que se implementan en la propia sesión como <colgroup> y <col>.
+
+Se da una primera introducción a la inclusión de formularios:
+<form> con sus atributos de envío de post o get. Elementos que pueden aparecer en este contexto input y label. Modificadores de acceso,
+y validación nativa sobre tipos email, date-time, menús desplegables, etc. 
+Se propone la realización de un formulario con diversidad de input para practicar lo propuesto.
+
+Se introduce el uso de expresiones regulares y su apoyo en https://regex101.com
+Se profundiza en el uso de Elements e identificación de los diferentes elementos y atributos en DevTools.
+
+Se incide en la posibilidad de usar controles nativos en HTML para la gestión de fechas, campos requeridos o formatos de campos,
+antes que hacer uso de JavaScript, siempre que eso sea posible.

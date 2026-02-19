@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Ordenada con Alineación</title>
+  <style>
+    ol {
+      list-style: none;        /* Quita los números automáticos */
+      padding: 0;
+      counter-reset: item;     /* Reinicia contador personalizado */
+      width: 400px;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+      counter-increment: item; /* Incrementa contador */
+    }
+
+    .frase {
+      flex: 1;
+      text-align: left;
+    }
+
+    .numero::before {
+      content: counter(item); /* Muestra número de lista */
+    }
+
+    .valor {
+      flex: 0 0 60px;
+      text-align: right;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <ol>
+    <li>
+      <span class="frase">Producto A</span>
+      <span class="valor">15</span>
+    </li>
+    <li>
+      <span class="frase">Artículo muy largo</span>
+      <span class="valor">250</span>
+    </li>
+    <li>
+      <span class="frase">Corto</span>
+      <span class="valor">8</span>
+    </li>
+  </ol>
+</body>
+</html>   

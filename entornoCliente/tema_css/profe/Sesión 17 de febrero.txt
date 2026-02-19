@@ -1,0 +1,11 @@
+Sesión 17 de febrero
+
+Sobre documentos HTML previamente formados se aplican nuevos coceptos HTML:
+Se presentan ejemplos de uso para la inclusión de propiedades de fuente como la familia de tipografía. 
+Se explican y ejemplifican propiedades relativas a margin y padding.
+Se acompaña de ejercicio práctico de diseño de un menún de cafetería, basándose en la codificación
+guiada de FreeCodeCamp
+
+Serie guiada a la codificación de proyectos de diversa dificultad en HTML y CSS, de FreeCodeCamp:
+
+https://www.freecodecamp.org/learn/2022/responsive-web-design/

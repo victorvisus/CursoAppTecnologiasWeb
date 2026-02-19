@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_formulario.css">
+    <title>ejemplo de formulario</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h2>Formulario Contacto</h2>
+            <form action="/" method="post">
+                <fieldset>
+                    <legend>Información personkal</legend>
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Escribir nombre">
+                    <label for="email">E-mail: </label>
+                    <input type="email" id="email" name="email" placeholder="aaaa@bbbb.ccc">
+                </fieldset>
+                <fieldset>
+                    <legend>Más información</legend>
+                    <label style="display:block;" for="telefono">Teléfono <span sytle="font-size: 50%;">(exactamente 6
+                            dígitos):</span> </label>
+                    <input type="tel" pattern="[0-9]{9}" id="telefono" name="telefono" placeholder="123456789">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Otros: </legend>
+                    <!--label style="display:block;" for="razon"-->
+                    <datalist id="razon" name="razon">
+                        <option>Más información</option>
+                        <option>FAQ</option>
+                        <option>Alternativa de contacto</option>
+                        <option>Quejas</option>
+                    </datalist>
+                    <label style="display:block;">Razón de contacto:
+                        <input list="razon" name="razon">
+                    </label>
+                </fieldset>
+                <details>
+                    <summary>Estudios</summary>
+                    <p>Nivel de estudios que tienes hasta ahora
+                        y nivel de estudios que quieres alcanzar
+                    </p>
+                </details>
+                <details>
+                    <summary>Sitios web</summary>
+                    <p>Sitios web favoritos que se parecen
+                        a los profesionales que te servirán como modelo.
+                        Por ejemplo:
+                    </p>
+                    <a href="https://www.w3schools.com/html/">ejemplo de sitio.</a>
+                </details>
+
+
+
+                <input type="submit" value="Enviar formulario">
+            </form>
+        </section>
+        <video src="https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4" controls></video>
+        <img style="width: 100%; aspect-ratio: 256/145;" src="img/Homepage-Card-Model-Y-Performance-Desktop-EU.avif">
+        <iframe style="width: 100%; aspect-ratio: 16/9;" width="560" height="315" src="https://www.youtube.com/embed/3nYLTiY5skU?si=jCMsuFv4-Cy2jVTY"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </main>
+
+</body>
+
+</html>

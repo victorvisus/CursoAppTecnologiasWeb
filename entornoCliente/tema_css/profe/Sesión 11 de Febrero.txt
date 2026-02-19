@@ -1,0 +1,18 @@
+
+Para la etiqueta <meta> como atributos para experiencia rica en Redes Sociales (Facebook):
+https://ogp.me/
+
+Roles para semántica de elementos tipo <div> o <span>:
+https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles
+
+Se procede a usar con ejemplos prácticos DevTools o el aplicativo de Navegador: "Herramientas para desarrolladores"
+Se realiza ejercicio de monitorización de tiempo de carga de elementos de navegación, como páginas web o scripts y 
+medición de su rendimiento desde el punto de vista de Performance y Network. Se hace mención a herramientas de previsualización en
+dispositivos móviles. Se inspeccionan someramente secciones como Security también en DevTools, de la cual se profundiza en el 
+uso de Elements.
+
+Se completa la realización de una página web patrón con tags como <section>, <article>, <footer>, <main> o <a>, con mención especial
+a la implementación de hipervínculos internos y externos y su modificación mediante atributos convenientes. Breve introducción a Roles WAI-ARIA.
+
+Se realiza ejercicio para cambiar vista sobre lo creado desde Accesibility a Dom Tree View para poder acceder a la
+semántica del sitio patrón de cara a corregir y perfeccionar la funcionalidad del mismo.
