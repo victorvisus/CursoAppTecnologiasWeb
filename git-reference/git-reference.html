@@ -1,198 +1,417 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guía de Referencia Git</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet" />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'negro-carbon': '#0E0E11',
-                        'gris-antracita': '#1C1E22',
-                        'gris-acero': '#3A3D42',
-                        'gris-tecnico': '#B5B8BE',
-                        'verde-criptico': '#3AFF7A',
-                        'blanco-tecnico': '#F2F3F5',
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'source': ['Source Sans 3', 'sans-serif'],
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "negro-carbon": "#0E0E11",
+              "gris-antracita": "#1C1E22",
+              "gris-acero": "#3A3D42",
+              "gris-tecnico": "#B5B8BE",
+              "verde-criptico": "#3AFF7A",
+              "blanco-tecnico": "#F2F3F5",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              source: ["Source Sans 3", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
     <style>
-        h1, h2, h3, h4 {
-            font-family: 'Inter', sans-serif;
-        }
-        body, p, h5, h6, code, pre {
-            font-family: 'Source Sans 3', sans-serif;
-        }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Inter", sans-serif;
+      }
+      body,
+      p,
+      h5,
+      h6,
+      code,
+      pre {
+        font-family: "Source Sans 3", sans-serif;
+      }
     </style>
-</head>
-<body class="bg-negro-carbon text-blanco-tecnico min-h-screen">
+  </head>
+  <body class="bg-negro-carbon text-blanco-tecnico min-h-screen">
     <!-- Header -->
     <header class="bg-gris-antracita border-b-2 border-verde-criptico py-8">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl font-bold text-verde-criptico mb-2">Guía de Referencia Git</h1>
-            <p class="text-gris-tecnico font-source">Comandos esenciales para tu flujo de trabajo diario</p>
-        </div>
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-verde-criptico mb-2">
+          Guía de Referencia Git
+        </h1>
+        <p class="text-gris-tecnico font-source">
+          Comandos esenciales para tu flujo de trabajo diario
+        </p>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
-        
-        <!-- El Ciclo Diario -->
-        <section class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
-            <h2 class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
-                El Ciclo Diario <span class="text-gris-tecnico text-xl">(Guardar cambios)</span>
-            </h2>
-            
-            <div class="space-y-4">
-                <div class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
-                    <code class="text-verde-criptico font-semibold">git status</code>
-                    <p class="text-blanco-tecnico mt-2">Te dice qué archivos han cambiado y en qué rama estás</p>
-                </div>
+      <!-- Configurar Git globalmente -->
+      <section
+        class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
+          Configurar Git globalmente
+        </h2>
+        <div class="space-y-4">
+          <p>
+            Para configurar Git globalmente, ejecuta los siguientes comandos en
+            la terminal:
+          </p>
+          <pre><code>git config --global user.name "Tu nombre"</code></pre>
+          <p>Y luego:</p>
+          <pre><code>git config --global user.email "TuCorreo@ejemplo.com"</code></pre>
+        </div>
+      </section>
 
-                <div class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
-                    <code class="text-verde-criptico font-semibold">git add .</code>
-                    <p class="text-blanco-tecnico mt-2">Prepara todos los cambios para el commit</p>
-                </div>
+      <!-- Configurar Git en la carpeta de trabajo -->
+      <section
+        class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
+          Configurar Git en la carpeta de trabajo
+        </h2>
+        <div class="space-y-4">
+          <p>
+            Para configurar Git en la carpeta de trabajo, ejecuta los siguientes
+            comandos en la terminal dentro de la carpeta:
+          </p>
+          <pre><code>git config user.name "Tu nombre"</code></pre>
+          <p>Y luego:</p>
+          <pre><code>git config user.email "TuCorreo@ejemplo.com"</code></pre>
+        </div>
+      </section>
 
-                <div class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
-                    <code class="text-verde-criptico font-semibold">git add &lt;archivo&gt;</code>
-                    <p class="text-blanco-tecnico mt-2">Prepara solo un archivo específico</p>
-                </div>
+      <!-- Comprobar las configuraciones -->
+      <section
+        class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
+          Comprobar las configuraciones
+        </h2>
+        <div class="space-y-4">
+          <p>
+            Para comprobar las configuraciones de Git tanto global como local,
+            ejecuta los siguientes comandos en la terminal:
+          </p>
+          <pre><code>git config --global --list</code></pre>
+          <p>Y luego:</p>
+          <pre><code>git config --local --list</code></pre>
+        </div>
+      </section>
 
-                <div class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
-                    <code class="text-verde-criptico font-semibold">git commit -m "mensaje"</code>
-                    <p class="text-blanco-tecnico mt-2">Crea una "foto" de tus cambios con una descripción</p>
-                </div>
-
-                <div class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
-                    <code class="text-verde-criptico font-semibold">git push origin &lt;rama&gt;</code>
-                    <p class="text-blanco-tecnico mt-2">Sube tus commits al repositorio de GitHub</p>
-                </div>
-
-                <div class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
-                    <code class="text-verde-criptico font-semibold">git pull origin &lt;rama&gt;</code>
-                    <p class="text-blanco-tecnico mt-2">Trae los cambios de GitHub a tu PC (útil si trabajas en varios PCs)</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gestión de Ramas -->
-        <section class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
-            <h2 class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
-                Gestión de Ramas <span class="text-gris-tecnico text-xl">(Ideal para tus módulos)</span>
-            </h2>
-            
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">Crear y saltar a una rama nueva:</h3>
-                    <div class="bg-gris-acero/30 rounded-md p-4">
-                        <code class="text-verde-criptico font-semibold">git checkout -b nombre-rama</code>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">Listar todas las ramas:</h3>
-                    <div class="bg-gris-acero/30 rounded-md p-4">
-                        <code class="text-verde-criptico font-semibold">git branch</code>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">Cambiar de una rama a otra:</h3>
-                    <div class="bg-gris-acero/30 rounded-md p-4">
-                        <code class="text-verde-criptico font-semibold">git checkout nombre-rama</code>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">Fusionar una rama en la que estás (Merge):</h3>
-                    <div class="bg-gris-acero/30 rounded-md p-4">
-                        <code class="text-verde-criptico font-semibold">git merge rama-que-quieres-traer</code>
-                        <p class="text-gris-tecnico mt-2 text-sm">Ej: estando en main, haces <code class="text-verde-criptico">git merge lenguaje-de-marcas</code></p>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">Borrar una rama local:</h3>
-                    <div class="bg-gris-acero/30 rounded-md p-4">
-                        <code class="text-verde-criptico font-semibold">git branch -d nombre-rama</code>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Consultas y Socorro -->
-        <section class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
-            <h2 class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
-                Consultas y "Socorro"
-            </h2>
-            
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">Ver el historial de cambios:</h3>
-                    <div class="bg-gris-acero/30 rounded-md p-4">
-                        <code class="text-verde-criptico font-semibold">git log --oneline</code>
-                        <p class="text-blanco-tecnico mt-2">Muestra los commits de forma resumida</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">Deshacer cambios locales (sin commit):</h3>
-                    <div class="bg-gris-acero/30 rounded-md p-4">
-                        <code class="text-verde-criptico font-semibold">git restore &lt;archivo&gt;</code>
-                        <p class="text-blanco-tecnico mt-2">Vuelve al estado del último commit</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">Corregir el último mensaje de commit:</h3>
-                    <div class="bg-gris-acero/30 rounded-md p-4">
-                        <code class="text-verde-criptico font-semibold">git commit --amend -m "Nuevo mensaje"</code>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Truco para tu caso -->
-        <section class="mb-16 bg-gradient-to-br from-gris-antracita to-gris-acero rounded-lg p-8 border-2 border-verde-criptico">
-            <h2 class="text-3xl font-bold text-verde-criptico mb-6 border-b border-verde-criptico/50 pb-3">
-                Truco para tu caso <span class="text-gris-tecnico text-xl">(Sincronización)</span>
-            </h2>
-            
-            <p class="text-blanco-tecnico mb-6 leading-relaxed">
-                Como tienes el repo en una ruta de Windows específica, a veces los permisos o archivos ocultos dan guerra. 
-                Si alguna vez notas que el <code class="text-verde-criptico bg-gris-acero px-2 py-1 rounded">git status</code> te muestra archivos que deberían estar ignorados 
-                (por el <code class="text-verde-criptico bg-gris-acero px-2 py-1 rounded">.gitignore</code>), usa este "reseteo" del índice:
+      <!-- Iniciar un repositorio en local -->
+      <section
+        class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
+          Iniciar un repositorio en local
+        </h2>
+        <div class="space-y-4">
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold">git init</code>
+            <p class="text-gris-tecnico text-sm mt-2">
+              Inicia un nuevo repositorio en el directorio actual
             </p>
+          </div>
+        </div>
+      </section>
 
-            <div class="bg-negro-carbon rounded-md p-6 border border-gris-acero">
-                <pre class="text-verde-criptico font-semibold space-y-2">
+      <!-- Crear un repositorio en GitHub -->
+      <section
+        class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
+          Crear un repositorio en GitHub
+        </h2>
+        <div class="space-y-4">
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold"
+              >Crear un nuevo repositorio en GitHub</code
+            >
+            <p class="text-gris-tecnico text-sm mt-2">
+              Ve a la página de GitHub, crea un nuevo repositorio vacío
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Unificar el repositorio local y el remoto en GitHub -->
+      <section
+        class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
+          Unificar el repositorio local y el remoto en GitHub
+        </h2>
+        <div class="space-y-4">
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold"
+              >git remote add origin
+              https://github.com/tu-usuario/tu-repositorio.git</code
+            >
+            <p class="text-gris-tecnico text-sm mt-2">
+              Agrega el repositorio remoto creado en GitHub
+            </p>
+          </div>
+
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold"
+              >git push -u origin master</code
+            >
+            <p class="text-gris-tecnico text-sm mt-2">
+              Sube tu repositorio local a GitHub
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- El Ciclo Diario -->
+      <section
+        class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
+          El Ciclo Diario
+          <span class="text-gris-tecnico text-xl">(Guardar cambios)</span>
+        </h2>
+
+        <div class="space-y-4">
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold">git status</code>
+            <p class="text-blanco-tecnico mt-2">
+              Te dice qué archivos han cambiado y en qué rama estás
+            </p>
+          </div>
+
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold">git add .</code>
+            <p class="text-blanco-tecnico mt-2">
+              Prepara todos los cambios para el commit
+            </p>
+          </div>
+
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold"
+              >git add &lt;archivo&gt;</code
+            >
+            <p class="text-blanco-tecnico mt-2">
+              Prepara solo un archivo específico
+            </p>
+          </div>
+
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold"
+              >git commit -m "mensaje"</code
+            >
+            <p class="text-blanco-tecnico mt-2">
+              Crea una "foto" de tus cambios con una descripción
+            </p>
+          </div>
+
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold"
+              >git push origin &lt;rama&gt;</code
+            >
+            <p class="text-blanco-tecnico mt-2">
+              Sube tus commits al repositorio de GitHub
+            </p>
+          </div>
+
+          <div
+            class="bg-gris-acero/30 rounded-md p-4 hover:bg-gris-acero/50 transition-colors">
+            <code class="text-verde-criptico font-semibold"
+              >git pull origin &lt;rama&gt;</code
+            >
+            <p class="text-blanco-tecnico mt-2">
+              Trae los cambios de GitHub a tu PC (útil si trabajas en varios
+              PCs)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gestión de Ramas -->
+      <section
+        class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
+          Gestión de Ramas
+          <span class="text-gris-tecnico text-xl"
+            >(Ideal para tus módulos)</span
+          >
+        </h2>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">
+              Crear y saltar a una rama nueva:
+            </h3>
+            <div class="bg-gris-acero/30 rounded-md p-4">
+              <code class="text-verde-criptico font-semibold"
+                >git checkout -b nombre-rama</code
+              >
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">
+              Listar todas las ramas:
+            </h3>
+            <div class="bg-gris-acero/30 rounded-md p-4">
+              <code class="text-verde-criptico font-semibold">git branch</code>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">
+              Cambiar de una rama a otra:
+            </h3>
+            <div class="bg-gris-acero/30 rounded-md p-4">
+              <code class="text-verde-criptico font-semibold"
+                >git checkout nombre-rama</code
+              >
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">
+              Fusionar una rama en la que estás (Merge):
+            </h3>
+            <div class="bg-gris-acero/30 rounded-md p-4">
+              <code class="text-verde-criptico font-semibold"
+                >git merge rama-que-quieres-traer</code
+              >
+              <p class="text-gris-tecnico mt-2 text-sm">
+                Ej: estando en main, haces
+                <code class="text-verde-criptico"
+                  >git merge lenguaje-de-marcas</code
+                >
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">
+              Borrar una rama local:
+            </h3>
+            <div class="bg-gris-acero/30 rounded-md p-4">
+              <code class="text-verde-criptico font-semibold"
+                >git branch -d nombre-rama</code
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Consultas y Socorro -->
+      <section
+        class="mb-16 bg-gris-antracita rounded-lg p-8 border border-gris-acero hover:border-verde-criptico transition-all duration-300">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-gris-acero pb-3">
+          Consultas y "Socorro"
+        </h2>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">
+              Ver el historial de cambios:
+            </h3>
+            <div class="bg-gris-acero/30 rounded-md p-4">
+              <code class="text-verde-criptico font-semibold"
+                >git log --oneline</code
+              >
+              <p class="text-blanco-tecnico mt-2">
+                Muestra los commits de forma resumida
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">
+              Deshacer cambios locales (sin commit):
+            </h3>
+            <div class="bg-gris-acero/30 rounded-md p-4">
+              <code class="text-verde-criptico font-semibold"
+                >git restore &lt;archivo&gt;</code
+              >
+              <p class="text-blanco-tecnico mt-2">
+                Vuelve al estado del último commit
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-blanco-tecnico mb-3">
+              Corregir el último mensaje de commit:
+            </h3>
+            <div class="bg-gris-acero/30 rounded-md p-4">
+              <code class="text-verde-criptico font-semibold"
+                >git commit --amend -m "Nuevo mensaje"</code
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Truco para tu caso -->
+      <section
+        class="mb-16 bg-gradient-to-br from-gris-antracita to-gris-acero rounded-lg p-8 border-2 border-verde-criptico">
+        <h2
+          class="text-3xl font-bold text-verde-criptico mb-6 border-b border-verde-criptico/50 pb-3">
+          Truco para tu caso
+          <span class="text-gris-tecnico text-xl">(Sincronización)</span>
+        </h2>
+
+        <p class="text-blanco-tecnico mb-6 leading-relaxed">
+          Como tienes el repo en una ruta de Windows específica, a veces los
+          permisos o archivos ocultos dan guerra. Si alguna vez notas que el
+          <code class="text-verde-criptico bg-gris-acero px-2 py-1 rounded"
+            >git status</code
+          >
+          te muestra archivos que deberían estar ignorados (por el
+          <code class="text-verde-criptico bg-gris-acero px-2 py-1 rounded"
+            >.gitignore</code
+          >), usa este "reseteo" del índice:
+        </p>
+
+        <div class="bg-negro-carbon rounded-md p-6 border border-gris-acero">
+          <pre class="text-verde-criptico font-semibold space-y-2">
 <code>git rm -r --cached .</code>
 <code>git add .</code>
 <code>git commit -m "Limpieza de archivos ignorados"</code></pre>
-            </div>
-        </section>
-
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="bg-gris-antracita border-t border-gris-acero py-6 mt-12">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-gris-tecnico">Guía de referencia rápida · Git</p>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-gris-tecnico">Guía de referencia rápida · Git</p>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

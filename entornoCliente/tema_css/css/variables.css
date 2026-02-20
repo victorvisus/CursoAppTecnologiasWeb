@@ -15,6 +15,7 @@
   --color-blanco: var(--color-blanco-tecnico);
   --color-gris: var(--color-gris-tecnico);
   --color-accent: #f0544f;
+
   --color-parrafo: var(--color-negro);
   --color-parrafo-blanco: var(--color-blanco);
   --color-link: var(--color-primario);
@@ -25,11 +26,14 @@
   --boton-std-hover-transparent: transparent;
   --boton-txt: var(--color-blanco);
   --boton-txt-hover: var(--boton-std);
-  --color-background: var(--color-blanco);
-  --font-titulos: "Exo 2", sans-serif;
-  --font-textos: "Exo 2", sans-serif;
+
+  --color-background: var(--color-blanco-tecnico);
+
+  --font-titulos: var(--font-inter);
+  --font-textos: var(--font-source);
   --font-nav: var(--font-textos);
   --font-alt: var(--font-textos);
+
   --weight-thin: 100;
   --weight-extralight: 200;
   --weight-light: 300;
@@ -64,5 +68,5 @@
   --shadow-std-hover: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
   --shadow-inset: inset 3px 4px 8px 0px rgba(17, 17, 17, 0.2);
   --transition-vel: 0.25s;
-  --radius: 20px;
+  --radius: 1em;
 }

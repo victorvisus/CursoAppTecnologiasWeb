@@ -1,0 +1,95 @@
+/* Previamente al documento html la box-sizing a border-box en general. */
+* {
+  box-sizing: border-box;
+}
+/***********************************************************/
+body {
+  background-color: var(--color-blanco-tecnico);
+}
+main {
+  background-color: var(--color-gris-tecnico);
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: max-content;
+}
+article {
+  grid-column: 1;
+}
+article.ejercicio {
+  grid-column: 2;
+}
+div.contenedor {
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 5px solid var(--color-primario);
+}
+div.contenedor.uno {
+  box-sizing: content-box;
+  background-color: var(--color-negro);
+  p {
+    color: var(--color-blanco);
+  }
+}
+
+div.contenedor.dos {
+  box-sizing: border-box;
+  background-color: var(--color-gris-acero);
+  p {
+    color: var(--color-blanco);
+  }
+}
+/* border redondeados y que sean visibles, además de tener padding,
+   tener en cuenta que contenido+padding+border = dimension total del elemento,
+    sin en margin */
+.ejercicio div.contenedor {
+  box-sizing: content-box;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-std);
+  background-color: var(--color-background);
+  height: auto;
+}
+/*
+Tarea: Crear un tabla de 2x2.
+En cada celda mostrará o bien un boton con bordes redondeas
+o bien cada celda que muestre los bordes reedondeos
+Se espera el siguiente comportamiento:
+Inicial mente todas las celdas con fondo blanco,
+y una vez que se hace click en el interior que cada una cambie a un color diferente
+*/
+.ejercicio .datos-super {
+  width: 90%;
+  margin: 2em auto;
+}
+.ejercicio .datos-super td {
+  border: 1px solid var(--color-gris);
+  box-shadow: var(--shadow-std);
+  background-color: var(--color-background);
+  text-align: center;
+  padding: 0.3em;
+  margin: 0.3em;
+}
+.ejercicio .datos-super.celdas tbody td {
+  border-radius: var(--radius);
+}
+.ejercicio .datos-super.botones button {
+  border-radius: var(--radius);
+}
+.ejercicio .datos-super.celdas td {
+  cursor: pointer;
+}
+.ejercicio .datos-super.celdas tbody tr:first-child td:first-child:active {
+  background-color: red;
+}
+.ejercicio .datos-super.celdas tbody tr:first-child td:last-child:active {
+  background-color: green;
+}
+.ejercicio .datos-super.celdas tbody tr:nth-child(2) td:first-child:active {
+  background-color: blue;
+}
+.ejercicio .datos-super.celdas tbody tr:nth-child(2) td:last-child:active {
+  background-color: yellow;
+}
