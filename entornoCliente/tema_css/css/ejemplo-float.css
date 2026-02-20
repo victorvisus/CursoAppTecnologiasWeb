@@ -1,0 +1,45 @@
+img {
+  width: 100%;
+  height: auto;
+}
+#main {
+  max-width: 70vw;
+  margin: 3rem auto;
+}
+
+.imagen-flotante {
+  float: left; /* Flota a la izquierda */
+  margin: 0 10px 10px 0; /* Espacio alrededor */
+  box-sizing: border-box;
+}
+
+.columna {
+  float: left;
+  /*width: 33.33%;*/ /* Layout de 3 columnas */
+  margin: 0 10px 10px 0; /* Espacio alrededor */
+  width: calc((100% / 4) - 10px);
+  box-sizing: border-box;
+}
+
+.clear {
+  clear: both; /* Clearing floats */
+}
+
+/* Detiene el efecto de floats previos */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cabecera {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-gris-antracita);
+
+  padding: 10px;
+  text-align: center;
+}
+.cabecera h1 {
+  color: var(--color-blanco-tecnico);
+}

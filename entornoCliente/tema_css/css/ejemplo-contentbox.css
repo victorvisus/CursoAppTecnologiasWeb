@@ -93,3 +93,23 @@ y una vez que se hace click en el interior que cada una cambie a un color difere
 .ejercicio .datos-super.celdas tbody tr:nth-child(2) td:last-child:active {
   background-color: yellow;
 }
+
+div.caja {
+  width: 300px;
+  height: 200px;
+  border: 1px solid var(--color-gris-tecnico);
+  background-color: var(--color-blanco-tecnico);
+
+  margin: 1rem;
+  padding: 1rem;
+}
+div.caja.absoluta {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+}
+div.caja.relativa {
+  position: relative;
+  top: 20px;
+  right: 100px;
+}

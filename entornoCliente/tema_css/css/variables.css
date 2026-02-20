@@ -1,6 +1,7 @@
 :root {
   --font-inter: "Inter", sans-serif;
   --font-source: "Source Sans 3", sans-serif;
+  --font-jetbrains: "JetBrains Mono", monospace;
 
   --color-negro-carbon: #0e0e11;
   --color-gris-antracita: #1c1e22;
@@ -22,6 +23,7 @@
   --color-link-hover: var(--color-secundario);
   --color-nav: var(--color-negro);
   --color-nav-hover: var(--color-primario);
+
   --boton-std: var(--color-primario);
   --boton-std-hover-transparent: transparent;
   --boton-txt: var(--color-blanco);
@@ -32,7 +34,7 @@
   --font-titulos: var(--font-inter);
   --font-textos: var(--font-source);
   --font-nav: var(--font-textos);
-  --font-alt: var(--font-textos);
+  --font-alt: var(--font-jetbrains);
 
   --weight-thin: 100;
   --weight-extralight: 200;
