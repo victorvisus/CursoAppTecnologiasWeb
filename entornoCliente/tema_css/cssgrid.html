@@ -13,6 +13,13 @@
     <meta name="copyright" content="2026 Victor. Libre de derechos." />
     <title>CSS Grid</title>
 
+    <!-- Tipografias Google Fonts -->
+    <!-- link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet" / -->
+
     <!-- fontawesome -->
     <link
       rel="stylesheet"
@@ -76,6 +83,8 @@
               beatae quisquam.
             </p>
             <a
+              type="button"
+              class="dark-btn"
               href="../css_grid/index.html"
               target="_blank"
               rel="noopener noreferrer"
@@ -136,12 +145,95 @@
               </a>
             </li>
           </ul>
-          <button
+          <a
+            type="button"
+            class="dark-btn"
             href="https://www.smashingmagazine.com/2017/07/why-css-grid-is-not-for-layouting-pages/"
             target="_blank"
             rel="noopener noreferrer">
-            Ver m s sobre CSS Grid en Smashing Magazine
-          </button>
+            Smashing Magazine
+          </a>
+        </section>
+      </article>
+      <article class="container">
+        <header class="header">
+          <h1>css flexbox photo gallery</h1>
+        </header>
+        <section class="section-article">
+          <div role="group" class="gallery">
+            <figure class="gallery-item">
+              <img
+                src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg"
+                alt="Imagen 1 de la galer a"
+                title="Imagen 1 de la galer a"
+                loading="lazy" />
+              <figcaption><h3>Imagen 1 de la galer a</h3></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg"
+                alt="Imagen 2 de la galer a"
+                title="Imagen 2 de la galer a"
+                loading="lazy" />
+              <figcaption><h3>Imagen 2 de la galer a</h3></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg"
+                alt="Imagen 3 de la galer a"
+                title="Imagen 3 de la galer a"
+                loading="lazy" />
+              <figcaption><h3>Imagen 3 de la galer a</h3></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg"
+                alt="Imagen 4 de la galer a"
+                title="Imagen 4 de la galer a"
+                loading="lazy" />
+              <figcaption><h3>Imagen 4 de la galer a</h3></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg"
+                alt="Imagen 5 de la galer a"
+                title="Imagen 5 de la galer a"
+                loading="lazy" />
+              <figcaption><h3>Imagen 5 de la galer a</h3></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg"
+                alt="Imagen 6 de la galer a"
+                title="Imagen 6 de la galer a"
+                loading="lazy" />
+              <figcaption><h3>Imagen 6 de la galer a</h3></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg"
+                alt="Imagen 7 de la galer a"
+                title="Imagen 7 de la galer a"
+                loading="lazy" />
+              <figcaption><h3>Imagen 7 de la galer a</h3></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg"
+                alt="Imagen 8 de la galer a"
+                title="Imagen 8 de la galer a"
+                loading="lazy" />
+              <figcaption><h3>Imagen 8 de la galer a</h3></figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg"
+                alt="Imagen 9 de la galer a"
+                title="Imagen 9 de la galer a"
+                loading="lazy" />
+              <figcaption><h3>Imagen 9 de la galer a</h3></figcaption>
+            </figure>
+          </div>
         </section>
       </article>
     </main>
@@ -151,30 +243,104 @@
         Esto es un ejemplo de un aside. Puedes utilizarlo para agregar notas o
         comentarios en tu p gina web.
       </p>
+      <h3>Más</h3>
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout"
+            target="_blank"
+            rel="noopener noreferrer">
+            CSS Grid Layout - MDN Web Docs
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://css-tricks.com/snippets/css-grid-starter-templates/"
+            target="_blank"
+            rel="noopener noreferrer">
+            CSS Grid Starter Templates - CSS-Tricks
+          </a>
+        </li>
+      </ul>
     </aside>
     <footer class="site-footer">
       <div class="footer-container">
-        <form action="/" method="POST">
-          <div role="group">
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" id="name" required />
+        <header class="heading">
+          <div role="group" class="author">
+            <h3 class="author-name">
+              By
+              <a href="#" target="_blank" rel="noreferrer">victorvgtmp</a>
+            </h3>
+            <p class="publish-date">22 febrero, 2026</p>
           </div>
-          <div role="group">
-            <label for="email">Correo electr nico:</label>
-            <input type="email" name="email" id="email" required />
+          <div role="group" class="social-info">
+            <ul class="social-links social-icons">
+              <li>
+                <a
+                  href="https://twitter.com/victorvgtmp"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/victorvgtmp"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/victorvgtmp/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/victorvgtmp/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UC_3h9T4X6AaXJyU8xk4Yw"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </li>
+            </ul>
           </div>
-          <div role="group">
-            <label for="message">Mensaje:</label>
-            <textarea name="message" id="message" required></textarea>
-          </div>
-          <div role="group">
-            <input type="checkbox" name="rgpd" id="rgpd_id" />
-            <label for="rgpd_id"
-              >Acepto los terminos y condiciones de la RGPD</label
-            >
-          </div>
-          <button type="submit">Enviar</button>
-        </form>
+        </header>
+        <div role="group" class="contact">
+          <form action="/" method="post">
+            <div role="group" class="form-item">
+              <label for="name">Nombre:</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+            <div role="group" class="form-item">
+              <label for="email">Correo electr nico:</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <div role="group" class="form-item">
+              <label for="message">Mensaje:</label>
+              <textarea name="message" id="message" required></textarea>
+            </div>
+            <div role="group" class="form-rgpd">
+              <input type="checkbox" name="rgpd" id="rgpd_id" />
+              <label for="rgpd_id"
+                >Acepto los terminos y condiciones de la RGPD</label
+              >
+            </div>
+            <button class="dark-btn" type="submit">Enviar</button>
+          </form>
+        </div>
         <img src="logo.png" alt="Logo de la empresa" class="logo" />
       </div>
     </footer>

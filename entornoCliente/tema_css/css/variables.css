@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
 :root {
   --font-inter: "Inter", sans-serif;
   --font-source: "Source Sans 3", sans-serif;
@@ -49,10 +51,10 @@
     14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))
   );
   --font-size-title-1: calc(
-    38px + (54 - 38) * ((100vw - 480px) / (1920 - 480))
+    32px + (48 - 32) * ((100vw - 480px) / (1920 - 480))
   );
   --font-size-title-2: calc(
-    30px + (42 - 30) * ((100vw - 480px) / (1920 - 480))
+    28px + (32 - 28) * ((100vw - 480px) / (1920 - 480))
   );
   --font-size-nav: 1.1rem;
   --font-size-footer: 0.9rem;
