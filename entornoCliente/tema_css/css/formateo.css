@@ -3,16 +3,27 @@
 /*******************************************************************************/
 /***********************************************************      GENERAL   ****/
 /*******************************************************************************/
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 html {
   font-family: var(--font-textos);
   font-size: var(--font-size-standard);
 }
 body {
-  font-family: var(--font-textos) !important;
-  font-size: 1rem !important;
+  font-family: var(--font-textos);
+  font-size: 1rem;
   color: var(--color-parrafo);
   font-weight: var(--weight-regular);
+}
+nav,
+header,
+main,
+aside,
+footer {
+  padding: 1rem;
 }
 p,
 a,
@@ -32,13 +43,14 @@ i {
   font-family: "fontawesome";
   font-style: normal;
   margin: 0 10px 0 12px;
-  /*font-weight: 500 !important;*/
+  /*font-weight: 500 ;*/
   transition: all var(--transition-vel) ease-in-out;
 }
 a,
 p a {
   color: var(--color-link);
   font-weight: var(--weight-bold);
+  text-decoration: none;
 }
 a i {
   color: var(--color-link);
@@ -54,10 +66,10 @@ a:hover {
   color: var(--color-link-hover);
 }
 h1 {
-  font-family: var(--font-titulos) !important;
+  font-family: var(--font-titulos);
   color: var(--color-primario);
-  /*font-size: 3rem !important;*/
-  font-size: var(--font-size-title-1) !important;
+  /*font-size: 3rem ;*/
+  font-size: var(--font-size-title-1);
   letter-spacing: 0.025em;
   margin-top: var(--margin-min);
   margin-bottom: var(--margin-min);
@@ -101,10 +113,10 @@ h4 {
 h5,
 h6 {
   font-family: var(--font-alt);
-  font-size: 1.1rem !important;
+  font-size: 1.1rem;
 }
 h6 {
-  font-size: 1rem !important;
+  font-size: 1rem;
   font-family: var(--font-textos);
   font-style: oblique;
   font-weight: var(--weight-regular);
@@ -127,34 +139,27 @@ input[type="number"],
 input[type="search"],
 select,
 textarea {
-  font-family: var(--font-textos) !important;
+  font-family: var(--font-textos);
   font-size: var(--font-form);
-  color: var(--color-parrafo) !important;
+  color: var(--color-parrafo);
 
   margin-bottom: 0px;
-  /*border-radius: 5px;*/
+  border-radius: 5px;
   border: 1px solid var(--color-gris);
-  padding: 2px 10px !important;
-  /*box-shadow: var(--shadow-inset);*/
-  transition: all 0.4s ease-in-out !important;
-  -webkit-transition: all 0.4s ease-in-out !important;
-  -moz-transition: all 0.4s ease-in-out !important;
-  background-color: var(--color-background) !important;
+  padding: 2px 10px;
+  box-shadow: var(--shadow-inset);
+  transition: all var(--transition-vel) ease-in-out;
+
+  background-color: var(--color-background);
   width: 100%;
-  min-height: 40px;
+  min-height: 1.5em;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="date"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
+input:focus,
 select:focus,
 textarea:focus {
-  /*border: 1px solid var(--color-primario) !important;*/
+  outline: none;
   border-color: var(--color-primario);
-  outline-style: none;
-  background-color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 0 8px rgba(58, 255, 122, 0.4); /* Un resplandor sutil del verde */
 }
 /***********************************************************./formularios   ****/

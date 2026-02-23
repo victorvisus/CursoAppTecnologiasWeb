@@ -1,0 +1,121 @@
+/**** css grid Layout principal****/
+.cssgrid {
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 1rem;
+}
+.page.cssgrid {
+  /* se define la cuadricula */
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  grid-template-areas:
+    "nav-left nav-center-1 nav-center-2 nav-right"
+    "header-left header-center-1 header-center-2 header-right"
+    "content-left content-center-1 content-right aside"
+    "footer-left footer-center-1 footer-center-2 footer-right";
+}
+.site-nav {
+  grid-area: nav-left;
+  grid-column: nav-left / nav-right;
+  grid-row: nav-left;
+
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  height: fit-content;
+  position: sticky;
+  top: 0;
+}
+.site-header {
+  border: 1px solid red;
+  grid-area: header-left;
+  grid-column: header-left / header-right;
+  grid-row: header-left;
+
+  height: fit-content;
+}
+.site-main {
+  border: 1px solid green;
+  grid-area: content-left;
+  grid-column: content-left / content-right;
+  grid-row: content-left;
+}
+.site-aside {
+  border: 1px solid blue;
+  grid-area: aside;
+  grid-column: aside;
+  grid-row: aside / footer-right;
+}
+.site-footer {
+  border: 1px solid yellow;
+  grid-area: footer-left;
+  grid-column: footer-left / footer-center-2;
+  grid-row: footer-left;
+}
+
+/* css grid layout main */
+.site-main.cssgrid {
+  /* se define la cuadricula */
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "article-01-left article-01-ctr-left article-01-ctr-right article-01-right"
+    "article-02-left article-02-ctr-left article-02-ctr-right article-02-right";
+}
+.site-main .container:first-child {
+  grid-area: article-01-left;
+  grid-column: article-01-left / article-01-ctr-right;
+  grid-row: article-01-left / article-01-left;
+}
+.site-main .container:nth-child(2) {
+  grid-area: article-01-right;
+  grid-column: article-01-right;
+  grid-row: article-01-right / article-02-right;
+}
+
+.site-main .container {
+  border: 1px solid burlywood;
+}
+
+/**** flexbox Layout ****/
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* nav bar */
+#main-menu {
+  max-width: 1200px;
+  margin: 0.25rem auto;
+}
+#main-menu .menu-item {
+  padding: 15px 10px;
+}
+/* header */
+.site-header.flexbox {
+  background-color: var(--color-negro);
+  justify-content: center;
+  align-items: center;
+  .logo {
+    display: inline-block; /* Necesario para que respete altura */
+    height: 60px; /* La altura que desees para tu nav */
+    line-height: 60px; /* Exactamente igual al height */
+  }
+  i {
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  > * {
+    padding: 15px;
+  }
+}
+
+/*formulario */
+form {
+}
+label {
+  display: inline-block;
+  margin: 17px 0 7px 0;
+}

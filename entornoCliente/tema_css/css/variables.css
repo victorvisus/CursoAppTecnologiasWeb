@@ -72,3 +72,8 @@
   --transition-vel: 0.25s;
   --radius: 1em;
 }
+
+.site-nav {
+  --color-link: var(--color-blanco-tecnico);
+  --color-link-hover: var(--color-gris-tecnico);
+}
