@@ -1,16 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
-    <meta charset="utf-8"> <!--para codificación de la página-->
-    <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="utf-8" />
+    <!--para codificación de la página-->
+    <meta name="viewport" content="width=device-width" />
     <title>Parte Cliente</title>
-    <link type="image/jpg" href="img/imagenWEB.jpg" rel="icon">
-    <meta name="description" content="Curso de la parte cliente del certificado de profesional">
-    <meta property="og:image" content="img/imagenWEB.jpg"> <!--Open Graph para redes sociales-->
+    <link type="image/jpg" href="./assets/img/imagenWEB.jpg" rel="icon" />
+    <meta
+      name="description"
+      content="Curso de la parte cliente del certificado de profesional" />
+    <meta property="og:image" content="./assets/img/imagenWEB.jpg" />
+    <!--Open Graph para redes sociales-->
     <!-- a continuación un elemento de CSS-->
     <style>
-        /*       body {
+      /*       body {
             background: rgb(23, 176, 30);
         }
   aside {
@@ -22,180 +25,195 @@
             background-color: lightgray;
         }
 */
-        p {
-            color: blue;
-            background-color:#FF5733;
-            /* Todos los párrafos serán azules*/
-        }
+      p {
+        color: blue;
+        background-color: #ff5733;
+        /* Todos los párrafos serán azules*/
+      }
 
-        h1 {
-            font-size: 24px;
-            /* Todos los encabezados h1 tendran 24px*/
-        }
+      h1 {
+        font-size: 24px;
+        /* Todos los encabezados h1 tendran 24px*/
+      }
 
-        img {
-            border:8px dotted orange;
-            /* Todas las imágenes tendrán borde*/
-        }
+      img {
+        border: 8px dotted orange;
+        /* Todas las imágenes tendrán borde*/
+      }
 
-        .especial {
-            background-color: yellow;
-            font-family:'Arial Narrow';
-        }
-        #htmlbasico{
-            font-style: oblique;
-            background-color: brown;
-        }
-
+      .especial {
+        background-color: yellow;
+        font-family: "Arial Narrow";
+      }
+      #htmlbasico {
+        font-style: oblique;
+        background-color: brown;
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header>
-        <h1 style="font-size:16px;color:rgb(24, 121, 64);font-style:italic;">CURSO Y CONCEPTOS DE LA PARTE CLIENTE: HTML
-        </h1>
-        <!-- intrudicimos un "índice" de navegación-->
-        <nav>
-            <!--A continuación los elementos de ancla o 
+      <h1 style="font-size: 16px; color: rgb(24, 121, 64); font-style: italic">
+        CURSO Y CONCEPTOS DE LA PARTE CLIENTE: HTML
+      </h1>
+      <!-- intrudicimos un "índice" de navegación-->
+      <nav>
+        <!--A continuación los elementos de ancla o 
             hipervínculos al interior del documento a otros documentos
             exteriores, incluso en otros servidores-->
-            <a href="#html_basico">HTML básico y conceptual</a>
-            <a href="#cuestiones_a_u">Cuestiones de accesibilidad y usabilidad</a>
-            <a href="https://www.w3schools.com/html/" target="_blank" rel="noreferrer">W3School</a>
-            <!--lo mismo pero tomando una imagen como hiperenlace-->
-            <a href="https://www.w3schools.com/html/" target="_blank" rel="noreferrer"><img src="img/imagenWEB.jpg"
-                    width="80"></a>
-            <a href="../otro_index.html">otra pagina</a>
-            <a href="../../otra_pagina_2.html">otra pagina 2</a>
-        </nav>
+        <a href="#html_basico">HTML básico y conceptual</a>
+        <a href="#cuestiones_a_u">Cuestiones de accesibilidad y usabilidad</a>
+        <a
+          href="https://www.w3schools.com/html/"
+          target="_blank"
+          rel="noreferrer"
+          >W3School</a
+        >
+        <!--lo mismo pero tomando una imagen como hiperenlace-->
+        <a
+          href="https://www.w3schools.com/html/"
+          target="_blank"
+          rel="noreferrer"
+          ><img src="./assets/img/imagenWEB.jpg" width="80"
+        /></a>
+        <a href="../otro_index.html">otra pagina</a>
+        <a href="../../otra_pagina_2.html">otra pagina 2</a>
+      </nav>
     </header>
 
     <main>
-        <h2>José Luis, docente del curso.</h2>
+      <h2>José Luis, docente del curso.</h2>
 
-        <p>Este es el primer día del curso.
-            Se ve la <strong>parte cliente</strong> y cómo se interactúa en ella.
-            A continuación otro párrafo:
-        </p>
-        <!--Este texto está fuera de etiquetas, práctica incorrecta.-->
-        <p>Este es el primer día del curso.
-            Se puede usar un editor de texto
-            y de desarrollo integrado como VS Code.
-        </p>
+      <p>
+        Este es el primer día del curso. Se ve la
+        <strong>parte cliente</strong> y cómo se interactúa en ella. A
+        continuación otro párrafo:
+      </p>
+      <!--Este texto está fuera de etiquetas, práctica incorrecta.-->
+      <p>
+        Este es el primer día del curso. Se puede usar un editor de texto y de
+        desarrollo integrado como VS Code.
+      </p>
 
-        <h2>Algunos aspectos de la sesión:</h2>
-        <ul>
-            <li class="items-de-clase">Agregar <mark>extensiones</mark> como Live Preview</li>
-            <li class="items-de-clase"><u><strong>Aprender etiquetas básicas</strong></u></li>
-            <li class="items-de-clase">Distinguir entre etiquetas y elementos</li>
-        </ul>
-        <!--para hacer descargable una imagen se anida un <img> en un <a>-->
-        <a download href="img/imagenWEB.jpg">
-            <img id="imagen01" height="100" width="100" title="imagen de la web" alt="Imagen de un esquema web"
-                src="img/imagenWEB.jpg">
-        </a>
-        <img src="https://media.istockphoto.com/id/2229422014/es/foto/red-con-agujas-de-alfiler-de-colores-unidas-con-cuerdas.jpg?s=2048x2048&w=is&k=20&c=L712TtIcbLdxaFRIOMz56DOgThtB1tApwR6vdrTdJK4="
-            width="400">
-        <h3>ESPECIFICACIÓN DEL CONTENIDO: </h3>
-        <aside>
-            <ol type="1" reversed>
-                <li>HTML básico y conceptual</li>
-                <li value="10">Cuestiones de accesibilidad y usabilidad</li>
-                <ul>
-                    <li>Para usuarios con discapacidades</li>
-                    <li>Para cambios de idiomas
-                        <ul>
-                            <li>español a inglés</li>
-                            <li>español a francés</li>
-                            <li>español a alemán</li>
-                        </ul>
-                    </li>
-                </ul>
-                <li>Introducción al uso de estilos</li>
-                <li>Ordenación de elementos de modo jeráquico</li>
-            </ol>
-        </aside>
+      <h2>Algunos aspectos de la sesión:</h2>
+      <ul>
+        <li class="items-de-clase">
+          Agregar <mark>extensiones</mark> como Live Preview
+        </li>
+        <li class="items-de-clase">
+          <u><strong>Aprender etiquetas básicas</strong></u>
+        </li>
+        <li class="items-de-clase">Distinguir entre etiquetas y elementos</li>
+      </ul>
+      <!--para hacer descargable una imagen se anida un <img> en un <a>-->
+      <a download href="./assets/img/imagenWEB.jpg">
+        <img
+          id="imagen01"
+          height="100"
+          width="100"
+          title="imagen de la web"
+          alt="Imagen de un esquema web"
+          src="./assets/img/imagenWEB.jpg" />
+      </a>
+      <img
+        src="https://media.istockphoto.com/id/2229422014/es/foto/red-con-agujas-de-alfiler-de-colores-unidas-con-cuerdas.jpg?s=2048x2048&w=is&k=20&c=L712TtIcbLdxaFRIOMz56DOgThtB1tApwR6vdrTdJK4="
+        width="400" />
+      <h3>ESPECIFICACIÓN DEL CONTENIDO:</h3>
+      <aside>
+        <ol type="1" reversed>
+          <li>HTML básico y conceptual</li>
+          <li value="10">Cuestiones de accesibilidad y usabilidad</li>
+          <ul>
+            <li>Para usuarios con discapacidades</li>
+            <li>
+              Para cambios de idiomas
+              <ul>
+                <li>español a inglés</li>
+                <li>español a francés</li>
+                <li>español a alemán</li>
+              </ul>
+            </li>
+          </ul>
+          <li>Introducción al uso de estilos</li>
+          <li>Ordenación de elementos de modo jeráquico</li>
+        </ol>
+      </aside>
 
-        <span role="button">
-            Siguiente página
-        </span><!--a cambiar por un div o span con role-->
+      <span role="button"> Siguiente página </span
+      ><!--a cambiar por un div o span con role-->
 
+      <section>
+        <article>
+          <header id="htmlbasico">
+            <h4 id="html_basico">HTML básico y conceptual</h4>
+            <p>
+              Se trata no sólo de dar estructura aparente al documento, sino de
+              organizarlo internamente con una lógica que permita su
+              mantenimiento (poscionamiento, SEO, correcciones evolutivas, o
+              escalabilidad) a largo plazo.
+            </p>
+          </header>
+          <footer><small>Hecho con HTML 5</small></footer>
+        </article>
+        <article>
+          <header>
+            <h4 id="cuestiones_a_u">
+              Cuestiones de accesibilidad y usabilidad
+            </h4>
+            <p>
+              Para el usuario es esencial una experiencia satisfactoria de uso y
+              acceso al contenido. En desarrollo se ha pensado e implementado la
+              forma adecuada para este fin: estructuración del documento,
+              jerarquía entre contenidos, uso de elementos que ordenan lo
+              expuesto, etc.
+            </p>
+          </header>
+        </article>
+        <article>
+          <header>
+            <h4>Introducción al uso de estilos</h4>
+            <p class="especial">
+              Por ejemplo a un texto como LOREM IPSUM:
+              <b>
+                <em
+                  >Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                  Quisque faucibus ex sapien vitae pellentesque sem placerat. In
+                  id cursus mi pretium tellus duis convallis. Tempus leo eu
+                  aenean sed diam urna tempor.
+                </em>
+              </b>
+              puede tener un estilo en cursiva, y con letra gótica, un color
+              gris, ...
+            </p>
+          </header>
+        </article>
+        <article>
+          <header>
+            <h4>Ordenación de elementos de modo jeráquico</h4>
+            <p class="especial">
+              El orden de importancia de los elementos debe corresponderse con:
+              indentaciones correctas en codificación, visión de la empresa
+              hacia sus clientes o usuarios, facilidad para la comprensión del
+              lector promedio, etc.
+            </p>
+          </header>
+        </article>
+      </section>
 
-        <section>
-            <article>
-                <header id="htmlbasico">
-                    <h4 id="html_basico">
-                        HTML básico y conceptual
-                    </h4>
-                    <p>
-                        Se trata no sólo de dar estructura aparente al documento,
-                        sino de organizarlo internamente con una lógica que permita
-                        su mantenimiento (poscionamiento, SEO, correcciones evolutivas,
-                        o escalabilidad) a largo plazo.
-                    </p>
-                </header>
-                <footer><small>Hecho con HTML 5</small></footer>
-            </article>
-            <article>
-                <header>
-                    <h4 id="cuestiones_a_u">
-                        Cuestiones de accesibilidad y usabilidad
-                    </h4>
-                    <p>
-                        Para el usuario es esencial una experiencia satisfactoria
-                        de uso y acceso al contenido. En desarrollo se ha pensado
-                        e implementado la forma adecuada para este fin: estructuración
-                        del documento, jerarquía entre contenidos, uso de elementos que
-                        ordenan lo expuesto, etc.
-                    </p>
-                </header>
-            </article>
-            <article>
-                <header>
-                    <h4>
-                        Introducción al uso de estilos
-                    </h4>
-                    <p class="especial">
-                        Por ejemplo a un texto como LOREM IPSUM:
-                        <b>
-                            <em>Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                                Quisque faucibus ex sapien vitae pellentesque sem placerat.
-                                In id cursus mi pretium tellus duis convallis.
-                                Tempus leo eu aenean sed diam urna tempor.
-                            </em>
-                        </b>
-                        puede tener un estilo en cursiva, y con letra gótica, un color gris, ...
-                    </p>
-                </header>
-            </article>
-            <article>
-                <header>
-                    <h4>
-                        Ordenación de elementos de modo jeráquico
-                    </h4>
-                    <p class="especial">
-                        El orden de importancia de los elementos debe corresponderse con:
-                        indentaciones correctas en codificación, visión de la empresa hacia
-                        sus clientes o usuarios, facilidad para la comprensión del lector
-                        promedio, etc.
-                    </p>
-                </header>
-            </article>
-        </section>
-
-        <!--Diferencia entre DIV y SPAN-->
-        <div>Hola Mundo</div>
-        <div>Adiós Mundo</div>
-        <span>De nuevo Hola Mundo</span>
-        <span><img src="img/imagenWEB.jpg" width="80">De nuevo Adiós Mundo</span>
-        <footer>
-            <a href="mailto:abced@gmail.com">correo electrónico</a>
-            <a href="tel:+34878777665">Contactar por teléfono</a>
-            <a href="Whatsapp:\\send?text=Hola Profe">contactar por Whatsapp</a>
-
-        </footer>
+      <!--Diferencia entre DIV y SPAN-->
+      <div>Hola Mundo</div>
+      <div>Adiós Mundo</div>
+      <span>De nuevo Hola Mundo</span>
+      <span
+        ><img src="./assets/img/imagenWEB.jpg" width="80" />De nuevo Adiós
+        Mundo</span
+      >
+      <footer>
+        <a href="mailto:abced@gmail.com">correo electrónico</a>
+        <a href="tel:+34878777665">Contactar por teléfono</a>
+        <a href="Whatsapp:\\send?text=Hola Profe">contactar por Whatsapp</a>
+      </footer>
     </main>
-</body>
-
+  </body>
 </html>

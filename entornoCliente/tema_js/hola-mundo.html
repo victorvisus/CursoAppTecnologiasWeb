@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ejemplo de HTML semántico y SEO" />
+    <meta name="author" content="Victor Visús" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ff1919" />
+    <title>Hola Mundo - Ejemplo de HTML semántico y SEO</title>
+  </head>
+  <body>
+    <header>
+      <h1>Hola Mundo</h1>
+    </header>
+    <main>
+      <p>Este es un ejemplo de HTML semántico y SEO</p>
+      <button id="miBoton">Hola</button>
+      <button onclick="alert('hola mundo desde el boton!')">
+        Hola en onclick
+      </button>
+    </main>
+    <footer>
+      <p>&copy; 2026 Victor Visús</p>
+    </footer>
+  </body>
+  <script>
+    document.getElementById("miBoton").addEventListener("click", function () {
+      alert("hola mundo desde el boton!");
+    });
+    console.log("hola mundo desde la consola");
+    alert("hola mundo!");
+  </script>
+  <!-- script src="./assets/js/hola-mundo.js" defer></script -->
+</html>

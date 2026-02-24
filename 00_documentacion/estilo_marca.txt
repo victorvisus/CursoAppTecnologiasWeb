@@ -1,9 +1,10 @@
-            --color-negro-carbon: #0E0E11;
-            --color-gris-antracita: #1C1E22;
-            --color-gris-acero: #3A3D42;
-            --color-gris-tecnico: #B5B8BE;
-            --color-verde-criptico: #3AFF7A;
-            --color-blanco-tecnico: #F2F3F5;
+--color-negro-carbon: #0E0E11;
+--color-gris-antracita: #1C1E22;
+--color-gris-acero: #3A3D42;
+--color-gris-tecnico: #B5B8BE;
+--color-verde-criptico: #3AFF7A;
+--color-blanco-tecnico: #F2F3F5;
 
-    font-family: "Inter", sans-serif; para titulos
-    font-family: "Source Sans 3", sans-serif; para textos y h5 y h6
+font-family: "Inter", sans-serif; para titulos
+font-family: "Source Sans 3", sans-serif; para textos y h5 y h6
+font-family: "JetBrains Mono", monospace; para representar código, o algún texto especial

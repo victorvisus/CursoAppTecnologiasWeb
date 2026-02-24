@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Cheat Sheet - Referencia Interactiva</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "negro-carbon": "#0E0E11",
+              "gris-antracita": "#1C1E22",
+              "gris-acero": "#3A3D42",
+              "gris-tecnico": "#B5B8BE",
+              "verde-criptico": "#3AFF7A",
+              "blanco-tecnico": "#F2F3F5",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              "source-sans": ["Source Sans 3", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="bg-negro-carbon text-blanco-tecnico min-h-screen">
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed top-4 right-4 z-50"></div>
+
+    <!-- Header -->
+    <header class="bg-gris-antracita border-b border-gris-acero px-6 py-8">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold text-verde-criptico mb-2">
+          JavaScript Cheat Sheet
+        </h1>
+        <p class="text-gris-tecnico text-lg">
+          Referencia interactiva para desarrolladores modernos
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Variables Section -->
+        <section
+          class="bg-gris-antracita rounded-lg border border-gris-acero p-6">
+          <h2 class="text-2xl font-semibold text-verde-criptico mb-4">
+            1. Declaración de Variables
+          </h2>
+          <p class="text-gris-tecnico mb-4">
+            En el JavaScript moderno, tenemos tres formas principales de
+            almacenar información. La regla de oro actual es: usa const por
+            defecto, let si el valor va a cambiar, y evita var.
+          </p>
+
+          <div class="space-y-4">
+            <div class="bg-negro-carbon rounded p-4 border border-gris-acero">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-verde-criptico font-medium">const</span>
+                <span class="text-gris-tecnico text-sm"
+                  >Para valores que no se reasignan</span
+                >
+              </div>
+              <div
+                class="code-block font-mono text-sm text-verde-criptico"
+                onclick="copyToClipboard(this)">
+                const nombre = "Alex"; // No cambiará
+              </div>
+            </div>
+
+            <div class="bg-negro-carbon rounded p-4 border border-gris-acero">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-verde-criptico font-medium">let</span>
+                <span class="text-gris-tecnico text-sm"
+                  >Para valores que pueden cambiar</span
+                >
+              </div>
+              <div
+                class="code-block font-mono text-sm text-verde-criptico"
+                onclick="copyToClipboard(this)">
+                let edad = 25; // Puede cambiar más adelante edad = 26; //
+                Reasignación válida
+              </div>
+            </div>
+
+            <div class="bg-negro-carbon rounded p-4 border border-gris-acero">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-verde-criptico font-medium">var</span>
+                <span class="text-gris-tecnico text-sm"
+                  >La forma antigua (pre-2015)</span
+                >
+              </div>
+              <div
+                class="code-block font-mono text-sm text-verde-criptico"
+                onclick="copyToClipboard(this)">
+                // Evita usar var - tiene comportamiento de scope confuso
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tipos de Datos Section -->
+        <section
+          class="bg-gris-antracita rounded-lg border border-gris-acero p-6">
+          <h2 class="text-2xl font-semibold text-verde-criptico mb-4">
+            2. Tipos de Datos
+          </h2>
+          <p class="text-gris-tecnico mb-4">
+            JavaScript es un lenguaje de tipado dinámico, lo que significa que
+            no tienes que declarar qué tipo de dato es una variable; el lenguaje
+            lo deduce.
+          </p>
+
+          <div class="space-y-3">
+            <div
+              class="flex items-center justify-between p-3 bg-negro-carbon rounded border border-gris-acero">
+              <div>
+                <span class="text-verde-criptico font-medium">String</span>
+                <div
+                  class="code-block font-mono text-sm text-verde-criptico mt-1"
+                  onclick="copyToClipboard(this)">
+                  "Hola" o 'Mundo'
+                </div>
+              </div>
+              <span class="text-gris-tecnico text-sm"
+                >Texto entre comillas</span
+              >
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3 bg-negro-carbon rounded border border-gris-acero">
+              <div>
+                <span class="text-verde-criptico font-medium">Number</span>
+                <div
+                  class="code-block font-mono text-sm text-verde-criptico mt-1"
+                  onclick="copyToClipboard(this)">
+                  42 o 3.14
+                </div>
+              </div>
+              <span class="text-gris-tecnico text-sm"
+                >Números enteros o decimales</span
+              >
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3 bg-negro-carbon rounded border border-gris-acero">
+              <div>
+                <span class="text-verde-criptico font-medium">Boolean</span>
+                <div
+                  class="code-block font-mono text-sm text-verde-criptico mt-1"
+                  onclick="copyToClipboard(this)">
+                  true / false
+                </div>
+              </div>
+              <span class="text-gris-tecnico text-sm">Valores lógicos</span>
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3 bg-negro-carbon rounded border border-gris-acero">
+              <div>
+                <span class="text-verde-criptico font-medium">Undefined</span>
+                <div
+                  class="code-block font-mono text-sm text-verde-criptico mt-1"
+                  onclick="copyToClipboard(this)">
+                  let variable; // undefined
+                </div>
+              </div>
+              <span class="text-gris-tecnico text-sm"
+                >Variable sin valor asignado</span
+              >
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3 bg-negro-carbon rounded border border-gris-acero">
+              <div>
+                <span class="text-verde-criptico font-medium">Null</span>
+                <div
+                  class="code-block font-mono text-sm text-verde-criptico mt-1"
+                  onclick="copyToClipboard(this)">
+                  let dato = null; // Intencionalmente vacío
+                </div>
+              </div>
+              <span class="text-gris-tecnico text-sm"
+                >Ausencia intencional de valor</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Objetos Section -->
+        <section
+          class="bg-gris-antracita rounded-lg border border-gris-acero p-6">
+          <h2 class="text-2xl font-semibold text-verde-criptico mb-4">
+            3. Objetos
+          </h2>
+          <p class="text-gris-tecnico mb-4">
+            Los objetos son colecciones de datos relacionados en formato
+            clave-valor. Imagínalos como un contenedor para las propiedades de
+            una "cosa" del mundo real.
+          </p>
+
+          <div class="bg-negro-carbon rounded p-4 border border-gris-acero">
+            <div
+              class="code-block font-mono text-sm text-verde-criptico"
+              onclick="copyToClipboard(this)">
+              const usuario = { nombre: "Elena", puntos: 150, estaActivo: true
+              }; // Acceder a los datos: console.log(usuario.nombre); // "Elena"
+            </div>
+          </div>
+
+          <div class="mt-4 space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="text-verde-criptico">•</span>
+              <span class="text-sm">Usan llaves {} para definir el objeto</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-verde-criptico">•</span>
+              <span class="text-sm"
+                >Formato clave: valor separados por comas</span
+              >
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-verde-criptico">•</span>
+              <span class="text-sm">Acceso con punto (.) o corchetes []</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Arrays Section -->
+        <section
+          class="bg-gris-antracita rounded-lg border border-gris-acero p-6">
+          <h2 class="text-2xl font-semibold text-verde-criptico mb-4">
+            4. Arrays (Arreglos)
+          </h2>
+          <p class="text-gris-tecnico mb-4">
+            Son listas ordenadas de valores. Se identifican por el uso de
+            corchetes [] y los elementos se separan por comas. El primer
+            elemento siempre está en la posición 0.
+          </p>
+
+          <div class="bg-negro-carbon rounded p-4 border border-gris-acero">
+            <div
+              class="code-block font-mono text-sm text-verde-criptico"
+              onclick="copyToClipboard(this)">
+              const lenguajes = ["JavaScript", "Python", "Ruby"];
+              console.log(lenguajes[0]); // "JavaScript" lenguajes.push("Java");
+              // Agrega un elemento al final
+            </div>
+          </div>
+
+          <div class="mt-4 space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="text-verde-criptico">•</span>
+              <span class="text-sm"
+                >Usan corchetes [] para definir el array</span
+              >
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-verde-criptico">•</span>
+              <span class="text-sm">Índices empiezan en 0 (base cero)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-verde-criptico">•</span>
+              <span class="text-sm"
+                >Métodos útiles: push(), pop(), shift(), unshift()</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Operadores Section -->
+        <section
+          class="bg-gris-antracita rounded-lg border border-gris-acero p-6">
+          <h2 class="text-2xl font-semibold text-verde-criptico mb-4">
+            5. Operadores Básicos
+          </h2>
+          <p class="text-gris-tecnico mb-4">
+            Los operadores nos permiten manipular los datos y realizar
+            comparaciones.
+          </p>
+
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-lg font-medium text-verde-criptico mb-2">
+                Aritméticos
+              </h3>
+              <div class="bg-negro-carbon rounded p-3 border border-gris-acero">
+                <div
+                  class="code-block font-mono text-sm text-verde-criptico"
+                  onclick="copyToClipboard(this)">
+                  + (Suma) 5 + 3 = 8 - (Resta) 5 - 3 = 2 * (Mult) 5 * 3 = 15 /
+                  (Div) 6 / 3 = 2 % (Módulo) 5 % 2 = 1
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-medium text-verde-criptico mb-2">
+                De Comparación
+              </h3>
+              <div class="bg-negro-carbon rounded p-3 border border-gris-acero">
+                <div
+                  class="code-block font-mono text-sm text-verde-criptico"
+                  onclick="copyToClipboard(this)">
+                  === (Igualdad estricta) 5 === "5" // false !== (Desigualdad
+                  estricta) 5 !== "5" // true > , < , >= , <= (Mayor/menor)
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-medium text-verde-criptico mb-2">
+                Lógicos
+              </h3>
+              <div class="bg-negro-carbon rounded p-3 border border-gris-acero">
+                <div
+                  class="code-block font-mono text-sm text-verde-criptico"
+                  onclick="copyToClipboard(this)">
+                  && (Y) true && false // false || (O) true || false // true !
+                  (No) !true // false
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conversión de Tipos Section -->
+        <section
+          class="bg-gris-antracita rounded-lg border border-gris-acero p-6 lg:col-span-2">
+          <h2 class="text-2xl font-semibold text-verde-criptico mb-4">
+            6. Conversión de Tipos
+          </h2>
+          <p class="text-gris-tecnico mb-4">
+            JavaScript permite convertir entre diferentes tipos de datos, ya sea
+            de forma explícita (controlada) o implícita (automática).
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="text-lg font-medium text-verde-criptico mb-3">
+                6.1. Conversión Explícita (Recomendada)
+              </h3>
+
+              <div class="space-y-3">
+                <div>
+                  <h4 class="text-sm font-medium text-blanco-tecnico mb-2">
+                    A Número
+                  </h4>
+                  <div
+                    class="bg-negro-carbon rounded p-3 border border-gris-acero">
+                    <div
+                      class="code-block font-mono text-sm text-verde-criptico"
+                      onclick="copyToClipboard(this)">
+                      let texto = "42.5"; let numero = Number(texto); // 42.5
+                      let entero = parseInt(texto); // 42 let decimal =
+                      parseFloat(texto); // 42.5
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="text-sm font-medium text-blanco-tecnico mb-2">
+                    A Texto
+                  </h4>
+                  <div
+                    class="bg-negro-carbon rounded p-3 border border-gris-acero">
+                    <div
+                      class="code-block font-mono text-sm text-verde-criptico"
+                      onclick="copyToClipboard(this)">
+                      let activo = true; let textoBool = String(activo); //
+                      "true" let num = 100; let numTexto = num.toString(); //
+                      "100"
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="text-sm font-medium text-blanco-tecnico mb-2">
+                    A Booleano
+                  </h4>
+                  <div
+                    class="bg-negro-carbon rounded p-3 border border-gris-acero">
+                    <div
+                      class="code-block font-mono text-sm text-verde-criptico"
+                      onclick="copyToClipboard(this)">
+                      // Valores "falsy" (se vuelven false): // 0, "", null,
+                      undefined, NaN Boolean(0); // false Boolean(""); // false
+                      Boolean(null); // false // Todo lo demás suele ser true:
+                      Boolean(1); // true Boolean("hola"); // true Boolean([]);
+                      // true
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-medium text-verde-criptico mb-3">
+                6.2. Conversión Implícita (Coerción)
+              </h3>
+
+              <div class="space-y-3">
+                <div>
+                  <h4 class="text-sm font-medium text-blanco-tecnico mb-2">
+                    El caso del símbolo +
+                  </h4>
+                  <div
+                    class="bg-negro-carbon rounded p-3 border border-gris-acero">
+                    <div
+                      class="code-block font-mono text-sm text-verde-criptico"
+                      onclick="copyToClipboard(this)">
+                      let resultado = "5" + 2; // "52" (concatenación) let resta
+                      = "5" - 2; // 3 (conversión a número) let multiplicacion =
+                      "5" * 2; // 10 (conversión a número)
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="text-sm font-medium text-blanco-tecnico mb-2">
+                    Comparación: == vs ===
+                  </h4>
+                  <div
+                    class="bg-negro-carbon rounded p-3 border border-gris-acero">
+                    <div
+                      class="code-block font-mono text-sm text-verde-criptico"
+                      onclick="copyToClipboard(this)">
+                      // == (Igualdad no estricta - convierte tipos) 5 == "5" //
+                      true 0 == false // true // === (Igualdad estricta -
+                      recomiendo) 5 === "5" // false 0 === false // false
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 bg-gris-acero rounded">
+                <p class="text-sm text-verde-criptico font-medium mb-1">
+                  💡 Consejo de "pro":
+                </p>
+                <p class="text-sm text-gris-tecnico">
+                  Usa siempre === para evitar errores por conversión implícita.
+                  Es más predecible y seguro.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla Resumen -->
+          <div class="mt-6">
+            <h3 class="text-lg font-medium text-verde-criptico mb-3">
+              Resumen de Funciones Clave
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-gris-acero">
+                    <th class="text-left py-2 px-3 text-verde-criptico">
+                      Función
+                    </th>
+                    <th class="text-left py-2 px-3 text-verde-criptico">
+                      Entrada
+                    </th>
+                    <th class="text-left py-2 px-3 text-verde-criptico">
+                      Salida
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-gris-acero">
+                    <td class="py-2 px-3 font-mono text-verde-criptico">
+                      Number("10")
+                    </td>
+                    <td class="py-2 px-3 text-gris-tecnico">String</td>
+                    <td class="py-2 px-3 text-gris-tecnico">10 (Number)</td>
+                  </tr>
+                  <tr class="border-b border-gris-acero">
+                    <td class="py-2 px-3 font-mono text-verde-criptico">
+                      String(10)
+                    </td>
+                    <td class="py-2 px-3 text-gris-tecnico">Number</td>
+                    <td class="py-2 px-3 text-gris-tecnico">"10" (String)</td>
+                  </tr>
+                  <tr class="border-b border-gris-acero">
+                    <td class="py-2 px-3 font-mono text-verde-criptico">
+                      Boolean(1)
+                    </td>
+                    <td class="py-2 px-3 text-gris-tecnico">Number</td>
+                    <td class="py-2 px-3 text-gris-tecnico">true</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-mono text-verde-criptico">
+                      parseFloat("3.14")
+                    </td>
+                    <td class="py-2 px-3 text-gris-tecnico">String</td>
+                    <td class="py-2 px-3 text-gris-tecnico">3.14 (Number)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gris-antracita border-t border-gris-acero mt-12 px-6 py-6">
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="text-gris-tecnico">
+          JavaScript Cheat Sheet © 2024 | Clic en cualquier bloque de código
+        </p>
+      </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>
