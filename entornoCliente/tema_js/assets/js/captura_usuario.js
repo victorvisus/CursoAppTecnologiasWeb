@@ -1,11 +1,13 @@
-const readline = require('readline');
+const readline = require("readline");
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
-rl.question('¿Cuál es tu lenguaje de programación favorito?', (respuesta) => {
-  console.log(`¡Qué interesante! ${respuesta} es genial.`);
+// variables con valores dados por consola por usuario:
+let edad;
+rl.question("Introduzca dato: ", (respuesta) => {
+  edad = respuesta;
+  console.log(`edad: ${edad}`);
   rl.close(); // Importante cerrar la interfaz de entrada de datos
 });
