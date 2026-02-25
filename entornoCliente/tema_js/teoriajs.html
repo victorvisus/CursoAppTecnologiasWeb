@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="keywords"
+      content="HTML, semántica, tags, atributos, elementos" />
+    <meta name="author" content="Victor Visús" />
+    <meta
+      name="description"
+      content="Documento html correectamente formado semanticamente, sin estilos" />
+
+    <title>JavaScript Teoría</title>
+
+    <link rel="shortcut icon" href="./img/superhero.png" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "negro-carbon": "#0E0E11",
+              "gris-antracita": "#1C1E22",
+              "gris-acero": "#3A3D42",
+              "gris-tecnico": "#B5B8BE",
+              "verde-criptico": "#3AFF7A",
+              "blanco-tecnico": "#F2F3F5",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              "source-sans": ["Source Sans 3", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="./css/formateo.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header class="bg-gris-antracita border-b border-gris-acero px-6 py-8">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold text-verde-criptico mb-2">
+          JavaScript Teoría
+        </h1>
+        <p class="text-gris-tecnico text-lg">
+          Referencia interactiva para desarrolladores modernos
+        </p>
+      </div>
+    </header>
+
+    <main class="px-6 py-8">
+      <section class="bg-negro-carbon rounded p-4 border border-gris-acero">
+        <h2 class="text-2xl font-semibold text-verde-criptico mb-4">
+          Introducción
+        </h2>
+        <p class="text-gris-tecnico mb-4">
+          JavaScript es un lenguaje de programación que se utiliza para agregar
+          funcionalidad interactiva a los sitios web. Es un lenguaje
+          interpretado que se ejecuta en el lado del cliente, por lo que no
+          necesita compilarse antes de ejecutarse.
+        </p>
+      </section>
+
+      <section class="bg-negro-carbon rounded p-4 border border-gris-acero">
+        <h2>anotaciones</h2>
+      </section>
+    </main>
+
+    <footer>
+      <div role="contentinfo">
+        <p>
+          &copy; 2026 <strong>Ejercicio de HTML Semántico</strong>. Creado con
+          <mark>fines educativos</mark> por <em>Victor</em>.
+        </p>
+        <address>
+          Puedes contactarme vía
+          <a href="mailto:victorvg.tmp@gmail.com">victorvg.tmp@gmail.com</a>
+          <br />
+          Zaragoza, España.
+        </address>
+      </div>
+    </footer>
+  </body>
+</html>
