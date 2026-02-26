@@ -58,15 +58,10 @@ function solicitarDato() {
   let dato = parseInt(prompt('¿Cual es la nota numérica (0-100)? '));
   alert(`El valor introducido es: ${dato}.`);
 
-  /*   while (isNaN(dato) && dato <= 0 && dato >= 100) {
-    if (isNaN(dato)) {
-      dato = parseInt(prompt('Introduce un valor númerico entre 0 y 100'));
-    } else if (dato <= 0 && dato >= 100) {
-      dato = parseInt(
-        prompt('La nota debe ser entre 0 y 100, introduce un valor correcto'),
-      );
-    }
-  } */
+  while (isNaN(dato)) {
+    dato = parseInt(prompt('Introduce un valor númerico entre 0 y 100 VALIDO'));
+  }
+
   // Devuelve la edad del usuario
   return parseInt(dato);
 }
