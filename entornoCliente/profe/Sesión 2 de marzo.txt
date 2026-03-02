@@ -1,0 +1,14 @@
+Sesión 2 de marzo
+
+Se explican ejemplos de manejo de arrays y de funciones.
+
+Se propone la realización de ejercicios de https://www.aulascript.com/evaluar/arrays_objetos.html
+sobre el tema Arrays. Concretamente:
+
+Tienes que crear un script que gestione una lista de la compra. Para ello tienes dos listas de artículos: compra, pendiente. Cada elemento de la lista compra es un objeto con dos propiedades: nombre del artículo y estado. Estado es un booleano true si el artículo se compró, false en caso contrario. Pendiente es una lista con los nombres de los artículos que faltan por comprar. La función que debes crear recibe como argumento la lista de compra y devuelve la lista de pendientes. <<--en las posiciones pares para compra aparece nombre artículo y en las impares el estado (true, false), para pendiente no es necesario. 
+
+Tenemos dos listas de asistentes a dos cursos: html y css. Queremos obtener una lsita de los asistentes a ambos cursos. La lista estará ordenada.
+
+En este ejercicio debes crear dos arrays para representar dos equipos de trabajo. Al primer array le llamaremos ocupados y al segundo libres. Ambos están llenos con 5 nombres.
+Debes crear una función rotar(lst1, lst2) que pase el primer nombre de la lista lst1 a l final de lst2, y luego el primero de la lst2 a l final de lst1.
+Para ver que funciona escribe los arrays antes y después de usar esta función.

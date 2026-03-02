@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios js 02 marzo</title>
+
+    <link rel="stylesheet" href="./assets/css/formateo.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <script src="./assets/js/260302_ejecercicios.js"></script>
+  </head>
+  <body>
+    <main id="main">
+      <header>
+        <h1>Ejercicios js 02 marzo</h1>
+        <p></p>
+      </header>
+      <article class="container">
+        <header>
+          <p class="heading">
+            Se propone la realización de ejercicios de
+            <a
+              href="https://www.aulascript.com/evaluar/arrays_objetos.html"
+              target="_blank"
+              rel="nofollow noopener"
+              >https://www.aulascript.com/evaluar/arrays_objetos.html</a
+            >
+            sobre el tema Arrays. Concretamente:
+          </p>
+        </header>
+        <section class="content">
+          <h2>Ejercicio 1</h2>
+          <p>
+            Tienes que crear un script que gestione una lista de la compra. Para
+            ello tienes dos listas de artículos: compra, pendiente. Cada
+            elemento de la lista compra es un objeto con dos propiedades: nombre
+            del artículo y estado. Estado es un booleano true si el artículo se
+            compró, false en caso contrario. Pendiente es una lista con los
+            nombres de los artículos que faltan por comprar. La función que
+            debes crear recibe como argumento la lista de compra y devuelve la
+            lista de pendientes. -- en las posiciones pares para compra aparece
+            nombre artículo y en las impares el estado (true, false), para
+            pendiente no es necesario.
+          </p>
+          <button onclick="gestionarListaCompra(compra, pendiente)">
+            Ejecutar ejercicio
+          </button>
+        </section>
+        <section class="content">
+          <h2>Ejercicio 2</h2>
+          <p>
+            Tenemos dos listas de asistentes a dos cursos: html y css. Queremos
+            obtener una lsita de los asistentes a ambos cursos. La lista estará
+            ordenada. En este ejercicio debes crear dos arrays para representar
+            dos equipos de trabajo. Al primer array le llamaremos ocupados y al
+            segundo libres. Ambos están llenos con 5 nombres. Debes crear una
+            función rotar(lst1, lst2) que pase el primer nombre de la lista lst1
+            a l final de lst2, y luego el primero de la lst2 a l final de lst1.
+            Para ver que funciona escribe los arrays antes y después de usar
+            esta función.
+          </p>
+          <button onclick="rotar(ocupados, libres)">Ejecutar ejercicio</button>
+        </section>
+      </article>
+    </main>
+    <script>
+      // Arrays ej. 01 //////////////////////////////////////////
+      const compra = [
+        "Manzana",
+        true,
+        "Pera",
+        true,
+        "Platano",
+        false,
+        "Uva",
+        false,
+        "Naranja",
+        true,
+      ];
+      const pendiente = new Array();
+      // Arrays ej. 02 //////////////////////////////////////////
+      const ocupados = ["Ana 1", "Luis 1", "Carlos 1", "Marta 1", "Sofía 1"];
+      const libres = ["Pedro 2", "Lucía 2", "Jorge 2", "Laura 2", "Diego 2"];
+    </script>
+  </body>
+</html>
