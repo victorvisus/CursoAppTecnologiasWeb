@@ -1,87 +1,170 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicios js 02 marzo</title>
 
-    <link rel="stylesheet" href="./assets/css/formateo.css" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicios js 02 marzo</title>
 
-    <script src="./assets/js/260302_ejecercicios.js"></script>
-  </head>
-  <body>
-    <main id="main">
+  <link rel="stylesheet" href="./assets/css/formateo.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <script src="./assets/js/funcionesBase.js"></script>
+  <script src="./assets/js/260302_ejecercicios.js"></script>
+  <script src="./assets/js/260303_ejercicios.js"></script>
+</head>
+
+<body>
+  <main id="main">
+    <header>
+      <h1>Ejercicios JavaScript</h1>
+    </header>
+    <article class="container">
       <header>
-        <h1>Ejercicios js 02 marzo</h1>
-        <p></p>
+        <h2>Ejercicios js 02 marzo</h2>
+
+        <p class="heading">
+          Se propone la realización de ejercicios de
+          <a href="https://www.aulascript.com/evaluar/arrays_objetos.html" target="_blank"
+            rel="nofollow noopener">https://www.aulascript.com/evaluar/arrays_objetos.html</a>
+          sobre el tema Arrays. Concretamente:
+        </p>
       </header>
-      <article class="container">
-        <header>
-          <p class="heading">
-            Se propone la realización de ejercicios de
-            <a
-              href="https://www.aulascript.com/evaluar/arrays_objetos.html"
-              target="_blank"
-              rel="nofollow noopener"
-              >https://www.aulascript.com/evaluar/arrays_objetos.html</a
-            >
-            sobre el tema Arrays. Concretamente:
-          </p>
-        </header>
-        <section class="content">
-          <h2>Ejercicio 1</h2>
-          <p>
-            Tienes que crear un script que gestione una lista de la compra. Para
-            ello tienes dos listas de artículos: compra, pendiente. Cada
-            elemento de la lista compra es un objeto con dos propiedades: nombre
-            del artículo y estado. Estado es un booleano true si el artículo se
-            compró, false en caso contrario. Pendiente es una lista con los
-            nombres de los artículos que faltan por comprar. La función que
-            debes crear recibe como argumento la lista de compra y devuelve la
-            lista de pendientes. -- en las posiciones pares para compra aparece
-            nombre artículo y en las impares el estado (true, false), para
-            pendiente no es necesario.
-          </p>
-          <button onclick="gestionarListaCompra(compra, pendiente)">
-            Ejecutar ejercicio
-          </button>
-        </section>
-        <section class="content">
-          <h2>Ejercicio 2</h2>
-          <p>
-            Tenemos dos listas de asistentes a dos cursos: html y css. Queremos
-            obtener una lsita de los asistentes a ambos cursos. La lista estará
-            ordenada. En este ejercicio debes crear dos arrays para representar
-            dos equipos de trabajo. Al primer array le llamaremos ocupados y al
-            segundo libres. Ambos están llenos con 5 nombres. Debes crear una
-            función rotar(lst1, lst2) que pase el primer nombre de la lista lst1
-            a l final de lst2, y luego el primero de la lst2 a l final de lst1.
-            Para ver que funciona escribe los arrays antes y después de usar
-            esta función.
-          </p>
-          <button onclick="rotar(ocupados, libres)">Ejecutar ejercicio</button>
-        </section>
-      </article>
-    </main>
-    <script>
-      // Arrays ej. 01 //////////////////////////////////////////
-      const compra = [
-        "Manzana",
-        true,
-        "Pera",
-        true,
-        "Platano",
-        false,
-        "Uva",
-        false,
-        "Naranja",
-        true,
-      ];
-      const pendiente = new Array();
-      // Arrays ej. 02 //////////////////////////////////////////
-      const ocupados = ["Ana 1", "Luis 1", "Carlos 1", "Marta 1", "Sofía 1"];
-      const libres = ["Pedro 2", "Lucía 2", "Jorge 2", "Laura 2", "Diego 2"];
-    </script>
-  </body>
+      <section class="content">
+        <h3>Ejercicio 1</h3>
+        <p>
+          Tienes que crear un script que gestione una lista de la compra. Para
+          ello tienes dos listas de artículos: compra, pendiente. Cada
+          elemento de la lista compra es un objeto con dos propiedades: nombre
+          del artículo y estado. Estado es un booleano true si el artículo se
+          compró, false en caso contrario. Pendiente es una lista con los
+          nombres de los artículos que faltan por comprar. La función que
+          debes crear recibe como argumento la lista de compra y devuelve la
+          lista de pendientes. -- en las posiciones pares para compra aparece
+          nombre artículo y en las impares el estado (true, false), para
+          pendiente no es necesario.
+        </p>
+        <button onclick="gestionarListaCompra(compra, pendiente)">
+          Ejecutar ejercicio
+        </button>
+      </section>
+      <section class="content">
+        <h3>Ejercicio 2</h3>
+        <p>
+          Tenemos dos listas de asistentes a dos cursos: html y css. Queremos
+          obtener una lsita de los asistentes a ambos cursos. La lista estará
+          ordenada. En este ejercicio debes crear dos arrays para representar
+          dos equipos de trabajo. Al primer array le llamaremos ocupados y al
+          segundo libres. Ambos están llenos con 5 nombres. Debes crear una
+          función rotar(lst1, lst2) que pase el primer nombre de la lista lst1
+          a l final de lst2, y luego el primero de la lst2 a l final de lst1.
+          Para ver que funciona escribe los arrays antes y después de usar
+          esta función.
+        </p>
+        <button onclick="rotar(ocupados, libres)">Ejecutar ejercicio</button>
+      </section>
+    </article>
+
+    <article class="container">
+      <header>
+        <h2>Ejercicios js 03 marzo</h2>
+        <p class="heading">
+          Se propone la realización de ejercicios de
+          <a href="https://github.com/makeitrealcamp/ejercicios-javascript" target="_blank"
+            rel="nofollow noopener">https://github.com/makeitrealcamp/ejercicios-javascript</a>
+          generales de js. Concretamente:
+        </p>
+      </header>
+      <section class="content">
+        <h3>1. Contraseña válida</h3>
+        <p>
+          Escribir una función llamada contrasenaValida que reciba un string y
+          retorne true si el string es igual a "2Fj(jjbFsuj" o "eoZiugBf&g9".
+          De lo contrario debe retornar false.
+        </p>
+        <button onclick="comprobarPass(getAnswer('Introduzca la contraseña'))">
+          Ejecutar ejercicio
+        </button>
+        <button onclick="comprobarPassword(getAnswer('Introduzca la contraseña'))">
+          Ejecutar ejercicio op array
+        </button>
+      </section>
+      <section class="content">
+        <h3>3. IMC (ïndice de masa corporal)</h3>
+        <p>
+          El índice de masa corporal (IMC), o BMI por sus siglas en inglés, es
+          un valor que determina la cantidad de grasa de una persona.</p>
+        <p>El BMI se calcula con la siguiente formula: peso / altura^2</p>
+        <p>Escribir una función llamada bmi que reciba dos argumentos: peso y altura, y
+          retorne un string con las siguientes posibilidades:</p>
+        <ul>
+          <li>"Bajo de peso" si el BMI < 18.5</li>
+          <li>"Normal" si está entre 18.5 y 24.9</li>
+          <li>"Sobrepeso" si está entre 25 y 29.9</li>
+          <li>"Obeso" si es igual o mayor a 30</li>
+        </ul>
+        </p>
+        <button onclick="comprobarImc(getAnswer('Introduzca el peso'), getAnswer('Introduzca la altura'))">
+          Ejecutar ejercicio
+        </button>
+      </section>
+      <section class="content">
+        <h3>8. Sumar rango de números</h3>
+        <p>Escribir una función llamada sumarRango que reciba dos argumentos: número inicial y número final. La función
+          debe retornar la suma de los números en ese rango (incluyéndolos).</p>
+        <p><strong>Nota:</strong> puedes asumir que el número inicial va a ser menor o igual que el número final.</p>
+        <button
+          onclick="sumarRango(getAnswer('Introduzca un numero inicial'), getAnswer('Introduzca el numero final'))">
+          Ejecutar ejercicio
+        </button>
+      </section>
+      <section class="content">
+        <h3>10. Número de caracteres</h3>
+        <p>Escribir una función llamada <code>numeroDeCaracteres</code> que reciba un string y un caracter (un string de
+          un caracter). La función debe retornar el número de veces que aparece el caracter en el string.</p>
+        <button id="btnEjecutar10"
+          onclick="numeroDeCaracteres(getAnswer('Introduzca una palabra o frase'), getAnswer('Introduzca la letra a encontrar'))">
+          Ejecutar ejercicio
+        </button>
+        <button id="btnEjecutar10a">
+          contarAbecedario
+        </button>
+      </section>
+    </article>
+  </main>
+  <script>
+    // Arrays ej. 01 //////////////////////////////////////////
+    const compra = [
+      'Manzana',
+      true,
+      'Pera',
+      true,
+      'Platano',
+      false,
+      'Uva',
+      false,
+      'Naranja',
+      true,
+    ];
+    const pendiente = new Array();
+    // Arrays ej. 02 //////////////////////////////////////////
+    const ocupados = ['Ana 1', 'Luis 1', 'Carlos 1', 'Marta 1', 'Sofía 1'];
+    const libres = ['Pedro 2', 'Lucía 2', 'Jorge 2', 'Laura 2', 'Diego 2'];
+
+
+    // Ejercicio 10 ////////////////////////////////////////////
+    // Seleccionamos el botón
+    const btn10a = document.getElementById('btnEjecutar10a');
+    // Añadimos el "oyente" de eventos
+    btn10a.addEventListener('click', () => {
+      const palabra = getAnswer('Introduzca una palabra o frase');
+
+      // Llamamos a la lógica
+      contarAbecedario(palabra);
+    });
+
+
+  </script>
+</body>
+
 </html>

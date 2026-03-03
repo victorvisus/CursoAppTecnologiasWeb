@@ -1,0 +1,4 @@
+Cadena de ámbitos (Scope Chain)
+El ámbito global es el que tenemos en la raíz de nuestro código.
+A partir de ahí podemos crear un ámbito más localizado. Dentro, podemos crear otro nuevo... y así sucesivamente.
+Lo importante que debes tener en cuenta es que los ámbitos inferiores pueden acceder a los superiores pero no al revés.
