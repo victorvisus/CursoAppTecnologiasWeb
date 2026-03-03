@@ -1,16 +1,4 @@
 /**
- * Devuelve un numero aleatorio entre 1 y 10
- * @returns {number}
- */
-function getRandomNumber() {
-  const random = Math.random();
-  const multiplied = random * 10;
-  const rounded = Math.floor(multiplied);
-  const result = rounded + 1;
-  return result;
-}
-
-/**
  * Solicita por prompt() datos al usuario.
  * Recive por parametro el texto de la pregunta que debe hacerle al usuario
  *
@@ -20,6 +8,26 @@ function getRandomNumber() {
 function getAnswer(text) {
   let answer = prompt(text);
   return answer;
+}
+/**
+ * Funcion que imprime un alert con los datos recibidos
+ * @param {*} text
+ * @param {*} valor
+ */
+function printAlert(text, valor) {
+  alert('archivo funcionesBase ' + text + ' ' + valor);
+}
+
+/**
+ * Devuelve un numero aleatorio entre 1 y 10
+ * @returns {number}
+ */
+function getRandomNumber() {
+  const random = Math.random();
+  const multiplied = random * 10;
+  const rounded = Math.floor(multiplied);
+  const result = rounded + 1;
+  return result;
 }
 
 /**

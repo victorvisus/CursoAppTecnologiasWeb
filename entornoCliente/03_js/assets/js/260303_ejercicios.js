@@ -1,21 +1,15 @@
+//import { getAnswer, printAlert } from 'funcionesBase.js';
+
 /**
  * Solicita por prompt() datos al usuario. y devuelve la respuesta
  * @param {*} text
  * @returns
  */
-function getAnswer(text) {
+/* function getAnswer(text) {
   let answer = prompt(text);
   return answer;
 }
-/**
- * Funcion que imprime un alert con los datos recibidos
- * @param {*} text
- * @param {*} valor
  */
-function printAlert(text, valor) {
-  alert(text + ' ' + valor);
-}
-
 /**
  * Escribir una función llamada contrasenaValida que reciba un string y
  *  retorne true si el string es igual a "2Fj(jjbFsuj" o "eoZiugBf&g9".
@@ -111,7 +105,7 @@ function numeroDeCaracteres(texto, char) {
       res++;
     }
   }
-  //printAlert('El numero de veces que aparece el caracter es: ', res);
+  printAlert('El numero de veces que aparece el caracter es: ', res);
   return res;
 }
 /**
@@ -150,9 +144,40 @@ function leerFichero(nombreFichero) {
   console.log(__dirname);
   console.log('Intentando leer en:', rutaAbsoluta);
 
-  const contenido = fs.readFileSync(nombreFichero, 'utf-8', 'r');
+  const contenido = fs.readFileSync(rutaAbsoluta, 'utf-8', 'r');
   console.log('Contenido leído con éxito');
 
   console.log(contenido);
 }
-leerFichero('datos.txt');
+//leerFichero('datos.txt');
+
+/**
+ * 26. Imprimir una matriz
+ * Escribir una función llamada imprimirMatriz que reciba una matriz (un arreglo de arreglos)
+ * e imprima todos los elementos del arreglo.
+ */
+
+function imprimirMatriz(matriz) {
+  let salida = '';
+  for (let i = 0; i < matriz.length; i++) {
+    for (let j = 0; j < matriz[i].length; j++) {
+      salida = salida + matriz[i][j] + ' ';
+    }
+  }
+  printAlert('La matriz: ' + salida);
+}
+function getMatriz() {
+  const matriz = [
+    [3, 7, 5, 2],
+    [32, 5, 6, -2],
+    [4, 8, 9, 35],
+    [4, 8, 9, 35],
+  ];
+  return matriz;
+}
+// tabla
+const tabla = [
+  ['Pais/año', '2003', '2004', '2005'],
+  ['España', 5, 6, -2],
+  ['Resto UE', 8, 9, 35],
+];
