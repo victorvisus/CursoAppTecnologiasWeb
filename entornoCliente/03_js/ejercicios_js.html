@@ -12,6 +12,7 @@
   <script src="./assets/js/funcionesBase.js"></script>
   <script src="./assets/js/260302_ejecercicios.js"></script>
   <script src="./assets/js/260303_ejercicios.js"></script>
+  <script src="./assets/js/objeto-empleados.js"></script>
 </head>
 
 <body>
@@ -44,9 +45,11 @@
           nombre artículo y en las impares el estado (true, false), para
           pendiente no es necesario.
         </p>
-        <button onclick="gestionarListaCompra(compra, pendiente)">
-          Ejecutar ejercicio
-        </button>
+        <div class="botones">
+          <button onclick="gestionarListaCompra(compra, pendiente)">
+            Ejecutar ejercicio
+          </button>
+        </div>
       </section>
       <section class="content">
         <h3>Ejercicio 2</h3>
@@ -61,7 +64,9 @@
           Para ver que funciona escribe los arrays antes y después de usar
           esta función.
         </p>
-        <button onclick="rotar(ocupados, libres)">Ejecutar ejercicio</button>
+        <div class="botones">
+          <button onclick="rotar(ocupados, libres)">Ejecutar ejercicio</button>
+        </div>
       </section>
     </article>
 
@@ -75,61 +80,121 @@
           generales de js. Concretamente:
         </p>
       </header>
-      <section class="content">
+      <iv class="content">
         <h3>1. Contraseña válida</h3>
         <p>
           Escribir una función llamada contrasenaValida que reciba un string y
           retorne true si el string es igual a "2Fj(jjbFsuj" o "eoZiugBf&g9".
           De lo contrario debe retornar false.
         </p>
-        <button onclick="comprobarPass(getAnswer('Introduzca la contraseña'))">
-          Ejecutar ejercicio
-        </button>
-        <button onclick="comprobarPassword(getAnswer('Introduzca la contraseña'))">
-          Ejecutar ejercicio op array
-        </button>
-      </section>
+        <div class="botones">
+          <button onclick="comprobarPass(getAnswer('Introduzca la contraseña'))">
+            Ejecutar ejercicio
+          </button>
+          <button onclick="comprobarPassword(getAnswer('Introduzca la contraseña'))">
+            Ejecutar ejercicio op array
+          </button>
+        </div>
+        </section>
+        <section class="content">
+          <h3>3. IMC (ïndice de masa corporal)</h3>
+          <p>
+            El índice de masa corporal (IMC), o BMI por sus siglas en inglés, es
+            un valor que determina la cantidad de grasa de una persona.</p>
+          <p>El BMI se calcula con la siguiente formula: peso / altura^2</p>
+          <p>Escribir una función llamada bmi que reciba dos argumentos: peso y altura, y
+            retorne un string con las siguientes posibilidades:</p>
+          <ul>
+            <li>"Bajo de peso" si el BMI < 18.5</li>
+            <li>"Normal" si está entre 18.5 y 24.9</li>
+            <li>"Sobrepeso" si está entre 25 y 29.9</li>
+            <li>"Obeso" si es igual o mayor a 30</li>
+          </ul>
+          </p>
+          <div class="botones">
+            <button onclick="comprobarImc(getAnswer('Introduzca el peso'), getAnswer('Introduzca la altura'))">
+              Ejecutar ejercicio
+            </button>
+          </div>
+        </section>
+        <section class="content">
+          <h3>8. Sumar rango de números</h3>
+          <p>Escribir una función llamada sumarRango que reciba dos argumentos: número inicial y número final. La
+            función
+            debe retornar la suma de los números en ese rango (incluyéndolos).</p>
+          <p><strong>Nota:</strong> puedes asumir que el número inicial va a ser menor o igual que el número final.</p>
+          <div class="botones">
+            <button
+              onclick="sumarRango(getAnswer('Introduzca un numero inicial'), getAnswer('Introduzca el numero final'))">
+              Ejecutar ejercicio
+            </button>
+          </div>
+        </section>
+        <section class="content">
+          <h3>10. Número de caracteres</h3>
+          <p>Escribir una función llamada <code>numeroDeCaracteres</code> que reciba un string y un caracter (un string
+            de
+            un caracter). La función debe retornar el número de veces que aparece el caracter en el string.</p>
+          <div class="botones">
+            <button id="btnEjecutar10">
+              Ejecutar ejercicio
+            </button>
+            <button id="btnEjecutar10a">
+              contarAbecedario
+            </button>
+          </div>
+        </section>
+        <i class="content">
+          <h3>26. Imprimir una matriz</h3>
+          <p>Escribir una función llamada <code>imprimirMatriz</code>z que reciba una matriz (un arreglo de arreglos) e
+            imprima todos
+            los elementos del arreglo.</p>
+          <div class="botones">
+            <button id="btnEjecutar26">
+              Ejecutar ejercicio
+            </button>
+          </div>
+          </section>
+    </article>
+
+    <article class="container">
+      <header>
+        <h2>Ejercicios Objetos js 04 marzo</h2>
+        <p class="heading">
+          Se propone la realización de ejercicios referentes a objetos de js
+        </p>
+      </header>
       <section class="content">
-        <h3>3. IMC (ïndice de masa corporal)</h3>
+        <h3>Crea un sistema que gestione una lista de empleados con:</h3>
         <p>
-          El índice de masa corporal (IMC), o BMI por sus siglas en inglés, es
-          un valor que determina la cantidad de grasa de una persona.</p>
-        <p>El BMI se calcula con la siguiente formula: peso / altura^2</p>
-        <p>Escribir una función llamada bmi que reciba dos argumentos: peso y altura, y
-          retorne un string con las siguientes posibilidades:</p>
         <ul>
-          <li>"Bajo de peso" si el BMI < 18.5</li>
-          <li>"Normal" si está entre 18.5 y 24.9</li>
-          <li>"Sobrepeso" si está entre 25 y 29.9</li>
-          <li>"Obeso" si es igual o mayor a 30</li>
+          <li>Array de objetos empleado (nombre, puesto, salario, activo).</li>
+          <li>Función para añadir nuevos empleados.</li>
+          <li>Función para mostrar todos los empleados activos.</li>
+          <li>Función para calcular el gasto total en nóminas.</li>
+          <li>Función para buscar empleado por nombre.</li>
+          <li>Extensiones: Filtrar por puesto, Ordenar por salario y Dar de baja empleados (cambiar a no activos).</li>
         </ul>
         </p>
-        <button onclick="comprobarImc(getAnswer('Introduzca el peso'), getAnswer('Introduzca la altura'))">
-          Ejecutar ejercicio
-        </button>
+        <div class="botones">
+          <button id="btnAddEmpleado">
+            Agregar empleados
+          </button>
+          <button id="btnListEmpleadosActivos">
+            Listar empleados activos
+          </button>
+          <button id="btnCalcNominas">
+            Calcular gasto en nóminas
+          </button>
+          <button id="btnfindEmpleado">
+            Buscar empleado por nombre
+          </button>
+          <button id="btnOrdenarEmpleados">
+            Ordenar empleados por salario
+          </button>
+        </div>
       </section>
-      <section class="content">
-        <h3>8. Sumar rango de números</h3>
-        <p>Escribir una función llamada sumarRango que reciba dos argumentos: número inicial y número final. La función
-          debe retornar la suma de los números en ese rango (incluyéndolos).</p>
-        <p><strong>Nota:</strong> puedes asumir que el número inicial va a ser menor o igual que el número final.</p>
-        <button
-          onclick="sumarRango(getAnswer('Introduzca un numero inicial'), getAnswer('Introduzca el numero final'))">
-          Ejecutar ejercicio
-        </button>
-      </section>
-      <section class="content">
-        <h3>10. Número de caracteres</h3>
-        <p>Escribir una función llamada <code>numeroDeCaracteres</code> que reciba un string y un caracter (un string de
-          un caracter). La función debe retornar el número de veces que aparece el caracter en el string.</p>
-        <button id="btnEjecutar10"
-          onclick="numeroDeCaracteres(getAnswer('Introduzca una palabra o frase'), getAnswer('Introduzca la letra a encontrar'))">
-          Ejecutar ejercicio
-        </button>
-        <button id="btnEjecutar10a">
-          contarAbecedario
-        </button>
-      </section>
+
     </article>
   </main>
   <script>
@@ -150,21 +215,8 @@
     // Arrays ej. 02 //////////////////////////////////////////
     const ocupados = ['Ana 1', 'Luis 1', 'Carlos 1', 'Marta 1', 'Sofía 1'];
     const libres = ['Pedro 2', 'Lucía 2', 'Jorge 2', 'Laura 2', 'Diego 2'];
-
-
-    // Ejercicio 10 ////////////////////////////////////////////
-    // Seleccionamos el botón
-    const btn10a = document.getElementById('btnEjecutar10a');
-    // Añadimos el "oyente" de eventos
-    btn10a.addEventListener('click', () => {
-      const palabra = getAnswer('Introduzca una palabra o frase');
-
-      // Llamamos a la lógica
-      contarAbecedario(palabra);
-    });
-
-
   </script>
+  <script src="./assets/js/listeners.js"></script>
 </body>
 
 </html>

@@ -82,3 +82,10 @@ p.heading a {
 }
 
 /*ejercicio js*/
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  gap: 10px;
+}

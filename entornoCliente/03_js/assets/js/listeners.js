@@ -30,3 +30,56 @@ btn26.addEventListener('click', () => {
   // Llamamos a la lógica
   imprimirMatriz(matriz);
 });
+
+// Ejercicio Empleados ////////////////////////////////////////////
+//Creo el array de empleados
+const empleados = [
+  new Trabajador('Paco', 'Desarrollador', 1200, true),
+  new Trabajador('Luis', 'Desarrollador', 1300, false),
+  new Trabajador('Manolo', 'Desarrollador', 1000, true),
+  new Trabajador('Marta', 'Desarrollador', 1500, true),
+];
+
+//Creo y recogo los botones del ejercicio de empleados
+const btnAddEmpleados = document.getElementById('btnAddEmpleado');
+const btnListEmpleadosActivos = document.getElementById(
+  'btnListEmpleadosActivos',
+);
+const btnCalcNominas = document.getElementById('btnCalcNominas');
+const btnfindEmpleado = document.getElementById('btnfindEmpleado');
+const btnOrdenarEmpleados = document.getElementById('btnOrdenarEmpleados');
+
+// Agrego los oyentes de eventos a los botones y sus funcionalidades
+btnAddEmpleados.addEventListener('click', () => {
+  addEmpleado(empleados);
+  printAlert('Empleados activos: ', mostrarEmpleadosActivos(empleados));
+});
+
+btnListEmpleadosActivos.addEventListener('click', () => {
+  printAlert('Empleados activos: ', mostrarEmpleadosActivos(empleados));
+});
+
+btnCalcNominas.addEventListener('click', () => {
+  printAlert('Gasto total en nóminas: ', calcularGastoNominas(empleados));
+});
+
+btnfindEmpleado.addEventListener('click', () => {
+  const nombre = getAnswer('Introduce el nombre del empleado a buscar');
+  const empleadoEncontrado = findEmpleado(empleados, nombre);
+  printAlert(
+    `Empleado encontrado:
+    - Nombre: ${empleadoEncontrado.nombre}
+    - Puesto: ${empleadoEncontrado.puesto}
+    - Salario: ${empleadoEncontrado.salario}
+    - Activo: ${empleadoEncontrado.activo}`,
+  );
+});
+
+btnOrdenarEmpleados.addEventListener('click', () => {
+  const empleadosOrdenados = OrdenarEmpleadosPorSalario(empleados);
+  let mensaje = 'Empleados ordenados por salario:\n';
+  for (let i = 0; i < empleadosOrdenados.length; i++) {
+    mensaje += `Empleado: ${empleadosOrdenados[i].nombre}, Salario: ${empleadosOrdenados[i].salario}\n`;
+  }
+  printAlert(mensaje);
+});
