@@ -61,7 +61,7 @@ console.log('Eliminada la propiedad vendido: ', coche);
  */
 console.log('----------------------------------');
 console.log('Obj. Familia -----------------------');
-const Familia = {};
+const familia = {};
 
 //Declaro la clase Persona
 class Persona {
@@ -85,70 +85,70 @@ class Hijo extends Persona {
   }
 }
 
-Familia.miembros = [];
+familia.miembros = [];
 
 const hijoMenor = new Hijo('Alfredo', 13, false, 'Informatica');
 const hijaMayor = new Hijo('Luisa', 15, true, 'Telecomunicaciones');
 const padre = new Persona('Ricardo', 43, false);
 const madre = new Persona('María', 45, true);
 
-Familia.miembros.push(hijoMenor, hijaMayor, padre, madre);
-Familia.direccion = 'Calle 1';
-Familia.telefono = '123456789';
-Familia.cp = '12345';
-Familia.renta = 5000;
-Familia.superficie_vivienda = 100;
+familia.miembros.push(hijoMenor, hijaMayor, padre, madre);
+familia.direccion = 'Calle 1';
+familia.telefono = '123456789';
+familia.cp = '12345';
+familia.renta = 5000;
+familia.superficie_vivienda = 100;
 
-console.log(Familia);
+console.log(familia);
 
 // los hijos crecen y las edades se modifican
 // hacer una funcion que agregue x años a las edades de los miembros de la familia
 function addEdad(num) {
-  Familia.miembros.forEach((miembro) => {
+  familia.miembros.forEach((miembro) => {
     miembro.edad += num;
     console.log(miembro.nombre + ' ahora tiene ' + miembro.edad + ' anios');
   });
 }
 addEdad(3);
-Familia.miembros.forEach((miembro) => miembro.saludar());
-/* Familia.miembros.padre.saludar();
-Familia.miembros.hijaMayor.saludar(); */
+familia.miembros.forEach((miembro) => miembro.saludar());
+/* familia.miembros.padre.saludar();
+familia.miembros.hijaMayor.saludar(); */
 
 //Add campo precio vivienda
-Familia.precio_vivienda = 30000;
+familia.precio_vivienda = 30000;
 
 // a cada mujer de la familia se le da un bono de 2000 euros
 function addBono(bono) {
-  Familia.miembros.forEach((miembro) => {
+  familia.miembros.forEach((miembro) => {
     if (miembro.mujer) {
       miembro.bono = bono;
     }
   });
 }
 addBono(2000);
-console.log(Familia);
+console.log(familia);
 
 //Acceso seguro con verificacion
 let clave = 'precio_vivienda';
-clave in Familia
-  ? console.log(`la clave ${clave} es: ${Familia[clave]}`)
+clave in familia
+  ? console.log(`la clave ${clave} es: ${familia[clave]}`)
   : console.log('la clave no existe');
 
 //Listar todas las propiedades:
-for (let propiedad in Familia)
-  console.log(`${propiedad}: ${Familia[propiedad]}`);
+for (let propiedad in familia)
+  console.log(`${propiedad}: ${familia[propiedad]}`);
 
 //Incrementamos la familia con 3 miembros, 2 mujeres y 1 que no es mujer
 
 const hijadd = new Hijo('Ana');
 hijadd.mujer = true;
 hijadd.acogida = true;
-Familia.miembros.push(hijadd);
+familia.miembros.push(hijadd);
 
-console.log(Familia);
+console.log(familia);
 
 //Saludar a las mujeres
-Familia.miembros.forEach((miembro) => {
+familia.miembros.forEach((miembro) => {
   if (miembro.mujer) {
     miembro.saludar();
   }
@@ -157,9 +157,9 @@ Familia.miembros.forEach((miembro) => {
 //Dinero sobrante
 const dineroSobrante = 1000;
 clave = 'bono';
-Familia.miembros.forEach((miembro) => {
+familia.miembros.forEach((miembro) => {
   !(clave in miembro) || 0 === miembro[clave]
     ? (miembro.bono_extra = dineroSobrante)
     : delete miembro.bono;
 });
-console.log(Familia);
+console.log(familia);

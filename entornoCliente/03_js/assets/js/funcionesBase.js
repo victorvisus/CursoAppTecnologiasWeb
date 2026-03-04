@@ -15,7 +15,7 @@ function getAnswer(text) {
  * @param {*} valor
  */
 function printAlert(text, valor) {
-  alert('archivo funcionesBase ' + text + ' ' + valor);
+  alert(text + ' ' + valor);
 }
 
 /**
