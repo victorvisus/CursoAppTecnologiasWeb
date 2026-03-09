@@ -25,7 +25,6 @@ desktop.ini
 
 # --- Lenguajes de Marcas y Web ---
 # Si usas Node.js para alguna herramienta de compilación (SASS, etc.)
-node_modules/
 dist/
 build/
 .cache/
@@ -36,6 +35,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
-package.json
-package-lock.json
+node_modules/
