@@ -1,135 +1,135 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Ejercicios DOM</title>
-    <style>
-      .resaltado {
-        background-color: yellow;
-        font-weight: bold;
-      }
 
-      .caja {
-        border: 1px solid black;
-        padding: 10px;
-        margin-top: 5px;
-      }
-      main {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      article.contenedor {
-        border: 1px solid black;
-        padding: 10px;
-        margin-top: 5px;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
+  <title>Ejercicios DOM</title>
+  <style>
+    .resaltado {
+      background-color: yellow;
+      font-weight: bold;
+    }
 
-  <body>
-    <main id="main">
-      <article class="contenedor">
-        <header>
-          <h2 id="tituloPrincipal">Manipulación del DOM</h2>
-          <p id="parrafoIntro">Este es un párrafo introductorio.</p>
-        </header>
+    .caja {
+      border: 1px solid black;
+      padding: 10px;
+      margin-top: 5px;
+    }
 
-        <div class="caja contenedor">
-          <p>Primer párrafo dentro de una caja.</p>
-          <button id="botonCambiar" onclick="cambiarTexto()">
-            Cambiar Texto del Párrafo
-          </button>
-          <button id="botonCambiarFondo" onclick="cambiarFondo()">
-            Cambiar Fondo del Párrafo
-          </button>
-          <button id="botonEncontrar" onclick="">Encontrar container</button>
-        </div>
+    main {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 5vmax 0;
+    }
 
-        <div class="caja importante">
-          <p>Segundo párrafo, también en una caja.</p>
-          <img
-            id="imagenDemo"
-            src="imagen_original.jpg"
-            alt="Imagen de demostración" />
-          <button id="botonCambiarImagen" onclick="cambiarBorde()">
-            Cambiar Borde
-          </button>
-          <button id="botonCambiarImagen" onclick="cambiarImagen()">
-            Cambiar Imagen
-          </button>
-        </div>
-        <div class="caja noimportante">
-          <ul id="listaItems">
-            <li class="item">Elemento 1</li>
-            <li class="item importante">Elemento 2</li>
-            <li class="item">Elemento 3</li>
-          </ul>
-          <button id="botonCambiarColorItems" onclick="cambiarColorItems()">
-            Cambiar Color de Items
-          </button>
-        </div>
+    article.contenedor {
+      border: 1px solid black;
+      padding: 10px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
 
-        <input
-          type="text"
-          id="entradaUsuario"
-          placeholder="Escribe algo aquí" />
-        <button id="botonMostrar" onclick="mostrarEntrada()">
-          Mostrar Entrada
+<body>
+  <main id="main">
+    <article class="contenedor">
+      <header>
+        <h2 id="tituloPrincipal">Manipulación del DOM</h2>
+        <p id="parrafoIntro">Este es un párrafo introductorio.</p>
+      </header>
+
+      <div class="caja contenedor">
+        <p>Primer párrafo dentro de una caja.</p>
+        <button id="botonCambiar" onclick="cambiarTexto()">
+          Cambiar Texto del Párrafo
         </button>
-        <p id="textoMostrado"></p>
-      </article>
+        <button id="botonCambiarFondo" onclick="cambiarFondo()">
+          Cambiar Fondo del Párrafo
+        </button>
+        <button id="botonEncontrar" onclick="">Encontrar container</button>
+      </div>
 
-      <article class="contenedor">
-        <header>
-          <h2>Eventos script DOM</h2>
-          <p>Este es un párrafo introductorio.</p>
-          <p class="">Este es un párrafo resaltado.</p>
-        </header>
+      <div class="caja importante">
+        <p>Segundo párrafo, también en una caja.</p>
+        <img id="imagenDemo" src="imagen_original.jpg" alt="Imagen de demostración" />
+        <button id="botonCambiarImagen" onclick="cambiarBorde()">
+          Cambiar Borde
+        </button>
+        <button id="botonCambiarImagen" onclick="cambiarImagen()">
+          Cambiar Imagen
+        </button>
+      </div>
+      <div class="caja noimportante">
+        <ul id="listaItems">
+          <li class="item">Elemento 1</li>
+          <li class="item importante">Elemento 2</li>
+          <li class="item">Elemento 3</li>
+        </ul>
+        <button id="botonCambiarColorItems" onclick="cambiarColorItems()">
+          Cambiar Color de Items
+        </button>
+      </div>
 
-        <section>
-          <!-- Método 1: Atributo onclick en HTML -->
-          <button onclick="miFuncion()">Hacer click</button>
+      <input type="text" id="entradaUsuario" placeholder="Escribe algo aquí" />
+      <button id="botonMostrar" onclick="mostrarEntrada()">
+        Mostrar Entrada
+      </button>
+      <p id="textoMostrado"></p>
+    </article>
 
-          <script>
-            function miFuncion() {
-              alert("¡Botón clickeado!");
-            }
-          </script>
+    <article class="contenedor">
+      <header>
+        <h2>Eventos script DOM</h2>
+        <p>Este es un párrafo introductorio.</p>
+        <p class="">Este es un párrafo resaltado.</p>
+      </header>
 
-          <!--Método 2: Propiedad onclick en JavaScript -->
-          <button id="miBoton">Hacer click</button>
+      <section>
+        <!-- Método 1: Atributo onclick en HTML -->
+        <button onclick="miFuncion()">Hacer click</button>
 
-          <script>
-            document.getElementById("miBoton").onclick = function () {
-              alert("¡Botón clickeado 2!");
-            };
-          </script>
-        </section>
+        <script>
+          function miFuncion() {
+            alert("¡Botón clickeado!");
+          }
+        </script>
 
-        <section>
-          <p id="miParrafo">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed error
-            reprehenderit non possimus magnam totam perferendis delectus!
-            Repellat hic ipsa assumenda officia, fuga optio beatae debitis
-            soluta nesciunt laborum? Excepturi.
-          </p>
-          <button id="multiClick">Hacer click</button>
-          <button id="removeListener">Eliminar un listener, en 5 segs</button>
-        </section>
+        <!--Método 2: Propiedad onclick en JavaScript -->
+        <button id="miBoton">Hacer click</button>
 
-        <section>
-          <p class="parrafo target">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Voluptates, tempore quia officia in repellat corporis ab sed et
-            illo, perferendis quod laboriosam quis quaerat odit nam modi
-            obcaecati quasi non?
-          </p>
-          <button id="target">Hacer click</button>
-        </section>
-      </article>
-    </main>
-    <script src="./js/script-dom.js"></script>
-    <script src="./js/script-eventos.js"></script>
-  </body>
+        <script>
+          document.getElementById("miBoton").onclick = function () {
+            alert("¡Botón clickeado 2!");
+          };
+        </script>
+      </section>
+
+      <section>
+        <p id="miParrafo">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed error
+          reprehenderit non possimus magnam totam perferendis delectus!
+          Repellat hic ipsa assumenda officia, fuga optio beatae debitis
+          soluta nesciunt laborum? Excepturi.
+        </p>
+        <button id="multiClick">Hacer click</button>
+        <button id="removeListener">Eliminar un listener, en 5 segs</button>
+      </section>
+
+      <section>
+        <p class="parrafo target">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Voluptates, tempore quia officia in repellat corporis ab sed et
+          illo, perferendis quod laboriosam quis quaerat odit nam modi
+          obcaecati quasi non?
+        </p>
+        <button id="target">Hacer click</button>
+      </section>
+    </article>
+  </main>
+  <script src="./js/script-dom.js"></script>
+  <script src="./js/script-eventos.js"></script>
+</body>
+
 </html>
