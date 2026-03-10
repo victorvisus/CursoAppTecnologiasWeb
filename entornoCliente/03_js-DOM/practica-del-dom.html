@@ -29,6 +29,10 @@
       padding: 10px;
       margin-top: 5px;
     }
+
+    .contenedor section {
+      padding: 0.5rem;
+    }
   </style>
 </head>
 
@@ -126,10 +130,32 @@
         </p>
         <button id="target">Hacer click</button>
       </section>
+      <section>
+        <h3>Eventos de Teclado</h3>
+        <form action="/">
+          <input type="text" name="name" id="name" value="" required />
+          <input type="submit" value="Enviar" />
+        </form>
+      </section>
+    </article>
+
+    <article class="contenedor">
+      <header>
+        <h2>Crear y eliminar nodos</h2>
+      </header>
+      <section id="padre">
+        <!-- aqui iran los nuevos elementos -->
+
+
+        <button id="btn-crear">Crear e insertar Elementos</button>
+        <button id="btn-insert-before">Insertar antes del prependParagraph</button>
+        <button id="btn-linkGoogle">Insertar un link a google</button>
+      </section>
     </article>
   </main>
   <script src="./js/script-dom.js"></script>
   <script src="./js/script-eventos.js"></script>
+  <script src="./js/script-nodos.js"></script>
 </body>
 
 </html>
