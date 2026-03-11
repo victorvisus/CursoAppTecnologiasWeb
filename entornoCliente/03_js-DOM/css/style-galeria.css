@@ -22,6 +22,19 @@
   padding: 20px 10px;
   gap: 2em;
 }
+.formulario {
+  flex-direction: column;
+  form {
+    margin: unset;
+    width: 100%;
+    max-width: 350px;
+    div[role='group'] {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+}
 .gallery {
   .gallery-item {
     margin: unset;

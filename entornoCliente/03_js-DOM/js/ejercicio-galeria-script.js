@@ -8,7 +8,7 @@
 
 function delImg() {
   this.parentElement.remove();
-  console.log('Imagen eliminada');
+  alert('Imagen eliminada');
 }
 
 function addImg(url, caption) {
