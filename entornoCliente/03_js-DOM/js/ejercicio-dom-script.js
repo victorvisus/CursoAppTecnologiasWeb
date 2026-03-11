@@ -15,16 +15,15 @@ function ejercicionDOM() {
   enlace.target = '_blank';
 
   const parrafo = document.createElement('p');
-  let contenidoParrafo;
+  parrafo.textContent = 'lorem ipsum y demas';
 
-  if (edad > 18) {
-    contenidoParrafo = 'lorem ipsum y demas';
-  } else {
-    contenidoParrafo = 'Tienes que aprender latin';
-    document.querySelector('div').append(enlace);
+  if (edad <= 18) {
+    parrafo.textContent = 'Tienes que aprender latin';
+
+    document.querySelector('div').append(parrafo, enlace);
+    return;
   }
 
-  parrafo.textContent = contenidoParrafo;
   document.querySelector('div').append(parrafo);
 }
 
