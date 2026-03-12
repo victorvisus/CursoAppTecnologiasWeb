@@ -81,18 +81,18 @@ function obtenerPedidos(idUser) {
   //console.log('⏳ Function obtenerPedidos() pendiente de implementar');
   return new Promise((resolve, reject) => {
     // Creamos un array para almacenar los pedidos del usuario
-    const usrOrder = new Array();
+    const usrOrders = new Array();
 
     // Recorremos el array de pedidos para obtener los pedidos del usuario y los almacenamos en el array anterior
     for (let i = 0; i < pedidos.length; i++) {
       if (pedidos[i].usuario_id === idUser) {
-        usrOrder.push(pedidos[i]);
+        usrOrders.push(pedidos[i]);
       }
     }
 
     // Imprimimos los pedidos obtenidos del usuario
     console.log('Detalles de los pedidos del usuario ' + idUser);
-    usrOrder.forEach((p) => {
+    usrOrders.forEach((p) => {
       console.log('Pedido ' + p.id + ':');
       p.productos.forEach((producto) => {
         console.log(
@@ -109,8 +109,8 @@ function obtenerPedidos(idUser) {
     });
     console.log('--- Fin pedidos usuario ' + idUser + '\n');
 
-    if (usrOrder) {
-      resolve(usrOrder);
+    if (usrOrders) {
+      resolve(usrOrders);
     } else {
       reject(new Error('No se encontraron pedidos'));
     }
@@ -122,20 +122,20 @@ function obtenerPedidos(idUser) {
  * @param {*} idOrder
  * @returns
  */
-function obtenerDetalles(idOrder, usrOrder) {
+function obtenerDetalles(idOrder, usrOrders) {
   console.log(
     '// function obtenerDetalles ////////////////////////////////////// -> ',
     idOrder,
   );
-  console.log(usrOrder);
+  console.log(usrOrders);
   //console.log('⏳ Function obtenerDetalles() pendiente de implementar');
   //obtenerDetalles(pedidos[0].id); // Devolvemos la siguiente Promise
 
   const detalleOrder = [];
 
-  for (let i = 0; i < usrOrder.length; i++) {
-    if (usrOrder[i].id === idOrder) {
-      detalleOrder.push(usrOrder[i]);
+  for (let i = 0; i < usrOrders.length; i++) {
+    if (usrOrders[i].id === idOrder) {
+      detalleOrder.push(usrOrders[i]);
     }
   }
   console.log('detalles del pedido ' + idOrder, detalleOrder);
@@ -149,9 +149,15 @@ function calcularTotal(detalleOrder) {
   );
 
   console.log(detalleOrder);
-  console.log('⏳ Function calcularTotal() pendiente de implementar');
+  //console.log('⏳ Function calcularTotal() pendiente de implementar');
 
   let total = 0;
+
+  for (let i = 0; i < detalleOrder[0].productos.length; i++) {
+    total +=
+      detalleOrder[0].productos[i].precio *
+      detalleOrder[0].productos[i].cantidad;
+  }
 
   return total;
 }
@@ -161,13 +167,13 @@ obtenerUsuario(1)
     console.log('Usuario (en el .then()):', usuario.nombre);
     return obtenerPedidos(usuario.id); // Devolvemos la siguiente Promise
   })
-  .then((usrOrder) => {
-    console.log('Pedidos (en el .then()):', usrOrder);
-    return obtenerDetalles(usrOrder[0].id, usrOrder); // Devolvemos la siguiente Promise
+  .then((usrOrders) => {
+    console.log('Pedidos (en el .then()):', usrOrders);
+    return obtenerDetalles(usrOrders[0].id, usrOrders); // Devolvemos la siguiente Promise
   })
-  .then((detalles) => {
-    console.log('Detalles (en el .then()):', detalles);
-    return calcularTotal(detalles); // Devolvemos la siguiente Promise
+  .then((detalleOrder) => {
+    console.log('Detalles (en el .then()):', detalleOrder);
+    return calcularTotal(detalleOrder); // Devolvemos la siguiente Promise
   })
   .then((total) => {
     console.log('Total:', total);
