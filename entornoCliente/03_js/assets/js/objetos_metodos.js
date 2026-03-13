@@ -34,3 +34,14 @@ const valoresAsociados = arrayKeysObjEstad.forEach((clave) => {
   console.log(objEstad[clave]);
 });
 //console.log(valoresAsociados);
+
+//quitamos los dias y los guardamos en un nuevo array
+let meses = ['enero', 'febrero', 'lunes', 'martes'];
+let dias = meses.splice(2, 2);
+console.log(meses);
+console.log(dias);
+
+//insertamos un mes
+meses = ['enero', 'febrero', 'lunes', 'martes'];
+meses.splice(2, 0, 'marzo');
+console.log(meses);

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tarjeta-persona</title>
+  </head>
+  <body>
+    <header>
+      <h1>tarjeta-persona</h1>
+    </header>
+    <main id="main">
+      <article id="empleados" class="container">
+        <section class="empleado container-content">
+          <header class="empleado-info">
+            <h2>Empleado 1</h2>
+          </header>
+          <div class="empleado-info" role="group">
+            <h3>Profesion</h3>
+            <p>empleado 1</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Correo Electronico</h3>
+            <p>empleado 1</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Telefono</h3>
+            <p>empleado 1</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Ubicacion</h3>
+            <p>empleado 1</p>
+          </div>
+        </section>
+      </article>
+    </main>
+    <aside class="form-add">
+      <header>
+        <h3>Agregar Empleado</h3>
+      </header>
+      <form action="/">
+        <div role="group" class="form-item">
+          <label for="name-id">Nombre</label>
+          <input type="text" name="name" id="name-id" />
+        </div>
+        <div role="group" class="form-item">
+          <label for="profesion-id">Profesión</label>
+          <input type="text" name="profesion" id="profesion-id" />
+        </div>
+        <div role="group" class="form-item">
+          <label for="email-id">Correo electrónico</label>
+          <input type="email" name="email" id="email-id" />
+        </div>
+        <div role="group" class="form-item">
+          <label for="telefono-id">Teléfono</label>
+          <input type="tel" name="telefono" id="telefono-id" />
+        </div>
+        <div role="group" class="form-item">
+          <label for="ubicacion-id">Ubicación</label>
+          <input type="text" name="ubicacion" id="ubicacion-id" />
+        </div>
+        <button type="submit" id="add-empleado">Agregar</button>
+      </form>
+    </aside>
+    <script src="./js/tarjeta-persona.js"></script>
+  </body>
+</html>
