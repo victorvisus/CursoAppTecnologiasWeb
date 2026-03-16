@@ -1,0 +1,79 @@
+#main {
+  padding: var(--margin-max);
+}
+.container {
+  background-color: var(--color-negro-carbon);
+  padding: var(--margin-max);
+  margin-bottom: var(--margin-max);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-std);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--margin-max);
+  .container-content {
+    background-color: var(--color-gris-antracita);
+    padding: var(--margin-max);
+    margin-bottom: var(--margin-max);
+    border-radius: var(--radius);
+
+    border: 2px solid var(--color-verde-criptico);
+    header {
+      padding-left: 0;
+    }
+    h2,
+    p {
+      color: var(--color-blanco);
+    }
+  }
+}
+/* .container-content {
+  background-color: var(--color-gris-antracita);
+  padding: var(--margin-max);
+  margin-bottom: var(--margin-max);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-std);
+  border: 2px solid var(--color-verde-criptico);
+  h2,
+  p {
+    color: var(--color-blanco);
+  }
+} */
+
+/**** Formulario ****/
+aside.form-add {
+  background-color: var(--color-background);
+  padding: var(--margin-max);
+  margin: var(--margin-max);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-std);
+
+  header,
+  form#form-add {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    .form-item {
+      margin-bottom: var(--margin-min);
+      display: flex;
+      flex-direction: column;
+      label {
+        margin-bottom: var(--margin-min);
+      }
+      input {
+        border: 1px solid var(--color-gris-acero);
+      }
+    }
+  }
+}
+
+.btn-del {
+  background-color: var(--color-delete);
+  border-color: var(--color-blanco);
+  color: var(--color-blanco);
+
+  &:hover {
+    background-color: var(--color-blanco);
+    color: var(--color-delete);
+  }
+}

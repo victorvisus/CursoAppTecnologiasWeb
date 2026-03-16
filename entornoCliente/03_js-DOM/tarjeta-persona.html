@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tarjeta-persona</title>
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0E0E11" />
+
+    <link
+      rel="shortcut icon"
+      href="./assets/img/HTML5_logo_and_wordmark.svg"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="./css/formateo.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header>
@@ -32,13 +44,80 @@
             <p>empleado 1</p>
           </div>
         </section>
+        <!-- Eliminar desde aqui -->
+        <section class="empleado container-content">
+          <header class="empleado-info">
+            <h2>empleado 2</h2>
+          </header>
+          <div class="empleado-info" role="group">
+            <h3>Profesion</h3>
+            <p>empleado 2</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Correo Electronico</h3>
+            <p>empleado 2</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Telefono</h3>
+            <p>empleado 2</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Ubicacion</h3>
+            <p>empleado 2</p>
+          </div>
+        </section>
+
+        <section class="empleado container-content">
+          <header class="empleado-info">
+            <h2>empleado 3</h2>
+          </header>
+          <div class="empleado-info" role="group">
+            <h3>Profesion</h3>
+            <p>empleado 3</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Correo Electronico</h3>
+            <p>empleado 3</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Telefono</h3>
+            <p>empleado 3</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Ubicacion</h3>
+            <p>empleado 3</p>
+          </div>
+        </section>
+
+        <section class="empleado container-content">
+          <header class="empleado-info">
+            <h2>empleado 4</h2>
+          </header>
+          <div class="empleado-info" role="group">
+            <h3>Profesion</h3>
+            <p>empleado 4</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Correo Electronico</h3>
+            <p>empleado 4</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Telefono</h3>
+            <p>empleado 4</p>
+          </div>
+          <div class="empleado-info" role="group">
+            <h3>Ubicacion</h3>
+            <p>empleado 4</p>
+          </div>
+        </section>
+        <!-- Eliminar hasta aqui -->
       </article>
     </main>
     <aside class="form-add">
       <header>
         <h3>Agregar Empleado</h3>
       </header>
-      <form action="/">
+      <form role="form" id="form-add" action="/" method="post">
         <div role="group" class="form-item">
           <label for="name-id">Nombre</label>
           <input type="text" name="name" id="name-id" />
@@ -59,8 +138,13 @@
           <label for="ubicacion-id">Ubicación</label>
           <input type="text" name="ubicacion" id="ubicacion-id" />
         </div>
+        <div role="group" class="send-form">
+          <div role="group" class="form-item rgpd">
+            <input type="checkbox" name="rgpd" id="rgpd_id" />
+            <label for="rgpd_id">Acepto los terminos y condiciones de la RGPD</label>
+          </div>
         <button type="submit" id="add-empleado">Agregar</button>
-      </form>
+        </div>
     </aside>
     <script src="./js/tarjeta-persona.js"></script>
   </body>

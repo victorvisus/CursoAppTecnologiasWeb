@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
-  --font-inter: "Inter", sans-serif;
-  --font-source: "Source Sans 3", sans-serif;
-  --font-jetbrains: "JetBrains Mono", monospace;
+  --font-inter: 'Inter', sans-serif;
+  --font-source: 'Source Sans 3', sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
 
   --color-negro-carbon: #0e0e11;
   --color-gris-antracita: #1c1e22;
@@ -18,6 +18,7 @@
   --color-blanco: var(--color-blanco-tecnico);
   --color-gris: var(--color-gris-tecnico);
   --color-accent: #f0544f;
+  --color-delete: #a52a2a;
 
   --color-parrafo: var(--color-negro);
   --color-parrafo-blanco: var(--color-blanco);
@@ -59,16 +60,17 @@
   --font-size-nav: 1.1rem;
   --font-size-footer: 0.9rem;
   --font-form: 0.9rem;
-  --margin-min: 1vmax;
+  --margin-min: 0.75vmax;
   --margin-regular: 1.25vmax;
-  --margin-max: 2vmax;
+  --margin-max: 2.5vmax;
+  --margin-super: 5vmax;
   --margin-vc: 1.5vmax;
   --std-gradient: linear-gradient(
     180deg,
     rgba(173, 0, 0, 1) 45%,
     rgba(19, 105, 54, 0) 100%
   );
-  --shadow-std: 0px 7px 6px 0px rgba(0, 0, 0, 0.1);
+  --shadow-std: 0px 7px 6px 0px rgba(0, 0, 0, 0.5);
   --shadow-std-hover: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
   --shadow-inset: inset 3px 4px 8px 0px rgba(17, 17, 17, 0.2);
   --transition-vel: 0.25s;
