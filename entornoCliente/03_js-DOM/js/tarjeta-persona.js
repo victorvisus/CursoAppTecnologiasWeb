@@ -51,48 +51,15 @@ function crearHTML(_persona) {
   emplHeader.append(nombreTitulo); //al header le agrego el h2.
   emplSectionContainer.append(emplHeader); //al section le agrego el header
 
-  //div.empleado-info
-  const emplInfo = document.createElement('div');
-  emplInfo.className = 'empleado-info';
-  emplInfo.role = 'group';
-  //agrega 4 veces el div.empleado-info
-  for (let i = 0; i < 4; i++) {
-    emplSectionContainer.append(emplInfo.cloneNode(true)); //al section le agrego el div
+  //creo los nodos, excepto el nombre
+  for (let i = 0; i < _personaKeys.length; i++) {
+    if (i !== 0)
+      makeNodos(
+        emplSectionContainer,
+        _personaKeys[i],
+        _persona[_personaKeys[i]],
+      );
   }
-  //Seleccion y guarda en const cada uno de los div.empleado-info
-  const divFirst = document.querySelector(
-    '.empleado:last-child div.empleado-info:nth-child(2)',
-  ); //divFirst
-  const divSecond = document.querySelector(
-    '.empleado:last-child div.empleado-info:nth-child(3)',
-  ); //divFirst
-  const divThirst = document.querySelector(
-    '.empleado:last-child div.empleado-info:nth-child(4)',
-  ); //divFirst
-  const divFourth = document.querySelector(
-    '.empleado:last-child div.empleado-info:nth-child(5)',
-  ); //divFirst
-
-  console.log(`Primer div:
-    ${divFirst}`); //imprimo los divFirst);
-  console.log(`Second div:
-     ${divSecond}`); //imprimo los divSecond);
-  console.log(`Thirst div:
-     ${divThirst}`); //imprimo los divThirst);
-  console.log(`Fourth div:
-     ${divFourth}`); //imprimo los divFourth);
-
-  //Creo un elemento h3 para poner el titulo de cada item, en cada momento
-  let h3Item = document.createElement('h3');
-  let pItem = document.createElement('p');
-  console.log('creadas variables h3 y p');
-
-  //Empleado Profesión
-  h3Item.textContent = _personaKeys[1]; //pongo el titulo
-  pItem.textContent = _persona.profesion; //pongo la profesion
-  divFirst.append(h3Item); //al primer div.empleado-item le agrego el h3 y el p
-  divFirst.append(pItem); //al primer div.empleado-item le agrego el p
-  console.log('Creado Profesion', divFirst);
 
   //boton eliminar
   const btnDel = makeBtn({
@@ -104,7 +71,40 @@ function crearHTML(_persona) {
   emplSectionContainer.append(btnDel);
 }
 
-function makeNodos(_itemKey, _itemValue) {}
+/**
+ * Crea los nodos
+ *
+ * @param {*} _container
+ * @param {*} _itemKey
+ * @param {*} _itemValue
+ */
+function makeNodos(_container, _itemKey, _itemValue) {
+  console.log(
+    `Creando ${_itemKey}, con ${_itemValue}, dentro de ${_container}`,
+  );
+
+  //Crea el div.empleado-info
+  const divItem = document.createElement('div');
+  divItem.className = 'empleado-info item';
+  divItem.role = 'group';
+  //agrega el div.item
+  _container.append(divItem); //al section le agrego el div
+  console.log(divItem);
+
+  //Creo un elemento h3 para poner el titulo de cada item, en cada momento
+  const h3Item = document.createElement('h3');
+  h3Item.textContent = _itemKey; //pongo el titulo
+  divItem.append(h3Item); //al primer div.empleado-item le agrego el h3
+
+  // cReo un elemento p para poner el valor de cada item
+  const pItem = document.createElement('p');
+  pItem.textContent = _itemValue; //pongo la profesion
+  divItem.append(pItem); //al primer div.empleado-item le agrego el p
+  console.log('creadas h3 y p');
+
+  console.log('Creado Profesion', divItem);
+}
+
 /**
  * Construyendo un boton, tiene uno parametros por default, que son el texto del boton y su clase
  * @param {*} param0.textContent, default 'Eliminar'
