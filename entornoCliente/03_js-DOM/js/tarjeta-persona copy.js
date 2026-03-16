@@ -18,42 +18,20 @@ btnAddEmpleado.addEventListener("click", (_event) => {
 
   const empleado = crearEmpleado();
 
-  // Bloqueamos el botón o cambiamos el texto para feedback visual, simulo que los datos viajan a un servidor
-  btnAddEmpleado.disabled = true;
-  btnAddEmpleado.textContent = "Guardando...";
-
-  init(empleado);
-});
-
-/**
- * Inicializa el proceso de guardar un empleado
- * Desbloquea el botón al finalizar el proceso
- * Muestra un mensaje de error si algo falla
- * Limpia el formulario si todo es ok
- * @param {_persona} - objeto con los datos del empleado
- * @return {void}
- */
-async function init(_persona) {
-  // Bloqueamos el botón o cambiamos el texto para feedback visual, simulo que los datos viajan a un servidor
-  btnAddEmpleado.disabled = true;
-  btnAddEmpleado.textContent = "Guardando...";
   try {
-    const empleadoConfirmado = await guardarEmpleadoServidor(_persona);
-
-    //Crea la tarjeta con los datos del empleado
-    makeCard(_persona);
-
-    //Si todo es ok, limpiamos el formulario
-    resetForm();
+    makeCard(empleado);
   } catch (error) {
     console.log(error);
     alert(error);
   } finally {
-    alert("Empleado guardado");
-    btnAddEmpleado.disabled = false;
-    btnAddEmpleado.textContent = "Agregar Empleado";
+    document.getElementById("name-id").value = "";
+    document.getElementById("profesion-id").value = "";
+    document.getElementById("email-id").value = "";
+    document.getElementById("telefono-id").value = "";
+    document.getElementById("ubicacion-id").value = "";
   }
-}
+});
+
 /**
  * Crea un objeto persona con los valores recogidos en el formulario
  *
@@ -84,17 +62,21 @@ function makeCard(_persona) {
   const container = document.getElementById("empleados"); //selecciona el article
 
   //creo un section, el container-inner, la tarjeta
-  const sectionCard = document.createElement("section"); //crea un section
-  sectionCard.className = "empleado card container-content"; //le agrega la clase
-  container.append(sectionCard); //agrego el section al container article
+  const sectionContainerInner = document.createElement("section"); //crea un section
+  sectionContainerInner.className = "empleado container-content"; //le agrega la clase
+  container.append(sectionContainerInner); //agrego el section al container article
 
   //mando crear el nodo del titulo con el nombre
-  makeTitle(sectionCard, _persona[personaKeys[0]]);
+  makeTitle(sectionContainerInner, _persona[personaKeys[0]]);
 
   //mando crear los nodos, excepto el nombre, ya que lo he creado antes
   for (let i = 0; i < personaKeys.length; i++) {
     if (i !== 0)
-      makeNodos(sectionCard, personaKeys[i], _persona[personaKeys[i]]);
+      makeNodos(
+        sectionContainerInner,
+        personaKeys[i],
+        _persona[personaKeys[i]],
+      );
   }
 
   //agrego el boton eliminar
@@ -104,7 +86,7 @@ function makeCard(_persona) {
   });
   btnDel.onclick = delEmployee; //le agrega funcionalidad
   // falta agregar el btn a la tarjeta
-  sectionCard.append(btnDel);
+  sectionContainerInner.append(btnDel);
 }
 
 /**
@@ -177,39 +159,4 @@ function makeBtn({ textContent = "Eliminar", className = "btn-del" } = {}) {
 function delEmployee() {
   this.parentElement.remove();
   alert("Fallecido");
-}
-
-/**
- * Resetea el formulario
- *
- * Elimina el contenido de los input del formulario
- * para que pueda ser rellenado de nuevo
- */
-function resetForm() {
-  document.getElementById("name-id").value = "";
-  document.getElementById("profesion-id").value = "";
-  document.getElementById("email-id").value = "";
-  document.getElementById("telefono-id").value = "";
-  document.getElementById("ubicacion-id").value = "";
-
-  //aplicar esto guardando dartos en un arrayu y recorriendo con un foreach para poner cada valor a 0
-}
-
-/**
- * Función que simula una petición de red
- */
-function guardarEmpleadoServidor(empleado) {
-  return new Promise((resolve, reject) => {
-    console.log("⏳ Conectando con el servidor...");
-
-    setTimeout(() => {
-      // Simulación de error aleatorio (10% de probabilidad)
-      if (Math.random() < 0.1) {
-        reject(new Error("Error de conexión con la base de datos"));
-      } else {
-        console.log("✅ Empleado guardado con éxito");
-        resolve(empleado);
-      }
-    }, 1500);
-  });
 }

@@ -204,6 +204,11 @@ input[type="submit"] {
   /* otros */
   transition: all var(--transition-vel) ease-in-out;
   box-shadow: none;
+  &:disabled {
+    background-color: var(--color-gris);
+    border-color: var(--color-gris);
+    color: var(--color-negro);
+  }
 }
 a[type="button"].white-btn,
 a.btn.white-btn,
@@ -234,8 +239,8 @@ a[type="button"]:hover,
 a.btn:hover,
 button:hover,
 input[type="submit"]:hover {
-  border-color: var(--color-negro);
+  border-color: var(--color-primario);
   background-color: transparent;
-  color: var(--color-negro);
+  color: var(--color-primario);
 }
 /***********************************************************      ./Botones ****/
