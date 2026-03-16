@@ -1,0 +1,78 @@
+Sesión 16 de marzo
+
+Se propone la realización de un ejercicio para la gestión de este objeto:
+
+const productos = [
+    { nombre: "Laptop", precio: 800, categoria: "Electrónica" },
+    { nombre: "Mouse", precio: 25, categoria: "Electrónica" },
+    { nombre: "Teclado", precio: 50, categoria: "Electrónica" },
+    { nombre: "Monitor", precio: 200, categoria: "Electrónica" },
+    { nombre: "Silla", precio: 150, categoria: "Muebles" }
+];
+/*
+Obtener solo los nombres de los productos.
+Filtrar productos que cuesten menos de 100€.
+Calcular el precio total de todos los productos.
+Encontrar el producto más caro.
+Crear un array con los nombres en mayúsculas.
+Usa: map, filter, reduce, find, y funciones arrow concisas.
+*/
+
+// para destructuring:
+ Usar destructuring anidado 
+// para acceder a las especificaciones del producto.
+/*const producto = {
+    id: 101,
+    nombre: "Laptop",
+    precio: 999,
+    especificaciones: {
+      ram: "16GB",
+      procesador: "Intel i7"
+    }
+  };
+
+const {id, nombre, precio, especificaciones: { ram, procesador}} = producto
+console.log(id, " ", nombre, " ", precio, " ", ram, " ", procesador)
+*/
+//Ejercicio 2: Crea una función que use destructuring
+//  en sus parámetros con un valor por defecto.
+
+
+// TODO: Crea una función registrarUsuario que use destructuring
+  // en sus parámetros para aceptar: nombre, email, edad (defecto: 18)
+  // La función debe retornar un objeto con esos datos
+  
+  // Prueba:
+  // registrarUsuario({ nombre: "Ana", email: "ana@email.com" })
+  // Debe retornar: { nombre: "Ana", email: "ana@email.com", edad: 18 }
+/*
+function registrarUsuario({nombre=undefined, email, edad=18, direccion="Zaragoza", nacionalidad=undefined}){
+    const objetoDevolucion = {nombre:nombre, email:email, edad:edad, nacionalidad:nacionalidad} ;
+    return objetoDevolucion
+}
+console.log(registrarUsuario({nombre:"Ana", nacionalidad:"española", email:"ana@email.com"}))*/
+
+// SPREAD para ARRAYS:
+/*
+const horarioLectivo = ["8:30","11:00","14:30"]
+const segundaPausa = ["13:00"]
+const horarioCompleto = ["8:30","11:00",...segundaPausa,"14:30"]
+console.log(horarioCompleto)
+const tardes = ["15:30","17:00","19:30"]
+const noches = ["21:30","22:00","23:30"]
+const horarioCompleto2 = ["8:30","11:00","14:30", ...tardes]
+console.log(horarioCompleto2)*/
+
+const temperaturas = [12, 14, 10, 13, 20, 5, 1]
+console.log(Math.max(...temperaturas))
+
+Tarea:
+
+// Para una agenda: se requiere un objeto que sea jornada-> entre otros
+// horario, clientes, ...
+// habrá días que se queden sin asignación horaria, y otros que se completen->
+// destructuring en un sentido y spread en el sentido opuesto.
+// si se contempla el objeto semana, habrá semanas con días festivos 
+// y otras que no: destructuring y spread
+// Mirar también: window.localStorage(algo)
+// Se pueden guardar datos en ficheros .txt

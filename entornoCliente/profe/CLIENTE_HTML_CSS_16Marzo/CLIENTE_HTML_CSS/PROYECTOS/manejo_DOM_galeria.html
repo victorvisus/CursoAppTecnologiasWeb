@@ -1,0 +1,120 @@
+<!-- Crear un HTML con un contenedor para la galería.
+Añadir un input para URL de imagen y botón "Agregar".
+Implementar función que cree elementos '<img>' dinámicamente.
+Cada imagen debe tener un botón "Eliminar".-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <style>
+        /* Estilos Básicos */
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Estilos de la Galería */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .galeria__item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .galeria__item img {
+            width: 100%;
+            height: 200px;
+            /* Altura fija para uniformidad */
+            object-fit: cover;
+            /* Recorta la imagen sin deformarla */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efecto Hover */
+        .galeria__item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Mi Galería Dinámica</h2>
+    <div id="galeria-1" class="galeria">
+        <div class="galeria__item"><img src="./img/imagen1.jpg" alt="Descripción 1"></div>
+        <div class="galeria__item"><img src="./img/imagen2.jpg" alt="Descripción 2"></div>
+        <div class="galeria__item"><img src="./img/imagen3.jpg" alt="Descripción 3"></div>
+        <div class="galeria__item"><img src="./img/imagen4.jpg" alt="Descripción 4"></div>
+        <div class="galeria__item"><img src="./img/imagen5.jpg" alt="Descripción 5"></div>
+        <div class="galeria__item"><img src="./img/imagen6.jpg" alt="Descripción 6"></div>
+    </div>
+    <!--para seleccionar imagen y cargarla en la galería-->
+    <input type="url" id="url-imagen" placeholder="URL de la imagen">
+    <button onclick="agregarImagen()">Agregar Imagen</button>
+    <!--para borrar imagen de la galería -->
+    <input type="text" id="campo-eliminar" placeholder="id de la imagen a borrar">
+    <button id="boton-eliminar">Eliminar Imagen</button>
+
+<script>
+        const arrayNuevasImagenes = []
+        let identificador = 1000;
+        function agregarImagen() {
+            //capturarmos el contenido del input
+            const contenidoInput = document.getElementById('url-imagen').value
+            //lo asignamos a la ruta de la imagen
+            const urlImagen = contenidoInput
+            //creamos la imagen como elemento
+            const imagen = document.createElement('img');
+            imagen.src = urlImagen
+            console.log("el SRC de la imagen: " + imagen.src)
+            imagen.alt = "Imagen cargada desde input";
+            imagen.onerror = function () {
+                console.error("No se pudo cargar la imagen desde la URL proporcionada.");
+                alert("La URL no apunta a una imagen válida.");
+            };
+            //el contenedor principal es el div exterior
+            const contenedor = document.getElementById("galeria-1")
+            //creamos un div, contenedor a propósito para la imagen que agregamos al mismo
+            const contenedorImg = document.createElement('div')
+            contenedorImg
+            contenedorImg.innerHTML = ""
+            contenedorImg.append(imagen)
+            //se agrega la imagen al array de imágenes, para un acceso rápido si es necesario
+            arrayNuevasImagenes.append(imagen)
+            contenedorImg.className = "galeria__item"
+            identificador = identificador +1;
+            contenedorImg.setAttribute("id", identificador)
+            //agregamos el contenedorImg al contenedor
+            contenedor.append(contenedorImg)
+        }
+        const botonEliminar = document.getElementById("boton-eliminar")
+        // esta función se llamaría en relación a un input de texto que recoja el índice
+        // de la imagen a borrar (según usuario), y un botón para ejecutar la acción de borrado
+        const iden = document.getElementById("campo-eliminar").getAttribute("texContent")
+        botonEliminar.addEventListener('click', (iden) => {
+            const elementoABorrar = document.getElementById(iden)
+            elementoABorrar.remove()
+        });
+
+    </script>
+</body>
+
+</html>

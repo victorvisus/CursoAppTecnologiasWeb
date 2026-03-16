@@ -1,0 +1,250 @@
+<!--volvemos al DOM: crear un formulario que 1. recoja los datos de una persona, 2. genere un objeto JS persona y 3. "pueble" con los datos de ese objeto un <div> o <article> o <section> o "algo que simule una tarjeta" en HTML.-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Contacto</title>
+    <style>
+        /*ESTILO PARA EL FORMULARIO*/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .submit-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /*ESTILO PARA LA TARJETA*/
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+
+        .card {
+            width: 320px;
+            height: 450px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e02fff;
+            margin-top: 20px;
+        }
+
+        .card h1 {
+            margin: 15px 0;
+            color: #333;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .card p {
+            text-align: center;
+            color: #555;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .card p strong {
+            color: #e02fff;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-info div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Formulario de Datos</h2>
+        <form id="miFormulario">
+            <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" required />
+                <div id="error-nombre" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="profesion">Profesión *</label>
+                <input type="text" id="profesion" name="profesion" required />
+                <div id="error-profesion" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required />
+                <div id="error-email" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" required />
+                <div id="error-telefono" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="ubicacion">Ubicación *</label>
+                <input type="text" id="ubicacion" name="ubicacion" required />
+                <div id="error-ubicacion" class="error"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+    </div>
+    <!--div class="card">
+        <img src="https://via.placeholder.com/100" alt="Foto de perfil" />
+        <h1>Juan Pérez</h1>
+        <p><strong>Desarrollador Frontend</strong></p>
+        <div class="contact-info">
+            <div><strong>Email:</strong> juan.perez@email.com</div>
+            <div><strong>Teléfono:</strong> +54 9 11 1234-5678</div>
+            <div><strong>Ubicación:</strong> Buenos Aires, Argentina</div>
+        </div>
+    </div-->
+
+    <script>
+        document.getElementById("miFormulario").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Limpiar errores anteriores
+            document.querySelectorAll(".error").forEach(el => el.textContent = "");
+
+            // Obtener valores
+            const nombre = document.getElementById("nombre").value.trim();
+            const profesion = document.getElementById("profesion").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const telefono = document.getElementById("telefono").value.trim();
+            const ubicacion = document.getElementById("ubicacion").value.trim();
+
+            // Validar campos
+            let valido = true;
+
+            if (nombre === "") {
+                document.getElementById("error-nombre").textContent = "El nombre es obligatorio.";
+                valido = false;
+            }
+
+            if (profesion === "") {
+                document.getElementById("error-profesion").textContent = "La profesión es obligatoria.";
+                valido = false;
+            }
+
+            if (email === "" || !/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById("error-email").textContent = "El email es inválido.";
+                valido = false;
+            }
+
+            if (telefono === "" || !/^\d{7,15}$/.test(telefono)) {
+                document.getElementById("error-telefono").textContent = "El teléfono debe tener entre 7 y 15 dígitos.";
+                valido = false;
+            }
+
+            if (ubicacion === "") {
+                document.getElementById("error-ubicacion").textContent = "La ubicación es obligatoria.";
+                valido = false;
+            }
+
+            // Si todo es válido, mostrar los datos
+            if (valido) {
+                alert(`Datos enviados:\nNombre: ${nombre}\nProfesión: ${profesion}\nEmail: ${email}\nTeléfono: ${telefono}\nUbicación: ${ubicacion}`);
+                const persona = {
+                    nombre: nombre,
+                    profesion: profesion,
+                    email: email,
+                    telefono: telefono,
+                    ubicacion: ubicacion
+                }
+                this.reset(); // Limpiar el formulario
+                const renderizadoTarjeta = `
+        <div class="card">
+        <img src="https://via.placeholder.com/100" alt="Foto de perfil" />
+        <h1>${persona.nombre}</h1>
+        <p><strong>${persona.profesion}</strong></p>
+        <div class="contact-info">
+            <div><strong>Email:</strong>${persona.email}</div>
+            <div><strong>Teléfono:</strong>${persona.telefono}</div>
+            <div><strong>Ubicación:</strong> ${persona.ubicacion}</div>
+        </div>
+    </div>`
+            }
+        });
+    </script>
+
+</body>
+
+</html>
