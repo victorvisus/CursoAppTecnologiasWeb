@@ -12,8 +12,19 @@ if (typeof Storage !== 'undefined') {
 // localStorage.setItem('clave', 'valor');    //guarda el valor
 // localStorage.getItem('clave');    //devuelve el valor
 // localStorage.removeItem('clave');    //borra la clave
+// delete localStorage.clave;    //borra la clave
 // localStorage.clear();    //borra todo el almacenamiento local
+// localStorage.key(index);    //devuelve la clave del index, de 0 a localStorage.length
+// localStorage.length;    //propiedad que devuelve el numero de claves
 
+/*
+Acerca de LocalStorage:
+https://es.javascript.info/localstorage
+Además javascript.info es guía de referencia completa y reconocida para JS.
+
+*/
+
+// Guardar y obtener un dato
 localStorage.setItem('Nombre', 'Miguel Antonio');
 console.log(`El nombre es: ${localStorage.getItem('Nombre')}`);
 
