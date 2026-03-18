@@ -1,3 +1,4 @@
+'use strict'; // modo estricto, evita comportamientos inesperados
 /* ********************************************************************************************************************************************
 Tareas:
 • Crear una clase para objetos persona que tenga como atributos: nombre, apellidos, NIF. crearle internamente un método estático que valide la letra del NIF.
@@ -30,3 +31,6 @@ class Persona {
   }
 }
 console.log(Persona.validaLetraNIF('25182545Y'));
+
+const JuanJose = new Persona('Juan Jose', 'Garcia', '25182545Y');
+console.log(JuanJose.info());
