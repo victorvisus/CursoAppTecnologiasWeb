@@ -155,3 +155,103 @@ const groupByCiudad2 = Object.groupBy(personas2, (persona) => persona.ciudad);
 console.log('Agrupado por ciudad, con groupBy: ', groupByCiudad2);
 console.log('Cordoba');
 console.log(groupByCiudad2.Cordoba);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// con .includes() comprobamos si un elemento esta en un array
+// devuelve true si lo encuentra, false si no
+const numeros99 = [1, 2, 3, 4, 5];
+console.log(numeros99.includes(3)); // true
+console.log(numeros99.includes(6)); // false
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// find() y findIndex() buscan el primer elemento que cumple una condición:
+// find() devuelve el elemento en sí (o undefined si no lo encuentra).
+// findIndex() devuelve el índice (o -1 si no lo encuentra).
+
+// con array
+const numerosFind = [1, 2, 3, 4, 5];
+console.log(numerosFind.find((n) => n % 2 === 0)); // 2
+console.log(numerosFind.findIndex((n) => n % 2 === 0)); // 1
+
+// con objetos
+const usuarios = [
+  { id: 1, nombre: 'Ana', ciudad: 'Buenos Aires' },
+  { id: 2, nombre: 'Luis', ciudad: 'Cordoba' },
+  { id: 3, nombre: 'Pedro', ciudad: 'Mendoza' },
+  { id: 4, nombre: 'Juan', ciudad: 'Buenos Aires' },
+  { id: 5, nombre: 'Maria', ciudad: 'Buenos Aires' },
+  { id: 6, nombre: 'Carlos', ciudad: 'Cordoba' },
+  { id: 7, nombre: 'Sofia', ciudad: 'Mendoza' },
+  { id: 8, nombre: 'Lucas', ciudad: 'Cordoba' },
+];
+
+console.log(usuarios.find((u) => u.id === 3)); // { id: 3, nombre: 'Pedro', ciudad: 'Mendoza' }
+console.log(usuarios.findIndex((u) => u.id === 3)); // 2
+
+// con findIndex()
+const noExiste = usuarios.findIndex((u) => u.id === 99);
+console.log('Usuario con index 99: ', noExiste); // -1
+
+//Uso practica. Eliminar
+const indice = usuarios.findIndex((u) => u.id === 2); // 1
+console.log('El indice es: ', indice);
+if (indice !== -1) {
+  //eliminar
+  usuarios.splice(indice, 1);
+
+  //O actualizar
+  usuarios[indice].nombre = 'Juan Pedro';
+}
+console.log(usuarios);
+
+//Eliminar el primer  que su nombre empieze por "S"
+const indexA = usuarios.findIndex((_usr) => _usr.nombre[0] === 'S'); // Coje la posición 0 del String (primera letra) y la compara === con el caracter indicado
+const indexB = usuarios.findIndex((_usr) => _usr.nombre.includes('J')); // busca el caracter indicado en el string "nombre", el problema que da igual la posicion
+if (indexA !== -1) {
+  usuarios.splice(indexA, 1);
+}
+console.log('Quitando los que empiezan con "S": ', usuarios);
+
+if (indexB !== -1) {
+  usuarios.splice(indexB, 1);
+}
+console.log('Quitando los que contienen "J": ', usuarios);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// some() y every() evalúan una condición en sus elementos, devolviendo true o false:
+// some() retorna true si AL MENOS UNO cumple la condición (como un OR lógico),
+// every() retorna true solo si TODOS los elementos la cumplen (como un AND lógico).
+
+// con array
+const numerosSome = [1, 2, 3, 4, 5];
+console.log(numerosSome.some((n) => n % 2 === 0)); // true
+console.log(numerosSome.every((n) => n % 2 === 0)); // false
+
+// con objetos
+const usuariosSome = [
+  { id: 1, nombre: 'Ana', ciudad: 'Buenos Aires' },
+  { id: 2, nombre: 'Luis', ciudad: 'Cordoba' },
+  { id: 3, nombre: 'Pedro', ciudad: 'Mendoza' },
+  { id: 4, nombre: 'Juan', ciudad: 'Buenos Aires' },
+  { id: 5, nombre: 'Maria', ciudad: 'Buenos Aires' },
+  { id: 6, nombre: 'Carlos', ciudad: 'Cordoba' },
+  { id: 7, nombre: 'Sofia', ciudad: 'Mendoza' },
+  { id: 8, nombre: 'Lucas', ciudad: 'Cordoba' },
+];
+
+console.log(usuariosSome.some((u) => u.id === 3)); // true
+console.log(usuariosSome.every((u) => u.id === 3)); // false
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Combinar metodos
+
+const resultado1 = usuarios
+  .filter((u) => u.ciudad === 'Cordoba')
+  .map((u) => u.id)
+  .reduce((acc, id) => acc + id, 0);
+console.log('El resultado es: ', resultado1);
+
+const cordobeses = usuarios.filter((u) => u.ciudad === 'Cordoba');
+const idsCordobeses = cordobeses.map((u) => u.id);
+const resultado2 = [...idsCordobeses];
+console.log('El resultado es: ', resultado2);
