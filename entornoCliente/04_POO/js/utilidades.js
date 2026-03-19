@@ -25,7 +25,7 @@ export class Utilidades {
     const day = String(now.getDate()).padStart(2, '0');
     const hour = String(now.getHours()).padStart(2, '0');
     const minute = String(now.getMinutes()).padStart(2, '0');
-    const randomNumber = Utilidades.getRandomNumber();
+    const randomNumber = this.getRandomNumber();
 
     return `${year}${month}${day}${hour}${minute}${randomNumber}`;
   }

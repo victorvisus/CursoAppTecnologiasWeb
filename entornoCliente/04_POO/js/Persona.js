@@ -14,7 +14,6 @@ class Persona {
     this.nombre = _nombre;
     this.apellidos = _apellidos;
   }
-
   // método estático. No necesita un objeto para ser llamado
   static validaLetraNIF(NIF) {
     const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';

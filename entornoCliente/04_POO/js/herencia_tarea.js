@@ -17,58 +17,70 @@ Crea clase UsuarioEditor que extiende Usuario:
 */
 
 class Usuario {
-  constructor(nombre, email) {
-    this.nombre = nombre;
-    this.email = email;
+  constructor(_nombre, _email) {
+    this.nombre = _nombre;
+    this.email = _email;
   }
   login() {
-    console.log(`Usuario ${this.nombre} ha iniciado sesión`);
+    return `Usuario ${this.nombre} ha iniciado sesión`;
   }
   verPerfil() {
-    console.log(`Nombre: ${this.nombre}, Email: ${this.email}`);
+    return `Nombre: ${this.nombre}, Email: ${this.email}`;
   }
 }
 class UsuarioAdmin extends Usuario {
-  constructor(nombre, email, nivel) {
-    super(nombre, email);
-    this.nivel = nivel;
+  constructor(_nombre, _email, _nivel) {
+    super(_nombre, _email);
+    this.nivel = _nivel;
   }
   login() {
-    super.login();
-    console.log(' como admin');
+    return super.login() + ' como admin';
   }
-  eliminarUsuario(usuario) {
-    console.log(`El usuario ${usuario} ha sido eliminado`);
+  eliminarUsuario(_usuario) {
+    const result = trabajadores.filter(
+      (trabajador) => trabajador.nombre !== _usuario,
+    );
+    trabajadores = result;
+    //console.log(`El usuario ${_usuario} ha sido eliminado`);
   }
   verPerfil() {
-    super.verPerfil();
-    console.log(`Nivel: ${this.nivel}`);
+    return super.verPerfil() + ` Nivel: ${this.nivel}`;
   }
 }
 class UsuarioEditor extends Usuario {
-  constructor(nombre, email, especialidad) {
-    super(nombre, email);
-    this.especialidad = especialidad;
+  constructor(_nombre, _email, _especialidad) {
+    super(_nombre, _email);
+    this.especialidad = _especialidad;
   }
-  publicarContenido(titulo) {
-    console.log(`El contenido ${titulo} ha sido publicado`);
+  publicarContenido(_titulo) {
+    console.log(`El contenido ${_titulo} ha sido publicado`);
   }
   verPerfil() {
-    super.verPerfil();
-    console.log(`Especialidad: ${this.especialidad}`);
+    return super.verPerfil() + ` Especialidad: ${this.especialidad}`;
   }
 }
 
+let trabajadores = [
+  new UsuarioAdmin('Ana', 'ana@example.com', 3),
+  new UsuarioEditor('Luis', 'luis@example.com', 'Programación'),
+  new UsuarioAdmin('Pedro', 'pedro@example.com', 2),
+  new UsuarioEditor('Maria', 'maria@example.com', 'Diseño'),
+  new Usuario('Juan', 'juan@example.com'),
+];
+console.log(trabajadores);
+
 const usr1 = new Usuario('Ana', 'ana@email');
-usr1.login();
-usr1.verPerfil();
+console.log(usr1.login());
+console.log(usr1.verPerfil());
 
 const usrAdmin = new UsuarioAdmin('Ana', 'ana@email', 1);
-usrAdmin.login();
-usrAdmin.verPerfil();
-usrAdmin.eliminarUsuario('Carlos');
+console.log(usrAdmin.login());
+console.log(usrAdmin.verPerfil());
+usrAdmin.eliminarUsuario('Juan');
 
 const usrEditor = new UsuarioEditor('Ana', 'ana@email', 'HTML');
-usrEditor.login();
+console.log(usrEditor.login());
 usrEditor.publicarContenido('Mi primer contenido');
-usrEditor.verPerfil();
+console.log(usrEditor.verPerfil());
+
+console.log(trabajadores);

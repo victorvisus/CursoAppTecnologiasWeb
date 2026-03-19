@@ -10,7 +10,7 @@ Extra ----------------------------------------------------------
 • Tenga método vaciar() que vacia el array de productos.
 • Comprobar el tiempo de vida del carrito
 */
-//import { Utilidades } from './utilidades.js';
+import { Utilidades } from './Utilidades.js';
 
 //Estructura de producto:
 const producto = { nombre: 'Laptop', precio: 999, cantidad: 1 };
@@ -20,8 +20,8 @@ const producto4 = { nombre: 'Pantalla', precio: 199, cantidad: 3 };
 
 class CarritoCompra {
   constructor() {
-    //this.PK_carritoCompra = Utilidades.generarId();
-    this.PK_carritoCompra = 2;
+    this.PK_carritoCompra = Utilidades.generarId();
+    //this.PK_carritoCompra = 2;
     this.productos = [];
   }
 
