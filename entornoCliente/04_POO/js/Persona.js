@@ -7,19 +7,19 @@ objeto de la clase Persona
 */
 class Persona {
   constructor(_nombre, _apellidos, _NIF) {
-    this.nombre = _nombre;
-    this.apellidos = _apellidos;
     if (!Persona.validaLetraNIF(_NIF) || _NIF.length !== 9) {
       throw new Error('NIF incorrecto');
     }
     this.NIF = _NIF;
+    this.nombre = _nombre;
+    this.apellidos = _apellidos;
   }
 
   // método estático. No necesita un objeto para ser llamado
   static validaLetraNIF(NIF) {
     const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
-    const num = NIF.substring(0, NIF.length - 1);
-    const letra = NIF[NIF.length - 1];
+    const num = NIF.substring(0, NIF.length - 1); //Quitar el caracter final, posición lenght - 1
+    const letra = NIF[NIF.length - 1]; //Coge el caracter que esta en la posición del string length - 1
     if (letras[num % 23] === letra) {
       return true;
     }
