@@ -42,18 +42,3 @@ export default class GestorProducto {
     return total;
   }
 }
-
-/*
-
-    agregar(_producto) {
-        if (validarPrecio(_producto.precio) && validarStock(_producto.stock)) {
-            this.productos.push(_producto);
-        }
-    }
-    listar() {
-        return this.productos.map(producto => producto.toString());
-    }
-    obtenerTotal() {
-        return this.productos.reduce((total, producto) => total + producto.precio * producto.stock, 0);
-    }
-*/
