@@ -82,16 +82,21 @@ function crearGestorTareas() {
       tareas.push(tarea);
     },
     listar() {
+      console.log('-- Tareas --');
       let listaTareas = '';
-      for (let i = 0; i < tareas.length; i++) {
+      /*       for (let i = 0; i < tareas.length; i++) {
         listaTareas = listaTareas.concat(
           'Tarea ' + i + ': ' + tareas[i] + '\n',
         );
-      }
+      } */
+      tareas.forEach((tarea, i) => {
+        listaTareas = listaTareas.concat('Tarea ' + i + ': ' + tarea + '\n');
+      });
       return listaTareas;
     },
     completar(i) {
-      tareas.splice(i, 1);
+      //tareas.splice(i, 1);
+      tareas[i] = tareas[i].concat(' (completada)');
     },
     pendientes() {
       return 'Tienes ' + tareas.length + ' tareas pendientes.';
@@ -104,5 +109,6 @@ misTareas.agregar('Estudiar closures');
 misTareas.agregar('Hacer ejercicios');
 misTareas.agregar('Hacer Tareas');
 console.log(misTareas.listar());
-misTareas.completar(0);
+misTareas.completar(1);
+console.log(misTareas.listar());
 console.log(misTareas.pendientes()); // 1
