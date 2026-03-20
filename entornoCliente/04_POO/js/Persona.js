@@ -6,14 +6,37 @@ Que como método no estático tenga info() que dará toda la información de un
 objeto de la clase Persona
 */
 class Persona {
+  #NIF;
   constructor(_nombre, _apellidos, _NIF) {
-    if (!Persona.validaLetraNIF(_NIF) || _NIF.length !== 9) {
-      throw new Error('NIF incorrecto');
-    }
-    this.NIF = _NIF;
+    this.#NIF = _NIF;
     this.nombre = _nombre;
     this.apellidos = _apellidos;
   }
+  set nombre(_nombre) {
+    this._nombre = _nombre;
+  }
+  set apellidos(_apellidos) {
+    this._apellidos = _apellidos;
+  }
+  get nombre() {
+    return this._nombre;
+  }
+  get apellidos() {
+    return this._apellidos;
+  }
+  get NIF() {
+    return this.#NIF;
+  }
+  set NIF(_NIF) {
+    if (!Persona.validaLetraNIF(_NIF) || _NIF.length !== 9) {
+      throw new Error('NIF incorrecto');
+    }
+    this.#NIF = _NIF;
+  }
+  getNombreCompleto() {
+    return `${this.nombre} ${this.apellidos}`;
+  }
+
   // método estático. No necesita un objeto para ser llamado
   static validaLetraNIF(NIF) {
     const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
@@ -33,3 +56,9 @@ console.log(Persona.validaLetraNIF('25182545Y'));
 
 const JuanJose = new Persona('Juan Jose', 'Garcia', '25182545Y');
 console.log(JuanJose.info());
+
+console.log('get: ', JuanJose.nombre);
+console.log('get: ', JuanJose.apellidos);
+console.log('metodo: ', JuanJose.getNombreCompleto());
+console.log('metodo: ', JuanJose.info());
+console.log('get ', JuanJose.NIF);
