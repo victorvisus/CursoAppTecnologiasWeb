@@ -122,4 +122,14 @@ class ConfiguracionUsuario {
       'Se han eliminado todos los datos de configuración del navegador.',
     );
   }
+  aplicarCambios() {
+    document.body.className = this.#config.tema;
+    document.documentElement.lang = this.#config.idioma;
+  }
+  cambiarTema() {
+    //evalua si el .tema === claro, entonces lo cambia a oscuro, si no lo cambia a claro
+    this.#config.tema = this.#config.tema === 'claro' ? 'oscuro' : 'claro';
+    this.guardar();
+    this.aplicarCambios();
+  }
 }
