@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tarea LocalStorage</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .claro {
+            background-color: white;
+            color: black;
+        }
+
+        .oscuro {
+            background-color: black;
+            color: white;
+        }
+
+        .azul {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body class="oscuro">
+        <header>
+            <h1>Configuración de Usuario</h1>
+
+        </header>
+        <main>
+            <article>
+                <form action="/">
+                    <select id="select-tema">
+                        <option value="claro">Claro</option>
+                        <option value="oscuro">Oscuro</option>
+                        <option value="azul">Azul</option>
+                    </select>
+
+                    <select id="select-lenguaje">
+                        <option value="es">es</option>
+                        <option value="en">en</option>
+                        <option value="de">de</option>
+                        <option value="it">it</option>
+                    </select>
+
+                    <select id="select-notificaciones">
+                        <option value="true">Si</option>
+                        <option value="false">No</option>
+                    </select>
+
+                </form>
+                <div role="group">
+                    <button id="btn-tema">Cambiar Tema</button>
+                    <button id="btn-idioma">Cambiar idioma</button>
+                    <button id="btn-notificaciones">Toggle Notificaciones</button>
+                </div>
+                <div role="group">
+                    <button id="btn-aplicar">Aplicar Cambios</button>
+                    <button id="btn-reset">Resetear</button>
+                    <button id="btn-limpiar">Limpiar localStorage</button>
+                </div>
+                <div role="group">
+                    <div id="estado-notificaciones"></div>
+                    <div id="estado-idioma"></div>
+                </div>
+            </article>
+        </main>
+    </body>
+
+
+
+
+    <script type="" src="./js/storage_tarea.js"></script>
+    <script>
+        const usr = new ConfiguracionUsuario();
+        usr.cargarPreferencias();
+
+        // Listeners /////////////////////////////////////////////////////////
+        const btnTema = document.getElementById('btn-tema');
+        btnTema.addEventListener('click', () => {
+            let nuevoTema = document.getElementById('select-tema').value;
+            usr.cambiarTema(nuevoTema);
+        });
+
+        const btnIdioma = document.getElementById('btn-idioma');
+        btnIdioma.addEventListener('click', () => {
+            let nuevoIdioma = document.getElementById('select-lenguaje').value;
+            usr.cambiarIdioma(nuevoIdioma);
+        });
+
+        const btnNotificacione = document.getElementById('btn-notificaciones');
+        btnNotificacione.addEventListener('click', () => {
+            let notificaciones = document.getElementById('select-notificaciones').value;
+            usr.toggleNotificaciones(notificaciones);
+        });
+
+        const btnAplicar = document.getElementById('btn-aplicar');
+        btnAplicar.addEventListener('click', () => {
+            let _tema = document.getElementById('select-tema').value;
+            let _idioma = document.getElementById('select-lenguaje').value;
+            let _notificaciones = document.getElementById('select-notificaciones').value;
+
+            usr.aplicarCambios(_tema, _idioma, _notificaciones);
+        });
+    </script>
+</body>
+
+</html>

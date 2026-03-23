@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Guía completa sobre el constructor y el concepto 'this' en JavaScript POO. Aprende cómo funcionan los constructores y el contexto de this."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, constructor, this, POO, Programación Orientada a Objetos, contexto, clases"
+    />
+    <meta name="author" content="Víctor Visús García" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Constructor y el concepto 'this' en JavaScript"
+    />
+    <meta
+      property="og:description"
+      content="Guía completa sobre constructores y el contexto de this en JavaScript POO"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Constructor y el concepto 'this' en JavaScript"
+    />
+    <meta
+      name="twitter:description"
+      content="Guía completa sobre constructores y el contexto de this en JavaScript"
+    />
+
+    <title>
+      Constructor y el concepto 'this' en JavaScript | Cypherstudios
+    </title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@400;400i;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Custom styles following brand guidelines */
+      :root {
+        --negro-carbon: #0e0e11;
+        --gris-antracita: #1c1e22;
+        --gris-acero: #3a3d42;
+        --gris-tecnico: #b5b8be;
+        --verde-criptico: #3aff7a;
+        --blanco-tecnico: #f2f3f5;
+      }
+
+      body {
+        font-family: 'Source Sans 3', sans-serif;
+        background-color: var(--negro-carbon);
+        color: var(--blanco-tecnico);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'Inter', sans-serif;
+      }
+
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      .text-accent {
+        color: var(--verde-criptico);
+      }
+
+      .bg-secondary {
+        background-color: var(--gris-antracita);
+      }
+
+      .border-accent {
+        border-color: var(--gris-acero);
+      }
+
+      .text-secondary {
+        color: var(--gris-tecnico);
+      }
+
+      .hover-accent:hover {
+        color: var(--verde-criptico);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--gris-antracita);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--gris-acero);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--gris-tecnico);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-secondary border-b border-accent">
+      <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <h1 class="text-2xl font-semibold text-accent">Cypherstudios</h1>
+          <span class="font-mono text-sm text-secondary"
+            >Víctor Visús García</span
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 max-w-4xl">
+      <article>
+        <!-- Title -->
+        <header class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Constructor y el concepto <span class="text-accent">'this'</span> en
+            JavaScript
+          </h1>
+          <p class="text-xl text-secondary leading-relaxed">
+            Entiende los fundamentos de los constructores y el contexto de this
+            para dominar la Programación Orientada a Objetos en JavaScript
+          </p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="mb-12 bg-secondary rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4 text-accent">Navegación</h2>
+          <ul class="space-y-2">
+            <li>
+              <a href="#introduccion" class="hover-accent text-secondary"
+                >Introducción</a
+              >
+            </li>
+            <li>
+              <a href="#que-es-constructor" class="hover-accent text-secondary"
+                >¿Qué es un Constructor?</a
+              >
+            </li>
+            <li>
+              <a href="#tipos-constructores" class="hover-accent text-secondary"
+                >Tipos de Constructores en JavaScript</a
+              >
+            </li>
+            <li>
+              <a href="#que-es-this" class="hover-accent text-secondary"
+                >¿Qué es 'this'?</a
+              >
+            </li>
+            <li>
+              <a href="#contextos-this" class="hover-accent text-secondary"
+                >Contextos de 'this'</a
+              >
+            </li>
+            <li>
+              <a href="#mejores-practicas" class="hover-accent text-secondary"
+                >Mejores Prácticas</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Introduction -->
+        <section id="introduccion" class="mb-12 bg-secondary rounded-lg p-8">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Introducción</h2>
+          <div class="space-y-4 text-lg leading-relaxed">
+            <p>
+              El constructor y la palabra clave <code class="font-mono text-accent">this</code> 
+              son dos de los conceptos más fundamentales y a veces confusos en JavaScript. 
+              Entender cómo funcionan es crucial para dominar la Programación Orientada a Objetos 
+              y escribir código más predecible y mantenible.
+            </p>
+            <p>
+              El constructor es un método especial que se ejecuta cuando creamos una nueva instancia 
+              de una clase, mientras que <code class="font-mono text-accent">this</code> se refiere al contexto 
+              en el que se está ejecutando el código. Su comportamiento puede variar dependiendo de 
+              cómo se llame la función, lo que lo convierte en uno de los temas más importantes 
+              para dominar en JavaScript.
+            </p>
+          </div>
+        </section>
+
+        <!-- What is a Constructor -->
+        <section id="que-es-constructor" class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">¿Qué es un Constructor?</h2>
+          <div class="space-y-4">
+            <p class="text-lg leading-relaxed">
+              Un constructor es un método especial que se llama automáticamente cuando se crea 
+              una nueva instancia de una clase. Su propósito principal es inicializar las propiedades 
+              del objeto y realizar cualquier configuración necesaria.
+            </p>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h3 class="text-xl font-semibold mb-4">Características del Constructor:</h3>
+              <ul class="list-disc list-inside space-y-2 text-secondary">
+                <li>Se ejecuta automáticamente al crear una nueva instancia</li>
+                <li>No puede retornar valores explícitamente (retorna la nueva instancia)</li>
+                <li>Se usa para inicializar propiedades del objeto</li>
+                <li>Puede aceptar parámetros para personalizar la inicialización</li>
+                <li>Solo puede haber un constructor por clase</li>
+              </ul>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h3 class="text-xl font-semibold mb-4">Ejemplo Básico de Constructor</h3>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class Persona {
+    // Constructor
+    constructor(nombre, edad) {
+        this.nombre = nombre;  // Inicializa propiedad nombre
+        this.edad = edad;      // Inicializa propiedad edad
+        this.creadoEn = new Date(); // Propiedad con valor por defecto
+    }
+    
+    // Método de instancia
+    presentarse() {
+        return `Hola, soy ${this.nombre} y tengo ${this.edad} años`;
+    }
+}
+
+// Crear instancias usando el constructor
+const persona1 = new Persona("Ana", 25);
+const persona2 = new Persona("Carlos", 30);
+
+console.log(persona1.presentarse()); // Hola, soy Ana y tengo 25 años
+console.log(persona2.presentarse()); // Hola, soy Carlos y tengo 30 años</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Types of Constructors -->
+        <section id="tipos-constructores" class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Tipos de Constructores en JavaScript</h2>
+          <div class="space-y-6">
+            
+            <!-- Constructor por Defecto -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">Constructor por Defecto</h3>
+              <p class="text-secondary mb-4">
+                Si no definimos un constructor, JavaScript proporciona uno automáticamente:
+              </p>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class Coche {
+    // Sin constructor definido - JavaScript usa uno por defecto
+    
+    arrancar() {
+        return "El coche ha arrancado";
+    }
+}
+
+const miCoche = new Coche(); // Funciona gracias al constructor por defecto
+console.log(miCoche.arrancar());</code></pre>
+            </div>
+
+            <!-- Constructor con Parámetros -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">Constructor con Parámetros</h3>
+              <p class="text-secondary mb-4">
+                El constructor más común, que acepta parámetros para inicializar el objeto:
+              </p>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class Producto {
+    constructor(nombre, precio, stock = 0) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+        this.activo = true;
+    }
+    
+    aplicarDescuento(porcentaje) {
+        this.precio *= (1 - porcentaje / 100);
+    }
+}
+
+const laptop = new Producto("Laptop Gaming", 1200, 10);
+const mouse = new Producto("Mouse Inalámbrico", 25); // stock usa valor por defecto</code></pre>
+            </div>
+
+            <!-- Constructor con Validación -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">Constructor con Validación</h3>
+              <p class="text-secondary mb-4">
+                Es buena práctica validar los parámetros en el constructor:
+              </p>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class Usuario {
+    constructor(email, password) {
+        // Validación de email
+        if (!email || !email.includes('@')) {
+            throw new Error("Email inválido");
+        }
+        
+        // Validación de password
+        if (!password || password.length < 6) {
+            throw new Error("La contraseña debe tener al menos 6 caracteres");
+        }
+        
+        this.email = email.toLowerCase();
+        this.password = password;
+        this.creadoEn = new Date();
+        this.ultimoLogin = null;
+    }
+}
+
+try {
+    const usuario = new Usuario("user@example.com", "password123");
+    console.log("Usuario creado exitosamente");
+} catch (error) {
+    console.error("Error al crear usuario:", error.message);
+}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- What is this -->
+        <section id="que-es-this" class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">¿Qué es 'this'?</h2>
+          <div class="space-y-4">
+            <p class="text-lg leading-relaxed">
+              La palabra clave <code class="font-mono text-accent">this</code> es una de las más poderosas 
+              y a veces confusas en JavaScript. Se refiere al contexto en el que se está ejecutando 
+              una función, y su valor depende de cómo se llama la función, no de dónde se define.
+            </p>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h3 class="text-xl font-semibold mb-4">Regla Fundamental:</h3>
+              <blockquote class="border-l-4 border-accent pl-4 text-secondary text-lg italic">
+                "this no se define cuando se escribe el código, sino cuando se ejecuta la función"
+              </blockquote>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h3 class="text-xl font-semibold mb-4">Ejemplo Simple:</h3>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">const objeto = {
+    nombre: "Objeto",
+    mostrarNombre() {
+        console.log(this.nombre); // 'this' se refiere a 'objeto'
+    }
+};
+
+objeto.mostrarNombre(); // Imprime: "Objeto"
+
+// ¿Qué pasa si asignamos el método a otra variable?
+const funcion = objeto.mostrarNombre;
+funcion(); // Imprime: undefined (porque 'this' ya no es 'objeto')</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contexts of this -->
+        <section id="contextos-this" class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Contextos de 'this'</h2>
+          <div class="space-y-6">
+            
+            <!-- 1. Global Context -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">1. Contexto Global</h3>
+              <p class="text-secondary mb-4">
+                En el contexto global (fuera de cualquier función), <code class="font-mono text-accent">this</code> 
+                se refiere al objeto global:
+              </p>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">// En navegador
+console.log(this === window); // true
+
+// En Node.js
+console.log(this === global); // true
+
+// En modo estricto ('use strict')
+// this es undefined en contexto global</code></pre>
+            </div>
+
+            <!-- 2. Function Context -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">2. Contexto de Función</h3>
+              <p class="text-secondary mb-4">
+                En funciones tradicionales, <code class="font-mono text-accent">this</code> depende de cómo se llama:
+              </p>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">function funcionTradicional() {
+    console.log(this);
+}
+
+// Llamada simple - this es undefined en modo estricto
+funcionTradicional();
+
+// Llamada como método de un objeto
+const miObjeto = {
+    metodo: funcionTradicional
+};
+miObjeto.metodo(); // this es miObjeto
+
+// Llamada con call/apply
+funcionTradicional.call({ nombre: "test" }); // this es { nombre: "test" }</code></pre>
+            </div>
+
+            <!-- 3. Arrow Functions -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">3. Funciones Flecha (Arrow Functions)</h3>
+              <p class="text-secondary mb-4">
+                Las arrow functions no tienen su propio <code class="font-mono text-accent">this</code>, 
+                lo heredan del contexto léxico:
+              </p>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">const objeto = {
+    nombre: "Principal",
+    
+    metodoTradicional() {
+        console.log(this.nombre); // "Principal"
+        
+        const funcionFlecha = () => {
+            console.log(this.nombre); // "Principal" (hereda this del contexto exterior)
+        };
+        
+        funcionFlecha();
+    },
+    
+    metodoConFuncionTradicional() {
+        function funcionInterna() {
+            console.log(this.nombre); // undefined (this es undefined o global)
+        }
+        funcionInterna();
+    }
+};
+
+objeto.metodoTradicional();
+objeto.metodoConFuncionTradicional();</code></pre>
+            </div>
+
+            <!-- 4. Class Methods -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">4. Métodos de Clase</h3>
+              <p class="text-secondary mb-4">
+                En clases, <code class="font-mono text-accent">this</code> se refiere a la instancia:
+              </p>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class Cuenta {
+    constructor(titular, saldo) {
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+    
+    depositar(cantidad) {
+        this.saldo += cantidad; // this se refiere a la instancia
+        return this;
+    }
+    
+    mostrarSaldo() {
+        console.log(`${this.titular}: $${this.saldo}`);
+    }
+}
+
+const cuenta1 = new Cuenta("Ana", 1000);
+const cuenta2 = new Cuenta("Carlos", 500);
+
+cuenta1.depositar(200).mostrarSaldo(); // Ana: $1200
+cuenta2.depositar(100).mostrarSaldo(); // Carlos: $600</code></pre>
+            </div>
+
+            <!-- 5. Event Handlers -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">5. Manejadores de Eventos</h3>
+              <p class="text-secondary mb-4">
+                En eventos DOM, <code class="font-mono text-accent">this</code> se refiere al elemento que disparó el evento:
+              </p>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class BotonPersonalizado {
+    constructor(elementoId) {
+        this.boton = document.getElementById(elementoId);
+        this.contador = 0;
+        
+        // Usando arrow function para mantener this
+        this.boton.addEventListener('click', () => {
+            this.contador++;
+            console.log(`Clics: ${this.contador}`);
+        });
+        
+        // O usando bind
+        // this.boton.addEventListener('click', this.handleClick.bind(this));
+    }
+    
+    handleClick() {
+        this.contador++;
+        console.log(`Clics: ${this.contador}`);
+    }
+}
+
+// En HTML: &lt;button id="miBoton"&gt;Haz clic&lt;/button&gt;
+const miBoton = new BotonPersonalizado('miBoton');</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Common Problems and Solutions -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Problemas Comunes y Soluciones</h2>
+          <div class="space-y-6">
+            
+            <!-- Problem 1 -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4 text-accent">Problema 1: Pérdida de this en callbacks</h3>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class Temporizador {
+    constructor() {
+        this.segundos = 0;
+    }
+    
+    // ❌ Problema: this se pierde
+    iniciarIncorrecto() {
+        setTimeout(function() {
+            this.segundos++; // Error: this no es la instancia
+            console.log(this.segundos);
+        }, 1000);
+    }
+    
+    // ✅ Solución 1: Arrow function
+    iniciarArrow() {
+        setTimeout(() => {
+            this.segundos++; // this se mantiene
+            console.log(this.segundos);
+        }, 1000);
+    }
+    
+    // ✅ Solución 2: bind
+    iniciarBind() {
+        setTimeout(function() {
+            this.segundos++; // this se mantiene gracias a bind
+            console.log(this.segundos);
+        }.bind(this), 1000);
+    }
+}</code></pre>
+            </div>
+
+            <!-- Problem 2 -->
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4 text-accent">Problema 2: this en métodos anidados</h3>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class Calculadora {
+    constructor() {
+        this.resultado = 0;
+    }
+    
+    // ❌ Problema: this se pierde en función anidada
+    operarIncorrecto() {
+        function sumar(a, b) {
+            this.resultado = a + b; // Error: this no es la instancia
+        }
+        
+        sumar(5, 3);
+        return this.resultado;
+    }
+    
+    // ✅ Solución 1: Arrow function
+    operarArrow() {
+        const sumar = (a, b) => {
+            this.resultado = a + b; // this se mantiene
+        };
+        
+        sumar(5, 3);
+        return this.resultado;
+    }
+    
+    // ✅ Solución 2: guardar referencia a this
+    operarReferencia() {
+        const self = this; // Guardar referencia
+        
+        function sumar(a, b) {
+            self.resultado = a + b; // Usar referencia guardada
+        }
+        
+        sumar(5, 3);
+        return this.resultado;
+    }
+}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section id="mejores-practicas" class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Mejores Prácticas</h2>
+          <div class="space-y-6">
+            
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">Constructores</h3>
+              <ul class="list-disc list-inside space-y-2 text-secondary">
+                <li><strong>Valida siempre los parámetros:</strong> Evita estados inconsistentes</li>
+                <li><strong>Usa valores por defecto:</strong> Simplifica la creación de instancias</li>
+                <li><strong>No hagas trabajo pesado:</strong> El constructor debe ser rápido</li>
+                <li><strong>Documenta los parámetros:</strong> Facilita el uso de la clase</li>
+              </ul>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">Uso de 'this'</h3>
+              <ul class="list-disc list-inside space-y-2 text-secondary">
+                <li><strong>Usa arrow functions en callbacks:</strong> Para mantener el contexto</li>
+                <li><strong>Evita funciones anidadas tradicionales:</strong> O usa bind/self</li>
+                <li><strong>Sé consistente:</strong> Usa el mismo patrón en todo el proyecto</li>
+                <li><strong>Usa 'use strict':</strong> Evita comportamientos inesperados</li>
+                <li><strong>Documenta el contexto esperado:</strong> Cuando sea ambiguo</li>
+              </ul>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">Patrones Recomendados</h3>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class ServicioUsuario {
+    constructor(apiUrl) {
+        // Validación
+        if (!apiUrl) {
+            throw new Error("Se requiere una URL de API");
+        }
+        
+        // Inicialización
+        this.apiUrl = apiUrl;
+        this.usuarios = [];
+        this.cargando = false;
+    }
+    
+    // ✅ Usar arrow functions para mantener this
+    cargarUsuarios = async () => {
+        try {
+            this.cargando = true;
+            const response = await fetch(`${this.apiUrl}/users`);
+            this.usuarios = await response.json();
+        } catch (error) {
+            console.error("Error al cargar usuarios:", error);
+        } finally {
+            this.cargando = false;
+        }
+    }
+    
+    // ✅ Métodos simples pueden ser tradicionales
+    obtenerUsuario(id) {
+        return this.usuarios.find(usuario => usuario.id === id);
+    }
+}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Resumen</h2>
+          <div class="space-y-4 text-lg leading-relaxed">
+            <p>
+              El constructor y <code class="font-mono text-accent">this</code> son conceptos fundamentales que 
+              todo desarrollador JavaScript debe dominar. El constructor nos permite crear objetos 
+              consistentes y bien inicializados, mientras que <code class="font-mono text-accent">this</code> 
+              nos da acceso al contexto de ejecución.
+            </p>
+            <p>
+              Las claves para dominar estos conceptos son:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-secondary ml-6">
+              <li>Entender que <code class="font-mono text-accent">this</code> depende de cómo se llama la función</li>
+              <li>Usar arrow functions para mantener el contexto léxico</li>
+              <li>Validar parámetros en los constructores</li>
+              <li>Ser consciente del contexto en callbacks y eventos</li>
+              <li>Practicar con diferentes escenarios para internalizar los conceptos</li>
+            </ul>
+            <p>
+              Con estos fundamentos sólidos, estarás preparado para escribir código JavaScript 
+              más robusto, mantenible y libre de errores comunes relacionados con el contexto 
+              y la inicialización de objetos.
+            </p>
+          </div>
+        </section>
+
+        <!-- Navigation Links -->
+        <section class="mb-12 bg-secondary rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4 text-accent">Artículos Relacionados</h2>
+          <div class="space-y-2">
+            <a href="index.html" class="block hover-accent text-secondary">
+              ← Programación Orientada a Objetos en JavaScript
+            </a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary border-t border-accent mt-20">
+      <div class="container mx-auto px-6 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="text-secondary">
+              © 2024 <span class="font-mono">Víctor Visús García</span> -
+              Cypherstudios
+            </p>
+          </div>
+          <div class="font-mono text-sm text-secondary">
+            Constructor y el concepto 'this' en JavaScript
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
