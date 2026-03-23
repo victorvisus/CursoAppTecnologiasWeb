@@ -76,36 +76,11 @@ class ConfiguracionUsuario {
       localStorage.setItem(`${app_prefix}config`, JSON.stringify(this.#config));
 
       // TODO: poner la version recuperando propiedad por propiedad, en lugar del objeto completo
-      /*       localStorage.setItem(
-        `${app_prefix}${TEMA}`,
-        JSON.stringify(this.#config.tema),
-      );
-      localStorage.setItem(
-        `${app_prefix}${IDIOMA}`,
-        JSON.stringify(this.#config.idioma),
-      );
-      localStorage.setItem(
-        `${app_prefix}${NOTIFICACIONES}`,
-        JSON.stringify(this.#config.notificaciones),
-      ); */
 
       console.log('Configuración guardada');
     } catch (error) {
       console.log(error);
     }
-  }
-
-  cambiarTema(tema) {
-    this.#config.tema = tema;
-
-    this.guardar();
-    console.log('Tema cambiado');
-  }
-
-  toggleNotificaciones() {
-    this.#config.notificaciones = !this.#config.notificaciones;
-    this.guardar();
-    console.log('Notificaciones cambiadas');
   }
   reset() {
     this.#config = { ...DEFAULT_CONFIG };
@@ -122,14 +97,59 @@ class ConfiguracionUsuario {
       'Se han eliminado todos los datos de configuración del navegador.',
     );
   }
-  aplicarCambios() {
-    document.body.className = this.#config.tema;
-    document.documentElement.lang = this.#config.idioma;
-  }
-  cambiarTema() {
-    //evalua si el .tema === claro, entonces lo cambia a oscuro, si no lo cambia a claro
-    this.#config.tema = this.#config.tema === 'claro' ? 'oscuro' : 'claro';
+
+  cambiarTema(_tema) {
+    this.#config.tema = _tema;
     this.guardar();
-    this.aplicarCambios();
+    this.printTema();
+  }
+  cambiarIdioma(_idioma) {
+    this.#config.idioma = _idioma;
+    this.guardar();
+    this.printIdioma();
+  }
+  toggleNotificaciones(_notificaciones) {
+    this.#config.notificaciones = _notificaciones;
+    this.guardar();
+    this.printNotificaciones();
+  }
+  printTema() {
+    console.log(this.#config.tema);
+    document.body.className = this.#config.tema;
+  }
+  printIdioma() {
+    document.documentElement.lang = this.#config.idioma;
+    const cajaOIdioma = document.getElementById('estado-idioma');
+    const paragraph = document.createElement('p');
+    paragraph.textContent = this.#config.idioma;
+    cajaOIdioma.replaceChildren(paragraph);
+  }
+  printNotificaciones() {
+    //imprime el estado del idioma
+    const notificaciones = document.getElementById('estado-notificaciones');
+    const paragraph = document.createElement('p');
+    if (this.#config.notificaciones) {
+      paragraph.textContent = 'Notificaciones Activadas';
+    } else {
+      paragraph.textContent = 'Notificaciones Desactivadas';
+    }
+    notificaciones.replaceChildren(paragraph);
+  }
+  aplicarCambios(_tema, _idioma, _notificaciones) {
+    this.cambiarTema(_tema);
+    this.cambiarIdioma(_idioma);
+    this.toggleNotificaciones(_notificaciones);
+
+    document.getElementById('select-tema').value = this.#config.tema;
+    document.getElementById('select-lenguaje').value = this.#config.idioma;
+    document.getElementById('select-notificaciones').checked =
+      this.#config.notificaciones;
+  }
+  cargarPreferencias() {
+    this.aplicarCambios(
+      this.#config.tema,
+      this.#config.idioma,
+      this.#config.notificaciones,
+    );
   }
 }
