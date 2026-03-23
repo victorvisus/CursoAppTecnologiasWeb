@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Método 1: Atributo onclick en HTML -->
+    <button onclick="miFuncion()">Hacer click</button>
+    <script>
+        function miFuncion() {
+            alert('¡Botón clickeado!');
+        }
+    </script>
+
+
+    <!--Método 2: Propiedad onclick en JavaScript -->
+    <button id="miBoton">Hacer click</button>
+    <button id="miBoton2">Hacer click</button>
+    <script>
+        document.getElementById('miBoton').onclick = function () {
+            alert('¡Botón clickeado!');
+        }
+    </script>
+    <p id="lorem1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque ad quisquam ipsam recusandae
+        iusto suscipit? Ab animi id dolorum rem error. Adipisci commodi at a dignissimos modi praesentium debitis fuga?
+    </p>
+    <form>
+        <input id="campo-prueba" type="text" value="campoPrueba">
+        <!--input type="submit"-->
+    </form>
+    <!-- hacer script para que el párrafo anterior 
+     cambie color de lentra a rojo al pasar el ratón
+     por encima-->
+    <script>
+        const parrafoLorem1 = document.getElementById('lorem1');
+        const colorOriginal = parrafoLorem1.style.color;
+        parrafoLorem1.addEventListener('mouseover', () => { parrafoLorem1.style.color = "red" });
+        parrafoLorem1.addEventListener('mouseout', function () { parrafoLorem1.style.color = colorOriginal; });
+
+        const boton = document.getElementById('miBoton2');
+
+        // Primera función
+        /*
+               boton.addEventListener('click', function () {
+                   console.log('Primera función ejecutada');
+       
+               });
+       
+               // Segunda función
+               boton.addEventListener('click', function () {
+                   console.log('Segunda función ejecutada');
+       
+               });
+       
+               // Tercera función
+               boton.addEventListener('click', function () {
+                   console.log('Tercera función ejecutada');
+       
+               });
+       
+               boton.addEventListener('click', function () {
+                   alert("Se ha pulsado el tercer botón");
+       
+               });
+       */
+        /*
+                function miFuncion() {
+                    alert('Funciona sin limitación de segundos');
+                }
+                function miFuncion2() {
+                    setTimeout(() => {
+                        boton.removeEventListener('click', miFuncion);
+                        console.log('Listener eliminado en delay de 7 segundos desde el primer click');
+                    }, 7000);
+                }
+        
+                // Añadir listener
+                boton.addEventListener('click', miFuncion);
+                // Una vez hecho click se activa un contador de tiempo desde miFuncion2 que al cabo de 7 segundos elimina el efecto de miFuncion
+                boton.addEventListener('click', miFuncion2);
+        */
+        // Eliminar listener despues de 5 segundos
+        /*
+        setTimeout(() => {
+            boton.removeEventListener('click', miFuncion);
+            console.log('Listener eliminado');
+        }, 7000);*/
+
+        // A Esto NO funciona:
+        //boton.addEventListener('click', function () {alert('click'); });
+        //boton.removeEventListener('click', function () {alert('click');}); //X
+        /*
+                const parrafoClickBoton = document.querySelector("#lorem1")
+                boton.addEventListener('click', function (e) {
+                    parrafoClickBoton.style.color = "blue"
+                })
+        
+                boton.addEventListener('click', function (e) {
+                    console.log(e.target); // El botón que fue clickeado
+        
+                });
+        
+                boton.addEventListener('click', function (e) {
+                    console.log(e.type); // "click"
+        
+                });
+        
+                boton.addEventListener('click', function (e) {
+                    console.log(e.timeStamp); // Tiempo en milisegundos
+        
+                });
+        
+                boton.addEventListener('click', function (e) {
+                    console.log(e.currentTarget);
+                });
+        */
+        // Eventos de teclado:
+        const miInput = document.getElementById("campo-prueba");
+
+        miInput.addEventListener('keydown', function (e) {
+            console.log('Tecla presionada: ' + e.key);
+        });
+
+        miInput.addEventListener('keyup', function (e) {
+            console.log('Tecla liberada: ' + e.key);
+        });
+
+        miInput.addEventListener('keydown', function (e) {
+            console.log('Tecla: ' + e.key); // 'a', 'Enter', 'Escape'
+            console.log('Código-obsoleto: ' + e.keyCode);// Número de la tecla (obsoleto)
+            console.log('Código: ' + e.code);// 'KeyA', 'Enter', 'Escape'
+            if (e.ctrlKey) console.log('Ctrl presionado');
+            if (e.shiftKey) console.log('Shift presionado');
+            if (e.altKey) console.log('Alt presionado');
+        });
+
+
+    </script>
+
+</body>
+
+</html>

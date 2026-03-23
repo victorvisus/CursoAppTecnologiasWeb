@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Primer Flexbox</title>
+    <style>
+        .contenedor {
+            /* Añadir display: flex aquí */
+            display: flex;
+            border: 2px dotted #ca3434;
+            padding: 10px;
+            flex-direction: row-reverse;
+        }
+
+        .item {
+            padding: 20px;
+            margin: 5px;
+            background-color: #3498db;
+            color: white;
+            border: 1px solid #a1831e;
+        }
+
+        .contenedorGrid {
+            /* Añadir display: flex aquí */
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 100px 100px;
+            gap: 10px;
+        }
+
+        .itemGrid {
+            padding: 20px;
+            text-align: center;
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* ----------------------------------------------------*/
+        .contenedorGrid2 {
+            display: grid;
+
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: minmax(200px, 300px);
+            /*100px 200px;*/
+            gap: 10px;
+
+
+            /* Tres columnas iguales */
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Equivalente a: */
+            grid-template-columns: repeat(3, fr);
+
+            /* Columna fija + columna flexible */
+            /*grid-template-columns: 200px 1fr;*/
+            grid-template-columns: repeat(1, 2fr 1fr 2fr);
+        }
+
+        /*----------------------------------------------------*/
+        .contenedorGrid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "header header header"
+                "sidebar contenido contenido"
+                "footer footer footer";
+            min-height: 100vh;
+            gap: 10px;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: grey;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            color: red;
+            font-size: larger;
+        }
+
+        .contenido {
+            grid-area: contenido;
+        }
+
+        .footer {
+            grid-area: footer;
+            color: black;
+        }
+
+        /*------------------------ alineación en el grid --------------------*/
+        /* Alineación de todo el contenido (contenedor) */
+        .contenedorGrid4 {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, 200px);
+            height: 500px;/* Mayor que el grid para demostrar alineación */
+            /* Alineación horizontal de la cuadrícula completa */
+            justify-content: center;/* start, end, center, space-between, space-around, space-evenly */
+            /* Alineación vertical de la cuadrícula completa */
+            align-content: center; /* start, end, center, space-between, space-around, 
+            space-evenly */
+        }
+    </style>
+</head>
+
+<body>
+    <!--Para probar display:flex-->
+    <div class="contenedor">
+        <div class="item">Elemento 1</div>
+        <div class="item">Elemento 2</div>
+        <div class="item">Elemento 3</div>
+        <div class="item">Elemento 4</div>
+    </div>
+    <!--Para probar display:grid-->
+    <div class="contenedorGrid">
+        <div class="itemGrid">Elemento 1</div>
+        <div class="itemGrid">Elemento 2</div>
+        <div class="itemGrid">Elemento 3</div>
+        <div class="itemGrid">Elemento 4</div>
+        <div class="itemGrid">Elemento 5</div>
+        <div class="itemGrid">Elemento 6</div>
+    </div>
+    <!--Para probar display:grid modalidad fr-->
+    <hr>
+    <!--Para probar display:grid-->
+    <div class="contenedorGrid2">
+        <div class="itemGrid">Elemento 1</div>
+        <div class="itemGrid">Elemento 2</div>
+        <div class="itemGrid">Elemento 3</div>
+        <div class="itemGrid">Elemento 4</div>
+        <div class="itemGrid">Elemento 5</div>
+        <div class="itemGrid">Elemento 6</div>
+    </div>
+    <hr>
+    <!--Para probar display:grid template areas-->
+    <!--    <div class="contenedorGrid3">
+        <div class="itemGrid header"><p>Elemento 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
+            similique, doloremque quasi vero temporibus maxime quae sunt
+             corrupti. Sint dignissimos nemo illo mollitia 
+             expedita voluptas, provident alias nisi sunt perspiciatis.</p></div>
+        <div class="itemGrid header"><p>Elemento 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
+            similique, doloremque quasi vero temporibus maxime quae sunt
+             corrupti. Sint dignissimos nemo illo mollitia 
+             expedita voluptas, provident alias nisi sunt perspiciatis.</p></div>
+        <div class="itemGrid header"><p>Elemento 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
+            similique, doloremque quasi vero temporibus maxime quae sunt
+             corrupti. Sint dignissimos nemo illo mollitia 
+             expedita voluptas, provident alias nisi sunt perspiciatis.</p></div>
+        <div class="itemGrid sidebar"><p>Elemento 4 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
+            similique, doloremque quasi vero temporibus maxime quae sunt
+             corrupti. Sint dignissimos nemo illo mollitia 
+             expedita voluptas, provident alias nisi sunt perspiciatis.</p></div>
+        <div class="itemGrid content">Elemento 5</div>
+        <div class="itemGrid content">Elemento 6</div>
+        <div class="itemGrid sidebar"><p>Elemento 7 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est
+            similique, doloremque quasi vero temporibus maxime quae sunt
+             corrupti. Sint dignissimos nemo illo mollitia 
+             expedita voluptas, provident alias nisi sunt perspiciatis.</p></div>
+        <div class="itemGrid footer">Elemento 8</div>
+        <div class="itemGrid footer">Elemento 9. Lorem ipsum dolor sit amet lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quaerat amet necessitatibus voluptates vel saepe laboriosam laborum aspernatur praesentium, explicabo maiores eaque, tempora voluptate adipisci qui est et, nulla error?consectetur adipisicing elit. Mollitia doloribus nulla ipsum molestias, dolorum totam dolorem provident accusantium tempora minima deleniti minus sed odit vero explicabo eius. Soluta, quis asperiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda expedita ad impedit similique tenetur quisquam dolores illum architecto eveniet quam, unde, quas officiis, deserunt cumque omnis delectus. Ipsa, asperiores quas!Lorem</div>
+    </div>
+-->
+    <div class="contenedorGrid4">
+        <div class="itemGrid">Elemento 1</div>
+        <div class="itemGrid">Elemento 2</div>
+        <div class="itemGrid">Elemento 3</div>
+        <div class="itemGrid">Elemento 4</div>
+        <div class="itemGrid">Elemento 5</div>
+        <div class="itemGrid">Elemento 6</div>
+    </div>
+
+    <p>kjsdflkasjkfjsdfjsalkdfasd</p>
+</body>
+
+</html>

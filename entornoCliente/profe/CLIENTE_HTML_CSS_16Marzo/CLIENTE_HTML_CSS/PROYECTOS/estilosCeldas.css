@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+/*div {bordes redondeados y que sean visibles, además de tener
+    un padding, tener en cuenta que contenido+padding+border =
+    dimensión total del elemento, sin en el margin*}*/
+
+.mi-div {
+    width: 100px;
+    height: 100px;
+    background-color: blanco; /* Color inicial */
+    padding: 20px;
+    border: 1px solid #ccc;
+    /*cursor: pointer;*/
+    border-radius: 10px;
+    overflow: hidden;
+}
+/*
+.mi-div:active {
+    background-color: red; }
+*/
+
+table {
+      border-collapse: collapse;
+      width: 100%;
+}
+th, td {
+      border: 1px solid #000;
+      text-align: center;
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+       /* Aplica bordes redondeados a las celdas */
+}
+.celda11:active {
+    background-color: red;
+    overflow: auto;
+}
+.celda12:active {
+    background-color: green;
+}
+.celda21:active {
+    background-color: blue;
+}
+.celda22:active {
+    background-color: yellow;
+}
+p:active {
+    color: orange;
+    font-size: 150%;
+}
+#texto1 {
+    overflow: hidden;
+}

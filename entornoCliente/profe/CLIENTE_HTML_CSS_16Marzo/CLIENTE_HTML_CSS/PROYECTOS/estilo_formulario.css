@@ -1,0 +1,17 @@
+/*input[disabled] {
+    color: red;
+}
+*/
+input[type='text'] 
+{
+    border: 2px solid #77a389;
+}
+
+label {
+    display: block;
+}
+
+input[name="email"]{
+    font-family: 'Courier New', Courier, monospace;
+}
+

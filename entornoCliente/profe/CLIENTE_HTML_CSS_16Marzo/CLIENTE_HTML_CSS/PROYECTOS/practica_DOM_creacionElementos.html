@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mi-contenedor">
+
+        <p><em>Se da un contexto HTML previo, en relación al
+            cual dinámicamente se incorporan por JS nuevos elementos
+            </em>
+        </p>
+        
+        <p id="elemento-existente"><b>Sobre este párrafo se va a
+            insertar un elemento</b></p>
+    </div>
+    <script>
+        // se crean a continuación nuevoParrafo y nuevaImagen
+        const nuevoParrafo = document.createElement('p');
+        nuevoParrafo.textContent = '¡Hola! Soy un párrafo creado dinámicamente';
+        nuevoParrafo.id = 'parrafo-dinamico';
+        nuevoParrafo.className = 'texto-especial';
+        nuevoParrafo.setAttribute('data-info', 'creado-por-js');
+
+        const nuevalmagen = document.createElement('img');
+        nuevalmagen.src = './img/imagenWEB.jpg';
+        nuevalmagen.alt = 'Ordenadores en red';
+        nuevalmagen.width = 300
+        // nuevoParrafo y nuevaImagen vamos a situarlos en relación 
+        // a otros elementos previos existentes de la página
+        const contenedor = document.getElementById('mi-contenedor');
+        // en este caso contenedor es el div preexistente
+        //contenedor.prepend(nuevalmagen);
+        //contenedor.appendChild(nuevoParrafo);
+        
+        // referencia es el elemento párrafo
+        // preexistente con id "elemento-existente" que es tipo <p>
+
+        const referencia = document.getElementById('elemento-existente');
+        contenedor.insertBefore(nuevoParrafo, referencia);
+        contenedor.append(nuevalmagen);
+        // creo un link a google que se agrega al principio del contenedor
+        const nuevoLink = document.createElement('a')
+        nuevoLink.href = "https://www.google.com"
+        nuevoLink.text = "Link a Google"
+        contenedor.prepend(nuevoLink)
+    
+    </script>
+</body>
+
+</html>
