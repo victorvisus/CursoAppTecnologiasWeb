@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        localStorage.setItem('Nombre', 'Miguel Antonio');//establecer
+        console.log(`Recupero con getItem() El nombre es: ${localStorage.getItem('Nombre')}`);//acceder
+        for (let i = 0; i < localStorage.length; i++) {
+            console.log('itero con key() ' + localStorage.key(i));//itera por las claves
+        }
+
+
+        localStorage.removeItem('Nombre');//eliminar
+        console.log(`El nombre es: ${localStorage.getItem('Nombre')}`);
+
+        /**
+         * Almacenar datos complejos
+        localStorage solo puede guardar strings, por lo que si intentas almacenar un objeto o un array, JavaScript lo convierte automáticamente en "[object Object]" y se pierde toda la información. Para evitarlo, usamos JSON, que permite transformar estructuras de datos en texto.
+        Con JSON.stringify() convertimos objetos o arrays en cadenas JSON para guardarlos.
+        Con JSON.parse() los transformamos de nuevo al recuperarlos.
+        La regla clave es: si lo guardas con stringify, debes recuperarlo con parse.
+        */
+
+    </script>
+</body>
+
+</html>
