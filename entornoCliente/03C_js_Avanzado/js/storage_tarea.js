@@ -30,6 +30,13 @@ class ConfiguracionUsuario {
   get config() {
     return this.#config;
   }
+  obtenerConfig() {
+    let prefs = '';
+    for (const key in this.#config) {
+      prefs += `· ${key}: ${this.#config[key]}\n`;
+    }
+    return prefs;
+  }
   /**
    * Logica del metodo:
    * Mira en localStorage usando una clave fija (por ejemplo: "prefs_v1").
@@ -93,5 +100,26 @@ class ConfiguracionUsuario {
 
     this.guardar();
     console.log('Tema cambiado');
+  }
+
+  toggleNotificaciones() {
+    this.#config.notificaciones = !this.#config.notificaciones;
+    this.guardar();
+    console.log('Notificaciones cambiadas');
+  }
+  reset() {
+    this.#config = { ...DEFAULT_CONFIG };
+    this.guardar();
+  }
+  eliminarTodo() {
+    // 1. Elimina la entrada específica del disco (localStorage)
+    localStorage.removeItem(`${app_prefix}config`);
+
+    // 2. Resetea la variable interna de la clase para que no tenga datos viejos
+    this.#config = { ...DEFAULT_CONFIG };
+
+    console.warn(
+      'Se han eliminado todos los datos de configuración del navegador.',
+    );
   }
 }

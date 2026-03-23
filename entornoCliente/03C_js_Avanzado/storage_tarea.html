@@ -103,6 +103,17 @@
         usr.config.tema = 'oscuro';
         usr.guardar();
 
+        console.log(
+            'Configuración de usuario\n' +
+            usr.obtenerConfig(),
+        )
+
+        setTimeout(() => {
+            console.log('Configuración de usuario\n' + usr.obtenerConfig());
+            dialogo = confirm('Eliminar todo?');
+            if (dialogo) usr.eliminarTodo();
+        }, 5000)
+
     </script>
 </body>
 
