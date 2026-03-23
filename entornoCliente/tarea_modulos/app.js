@@ -4,8 +4,9 @@
 •Agrégalos al gestor
 •Muestra la lista y el total
 */
-import GestorProducto from './src/gestor/GestorProducto.js';
-import Producto from './src/modelos/Producto.js';
+import { formatearPrecio } from './src/utils/formateo.js'; // importa la funcion indicada
+import GestorProducto from './src/gestor/GestorProducto.js'; // importa la clase indicada
+import Producto from './src/modelos/Producto.js'; // importa la clase indicada
 
 try {
   const miGestor = new GestorProducto();
@@ -19,7 +20,7 @@ try {
   miGestor.agregar(p3);
 
   console.log(miGestor.listar());
-  console.log(miGestor.obtenerTotal());
+  console.log(`Suma total: ${formatearPrecio(miGestor.obtenerTotal())}`);
 } catch (error) {
   console.log(`ERROR: ` + error.message + '\nFin de la ejecución');
 }

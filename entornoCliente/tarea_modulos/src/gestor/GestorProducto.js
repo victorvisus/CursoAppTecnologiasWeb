@@ -5,15 +5,18 @@
 •Método: listar() - devuelve strings formateados
 •Método: obtenerTotal() - suma de precio * stock de todos
 */
-import { formatearPrecio, formatearStock } from '../utils/formateo.js';
-import { validarPrecio, validarStock } from '../utils/validaciones.js';
+import { formatearPrecio, formatearStock } from '../utils/formateo.js'; //Importa las funciones indicadas
+import * as Valida from '../utils/validaciones.js'; //Importa todas las funciones del archivo, poniendo un alias (namespace)
 
 export default class GestorProducto {
   constructor() {
     this.productos = [];
   }
   agregar(_producto) {
-    if (!validarPrecio(_producto.precio) || !validarStock(_producto.stock))
+    if (
+      !Valida.validarPrecio(_producto.precio) ||
+      !Valida.validarStock(_producto.stock)
+    )
       throw new Error('Producto no valido');
     this.productos.push(_producto);
   }
