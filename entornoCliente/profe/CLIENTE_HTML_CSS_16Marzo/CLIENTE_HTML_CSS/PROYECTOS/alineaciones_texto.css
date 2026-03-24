@@ -1,0 +1,63 @@
+.izquierda{
+    text-align: left;
+}
+
+.derecha{
+    text-align: right;
+}
+
+.centrado{
+    text-align: center;
+}
+
+.justificado{
+    text-align: justify;
+}
+
+.centrado span{
+    text-align: right;
+}
+
+.espaciado{
+    line-height: 2;
+}
+
+.titulares{
+    word-spacing: 4px;
+}
+
+/*section article h4 {
+    text-align: center;
+}*/
+
+.citasromanas h4{
+    text-align: center;
+    color: rgb(61, 91, 16);
+}
+
+/* Selector hijo directo*/
+div > p {
+    color: red;
+}
+/* Selector hermano adyacente*/
+h5 ~ p {
+    text-align: center;
+}
+
+/*pseudoclases: selector para comportamiento o estado o evento*/
+a:hover {
+    color: goldenrod;
+    font-size: large;
+}
+
+/*pseudoelemento. En este caso combinado con hermano: a todos
+los párrafos que suceden inmediatamente a una cabecera h4 se
+les aplica en su primera línea negrita*/
+h4 + p::first-line {
+    font-weight: bold;
+}
+
+article p.espaciado{
+    font-style: italic;
+    color: red;
+}

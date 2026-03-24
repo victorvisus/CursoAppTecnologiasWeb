@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funciones</title>
+    <script src="./assets/js/funcionesBase.js"></script>
+    <script src="./assets/js/funciones_como_valor.js"></script>
+  </head>
+  <body>
+    <main id="main">
+      <article class="content">
+        <section>
+          <h2>Número aletarior</h2>
+          <button onclick="printNum()">Imprime Numero</button>
+        </section>
+      </article>
+
+      <article id="saludos" class="content">
+        <section>
+          <h2>Funciones saludos</h2>
+          <button
+            onclick="procesarUsuario(getAnswer('¿Cómo te llamas?'), saludar)"
+          >
+            Saludar
+          </button>
+        </section>
+      </article>
+      <article id="calcular" class="content">
+        <section>
+          <h2>Funciones Calcular</h2>
+          <button onclick="calculadora()">Calcular</button>
+        </section>
+      </article>
+    </main>
+    <script>
+      function printNum() {
+        alert(getRandomNumber());
+      }
+
+      function calculadora() {
+        let num1, num2, operacion;
+        operacion = getAnswer(
+          '¿Qué operación quieres hacer?\n- sumar\n- multiplicar\n- restar',
+        );
+
+        do {
+          num1 = parseInt(getAnswer('Escribe el primer numero'));
+        } while (!isNumber(num1));
+        do {
+          num2 = parseInt(getAnswer('Escribe el segundo numero'));
+        } while (!isNumber(num2));
+
+        // Creamos un "diccionario" que mapea el texto con la función real
+        const operaciones = {
+          sumar: sumar,
+          multiplicar: multiplicar,
+          restar: restar,
+        };
+        // Buscamos la función en el diccionario usando el string del usuario
+        const funcionReal = operaciones[operacion];
+
+        alert('primer num: ' + num1);
+        alert('segundo num: ' + num2);
+        alert('operacion: ' + funcionReal);
+
+        calcular(num1, num2, funcionReal);
+      }
+    </script>
+  </body>
+</html>

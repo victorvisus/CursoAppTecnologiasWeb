@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+    Implementa una calculadora con callbacks para la operación y mostrar resultado.
+        •El usuario introduce dos números y una operación.
+        •Con un switch se llama a la función 'calcular' con un callback para definir cómo mostrar el resultado y otro para definir la operación.
+        •Los callbacks pueden ser nombrados, anónimos o funciones arrow.
+    -->
+    <main>
+        <h1>Ejercicio callback calculadora</h1>
+        <form action="/">
+            <label for="num 1">Primer numero</label>
+            <input type="number" name="num1" id="num1">
+            <label for="num2">Segun numero</label>
+            <input type="number" name="num2" id="num2">
+            <label for="operacion">operacion (+ - * /)</label>
+            <input type="text" name="operacion" id="operacion">
+
+        </form>
+        <button id="btn-calcular">Calcular</button>
+        <label for="resultado">Resultado</label>
+        <input type="number" name="resultado" id="resultado">
+    </main>
+    <script src="./js/ejercicio-calcula-callback.js"></script>
+</body>
+
+</html>

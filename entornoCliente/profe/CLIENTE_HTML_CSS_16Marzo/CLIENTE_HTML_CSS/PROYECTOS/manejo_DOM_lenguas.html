@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .modal-overlay {
+        display: flex;
+        /* Cambiar a 'none' para ocultar */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Fondo oscuro transparente */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        /* Asegura que esté por encima */
+    }
+
+    .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-content input {
+        padding: 10px;
+        margin: 10px 0;
+        width: 80%;
+    }
+</style>
+
+<body>
+    <div id="customModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Bienvenido</h2>
+            <p>Por favor, introduce tu nombre:</p>
+            <input type="text" id="userName" placeholder="Nombre..." />
+            <button onclick="closeModal()">Aceptar</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Esta es la página principal</h1>
+        <p>La página carga por completo mientras el modal está activo.</p>
+    </div>
+    <div id="contenedor-1">
+        <h1>Acción formativa en lenguas</h1>
+    </div>
+    <script>
+        /*Ejercicio: se pregunta al usuario en un prompt su edad. si es mayor de 18 años se le presenta un párrafo con Lorem Ipsum. Si es menor o igual a 18 años se le presenta un texto en <p> que diga: "usted tiene que aprender latín" y además a continuación un link a la página web de lenguas preferida, por ejemplo:
+https://scholalatina.it/es/scholae-latinae-cursos-de-latin/
+
+El contenedor para los elementos preexistentes es un <div>, y dentro del <div> hay un <h1> con el título "Acción formativa en lenguas"
+        */
+        // La página ya ha cargado, el modal se muestra automáticamente
+        window.onload = function () {
+            document.getElementById('customModal').style.display = 'flex';
+        };
+
+        function closeModal() {
+            const name = document.getElementById('userName').value;
+            if (name) {
+                console.log("Nombre del usuario: " + name);
+                document.getElementById('customModal').style.display = 'none';
+
+                if (edad <= 18) {
+                    const parrafoAprender = document.createElement("p")
+                    parrafoAprender.textContent = "Usted tiene que aprender latín"
+                    const linkLatin = document.createElement("a")
+                    linkLatin.href = "https://scholalatina.it/es/scholae-latinae-cursos-de-latin/"
+                    linkLatin.text = "Link a curso de latín"
+                    referencia.append(parrafoAprender, linkLatin)
+                }
+                else {
+                    const parrafoLorem = document.createElement("p")
+                    console.log("Antes de Lorem*** " + referencia)
+                    parrafoLorem.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eaque, repellat et sapiente asperiores incidunt iure voluptatem, similique ad laborum esse praesentium quos sunt suscipit voluptas quo? Ipsam, veniam optio!"
+                    referencia.append(parrafoLorem)
+                    console.log("Después de Lorem*** " + referencia)
+                }
+            } else {
+                alert("Por favor, introduce un nombre.");
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

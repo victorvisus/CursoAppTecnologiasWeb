@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <span id="el1">1</span>
+        <span id="el2">2</span>
+    </div>
+    <script>
+        const elemento1 = document.querySelector("#el1")
+        // nextElementSibling: sólo HTML
+        const elemento2_es = elemento1.nextElementSibling
+        console.log(elemento2_es)
+        console.log("*******************")
+        // nextSibling: toda la info del DOM para ese elemento
+        const elemento2_s = elemento1.nextSibling
+        console.log(elemento2_s)
+    </script>
+</body>
+
+</html>

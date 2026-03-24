@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <dialog id="comportamiento_modal">
+            <h1>¿Sabías que puedes abrir una modal así ?</h1>
+                    <p>¡Y es totalmente nativo !</p>
+                    <button id="cerrar">Cerrar modal</button>
+        </dialog>
+        <button id="abrir">Ver más información</button>
+        <script>
+            window.abrir.addEventListener('click', () => {
+                window.comportamiento_modal.showModal()
+                })
+            window.cerrar.addEventListener('click', ()=> {
+                window.comportamiento_modal.close()
+            })
+        </script>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Tenetur delectus ullam nihil minus adipisci. 
+            Dolorem sit ducimus amet inventore labore, 
+            sapiente expedita quasi nam dolorum modi impedit
+            aspernatur deserunt tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Corrupti, natus neque ea quam sint deserunt quaerat officiis voluptate consectetur. Doloribus ullam dolorem natus excepturi sit! Minus veniam nam laudantium quo!
+        </p>
+        <hr>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Tenetur delectus ullam nihil minus adipisci. 
+            Dolorem sit ducimus amet inventore labore, 
+            sapiente expedita quasi nam dolorum modi impedit
+            aspernatur deserunt tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Corrupti, natus neque ea quam sint deserunt quaerat officiis voluptate consectetur. Doloribus ullam dolorem natus excepturi sit! Minus veniam nam laudantium quo!
+        </p>
+    </main>
+</body>
+
+</html>
