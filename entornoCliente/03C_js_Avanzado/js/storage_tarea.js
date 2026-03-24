@@ -85,6 +85,7 @@ class ConfiguracionUsuario {
   reset() {
     this.#config = { ...DEFAULT_CONFIG };
     this.guardar();
+    this.cargarPreferencias();
   }
   eliminarTodo() {
     // 1. Elimina la entrada específica del disco (localStorage)
