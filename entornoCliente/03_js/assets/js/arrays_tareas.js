@@ -11,6 +11,45 @@ const productos = [
   { id: 3, nombre: 'Teclado', precio: 75, stock: 30 },
   { id: 4, nombre: 'Monitor', precio: 300, stock: 15 },
 ];
+console.log(
+  '// Tarea 1 /////////////////////////////////////////////////////////////////////',
+);
+
+console.log('\n1.- Extrae solo los nombres de los productos:');
+const listaProductos = productos.map((obj) => obj.nombre);
+console.log(`Lista de productos: ${listaProductos}`); // [ 'Laptop', 'Mouse', 'Teclado', 'Monitor' ] console.log(listaProductos);
+
+console.log('\n2.- Calcula el precio con IVA (21%) para cada producto:');
+//quiero añadir una nueva propiedad a cada objeto del array con el precio con IVA, que es el precio * 1.21
+/* for (let i = 0; i < productos.length; i++) {
+  productos[i].pvp = productos[i].precio * 1.21;
+} */
+//Ahora con map
+const productosConIVA = productos.map((producto) => ({
+  ...producto,
+  pvp: (producto.precio * 1.21).toFixed(2),
+}));
+console.log('Productos con IVA: (no modifica el array original)');
+console.log(productosConIVA);
+
+console.log(
+  '\n3.- Crea un array de objetos con nombre y valor total en stock:',
+);
+const stockProductos = productos.map((obj) => ({
+  nombre: obj.nombre,
+  valorStock: obj.stock * obj.precio,
+}));
+console.log('Stock de productos:');
+console.log(stockProductos);
+
+console.log(
+  '\n4.- Genera strings en formato: "ID-NOMBRE: PRECIO€" (ej: "1-LAPTOP: 999€"):',
+);
+const productosToString = productos.map(
+  (obj) => `${obj.id}-${obj.nombre}: ${obj.precio}€`,
+);
+console.log('Lista de productos:');
+console.log(productosToString);
 
 /* ********************************************************************************************************************************************
 Tareas usando filter()
