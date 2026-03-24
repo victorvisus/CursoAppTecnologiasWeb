@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Guía completa de Programación Orientada a Objetos en JavaScript. Aprende encapsulación, abstracción, herencia, polimorfismo y cuándo usar POO."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, POO, Programación Orientada a Objetos, encapsulación, abstracción, herencia, polimorfismo"
+    />
+    <meta name="author" content="Víctor Visús García" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Programación Orientada a Objetos en JavaScript"
+    />
+    <meta
+      property="og:description"
+      content="Guía completa sobre POO en JavaScript con ejemplos prácticos"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Programación Orientada a Objetos en JavaScript"
+    />
+    <meta
+      name="twitter:description"
+      content="Guía completa sobre POO en JavaScript"
+    />
+
+    <title>
+      Programación Orientada a Objetos en JavaScript | Cypherstudios
+    </title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@400;400i;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Custom styles following brand guidelines */
+      :root {
+        --negro-carbon: #0e0e11;
+        --gris-antracita: #1c1e22;
+        --gris-acero: #3a3d42;
+        --gris-tecnico: #b5b8be;
+        --verde-criptico: #3aff7a;
+        --blanco-tecnico: #f2f3f5;
+      }
+
+      body {
+        font-family: 'Source Sans 3', sans-serif;
+        background-color: var(--negro-carbon);
+        color: var(--blanco-tecnico);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'Inter', sans-serif;
+      }
+
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      .text-accent {
+        color: var(--verde-criptico);
+      }
+
+      .bg-secondary {
+        background-color: var(--gris-antracita);
+      }
+
+      .border-accent {
+        border-color: var(--gris-acero);
+      }
+
+      .text-secondary {
+        color: var(--gris-tecnico);
+      }
+
+      .hover-accent:hover {
+        color: var(--verde-criptico);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--gris-antracita);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--gris-acero);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--gris-tecnico);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-secondary border-b border-accent">
+      <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <h1 class="text-2xl font-semibold text-accent">Cypherstudios</h1>
+          <span class="font-mono text-sm text-secondary"
+            >Víctor Visús García</span
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 max-w-4xl">
+      <article>
+        <!-- Title -->
+        <header class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Programación Orientada a Objetos en
+            <span class="text-accent">JavaScript</span>
+          </h1>
+          <p class="text-xl text-secondary leading-relaxed">
+            Una guía completa para entender y aplicar los principios de POO en
+            el desarrollo web moderno
+          </p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="mb-12 bg-secondary rounded-lg p-8">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Introducción</h2>
+          <div class="space-y-4 text-lg leading-relaxed">
+            <p>
+              La Programación Orientada a Objetos (POO) es un paradigma de
+              programación que se basa en el concepto de "objetos", los cuales
+              pueden contener datos y código. Los datos están en forma de campos
+              (conocidos como atributos o propiedades), y el código, en forma de
+              procedimientos (conocidos como métodos).
+            </p>
+            <p>
+              En JavaScript, la POO ha evolucionado significativamente desde sus
+              inicios. Originalmente basado en prototipos, JavaScript incorporó
+              clases sintácticas en ES6 (2015), haciendo que el código sea más
+              familiar para desarrolladores que vienen de otros lenguajes como
+              Java, C# o Python.
+            </p>
+            <p>
+              La POO nos permite organizar el código de manera más estructurada,
+              reutilizable y mantenible, especialmente en aplicaciones grandes y
+              complejas donde la gestión del estado y el comportamiento se
+              vuelve crítica.
+            </p>
+          </div>
+        </section>
+
+        <!-- Encapsulation -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Encapsulación</h2>
+          <div class="space-y-4">
+            <p class="text-lg leading-relaxed">
+              La encapsulación es el principio de agrupar datos (propiedades) y
+              los métodos que operan sobre esos datos en una sola unidad. En
+              JavaScript, esto se logra mediante objetos y clases, permitiendo
+              controlar el acceso a los datos internos.
+            </p>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h3 class="text-xl font-semibold mb-4">
+                Ejemplo de Encapsulación
+              </h3>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class CuentaBancaria {
+    // Propiedad privada (encapsulación)
+    #saldo;
+    
+    constructor(saldoInicial = 0) {
+        this.#saldo = saldoInicial;
+    }
+    
+    // Método público para acceder al saldo
+    getSaldo() {
+        return this.#saldo;
+    }
+    
+    // Método público para modificar el saldo
+    depositar(cantidad) {
+        if (cantidad > 0) {
+            this.#saldo += cantidad;
+            return true;
+        }
+        return false;
+    }
+    
+    retirar(cantidad) {
+        if (cantidad > 0 && cantidad <= this.#saldo) {
+            this.#saldo -= cantidad;
+            return true;
+        }
+        return false;
+    }
+}
+
+const miCuenta = new CuentaBancaria(1000);
+console.log(miCuenta.getSaldo()); // 1000
+miCuenta.depositar(500);
+console.log(miCuenta.getSaldo()); // 1500
+// miCuenta.#saldo = 0; // Error: propiedad privada</code></pre>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h4 class="text-lg font-semibold mb-3">
+                Beneficios de la Encapsulación:
+              </h4>
+              <ul class="list-disc list-inside space-y-2 text-secondary">
+                <li>Protección de datos contra acceso no autorizado</li>
+                <li>Control sobre cómo se modifican los datos</li>
+                <li>Mayor facilidad para mantener y depurar el código</li>
+                <li>Abstracción de la complejidad interna</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Abstraction -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Abstracción</h2>
+          <div class="space-y-4">
+            <p class="text-lg leading-relaxed">
+              La abstracción es el principio de ocultar detalles de
+              implementación complejos y mostrar solo las funcionalidades
+              esenciales. En JavaScript, esto se logra mediante clases
+              abstractas (simuladas) y interfaces que definen contratos.
+            </p>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h3 class="text-xl font-semibold mb-4">Ejemplo de Abstracción</h3>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">// Clase base abstracta (simulada)
+class Vehiculo {
+    constructor(marca, modelo) {
+        if (this.constructor === Vehiculo) {
+            throw new Error("No se puede instanciar una clase abstracta");
+        }
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+    
+    // Método abstracto (debe ser implementado por las subclases)
+    acelerar() {
+        throw new Error("Método abstracto debe ser implementado");
+    }
+    
+    // Método concreto
+    obtenerInformacion() {
+        return `${this.marca} ${this.modelo}`;
+    }
+}
+
+class Coche extends Vehiculo {
+    constructor(marca, modelo, puertas) {
+        super(marca, modelo);
+        this.puertas = puertas;
+    }
+    
+    acelerar() {
+        return `El coche está acelerando`;
+    }
+}
+
+const miCoche = new Coche("Toyota", "Corolla", 4);
+console.log(miCoche.obtenerInformacion()); // Toyota Corolla
+console.log(miCoche.acelerar()); // El coche está acelerando</code></pre>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h4 class="text-lg font-semibold mb-3">
+                Ventajas de la Abstracción:
+              </h4>
+              <ul class="list-disc list-inside space-y-2 text-secondary">
+                <li>Simplificación de sistemas complejos</li>
+                <li>Reducción de la duplicación de código</li>
+                <li>Mayor facilidad para mantener y extender el código</li>
+                <li>Enfoque en lo esencial del problema</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Inheritance -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Herencia</h2>
+          <div class="space-y-4">
+            <p class="text-lg leading-relaxed">
+              La herencia permite que una clase (subclase) herede propiedades y
+              métodos de otra clase (superclase). Esto promueve la reutilización
+              de código y establece relaciones jerárquicas entre clases.
+            </p>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h3 class="text-xl font-semibold mb-4">Ejemplo de Herencia</h3>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class Animal {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    comer() {
+        return `${this.nombre} está comiendo`;
+    }
+    
+    dormir() {
+        return `${this.nombre} está durmiendo`;
+    }
+}
+
+class Perro extends Animal {
+    constructor(nombre, edad, raza) {
+        super(nombre, edad); // Llama al constructor de la clase padre
+        this.raza = raza;
+    }
+    
+    ladrar() {
+        return `${this.nombre} está ladrando`;
+    }
+    
+    // Sobrescritura de método
+    comer() {
+        return `${this.nombre} (un ${this.raza}) está comiendo croquetas`;
+    }
+}
+
+class Gato extends Animal {
+    constructor(nombre, edad, color) {
+        super(nombre, edad);
+        this.color = color;
+    }
+    
+    maullar() {
+        return `${this.nombre} está maullando`;
+    }
+}
+
+const miPerro = new Perro("Max", 5, "Labrador");
+const miGato = new Gato("Luna", 3, "Negro");
+
+console.log(miPerro.comer()); // Max (un Labrador) está comiendo croquetas
+console.log(miGato.comer()); // Luna está comiendo
+console.log(miPerro.ladrar()); // Max está ladrando</code></pre>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h4 class="text-lg font-semibold mb-3">
+                Tipos de Herencia en JavaScript:
+              </h4>
+              <ul class="list-disc list-inside space-y-2 text-secondary">
+                <li>
+                  <strong>Herencia simple:</strong> Una clase puede heredar de
+                  una sola superclase
+                </li>
+                <li>
+                  <strong>Herencia multinivel:</strong> Cadena de herencia (A →
+                  B → C)
+                </li>
+                <li>
+                  <strong>Composición:</strong> Alternativa a la herencia
+                  múltiple usando objetos
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Polymorphism -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Polimorfismo</h2>
+          <div class="space-y-4">
+            <p class="text-lg leading-relaxed">
+              El polimorfismo permite que objetos de diferentes clases respondan
+              al mismo mensaje o método de manera diferente. En JavaScript, esto
+              se logra mediante la sobrescritura de métodos y el duck typing.
+            </p>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h3 class="text-xl font-semibold mb-4">
+                Ejemplo de Polimorfismo
+              </h3>
+              <pre
+                class="font-mono text-sm bg-gray-900 p-4 rounded overflow-x-auto"
+              ><code class="text-accent">class Figura {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+    
+    calcularArea() {
+        throw new Error("Método debe ser implementado");
+    }
+    
+    describir() {
+        return `Soy una figura: ${this.nombre}`;
+    }
+}
+
+class Circulo extends Figura {
+    constructor(radio) {
+        super("Círculo");
+        this.radio = radio;
+    }
+    
+    calcularArea() {
+        return Math.PI * this.radio * this.radio;
+    }
+}
+
+class Rectangulo extends Figura {
+    constructor(ancho, alto) {
+        super("Rectángulo");
+        this.ancho = ancho;
+        this.alto = alto;
+    }
+    
+    calcularArea() {
+        return this.ancho * this.alto;
+    }
+}
+
+class Triangulo extends Figura {
+    constructor(base, altura) {
+        super("Triángulo");
+        this.base = base;
+        this.altura = altura;
+    }
+    
+    calcularArea() {
+        return (this.base * this.altura) / 2;
+    }
+}
+
+// Función polimórfica
+function mostrarArea(figura) {
+    console.log(`${figura.describir()}: Área = ${figura.calcularArea().toFixed(2)}`);
+}
+
+const figuras = [
+    new Circulo(5),
+    new Rectangulo(4, 6),
+    new Triangulo(3, 8)
+];
+
+figuras.forEach(figura => mostrarArea(figura));
+// Salida:
+// Soy una figura: Círculo: Área = 78.54
+// Soy una figura: Rectángulo: Área = 24.00
+// Soy una figura: Triángulo: Área = 12.00</code></pre>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h4 class="text-lg font-semibold mb-3">Tipos de Polimorfismo:</h4>
+              <ul class="list-disc list-inside space-y-2 text-secondary">
+                <li>
+                  <strong>Polimorfismo de sobrecarga:</strong> Múltiples métodos
+                  con mismo nombre pero diferentes parámetros
+                </li>
+                <li>
+                  <strong>Polimorfismo de sobrescritura:</strong> Subclases
+                  redefinen métodos de la superclase
+                </li>
+                <li>
+                  <strong>Polimorfismo paramétrico:</strong> Funciones que
+                  trabajan con diferentes tipos de datos
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- When to use OOP -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">
+            ¿Cuándo usar Programación Orientada a Objetos?
+          </h2>
+          <div class="space-y-6">
+            <p class="text-lg leading-relaxed">
+              La POO no es siempre la mejor solución para todos los problemas.
+              Es importante reconocer cuándo es apropiado usarla y cuándo otros
+              paradigmas podrían ser más adecuados.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-secondary rounded-lg p-6">
+                <h3 class="text-xl font-semibold mb-4 text-accent">
+                  ✅ Cuándo usar POO
+                </h3>
+                <ul class="space-y-3 text-secondary">
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Aplicaciones grandes y complejas:</strong> Con
+                      múltiples componentes interrelacionados</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Sistemas con estado complejo:</strong> Donde los
+                      objetos necesitan mantener su propio estado</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Requisitos de escalabilidad:</strong> Cuando el
+                      sistema debe crecer y evolucionar</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Trabajo en equipo:</strong> La modularidad
+                      facilita la colaboración</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Modelado del mundo real:</strong> Cuando el
+                      problema se mapea naturalmente a objetos</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-secondary rounded-lg p-6">
+                <h3 class="text-xl font-semibold mb-4 text-accent">
+                  ❌ Cuándo evitar POO
+                </h3>
+                <ul class="space-y-3 text-secondary">
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Scripts simples:</strong> Tareas pequeñas y
+                      específicas</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Procesamiento de datos puro:</strong>
+                      Transformaciones sin estado complejo</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Algoritmos funcionales:</strong> Donde la
+                      inmutabilidad es clave</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Prototipos rápidos:</strong> Cuando la velocidad
+                      de desarrollo es prioritaria</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-accent mr-2">•</span>
+                    <span
+                      ><strong>Microservicios simples:</strong> Con
+                      responsabilidades muy específicas</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6 mt-6">
+              <h4 class="text-lg font-semibold mb-3">
+                Señales de que necesitas POO:
+              </h4>
+              <ul class="list-disc list-inside space-y-2 text-secondary">
+                <li>Tienes código duplicado en múltiples lugares</li>
+                <li>La gestión del estado se vuelve complicada</li>
+                <li>
+                  Necesitas diferentes "tipos" de entidades con comportamientos
+                  similares
+                </li>
+                <li>El código se vuelve difícil de mantener y extender</li>
+                <li>Trabajas en un equipo grande y necesitas modularidad</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">
+            Mejores Prácticas en POO con JavaScript
+          </h2>
+          <div class="space-y-6">
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">Principios SOLID</h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-semibold text-accent">
+                    S - Single Responsibility Principle
+                  </h4>
+                  <p class="text-secondary">
+                    Cada clase debe tener una única responsabilidad
+                  </p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-accent">
+                    O - Open/Closed Principle
+                  </h4>
+                  <p class="text-secondary">
+                    Las clases deben estar abiertas para extensión pero cerradas
+                    para modificación
+                  </p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-accent">
+                    L - Liskov Substitution Principle
+                  </h4>
+                  <p class="text-secondary">
+                    Las subclases deben poder reemplazar a sus superclases
+                  </p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-accent">
+                    I - Interface Segregation Principle
+                  </h4>
+                  <p class="text-secondary">
+                    Las interfaces deben ser específicas y no forzar
+                    implementaciones innecesarias
+                  </p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-accent">
+                    D - Dependency Inversion Principle
+                  </h4>
+                  <p class="text-secondary">
+                    Depender de abstracciones, no de implementaciones concretas
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-secondary rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">Consejos Adicionales</h3>
+              <ul class="list-disc list-inside space-y-2 text-secondary">
+                <li>Usa composición sobre herencia cuando sea posible</li>
+                <li>Evita clases con demasiadas responsabilidades</li>
+                <li>
+                  Implementa patrones de diseño cuando resuelvan problemas
+                  reales
+                </li>
+                <li>Mantén las clases pequeñas y enfocadas</li>
+                <li>Usa nombres descriptivos para clases y métodos</li>
+                <li>Documenta el propósito y uso de cada clase</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-accent">Conclusión</h2>
+          <div class="space-y-4 text-lg leading-relaxed">
+            <p>
+              La Programación Orientada a Objetos en JavaScript es una
+              herramienta poderosa que, cuando se usa correctamente, puede
+              transformar la forma en que estructuramos y mantenemos nuestras
+              aplicaciones. Los cuatro pilares fundamentales (encapsulación,
+              abstracción, herencia y polimorfismo) nos proporcionan las bases
+              para crear sistemas robustos, escalables y mantenibles.
+            </p>
+            <p>
+              Sin embargo, es importante recordar que la POO no es una solución
+              mágica para todos los problemas. La clave está en entender cuándo
+              y cómo aplicar estos principios, combinándolos con otros
+              paradigmas cuando sea necesario para crear soluciones óptimas.
+            </p>
+            <p>
+              JavaScript, con su naturaleza flexible y evolución constante, nos
+              permite aprovechar lo mejor de múltiples paradigmas. Dominar la
+              POO en este contexto nos convierte en desarrolladores más
+              versátiles y capaces de enfrentar desafíos complejos con elegancia
+              y eficiencia.
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary border-t border-accent mt-20">
+      <div class="container mx-auto px-6 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="text-secondary">
+              © 2024 <span class="font-mono">Víctor Visús García</span> -
+              Cypherstudios
+            </p>
+          </div>
+          <div class="font-mono text-sm text-secondary">
+            Programación Orientada a Objetos en JavaScript
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

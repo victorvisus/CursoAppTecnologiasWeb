@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/style-galeria.css">
+</head>
+
+<body>
+    <article class="container">
+        <header class="header">
+            <h1>css flexbox dinamic photo gallery</h1>
+        </header>
+        <section class="section-article">
+            <div class="flexbox formulario" role="form">
+                <header>
+                    <h3>Añadir imagen</h3>
+                </header>
+                <form action="/">
+                    <div class="flexbox" role="group">
+                        <label for="link-img-id">url de la imagen</label>
+                        <input type="url" name="link-img" id="link-img-id">
+                    </div>
+                    <div class="flexbox" role="group">
+                        <label for="caption-id">Titulo de la imagen</label>
+                        <input type="text" name="caption" id="caption-id">
+                    </div>
+                    <input type="button" value="Enviar">
+                </form>
+            </div>
+            <div id="gallery" role="group" class="flexbox gallery">
+                <figure class="gallery-item">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg"
+                        alt="Imagen 1 de la galer a" title="Imagen 1 de la galer a" loading="lazy" />
+                    <figcaption>
+                        <h3>Imagen 1 de la galer a</h3>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg"
+                        alt="Imagen 2 de la galer a" title="Imagen 2 de la galer a" loading="lazy" />
+                    <figcaption>
+                        <h3>Imagen 2 de la galer a</h3>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg"
+                        alt="Imagen 3 de la galer a" title="Imagen 3 de la galer a" loading="lazy" />
+                    <figcaption>
+                        <h3>Imagen 3 de la galer a</h3>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg"
+                        alt="Imagen 4 de la galer a" title="Imagen 4 de la galer a" loading="lazy" />
+                    <figcaption>
+                        <h3>Imagen 4 de la galer a</h3>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg"
+                        alt="Imagen 5 de la galer a" title="Imagen 5 de la galer a" loading="lazy" />
+                    <figcaption>
+                        <h3>Imagen 5 de la galer a</h3>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg"
+                        alt="Imagen 6 de la galer a" title="Imagen 6 de la galer a" loading="lazy" />
+                    <figcaption>
+                        <h3>Imagen 6 de la galer a</h3>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg"
+                        alt="Imagen 7 de la galer a" title="Imagen 7 de la galer a" loading="lazy" />
+                    <figcaption>
+                        <h3>Imagen 7 de la galer a</h3>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg"
+                        alt="Imagen 8 de la galer a" title="Imagen 8 de la galer a" loading="lazy" />
+                    <figcaption>
+                        <h3>Imagen 8 de la galer a</h3>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg"
+                        alt="Imagen 9 de la galer a" title="Imagen 9 de la galer a" loading="lazy" />
+                    <figcaption>
+                        <h3>Imagen 9 de la galer a</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </article>
+
+    <script src="./js/ejercicio-galeria-script.js"></script>
+</body>
+
+</html>

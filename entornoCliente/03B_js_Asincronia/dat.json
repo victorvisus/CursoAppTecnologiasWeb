@@ -1,0 +1,30 @@
+{
+  "servidor": "RaspberryPi-4",
+  "estado": "activo",
+  "version": 4.2,
+  "configuracion": {
+    "puerto": 8080,
+    "ssl": true,
+    "limite_usuarios": 50
+  },
+  "servicios": [
+    {
+      "id": 1,
+      "nombre": "Desarrollo web",
+      "activo": true,
+      "tags": ["frontend", "javascript"]
+    },
+    {
+      "id": 2,
+      "nombre": "Mantenimiento web",
+      "activo": false,
+      "tags": ["servidor", "logs"]
+    },
+    {
+      "id": 3,
+      "nombre": "Migración correo",
+      "activo": true,
+      "tags": ["infraestructura"]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+/*
+LA RAÍZ:
+html {
+    font-size: 16px;
+}*/
+
+body {
+    font-size: 16px;
+    /* Tamaño base recomendado */
+}
+
+/*
+p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em; /*tamaño igual al del elemento padre
+    color: #1d0897
+}
+*/
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    /* 2 veces el tamaño de la raíz */
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+code {
+    font-family: "Courier New", monospace;
+}
+
+section {
+    margin: 10%;
+}
+
+/*SE ENTIENDE QUE EXISTE UNA class LLAMADA nota-pequeña EN EL HTML*/
+.nota-pequeña {
+    font-size: 0.8em;
+    /*80% del tamaño del elemento padre, 
+    que equivale a 0.8em */
+    font-weight: bold;
+    margin: 20px;
+}
+
+.destacado {
+    font-weight: 600;
+}
+
+.ligero {
+    font-weight: 300;
+}
+
+/*clases para "capitalización" y cursiva*/
+.cita {
+    font-style: italic;
+}
+
+.normal {
+    font-style: normal;
+}
+
+.subtitulo {
+    text-transform: capitalize;
+    /* Primera Letra En Mayúculas */
+}
+
+.titulo {
+    text-transform: uppercase;
+    /* TODO EN MAYÚSCULAS */
+}
+
+/* todo en minúsculas */
+.texto-minusculas {
+    text-transform: lowercase;
+}
+
+p {
+
+    /* Equivale a: */
+    font-style: italic;
+    font-variant: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: sans-serif;
+
+    /* Versión abreviada: */
+    font: italic normal 24px/1.5 Courier;
+    /*line-height: 1.5;*/
+    /*letter-spacing: 2px;*/
+    /*word-spacing: 2px;*/
+}
+
+h1 {
+    font: 32px Georgia, sans-serif;
+    /* Solo tamano y familia */
+}
+
+/* Rojo */
+.destacado {
+    color: #e63946;
+}
+
+/* Negro con transparencia */
+.sutil {
+    color: rgba (0, 0, 0, 0.6);
+}
+
+/*los hipervínculos no tendrán subrayado*/
+a {
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: #1d0897
+}
+
+.subrayado {
+    text-decoration: underline;
+}
+
+.tachado {
+    text-decoration: line-through;
+}
+
+/*tipo estilo y color*/
+.decoracion-completa {
+    text-decoration: underline 0.2em dotted red;
+}
+
+/*ejemplo de selector descendente: sólo afecta
+a los span dentro de h3*/
+h3 span {
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: underline 0.1em;
+    text-transform: capitalize;
+    color: #e63946;
+}
+
+#comentariosCSS {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#comentariosCSS_fundamentos {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*interlineados*/
+
+.compacto {
+    line-height: 1.2;
+}
+
+.espaciado {
+    line-height: 2;
+}
+
+.exacto {
+    line-height: 24px;
+}
+
+/*letter-spacing */
+.condensado {
+    letter-spacing: -1px;
+}
+
+.titulares {
+    word-spacing: 4cm;
+}
+
+/*efectos avanzados*/
+.sombra-basica {
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+}
+
+.texto-relieve {
+    color: #ffffff;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.resplandor {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #00aaff;
+}
+
+.multiples-sombras {
+    text-shadow: -2px 1px 2px black, 0px 0px 5px blue, 0px 0px 5px darkblue;
+    /* Múltiples sombras separadas por comas */
+}
+
+/*DESBORDAMIENTO DE TEXTO*/
+.truncado {
+    white-space: nowrap;
+    /* Evita saltos de línea */
+    overflow: hidden;
+    /* Oculta contenido que se desborda */
+    text-overflow: ellipsis;
+    /* Muestra " ... " */
+    width: 300px;
+    /* Ancho fijo para demostración */
+}
+
+div.efecto-truncado{
+  white-space: nowrap; 
+  width: 500px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #000000;
+}
+div.efecto-truncado:hover{
+    overflow: visible;
+}
+
+
+/*Estos 3 efectos no se han aplicado en HTML, consultarlos
+en https://www.w3schools.com/cssref/tryit.php?filename=trycss_text_white-space*/
+.conservar-formato {
+    white-space: pre; /* Mantiene espacios y saltos de línea */
+
+}
+.sin-ajuste {
+    white-space: nowrap; /* Sin saltos de línea */
+
+}
+
+.normal {
+    white-space: normal; /* Comportamiento predeterminado */
+
+}
+
+/* Rompe palabras en cualquier carácter, referencia::after
+https://www.w3schools.com/cssref/tryit.php?filename=trycss3_word-break */
+.romper-todo {
+    word-break: break-all;
+}
+/* Rompe palabras largas si es necesario. Referencia:
+https://www.w3schools.com/cssref/css3_pr_word-wrap.php */
+.ajustar-palabras {
+    word-wrap: break-word;
+}
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+.imagen-flotante {
+/* Flota a la izquierda */
+    margin: 0 10px 10px 0; /* Espacio alrededor */
+    float: right;
+}
+
+
+/* Layout de 3 columnas */
+.columna {
+    float: left;
+    width: 33.33%;
+}
+
+/** Clearing floats **/
+.clear {
+    clear: both;
+}
+/*Detiene el efecto de floats previos */
+
+.clearfix::after {
+    content:"";
+    display: table;
+    clear: both;
+}
+/* Técnica moderna para contener floats */
