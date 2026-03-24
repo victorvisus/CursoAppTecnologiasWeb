@@ -91,6 +91,7 @@
 
     <script type="" src="./js/storage_tarea.js"></script>
     <script>
+        // Crear objeto //////////////////////////////////////////////////////
         const usr = new ConfiguracionUsuario();
         usr.cargarPreferencias();
 
@@ -120,6 +121,16 @@
             let _notificaciones = document.getElementById('select-notificaciones').value;
 
             usr.aplicarCambios(_tema, _idioma, _notificaciones);
+        });
+
+        const btnReset = document.getElementById('btn-reset');
+        btnReset.addEventListener('click', () => {
+            usr.reset();
+        });
+
+        const btnLimpiarCache = document.getElementById('btn-limpiar');
+        btnLimpiarCache.addEventListener('click', () => {
+            usr.eliminarTodo();
         });
     </script>
 </body>
