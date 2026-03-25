@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea video subtitulos</title>
+
+    <style>
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2.5vmax;
+        }
+
+        video {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Video Subtitulado</h1>
+    </header>
+    <main>
+        <article>
+            <header>
+                <h2>Tierra</h2>
+            </header>
+            <section>
+                <video width="1280" height="720" controls>
+                    <source src="./video/tierra_MP4_1280_10MG.mp4" type="video/mp4">
+                    <source src="./video/file_example_MOV_1920_2_2MB.mov" type="video/mov">
+                    <source src="./video/file_example_WMV_1280_4_9MB.wmv" type="video/wmv">
+                    Tu navegador no soporta el video
+                    <track src="./video/tierra_es.vtt" kind="subtitles" srclang="es" label="Españolo" default>
+                    <track src="./video/tierra_en.vtt" kind="subtitles" srclang="en" label="Inglish">
+                </video>
+
+
+
+
+
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
