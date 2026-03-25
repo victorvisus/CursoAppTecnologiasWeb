@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        div[role="group"] {
+            margin-top: 15px;
+        }
+
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="radio" name="eleccion" value="opcion1" checked>Opcion1<br />
+    <input type="radio" name="eleccion" value="opcion2">Opcion2<br />
+    <input type="radio" name="eleccion" value="opcion3">Opcion3<br />
+
+    <!-- AGREGO EL CÓDIGO INDICADO EN EL ENUNCIADO, del ejercicio 2-->
+    <div role="group">
+        <label for="valor-opcion-id">Valor seleccionado</label>
+        <input type="text" name="valor-opcion" id="valor-opcion-id" disabled>
+    </div>
+
+    <script src="UF1842_Examen2_Victor_Visus.js"></script>
+</body>
+
+</html>
