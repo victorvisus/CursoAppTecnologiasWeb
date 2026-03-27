@@ -1,0 +1,149 @@
+
+
+
+
+HTML.
+
+Introduccion ------
+Documentos HTML
+Estructura Básica de un Documento HTML
+Declaración DOCTYPE
+El Elemento HTML
+La sección HEAD
+Elementos comunes en HEAD. title, meta, style, script, viewport
+La Sección BODY
+Anatomía de un elemento HTML
+Atributos y comentarios en HTML
+Atributo especificos de una tag, atributos generales (id, class...)
+Estructura básica HTML
+-DOCTYPE
+-Elementos html, head y body
+-Elementos y atributos
+-Comentarios
+
+
+Elementos Básicos ------
+Encabezados HTML
+-Buenas prácticas con encabezados
+-Párrafos
+-Saltos y Separadores
+-Elementos de formato básico
+Entidades HTML
+-Formatos:
+--Por nombre: &nombre; (ej. &lt;, &ntilde;).
+--Decimal: &#número; (ej. &#60;, &#241;).
+--Hexadecimal: &#xhex; (ej. &#x3C;, &#x241;).
+Listas en HTML
+-Tipos de listas
+--Listas no ordenadas
+--Listas ordenadas
+--Listas anidadas
+-Usos más comunes de listas
+
+Elementos HTML de contenido y estructura-----
+Enlaces (Hipervínculos)
+-Tipos de Enlaces
+-Rutas en Enlaces (Definicion, rutas absolutas y relativas)
+-Enlaces Internos (Anclas)
+-Atributos de enlaces (Target, title, download, etc..)
+Imágenes en HTML
+- atributo src y rutas
+- atributo alt
+-Dimensiones de Imágenes
+-Formatos de Imagen Web
+-Atributos adicionales
+--title: Muestra información al pasar el cursor.
+--loading: Controla cómo se carga la imagen con "eager" (inmediato) o "lazy" (carga diferida).
+--srcset: Para imágenes responsive (avanzado).
+Elementos DIV y SPAN
+-El Elemento DIV
+-El Elemento SPAN
+-Comparativa DIV VS SPAN
+
+HTML Real: De la Estructura a la Interacción-----
+HTML semántico
+-Beneficios del HTML semántico
+-Elementos semánticos principales
+--El elemento HEADER
+--El Elemento NAV
+--El Elemento MAIN
+--Elemento ARTICLE
+--Elemento SECTION
+--Elemento ASIDE
+--Elemento FOOTER
+-Anidación de elementos semánticos
+-Otros elementos semánticos útiles
+--figure, mark, time,address
+
+Tablas en HTML
+-Usos adecuados: y Usos incorrectos:
+-Componentes fundamentales
+-Ejemplo de tabla
+-Atributos básicos de tablas: border,colspan,rowspan
+-Ventajas de usar THEAD, TBODY, y TFOOT
+
+Formularios HTML
+-para que sirven
+-estructura básica de la tag form
+---'action': URL donde se envían los datos.
+---'method': Método HTTP de envío (GET o POST).
+---'name': Nombre del formulario (útil para JavaScript).
+-metodo get
+-metodo post
+-otros atributos para form
+--'enctype': Tipo de codificación (obligatorio para subir archivos). Valores:
+--'application/x-www-form-urlencoded' (predeterminado)
+--'multipart/form-data' (para archivos)
+--'text/plain' (texto sin formato)
+--'target': Dónde mostrar la respuesta. Valores:
+--'_self', '_blank', '_parent', '_top'
+--'autocomplete': permitir autocompletado.
+--'novalidate': Desactivar validación nativa.
+-Campos de entrada (Inputs) en formularios web
+-Elemento INPUT básico
+--Atributos fundamentales:
+--Todos los types y sus usos
+----Texto
+--------'type="text"': Campo de texto básico de una sola línea.
+--------'type="password"': Campo para contraseñas (oculta caracteres).
+--------'type="email"': Campo para correos electrónicos.
+--------'type="tel"': Campo para números telefónicos.
+--------'type="url"': Campo para direcciones web.
+----Numéricos y temporales
+--------'type="number"': Campo para valores numéricos.
+--------'type="range"': Control deslizante para seleccionar un valor.
+--------'type="date"': Selector de fecha.
+--------'type="time"': Para seleccionar hora.
+--------'type="datetime-local"': Fecha y hora.
+--------'type="month"': Selección de mes y año.
+--------'type="week"': Selección de semana del año.
+----Selección
+--------'type="checkbox"': Casillas de verificación (selección múltiple).
+--------'type="radio"': Botones de opción (selección única).
+----Especiales
+--------'type="color"': Seletor de color.
+--------'type="file"': Carga de archivos. Para cargar archivos tiene que haber 'enctype="multipart/form-data"', con 'accept limitas los tipos de archivo con 'multiple' permite varios archivos.
+--------'type="hidden"': Campo oculto, no visible al usuario (por ejemplo, para mandar info por defecto).
+--------'type="search"': Campo de búsqueda.
+----botones:
+--------'type="submit"': Envía el formulario.
+--------'type="reset"': Restablece los valores iniciales.
+--------'type="button"': Botón genérico (para JavaScript).
+--Vinculación con LABEL
+--Elemento TEXTAREA
+--Select y option
+---- 'multiple': Permite selección múltiple (se convierte en lista).
+---- 'size': Número de opciones visibles.
+---- 'selected': Marca una opción como seleccionada por defecto.
+---- optgroup, agrupando opciones
+---- sugerencias con <datalist>'
+-Atributos comunes de inputs
+-Validación Básica con Atributos
+-Agrupando Campos con FIELDSET
+-Validación nativa HTML5
+-Tipos de validación automática
+---Tipos de input específicos: email, url, number, date.
+---Atributo required: campos obligatorios.
+---Rangos: min, max, minlength, maxlength.
+---Patrones: pattern con expresiones regulares (regex).
+-Expresiones regulares básicas
