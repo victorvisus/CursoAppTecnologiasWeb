@@ -1,0 +1,43 @@
+{
+  "claudeCode.preferredLocation": "panel",
+  "php.validate.executablePath": "",
+  "editor.formatOnSave": true,
+  "window.autoDetectColorScheme": true,
+  "php.debug.executablePath": "",
+  "console-ninja.featureSet": "Community",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    //ruff
+    "source.fixAll.ruff": "explicit",
+    "source.organizeImports.ruff": "explicit",
+  },
+  "ruff.lint.ignore": ["F632"],
+  "js/ts.suggest.autoImports": true,
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "editor.linkedEditing": true,
+  "workbench.iconTheme": "vscode-icons",
+  "editor.stickyScroll.enabled": false,
+  "workbench.preferredDarkColorTheme": "Monokai Dimmed",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "codeium.enableCodeLens": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.minimap.enabled": false,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "chat.viewSessions.orientation": "stacked",
+  "workbench.startupEditor": "none",
+
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+  },
+}
