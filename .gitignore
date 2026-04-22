@@ -37,3 +37,4 @@ yarn-debug.log*
 yarn-error.log*
 
 node_modules/
+/entornoServidor/BaseDeDatos/BBDD/mariadb-12.2.2-winx64/

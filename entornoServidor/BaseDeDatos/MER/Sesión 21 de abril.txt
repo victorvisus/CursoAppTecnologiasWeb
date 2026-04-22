@@ -1,0 +1,15 @@
+Sesión 21 de abril
+
+Pasamos a explorar el concepto entidad-relación:
+
+https://es.wikipedia.org/wiki/Modelo_entidad-relaci%C3%B3n
+
+Para entrenarlo realizamos los primeros ejercicios de:
+
+http://tupdigital.web.unq.edu.ar/wp-content/uploads/sites/87/2018/08/practica-mer-mr.pdf
+
+Se pueden resolver sobre papel, pero existen herramientas tipo de SGBD como MySQL o bien draw io de Google:
+
+https://app.diagrams.net/?src=about
+------
+El resto de la clase realizamos el examen intermedio y el final de la UF1844
