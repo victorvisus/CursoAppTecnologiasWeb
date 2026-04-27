@@ -1,0 +1,47 @@
+CREATE TABLE equipo(
+	id INT(11) AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR(100)
+);
+
+CREATE TABLE simpatia(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	id_persona INT,
+	id_equipo INT,
+	CONSTRAINT fk_persona
+		FOREIGN KEY (id_persona)
+		REFERENCES persona(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	CONSTRAINT fk_equipo
+		FOREIGN KEY (id_equipo)
+		REFERENCES equipo(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
+ALTER TABLE simpatia MODIFY id_persona INT NOT NULL;
+ALTER TABLE simpatia MODIFY id_equipo INT NOT NULL;
+
+INSERT INTO persona (pasaporte, nombre, direccion) VALUES ('ABC12345', 'Juan Prez', 'Calle Mayor 10');
+INSERT INTO persona (pasaporte, nombre, direccion) VALUES ('DEF67891', 'Miguel Prez', 'Calle Florencio 10');
+
+INSERT INTO EQUIPO (Nombre) VALUES ('Real Madrid');
+INSERT INTO EQUIPO (Nombre) VALUES ('F.C. Barcelona');
+INSERT INTO EQUIPO (Nombre) VALUES ('Atlético de Madrid');
+INSERT INTO EQUIPO (Nombre) VALUES ('Real Betis');
+
+INSERT INTO simpatia (id_persona, id_equipo) VALUES 
+(1, 1),  -- Carlos -> Real Madrid
+(2, 2),  -- Lucía -> F.C. Barcelona
+(3, 3),  -- Juan -> Manchester City
+(4, 4),  -- Marta -> AC Milan
+(5, 1),  -- Diego -> Real Madrid
+(6, 2),  -- Elena -> F.C. Barcelona
+(7, 3),  -- Pablo -> Manchester City
+(8, 4),  -- Ana Belén -> AC Milan
+(9, 1),  -- Jorge -> Real Madrid
+(10, 2), -- Sara -> F.C. Barcelona
+(11, 4), -- Raúl -> AC Milan
+(12, 1), -- Sofía -> Real Madrid
+(13, 2), -- Iván -> F.C. Barcelona
+(14, 3), -- Carmen -> Manchester City
+(15, 1); -- Hugo -> Real Madrid

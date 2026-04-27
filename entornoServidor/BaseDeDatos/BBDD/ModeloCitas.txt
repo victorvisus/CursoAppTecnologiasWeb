@@ -1,0 +1,8 @@
+MODELO DE DATOS PARA UN SERVICIO QUE REQUIERE GESTIÓN DE CITAS PARA CLIENTES.
+
+0.DATOS_EMPRESA: id(PK), nombre_empresa (not null), dirección (not null), teléfono (not null), mail (not null), NIF (not null)
+1.CLIENTE: id_cliente(PK), nombre (not null), apellidos (not null), teléfono (not null), mail (not null), direcció (not null)n, NIF (not null), IBAN (not null)
+2.CITA: id_cliente(FK), id_servicio(FK), fecha_hora (not null), observaciones
+3.FACTURA: id_factura(PK), id_cliente(FK), id_cita(FK), fecha (not null), importe (not null)
+4.SERVICIO: id_servicio(PK), descripcion, status, categoria, precio
+5.CITA_SERVICIO: id(PK), id_servicio(FK), id_cita(FK)
