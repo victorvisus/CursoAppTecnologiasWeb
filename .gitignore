@@ -3,6 +3,8 @@ Thumbs.db
 desktop.ini
 .DS_Store
 *.zip
+*.exe
+*.msi
 
 # --- Editores de Código ---
 .vscode/
