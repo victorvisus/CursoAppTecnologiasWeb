@@ -37,3 +37,11 @@ SELECT COUNT(personaje) FROM disfraz;
 -- Bloque 4: Consultas Avanzadas (Múltiples JOINs)
 -- 1 Ficha Completa de Contrato: Genera un listado que muestre: Apellido del cliente, descripción del evento, lugar y el precio final del contrato.
 -- 2 Informe de Disfraces en Eventos: Muestra qué personajes (disfraces) aparecerán en cada evento (descripción del evento). Necesitarás unir evento, participa, animador y disfraz.
+
+-- seleccionar todos los eventos en que no tienen precio entre 1800 y 2400, y el presentador lleve en activo más de 6 años
+SELECT * FROM presentador;
+SELECT * FROM evento;
+SELECT p.apellido AS Presentador, e.descripcion AS Evento, e.precio_base AS Precio
+	FROM presentador p, evento e
+	WHERE p.anyo_inicio < (2026 - 6)
+		AND NOT (e.precio_base >= 1800 AND e.precio_base <= 2400) AND p.id_presentador = e.id_presentador;
