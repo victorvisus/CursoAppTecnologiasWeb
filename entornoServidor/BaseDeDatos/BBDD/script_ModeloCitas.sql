@@ -105,3 +105,5 @@ JOIN CLIENTE c ON cs.id_cliente = c.id_cliente
 JOIN CITA ci ON cs.id_cliente = ci.id_cliente AND cs.fecha_hora = ci.fecha_hora
 JOIN SERVICIO s ON cs.id_servicio = s.id_servicio
 ORDER BY ci.fecha_hora ASC;
+
+SELECT * FROM gestion_citas.cliente;

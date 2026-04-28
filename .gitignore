@@ -38,3 +38,11 @@ yarn-error.log*
 
 node_modules/
 /entornoServidor/BaseDeDatos/BBDD/mariadb-12.2.2-winx64/
+
+# Temporales de Draw.io
+.**drawio.bkp
+.$**
+
+# Archivos de base de datos (si usas SQLite)
+*.sqlite3
+*.db
