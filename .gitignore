@@ -41,6 +41,7 @@ node_modules/
 
 # Temporales de Draw.io
 .**drawio.bkp
+*.bkp
 .$**
 
 # Archivos de base de datos (si usas SQLite)
