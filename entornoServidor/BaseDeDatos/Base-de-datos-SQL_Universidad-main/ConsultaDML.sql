@@ -1,6 +1,37 @@
 use facultad;
 -- CONSULTAS
 
+-- Pruebas JOIN
+select a.nombre,  a.idCurso, a.caracter from asignatura a, matricula m
+	where m.idAsignatura = a.idAsignatura
+	group by  a.idCurso, a.nombre;
+
+-- en lo anterior devuelve solo 4 asignaturas de 6º curso, pero hay 6 asignaturas de 6º curso
+-- esto se debe a que el JOIN no encuentra matriculas para esas asignaturas en 5º curso
+select nombre, idCurso, caracter from asignatura a
+	INNER JOIN matricula m ON m.idAsignatura = a.idAsignatura
+	group by  a.idCurso, a.nombre;
+
+SELECT a.nombre,  a.idCurso, a.caracter from asignatura a;
+
+
+-- NATURAL JOIN
+SELECT a.nombre,  a.idCurso, a.caracter from asignatura a
+	NATURAL JOIN matricula m
+	group by  a.idCurso, a.nombre;
+
+
+-- LEFT OUTER JOIN: sacar todas las asignaturas de 6º curso de asignatura, se hayan o no matriculadas.
+select * from asignatura a
+	LEFT JOIN matricula m ON m.idAsignatura = a.idAsignatura
+	group by  a.idCurso, a.nombre;
+
+select * from asignatura a
+	RIGHT JOIN matricula m ON a.idAsignatura = m.idAsignatura
+	group by  a.idCurso, a.nombre;
+
+
+
 -- 1) Caracter, nº de alumnos, nota mínima, máxima y media de las asignaturas. Ordenar el resultado por curso primero y nombre de la asignatura después.
 /*
 SELECT idCurso, nombre, caracter, count(nota) AS 'Alumnos', round(min(nota), 2) AS 'Nota min',
@@ -69,6 +100,10 @@ SELECT COUNT(p.NIF) AS profesores, categoria
 	FROM profesor p
 	GROUP BY categoria
 	ORDER BY profesores DESC;
+
+-- Cuantos profesores hay en total
+SELECT COUNT(p.NIF) AS 'Num profesores'
+	FROM profesor p;
 
 
 -- 4) Conocer curso, asignatura, caracter de la asignatura, coordinador y e-mail de contacto
