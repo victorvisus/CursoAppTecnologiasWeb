@@ -31,6 +31,30 @@ select * from asignatura a
 	group by  a.idCurso, a.nombre;
 
 
+-- Ver que asignatura no tienen alumnos matriculados
+SELECT a.idAsignatura, a.nombre
+	FROM asignatura a
+	WHERE NOT EXISTS (
+	    SELECT 1 
+	    FROM matricula m 
+	    WHERE m.idAsignatura = a.idAsignatura
+	);
+
+-- con join
+SELECT a.idAsignatura, a.nombre, a.idCurso
+	FROM asignatura a
+	LEFT JOIN matricula m ON a.idAsignatura = m.idAsignatura
+	WHERE m.idAsignatura IS NULL
+	GROUP BY a.idCurso, a.nombre;
+
+-- Alumnos que estan matriculados en asignaturas que no existen
+SELECT m.idAlumno, a.nombre
+	FROM matricula m
+	RIGHT JOIN alumno a ON m.idAlumno = a.idAlumno
+	WHERE m.idAsignatura IS NULL;
+
+
+
 
 -- 1) Caracter, nº de alumnos, nota mínima, máxima y media de las asignaturas. Ordenar el resultado por curso primero y nombre de la asignatura después.
 /*
@@ -112,38 +136,86 @@ SELECT COUNT(p.NIF) AS 'Num profesores'
 	FROM asignatura INNER JOIN profesor ON (profesor.idProfesor = asignatura.coordinador)
 		ORDER BY idCurso ASC, asignatura ASC; */
 
-SELECT a.idCurso AS curso, a.nombre AS asignatura, a.caracter AS caracter,
-	CONCAT(p.nombre, ' ', p.apellido1, ' ', p.apellido2) AS coordinador, p.email 
+SELECT a.idCurso AS 'curso', a.nombre AS 'asignatura', a.caracter AS 'caracter',
+	CONCAT(p.nombre, ' ', p.apellido1, ' ', p.apellido2) AS 'coordinador', p.email 
 	FROM asignatura a
 		INNER JOIN profesor p ON (p.idProfesor = a.coordinador)
 	ORDER BY a.idCurso ASC, a.nombre ASC;
 
-SELECT a.idCurso AS curso, a.nombre AS asignatura, a.caracter AS caracter,
-	CONCAT(p.nombre, ' ', p.apellido1, ' ', p.apellido2) AS coordinador, p.email 
+SELECT a.idCurso AS 'curso', a.nombre AS 'asignatura', a.caracter AS 'caracter',
+	CONCAT(p.nombre, ' ', p.apellido1, ' ', p.apellido2) AS 'coordinador', p.email 
 	FROM asignatura a, profesor p
-	WHERE p.idProfesor = a.coordinador
+		WHERE p.idProfesor = a.coordinador
 	ORDER BY a.idCurso ASC, a.nombre ASC;
 
-
 -- 5) Asignaturas impartidas por profesor de más a menos
+SELECT CONCAT(p.nombre, ' ', p.apellido1) AS 'Maestro', COUNT(i.idAsignatura) AS 'Asignaturas'
+	FROM profesor p
+		INNER JOIN impartir i ON i.idProfesor = p.idProfesor
+	GROUP BY Maestro
+	ORDER BY Asignaturas DESC;
+
+/*
  SELECT concat(profesor.nombre, ' ', profesor.apellido1, ' ', profesor.apellido2) AS Profesor, count(impartir.idAsignatura) AS materiasImpartidas
 	 FROM profesor INNER JOIN impartir ON profesor.idProfesor = impartir.idProfesor 
 		 GROUP BY impartir.idProfesor
 		 ORDER BY materiasImpartidas DESC;
- 
+*/
+
+
 -- 6) Mostrar aquellos alumnos que tienen una media superior a 7.00 y su nota media
+SELECT * FROM alumno;
+SELECT * FROM matricula;
+
+SELECT CONCAT(a.nombre, ' ', a.apellido1) AS 'Alumno', ROUND(AVG(m.nota),2) AS 'Media'
+	FROM alumno a
+		INNER JOIN matricula m ON m.idAlumno = a.idAlumno
+	GROUP BY a.idAlumno
+	HAVING AVG(m.nota) > 7
+	ORDER BY Media DESC;
+
+
+
+
+
+
+/*
 SELECT concat(nombre, ' ', apellido1, ' ', apellido2) AS alumno, round(avg(matricula.nota),2) AS notaMedia
 	FROM alumno INNER JOIN matricula ON alumno.idAlumno = matricula.idAlumno
 		GROUP BY alumno.idAlumno
 		HAVING avg(matricula.nota) > 7.00 -- Filto de la agrupación alumno con una nota media superior a 7
 		ORDER BY notaMedia DESC;
+*/
 
--- 7) Obtener los créditos totales por curso (con separación según caracter). El curso 6 tiene 0 créditos, al ser un doctorado las asignaturas no forman parte de la nota final
+
+
+
+
+
+-- 7) Obtener los créditos totales por curso (con separación según caracter).
+-- El curso 6 tiene 0 créditos, al ser un doctorado las asignaturas no forman parte de la nota final
+
+SELECT * FROM asignatura;
+SELECT * FROM curso;
+
+SELECT a.idCurso, c.nombreDescriptivo AS 'Curso', a.caracter, SUM(a.creditos) AS 'Creditos'
+	FROM asignatura a
+		INNER JOIN curso c ON c.idCurso = a.idCurso
+	WHERE a.idCurso < 6
+	GROUP BY a.idCurso, a.caracter;
+/*
 SELECT curso, caracter, sum(creditos) AS creditos
 	FROM asignatura
 	GROUP BY curso, caracter;
+*/
 
 -- 8) Obtener aquellas optativas sin alumnos
+SELECT a.nombre AS 'Asignatura', a.caracter
+	FROM asignatura a
+		WHERE a.caracter = 'optativa' AND a.idAsignatura NOT IN (
+			SELECT m.idAsignatura FROM matricula m);
+			
+
 SELECT asignatura.nombre, count(matricula.idAlumno) AS alumnos
 	FROM asignatura LEFT JOIN matricula ON (asignatura.idAsignatura = matricula.idAsignatura)
 		GROUP BY asignatura.nombre
