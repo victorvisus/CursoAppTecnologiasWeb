@@ -1,0 +1,47 @@
+// Tabla de Sucursales
+Table sucursal {
+  id_sucursal int [pk, increment]
+  direccion varchar(255)
+  cod_postal char(5)
+  municipio varchar(100)
+  provincia varchar(100)
+  apellidos_director varchar(100)
+}
+
+// Tabla de Clientes
+Table cliente {
+  id_cliente int [pk, increment]
+  nif char(9) [unique]
+  nombre varchar(50)
+  apellido1 varchar(50)
+  apellido2 varchar(50)
+}
+
+// Tabla de Cuentas
+Table cuenta {
+  id_cuenta int [pk, increment]
+  pseudo_iban char(5) [unique] // Restricción del enunciado de 5 posiciones
+  id_cliente int
+  id_sucursal int
+}
+
+// Tabla de Transacciones
+Table transaccion {
+  id_transaccion int [pk, increment]
+  cta_origen int
+  cta_destino int
+  cantidad decimal(15,2)
+  fecha datetime
+}
+
+// RELACIONES (Modelo Lógico)
+
+// Un cliente tiene muchas cuentas, una cuenta solo de un cliente
+Ref: cliente.id_cliente < cuenta.id_cliente
+
+// Una cuenta solo está en una sucursal
+Ref: sucursal.id_sucursal < cuenta.id_sucursal
+
+// Una transacción es desde una cuenta (origen) a otra (destino)
+Ref: cuenta.id_cuenta < transaccion.cta_origen
+Ref: cuenta.id_cuenta < transaccion.cta_destino

@@ -1,0 +1,7 @@
+id;NIF;nombre;apellido1;apellido2
+1000;12345678A;Antonio;Garcia;Cano
+1001;87654321B;Maria;Lopez;Martinez
+1002;11223344C;Carlos;Ruiz;Fernandez
+1003;55667788D;Ana;Perez;Sanchez
+1004;99887766E;Pedro;Jimenez;Torres
+1005;44332211F;Laura;Navarro;Moreno

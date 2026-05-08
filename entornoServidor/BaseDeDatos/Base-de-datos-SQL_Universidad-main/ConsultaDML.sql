@@ -73,9 +73,7 @@ SELECT idCurso, nombre, caracter, count(nota) AS 'Alumnos', round(min(nota), 2) 
 	máxima
 	y media de las asignatura
 */
-SELECT * FROM asignatura;
-SELECT * FROM matricula;
-SELECT * FROM  matricula WHERE idAsignatura = 'AS001';
+
 SELECT a.idCurso, a.nombre, a.caracter, COUNT(m.idAlumno), MIN(m.nota), MAX(m.nota), ROUND(AVG(m.nota), 2)
 	FROM asignatura a, matricula m
 	WHERE m.idAsignatura = a.idAsignatura
@@ -97,16 +95,13 @@ SELECT a.nombre, round(avg(m.nota),2) AS 'Nota Media'
 		HAVING avg(m.nota) < 5
 		ORDER BY a.idCurso ASC, a.nombre ASC;
 
---- SACAR LA MEDIA DE LOS CURSOS CON MEDIA INFERIOR A 7
+-- SACAR LA MEDIA DE LOS CURSOS CON MEDIA INFERIOR A 7
 SELECT a.idCurso, round(avg(m.nota),2) AS 'Nota Media'
 	FROM asignatura a, matricula m
 	WHERE a.idAsignatura = m.idAsignatura
 		GROUP BY a.idCurso
 		HAVING avg(m.nota) < 7
 		ORDER BY a.idCurso ASC;
-
-
-
 
 -- 3) Conocer el número de profesores por categoría  y ordenar la tabla de categoría con más profesores a categoría con menos
 /* SELECT categoria, count(NIF)  as profesores 
@@ -164,8 +159,6 @@ SELECT CONCAT(p.nombre, ' ', p.apellido1) AS 'Maestro', COUNT(i.idAsignatura) AS
 
 
 -- 6) Mostrar aquellos alumnos que tienen una media superior a 7.00 y su nota media
-SELECT * FROM alumno;
-SELECT * FROM matricula;
 
 SELECT CONCAT(a.nombre, ' ', a.apellido1) AS 'Alumno', ROUND(AVG(m.nota),2) AS 'Media'
 	FROM alumno a
@@ -173,11 +166,12 @@ SELECT CONCAT(a.nombre, ' ', a.apellido1) AS 'Alumno', ROUND(AVG(m.nota),2) AS '
 	GROUP BY a.idAlumno
 	HAVING AVG(m.nota) > 7
 	ORDER BY Media DESC;
-
-
-
-
-
+	
+SELECT CONCAT(a.nombre, ' ', a.apellido1) AS 'Alumno', ROUND(AVG(m.nota),2) AS 'Media'
+	FROM alumno a, matricula m WHERE m.idAlumno = a.idAlumno
+	GROUP BY a.idAlumno
+	HAVING AVG(m.nota) > 7
+	ORDER BY Media DESC;
 
 /*
 SELECT concat(nombre, ' ', apellido1, ' ', apellido2) AS alumno, round(avg(matricula.nota),2) AS notaMedia
@@ -187,22 +181,22 @@ SELECT concat(nombre, ' ', apellido1, ' ', apellido2) AS alumno, round(avg(matri
 		ORDER BY notaMedia DESC;
 */
 
-
-
-
-
-
 -- 7) Obtener los créditos totales por curso (con separación según caracter).
 -- El curso 6 tiene 0 créditos, al ser un doctorado las asignaturas no forman parte de la nota final
-
-SELECT * FROM asignatura;
-SELECT * FROM curso;
 
 SELECT a.idCurso, c.nombreDescriptivo AS 'Curso', a.caracter, SUM(a.creditos) AS 'Creditos'
 	FROM asignatura a
 		INNER JOIN curso c ON c.idCurso = a.idCurso
 	WHERE a.idCurso < 6
-	GROUP BY a.idCurso, a.caracter;
+	GROUP BY a.idCurso, a.caracter
+	
+-- creamos una vista
+CREATE VIEW creditos_curso AS (
+	SELECT a.idCurso, c.nombreDescriptivo AS 'Curso', a.caracter, SUM(a.creditos) AS 'Creditos'
+		FROM asignatura a
+			INNER JOIN curso c ON c.idCurso = a.idCurso
+		WHERE a.idCurso < 6
+		GROUP BY a.idCurso, a.caracter);
 /*
 SELECT curso, caracter, sum(creditos) AS creditos
 	FROM asignatura
@@ -215,42 +209,84 @@ SELECT a.nombre AS 'Asignatura', a.caracter
 		WHERE a.caracter = 'optativa' AND a.idAsignatura NOT IN (
 			SELECT m.idAsignatura FROM matricula m);
 			
-
+/*
 SELECT asignatura.nombre, count(matricula.idAlumno) AS alumnos
 	FROM asignatura LEFT JOIN matricula ON (asignatura.idAsignatura = matricula.idAsignatura)
 		GROUP BY asignatura.nombre
 		HAVING alumnos = 0;
+*/
+
 
 -- 9) Obtener el número de alumnos de primero que tienen que recuperar cada asignatura
+
+
+USE facultad;
+
+SELECT a.nombre, COUNT(m.idAlumno) AS 'Suspendidos'
+	FROM asignatura a 
+	JOIN matricula m ON a.idAsignatura = m.idAsignatura
+		WHERE m.nota < 5.00 AND a.idCurso = 1
+	GROUP BY a.nombre;
+
+/*
 SELECT nombre, count(idAlumno) as alumnosRecuperacion
 	FROM asignatura INNER JOIN matricula ON asignatura.idAsignatura = matricula.idAsignatura
-	WHERE nota < 5.00 AND curso = 1
+	WHERE nota < 5.00 AND idCurso = 1
 		GROUP BY nombre
 		ORDER BY nombre ASC;
+*/
+-- 10) Alumnos que tienen que presentarse a la recuperación de Algebra lineal (AS001) y la nota que sacaron 
+SELECT CONCAT(a.nombre, ' ', a.apellido1, ' ', a.apellido2) AS 'Alumno', m.nota
+	FROM alumno a
+	INNER JOIN matricula m ON m.idAlumno = a.idAlumno
+	WHERE m.idAsignatura = 'AS001' AND m.nota < 5.00
+	GROUP BY a.idAlumno;
 
--- 10) Alumnos que tienen que presentarse a la recuperación de Algebra lineal y la nota que sacaron    
+
+
+/*   
 SELECT concat(alumno.nombre,' ', apellido1, ' ', apellido2) AS alumno, matricula.nota 
 	FROM alumno
 		INNER JOIN matricula ON alumno.idAlumno = matricula.idAlumno
 		INNER JOIN asignatura ON asignatura.idAsignatura = matricula.idAsignatura
 	WHERE matricula.nota < 5.00 AND asignatura.nombre = "Algebra lineal"
 		ORDER BY alumno ASC;
+*/
+-- 11) Alumnos de segundo que han sacado un 10 en alguna materias para ponerles mención de honor. Ordenar alfabéticamente por nombre asignatura 
+SELECT * from alumno;
+SELECT * from matricula;
+SELECT * from asignatura;
 
-	-- 11) Alumnos de segundo que han sacado un 10 en alguna materias para ponerles mención de honor. Ordenar alfabéticamente por nombre asignatura 
+SELECT a.nombre AS 'Asignatura', CONCAT(al.nombre, ' ', al.apellido1, ' ', al.apellido2) AS 'Alumno', m.nota
+	FROM asignatura a 
+	JOIN matricula m ON a.idAsignatura = m.idAsignatura
+	JOIN alumno al ON al.idAlumno = m.idAlumno
+		WHERE m.nota = 10 AND a.idCurso = 2
+	ORDER BY a.nombre ASC;
+
+
+/*
 SELECT idCurso, asignatura.nombre, concat(alumno.nombre,' ', apellido1, ' ', apellido2) AS alumno, nota
 	FROM matricula
 		INNER JOIN alumno ON alumno.idAlumno = matricula.idAlumno
 		INNER JOIN asignatura ON matricula.idAsignatura = asignatura.idAsignatura
 	WHERE nota = (select max(nota) from matricula) AND idCurso = 2
 		ORDER BY asignatura.nombre ASC;
+*/
+-- 12) Conocer número de alumnos totales, los becados y porcentaje de becados respecto al total
 
-	-- 12) Conocer número de alumnos totales, los becados y porcentaje de becados respecto al total
+
+
+
+
+
+/*
 SELECT count(alumno.idAlumno) AS alumnos, (SELECT count(alumno.idAlumno) FROM alumno WHERE beca = 'si') AS becados,
 	round((SELECT count(alumno.idAlumno)
 	FROM alumno WHERE beca = 'si')/count(alumno.idAlumno)*100, 2) AS "% becados"
 	FROM alumno;
-
-	-- 13) Conocer nota media de los becados y el curso en el que están. Ordenar resultado por nombre completo descendiente
+*/
+-- 13) Conocer nota media de los becados y el curso en el que están. Ordenar resultado por nombre completo descendiente
 SELECT curso, concat(alumno.nombre, ' ', apellido1, ' ', apellido2) AS Alumno, round(avg(matricula.nota),2) AS notaMedia
 	FROM alumno 
 		LEFT JOIN matricula ON (alumno.idAlumno = matricula.idAlumno) 
