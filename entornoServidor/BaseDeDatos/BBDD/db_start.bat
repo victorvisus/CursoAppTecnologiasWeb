@@ -15,3 +15,6 @@ if %errorlevel% neq 0 (
     echo Verifica que no haya otra instancia (como Docker) usando el puerto 3306.
     pause
 )
+
+
+:: para iniciar mariaDB desde consola: mariadb.exe -u usuario -p
