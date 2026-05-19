@@ -2,6 +2,16 @@ DROP DATABASE IF EXISTS jardineria;
 CREATE DATABASE jardineria CHARACTER SET utf8mb4;
 USE jardineria;
 
+
+DROP TABLE IF EXISTS oficina;
+DROP TABLE IF EXISTS empleado;
+DROP TABLE IF EXISTS gama_producto;
+DROP TABLE IF EXISTS cliente;
+DROP TABLE IF EXISTS pedido;
+DROP TABLE IF EXISTS producto;
+DROP TABLE IF EXISTS detalle_pedido;
+DROP TABLE IF EXISTS pago;
+
 CREATE TABLE oficina (
   codigo_oficina VARCHAR(10) NOT NULL,
   ciudad VARCHAR(30) NOT NULL,

@@ -286,7 +286,9 @@ SELECT count(alumno.idAlumno) AS alumnos, (SELECT count(alumno.idAlumno) FROM al
 	FROM alumno WHERE beca = 'si')/count(alumno.idAlumno)*100, 2) AS "% becados"
 	FROM alumno;
 */
+
 -- 13) Conocer nota media de los becados y el curso en el que están. Ordenar resultado por nombre completo descendiente
+
 SELECT curso, concat(alumno.nombre, ' ', apellido1, ' ', apellido2) AS Alumno, round(avg(matricula.nota),2) AS notaMedia
 	FROM alumno 
 		LEFT JOIN matricula ON (alumno.idAlumno = matricula.idAlumno) 
