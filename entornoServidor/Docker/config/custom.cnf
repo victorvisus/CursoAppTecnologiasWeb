@@ -1,0 +1,17 @@
+[mysqld]
+
+# Permitir conexiones desde cualquier IP (Docker gestionará el bloqueo)
+bind-address = 0.0.0.0
+
+# Configuración de juego de caracteres recomendada
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+
+# Configuración de puerto
+port = 3306
+
+# Tamaño máximo de paquete
+max_allowed_packet = 256M
+
+# Configuración de conexión
+max_connections = 1000
