@@ -39,6 +39,12 @@ O alternativamente:
 docker ps
 ```
 
+### ### 2.1 Ver contenedores
+
+```bash
+docker ps -a
+```
+
 ### 3. Acceder a MariaDB desde la terminal
 
 #### Opción A: Usando docker exec
