@@ -49,3 +49,7 @@ node_modules/
 # Archivos de base de datos (si usas SQLite)
 *.sqlite3
 *.db
+
+# Docker
+/docker/data/*
+.env

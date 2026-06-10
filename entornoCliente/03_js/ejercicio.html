@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        El Reto: "El Calculador de Precios"
+        Escribe una función llamada calcularPrecioFinal que reciba dos parámetros: el precioBase y el porcentajeIva (por ejemplo, 21 para el 21%).
+
+        Si el usuario no te pasa el porcentajeIva, la función debe aplicar el 21% por defecto (usa parámetros por defecto de JS).
+
+        La función debe devolver (return) el precio final redondeado a dos decimales.
+        */
+
+      function calcularPrecioFinal(precioBase, porcentajeIva = 21) {
+        indiceIva = porcentajeIva / 100;
+        precioFinal = precioBase + precioBase * indiceIva;
+        return precioFinal.toFixed(2);
+      }
+
+      onload = () => {
+        console.log('ejecutando...');
+
+        setTimeout(() => {
+          console.log(calcularPrecioFinal(100)); // Devuelve 121
+          //console.log(calcularPrecioFinal(100, 10)); // Devuelve 110
+        }, 5000);
+      };
+
+      /**
+       * El Reto: "El Filtro de Candidatos"
+        Imagina que estás programando el buscador de ofertas de empleo de una plataforma web. Tienes un array con los lenguajes que domina un programador y otro array con los requisitos mínimos de una oferta de trabajo.
+
+        Escribe una función llamada cumpleRequisitos(skillsUsuario, requisitosOferta).
+
+        La función debe devolver true si el usuario sabe todos los lenguajes que pide la oferta (puede saber más, pero no le puede faltar ninguno de los exigidos). Si le falta alguno, debe devolver false.
+
+        Pista: Convierte los arrays a Set dentro de la función y busca una forma de comprobar si cada requisito de la oferta está dentro de los conocimientos del usuario.
+       **/
+      const ofertaFrontend = ['JavaScript', 'React'];
+
+      const candidatoA = ['JavaScript', 'HTML', 'CSS', 'React', 'Node']; // Debería dar true (sabe todo lo que piden y más)
+      const candidatoB = ['JavaScript', 'HTML', 'CSS']; // Debería dar false (le falta React)
+
+      function cumpleRequisitos(skillsUsuario, requisitosOferta) {
+        for (i = 0; i < requisitosOferta.length; i++) {
+          if (!skillsUsuario.includes(requisitosOferta[i])) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      console.log(cumpleRequisitos(candidatoA, ofertaFrontend)); // Esperado: true
+      console.log(cumpleRequisitos(candidatoB, ofertaFrontend)); // Esperado: false
+    </script>
+  </body>
+</html>
