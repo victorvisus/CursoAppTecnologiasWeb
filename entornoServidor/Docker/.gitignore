@@ -1,2 +1,16 @@
-data/
+# Datos persistentes de las bases de datos / contenedores
+**/data/
+**/db_data/
+**/.docker_volumes/
+
+# Configuración sensible y contraseñas
 .env
+.env.local
+.env.*.local
+
+# Logs de los contenedores
+*.log
+docker-compose.log
+
+# Configuración específica de desarrollo/IDE
+.docker/
