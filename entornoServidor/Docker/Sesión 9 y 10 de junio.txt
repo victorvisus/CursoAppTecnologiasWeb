@@ -1,0 +1,156 @@
+Sesión 9 y 10 de junio
+
+Pass, Saas, IaaS
+
+https://es.wikipedia.org/wiki/Computaci%C3%B3n_en_la_nube
+
+MTBF, MTTR, MTTA, MTTF, DISPONIBILIDAD
+
+PROBLEMA:
+# Validación rápida de la matemática del enunciado para garantizar precisión absoluta.
+# Un proveedor de red opera 24/7 en un mes de 30 días (720 horas).
+# Si el MTBF es de 359.5 horas y el MTTR es de 30 minutos (0.5 horas):
+# Disponibilidad = 359.5 / (359.5 + 0.5) = 359.5 / 360 = 99.861%
+# Tiempo de inactividad mensual = 2 fallos * 0.5 horas = 1 hora (60 minutos).
+mtbf = 359.5
+mttr = 0.5
+disponibilidad = (mtbf / (mtbf + mttr)) * 100
+print(f"Disponibilidad: {disponibilidad:.3f}%")
+```：Disponibilidad: 99.861%
+
+Aquí tienes el enunciado de un problema práctico diseñado para el contexto de redes, ideal para exámenes, talleres o evaluaciones técnicas:
+
+---
+
+### Enunciado del Problema: Optimización de SLA en Core-Net Solutions
+
+**Contexto:**
+La empresa de telecomunicaciones *Core-Net Solutions* provee conectividad de fibra óptica de alta disponibilidad a un banco internacional. El Acuerdo de Nivel de Servicio (SLA) firmado exige que el proveedor garantice la **regla de los 5 nueves (99.999%)** de disponibilidad mensual. El contrato estipula penalizaciones financieras severas si el tiempo de inactividad acumulado supera el límite permitido para este estándar en un mes de 30 días.
+
+**Historial Operativo (Último mes):**
+Durante los últimos 30 días (operando 24/7), el sistema de monitoreo registró que la red troncal principal sufrió exactamente **2 interrupciones críticas** debido a fallos de hardware en los enrutadores principales:
+*   **Fallo 1:** Tomó **35 minutos** desde la caída del servicio hasta que el equipo de ingenieros de red logró reconfigurar el tráfico manualmente y levantar el sistema.
+*   **Fallo 2:** Tomó **25 minutos** resolverlo debido a la necesidad de reemplazar un transceptor de fibra dañado.
+
+El tiempo total en que la red funcionó de manera correcta y continua entre el inicio del mes, los fallos y el fin del mes sumó exactamente **719 horas**.
+
+---
+
+### Preguntas para el Estudiante / Ingeniero:
+
+1.  **Cálculo de Métricas:** Con base en los datos del último mes, determine los valores de:
+    *   **MTTR** (Tiempo Medio de Reparación) expresado en minutos.
+    *   **MTBF** (Tiempo Medio Entre Fallos) expresado en horas.
+2.  **Cálculo de Disponibilidad:** Utilizando la fórmula matemática que relaciona el MTBF y el MTTR, calcule el porcentaje exacto de disponibilidad que ofreció el proveedor en este periodo (utilice tres decimales).
+3.  **Evaluación del SLA:** 
+    *   ¿Cumplió *Core-Net Solutions* con la regla de los 5 nueves acordada en el contrato? 
+    *   ¿Por cuántos minutos y segundos excedió o se quedó corto el proveedor respecto al tiempo de inactividad permitido mensualmente para los 5 nueves?
+4.  **Propuesta de Arquitectura:** Si usted fuera el Arquitecto de Redes de la empresa, ¿qué solución técnica priorizaría para modificar el MTTR o el MTBF y lograr alcanzar el estándar de los 5 nueves el próximo mes?
+
+---
+EN 2026: 365 DÍAS:
+UN SERVICIO FALLA EL 8 DE FEBRERO (REPARACIÓN 1 HORA), EL 23 DE MAYO (REPARACIÓN 30 MINUTOS), EL 4 DE SEPTIEMBRE (REPARACIÓN 15 MINUTOS) Y 20 DE DICIEMBRE (REPARACIÓN 5 MINUTOS).
+CALCULAR:
+MTTR
+MTBF
+EL % DE DISPONIBILIDAD ANUAL
+------
+Instalación Docker-Desktop:
+1. PREPARACIÓN DEL SISTEMA
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(. /etc/lsb-release && echo "$DISTRIB_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+2. DESCARGA DE DOCKER-DESKTOP
+Descargar Docker DesktopDirígete a la página oficial de ⁠Docker Desktop para Linux.Descarga el paquete .deb correspondiente para la arquitectura de tu sistema (normalmente docker-desktop-<versión>-amd64.deb).
+3. INSTALACIÓN
+Abre tu terminal, navega hasta la carpeta donde descargaste el archivo .deb (por lo general, Descargas) e instálalo usando apt. Reemplaza el nombre del archivo por el que descargaste:
+cd ~/Descargas
+sudo apt-get update
+sudo apt install ./docker-desktop-amd64.deb
+
+Paso 4: Iniciar Docker Desktop. Una vez finalizada la instalación, puedes abrir Docker Desktop desde el menú de aplicaciones de tu Ubuntu. Al abrirlo por primera vez, aceptará los términos y se iniciará el servicio de máquina virtual necesario.
+
+Esto funciona si Hyper-V no lo impide, por ejemplo (en máquinas de KC) esto está limitado.
+------------------------------
+retomar la cuestión de elección entre dos alternativas de despliegue: 1ª sobre 3 contenedores, uno con la bd mariadb, otro con la aplicación y el servidor de aplicaciones uvicorn y módulos python, y otro con un servidor de páginas web estáticas, frente a la 2ª de sólo dos contenedores, uno con el servidor web de páginas estáticas y otro con el servidor de aplicaciones uvicorn y módulos python, frente a una base de datos mariadb de la que no nos interesa el contenedor y puede estar en otra máquina o red.
+Contestación y análisis:
+Opción 1: Tres contenedores (Todo en local/Docker)Ideal para desarrollo autosuficiente y entornos locales cerrados.Ventajas:Portabilidad total: Levantas todo el sistema (Base de datos + API + Web) con un único comando docker compose up.Aislamiento de red: La base de datos se comunica internamente dentro de la red de Docker, sin exponer puertos al exterior.Coste cero: No dependes de infraestructura externa pagada durante el desarrollo.Inconvenientes:Persistencia manual: Debes gestionar volúmenes de Docker obligatoriamente para no perder los datos al reiniciar el contenedor.Consumo de recursos: Tu máquina de despliegue debe asumir la carga de CPU y memoria que exige MariaDB.
+
+Opción 2: Dos contenedores (Base de datos externa)Ideal para entornos de producción, alta disponibilidad o entornos de desarrollo en la nube (Cloud).Ventajas:Menor mantenimiento: Delegas las copias de seguridad, parches y escalabilidad de la BD a un servicio gestionado (ej. AWS RDS) o a otra máquina.Contenedores ligeros: Tus dos contenedores son stateless (sin estado). Si se destruyen o reinician, no hay riesgo de pérdida de datos.Rendimiento dedicado: Los recursos de tu servidor de aplicaciones se liberan exclusivamente para Python y el servidor web.Inconvenientes:Latencia de red: Al estar en otra red o máquina, las consultas a la base de datos pueden tardar milisegundos extra si la conexión no es óptima.Configuración de seguridad: Debes gestionar políticas de red (firewalls, VPCs) y credenciales seguras para permitir que el contenedor Python conecte externamente.
+
+
+Recomendación técnica: 
+Usa la Opción 1 (3 contenedores) para Desarrollo Local: Te permite programar en tu ordenador sin depender de si tienes o no conexión a internet o a la red corporativa.
+Usa la Opción 2 (2 contenedores) para Producción / Testing: En servidores reales, es una mala práctica alojar la base de datos en el mismo servidor de aplicaciones mediante contenedores básicos, a menos que sea un proyecto muy pequeño.
+
+
+En ambos escenarios:
+1. instrucciones de instalación de nginx en docker en Lubuntu:
+
+mkdir -p ~/nginx-docker/html ~/nginx-docker/config
+nano ~/nginx-docker/html/index.html
+en ese index.html, poner un contenido, por ejemplo:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nginx en Lubuntu</title>
+</head>
+<body>
+    <h1>¡Hola! Nginx está funcionando correctamente en Docker</h1>
+</body>
+</html>
+Lanzar el contenedor mapeando el puerto hacia tu máquina local. Si tu usuario de Lubuntu ya pertenece al grupo docker, no necesitas anteponer sudo:
+[sudo] docker run --name mi-nginx-local \
+  -p 127.0.0.1:80:80 \
+  -v ~/nginx-docker/html:/usr/share/nginx/html:ro \
+  -d nginx:latest
+DONDE:
+--name mi-nginx-local: Asigna el nombre identificativo al contenedor.-p 127.0.0.1:80:80: Vincula el puerto 80 del contenedor al puerto 80 de tu máquina Lubuntu, restringido estrictamente a localhost (127.0.0.1) por seguridad.
+-v ~/nginx-docker/html:/usr/share/nginx/html:ro: Monta tu carpeta local con el archivo index.html en la ruta interna donde Nginx busca las páginas web por defecto. El sufijo :ro asegura que el contenedor solo pueda leer tus archivos sin modificarlos.
+-d nginx:latest: Descarga la última imagen oficial de Nginx y la ejecuta en segundo plano.
+
+verificar:
+curl http://127.0.0.1
+o por navegador
+-----
+En la dockerización de una aplicación de servidor de aplicaciones python-uviconrn valorar el uso de entorno virtual (que se habría instalado con python -m vevn .venv y activado con ./.venv/Scripts/activate) en el propio contenedor frente a la opción de no usarlo y subir la aplicación con su correspondientes requirements en bloque.
+
+En el desarrollo con Docker, la práctica estándar y más eficiente es NO utilizar un entorno virtual (venv) dentro del contenedor y, en su lugar, instalar las dependencias directamente a nivel de sistema.Dado que el contenedor Docker ya es un entorno aislado en sí mismo, añadir un venv añade una capa innecesaria de complejidad y redundancia. Sin embargo, existen ciertos matices técnicos importantes que debes valorar.
+
+Opción 1: Instalar en bloque (Sin Entorno Virtual) — RecomendadoEs la opción nativa de Docker. El contenedor se asume como un entorno dedicado en exclusiva a tu aplicación Python.Mayor Simplicidad: No tienes que gestionar la activación del entorno ni modificar las rutas (PATH) en el Dockerfile. Tu comando de arranque es directo: CMD ["uvicorn", "main:app", "--host", "0.0.0.0"].Imágenes más limpias: Evitas anidar directorios ocultos como .venv que pueden ensuciar la estructura del proyecto.Problema de Ubuntu/Debian (PEP 668): Las imágenes base modernas de Python (basadas en Debian Bookworm o Ubuntu reciente) bloquean la instalación de paquetes con pip install a nivel de sistema para no romper las herramientas del SO (error externally-managed-environment).Solución: Se soluciona fácilmente en el Dockerfile usando la bandera --break-system-packages o usando variables de entorno, ya que el contenedor no corre peligro de dañarse.
+
+Opción 2: Usar Entorno Virtual (venv) dentro de DockerConsiste en replicar el flujo de desarrollo local (python -m venv .venv) dentro de las capas del contenedor.Evita conflictos con el Sistema Operativo: Bypass directo al bloqueo de PEP 668 sin usar banderas forzadas. Garantiza que pip solo altere tu entorno aislado.Portabilidad Estricta: Si en un caso extremadamente raro compartes el entorno base de Python con otras herramientas del sistema operativo del contenedor, evitas colisiones de versiones.Mayor Complejidad de Configuración: Nota que en Linux (el núcleo del contenedor), el entorno se activa con source .venv/bin/activate (y no con Scripts/activate, que es exclusivo de Windows). En Docker, usar source o activate no persiste entre instrucciones RUN, por lo que te obliga a modificar manualmente la variable de entorno PATH en el Dockerfile.
+---
+Hay un archivo que contiene el proyecto para que sea portable y desplegable, en Docker u otro tipo de entorno,
+es el .WHL:
+En el ecosistema de Python, un Wheel (archivo con extensión .whl) es el formato estándar de empaquetado y distribución de software, diseñado para hacer que la instalación de librerías con pip sea drásticamente más rápida y limpia.Para entenderlo de forma sencilla: un Wheel es un archivo ZIP precompilado que contiene todos los archivos de la librería listos para ser copiados directamente a la carpeta de tu entorno de Python (site-packages), sin necesidad de compilar nada en tu ordenador.
+
+a la hora de generar (IA) el desplegable en Docker, hay archivos que no son necesarios
+------
+Se procede a subir a GitHub el proyecto app.py para compartirlo y manejarlo cada cual independientemente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+
+En ambos escenarios:
+1. instrucciones de instalación de nginx en docker en Lubuntu:
+
+mkdir -p ~/nginx-docker/html ~/nginx-docker/config
+nano ~/nginx-docker/html/index.html
+en ese index.html, poner un contenido, por ejemplo:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nginx en Lubuntu</title>
+</head>
+<body>
+    <h1>¡Hola! Nginx está funcionando correctamente en Docker</h1>
+</body>
+</html>
+Lanzar el contenedor mapeando el puerto hacia tu máquina local. Si tu usuario de Lubuntu ya pertenece al grupo docker, no necesitas anteponer sudo:
+[sudo] docker run --name mi-nginx-local \
+  -p 127.0.0.1:80:80 \
+  -v ~/nginx-docker/html:/usr/share/nginx/html:ro \
+  -d nginx:latest
+
+DONDE:
+--name mi-nginx-local: Asigna el nombre identificativo al contenedor.-p 127.0.0.1:80:80: Vincula el puerto 80 del contenedor al puerto 80 de tu máquina Lubuntu, restringido estrictamente a localhost (127.0.0.1) por seguridad.
+-v ~/nginx-docker/html:/usr/share/nginx/html:ro: Monta tu carpeta local con el archivo index.html en la ruta interna donde Nginx busca las páginas web por defecto. El sufijo :ro asegura que el contenedor solo pueda leer tus archivos sin modificarlos.
+-d nginx:latest: Descarga la última imagen oficial de Nginx y la ejecuta en segundo plano.
+
+verificar:
+curl http://127.0.0.1
+o por navegador
+
