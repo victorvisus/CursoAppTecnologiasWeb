@@ -1,0 +1,35 @@
+Sesión 12 de junio de 2026
+
+Acerca del significado de las etiquetas y opciones de un Dockerfile:
+https://desarrollofront.medium.com/las-10-instrucciones-imprescindibles-para-crear-un-dockerfile-bb439ff836d9
+
+Se opta por descargar un editor gráfico para GIT y GIT-HUB: GIT-BASH. Se procede a crear el repositorio con el .gitignore adecuado a Python, hacerle commit, push, y a continuación poblarlo con las carpetas y ficheros del proyecto facultad_3.
+
+
+PASOS para crear y ejecutar el contenedor de una aplicación propia con Docker:
+0. Fijar un usuario. Si no es root, debe ser uno con permiso específico o de grupo para ejecutar Docker.
+1. Recopilar el conjunto de archivos, por ejemplo: BBDD  Dockerfile  LICENSE  main_facultad_3.py  README.md  requirements.txt  templates; en la carpeta de trabajo donde estará también el Dockerfile, por ejemplo: /DOCKER_app/app_facultad_docker_2-main.
+2. en caso de haber un .env, si no se ha clonado por estar en .gitignore, crearlo en la carpeta de trabajo (/DOCKER_app/app_facultad_docker_2-main, p.e.) y editar las variables de entorno.
+3. Editar el contenido del Dockerfile, por ejemplo:
+FROM python:3.14-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY main_facultad_3.py .
+COPY .env .
+COPY BBDD/ ./BBDD/
+COPY templates/ ./templates/
+EXPOSE 5000
+CMD ["uvicorn", "main_facultad_3:app", "--host", "0.0.0.0", "--port", "5000"]
+4. con el mismo usuario con permisos, ejecutar:
+docker build -t facultad-app:1.0 .
+y
+docker run -d -p 8000:5000 --name mi_contenedor_facultad facultad-app:1.0
+5. Comprobar que el contenedor está activo:
+docker ps 
+Si no está activo, ver que existe: docker ps -a
+Si da error:
+6. Consultar el log: docker docker logs mi_contenedor_facultad
+----
+Reconstruir desde 0 el contenedor de la app para que pueda conectarse en remoto con la base de datos. Parámetro a cambiar: 
+HOST_DB=192.168.30.174

@@ -1,0 +1,31 @@
+Sesión 15 de junio
+
+FRENTE A LOS PELIGROS DE ALTERAR -O ELIMINAR- LA BD:
+
+1. Eliminación Radical del Permiso DROP a la Aplicación. El error más común es conectar el backend (Python, Node, PHP, etc.) usando el usuario root o un usuario con el privilegio ALL PRIVILEGES. Tu aplicación en servicio nunca debe tener permisos para alterar la estructura de la base de datos.Ejecuta estos comandos como administrador para remover el peligro:
+
+-- 1. Quitar absolutamente todos los privilegios destructivos al usuario de la app
+REVOKE DROP, ALTER, INDEX, CREATE, GRANT OPTION ON tu_base_datos.* FROM 'usuario_app'@'%';
+
+-- 2. Asegurar que SOLO tenga permisos para interactuar con los datos (DML)
+GRANT SELECT, INSERT, UPDATE, DELETE ON tu_base_datos.* TO 'usuario_app'@'%';
+
+-- 3. Aplicar los cambios en caliente de inmediato
+FLUSH PRIVILEGES;
+
+
+2. Activación del Modo Seguro del Servidor (sql_safe_updates)Para evitar que un desarrollador o una consulta de la aplicación ejecute un DELETE FROM tabla; (borrando millones de registros inadvertidamente por olvidar la cláusula WHERE), activa el Modo Seguro. Esto obliga a que cualquier eliminación o modificación especifique una clave primaria o un índice indexado.Puedes activarlo temporalmente o añadirlo al archivo de configuración para que sea permanente:
+SET GLOBAL sql_safe_updates = 1;
+
+Activación permanente (Archivo de configuración):Busca tu archivo de configuración (my.cnf o my.ini) y añade lo siguiente bajo la sección [mysqld]:
+[mysqld]
+sql_safe_updates = 1
+
+3. Protección contra DROP mediante Vistas de Solo Lectura (Truco Avanzado)Si requieres que un usuario específico mantenga ciertos accesos elevados pero quieres proteger tablas críticas de una destrucción accidental, puedes forzar un bloqueo indirecto. En MySQL, no se puede borrar una tabla si otra entidad depende de ella estructuralmente.Puedes crear una vista ficticia con restricciones WITH CHECK OPTION para entorpecer acciones destructivas directas en la consola:
+
+sql-- Crear una vista de seguridad que dependa directamente de tu tabla crítica
+CREATE VIEW vista_bloqueo_tabla AS 
+SELECT * FROM tabla_critica 
+WITH CHECK OPTION;
+
+ Buenas Prácticas para la Operación en ServicioAísla las migraciones: Si utilizas ORMs como SQLAlchemy/Alembic o Django, no permitas que hagan migraciones automáticas en producción con el usuario web. Genera un usuario temporal llamado usuario_migraciones que tenga el permiso ALTER y CREATE, úsalo únicamente durante la ventana de mantenimiento y apágalo al terminar.Verifica el parámetro read_only (Para réplicas): Si utilizas una arquitectura de base de datos con réplicas de lectura, asegúrate de que los nodos esclavos tengan el parámetro super_read_only = ON en su configuración. Esto impide que incluso el usuario administrador pueda modificar datos accidentalmente en esos nodos.

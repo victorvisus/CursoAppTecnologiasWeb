@@ -1,0 +1,31 @@
+Sesión 12 de junio
+
+Se configura el servidor web nginx para poder conectar desde peticiones de navegador al servidor de aplicaciones
+
+en la ruta de /home/usuario/mi-nging/ se crea nginx.conf:
+
+http {
+    server {
+        # Puerto donde Nginx escucha al navegador (el usuario entra por aquí)
+        listen 80; 
+
+        server_name localhost;
+
+        # Localización de las páginas estáticas
+        location / {
+            root /usr/share/nginx/html;
+            index index.html;
+        }
+
+        # CORREGIDO: Aquí se indica de forma explícita el puerto de recepción (5000)
+        location /alumnos/ {
+            proxy_pass http://192.168.30.174:8000; #el puerto del servicio real, no el expuesto en el contenedor
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+}
+
+una observación sobre uso de puertos:
+Si quieres que Nginx ignore por completo los puertos mapeados de tu máquina Lubuntu y hable directamente con el puerto real donde corre Uvicorn (5000), Nginx debe estar en la misma red interna de Docker. No puedes usar la IP 192.168.30.174 para esto. Debes usar la IP interna que Docker le asignó al contenedor (por ejemplo, 172.17.0.2):
