@@ -1,0 +1,132 @@
+Aquí tienes toda la transcripción completa del examen organizada por hojas y preguntas, seguida de las respuestas correctas justificadas paso a paso.
+
+PARTE 1: TRANSCRIPCIÓN DEL EXAMEN A TEXTO
+HOJA 1 (IMG_20260617_095744.jpg)
+25/1103.003 DESARROLLO DE APLICACIONES CON TECNOLOGÍAS WEB
+APELLIDOS Y NOMBRE: ALVAREZ LLAMAS, PABLO
+FECHA: 17/06/2026
+
+MF0493_3: Implantación de aplicaciones web en entornos internet, intranet y extranet.
+EXAMEN FINAL
+
+Preguntas test (todas puntúan por igual, incorrectas no penalizan, esta parte es la mitad de la puntuación total del examen):
+
+1. ¿Cuál es la afirmación correcta sobre la comparación entre los modelos de referencia OSI y la arquitectura TCP/IP?
+A) El modelo OSI se utiliza principalmente para la implementación real en Internet, mientras que TCP/IP es solo un marco teórico de estudio.
+B) El modelo TCP/IP mantiene separadas las capas de Sesión y Presentación como entidades independientes, igual que el modelo OSI de 7 capas.
+C) El modelo OSI es un marco de referencia teórico de 7 capas utilizado para el aprendizaje y estandarización conceptual, mientras que TCP/IP es un modelo práctico de implementación con menos capas que agrupa dichas funciones para operar en Internet.
+D) El modelo OSI fue desarrollado específicamente para la red ARPANET y se convirtió en el estándar técnico dominante que impulsa la web actual.
+
+2. Respecto a la evolución del direccionamiento IP y la transición de IPv4 a IPv6, ¿cuál de las siguientes afirmaciones describe correctamente una ventaja técnica fundamental del nuevo protocolo?
+A) IPv6 reduce la longitud de la dirección a 16 bits para simplificar la escritura manual por parte de los administradores de red.
+B) IPv6 elimina la necesidad de Traducción de Direcciones de Red (NAT) al ofrecer un espacio de direcciones prácticamente ilimitado de 128 bits, permitiendo la conectividad directa extremo a extremo.
+C) IPv6 depende obligatoriamente de servidores DHCP para cualquier tipo de configuración de dirección, ya que no soporta la autoconfiguración automática de dispositivos.
+D) IPv6 mantiene el mismo número total de direcciones que IPv4 (4.300 millones) pero las organiza mediante un sistema de nombres de dominio más complejo.
+
+HOJA 2 (IMG_20260617_095801.jpg)
+3. En el contexto de los ámbitos de red (Intranet, Extranet, Internet) y la seguridad perimetral, ¿cuál es la función principal de un cortafuegos (firewall) al implementar una Extranet?
+A) Permitir el acceso libre y sin autenticación de cualquier usuario de Internet a los recursos privados de la organización para fomentar la colaboración abierta.
+B) Sustituir al sistema de nombres de dominio (DNS) actuando como la base de datos central que traduce los nombres de los socios comerciales a direcciones IP privadas.
+C) Actuar como una barrera de seguridad filtrada que autoriza exclusivamente el acceso a usuarios externos específicos (como proveedores o clientes) a recursos restringidos, bloqueando el resto del tráfico de Internet.
+D) Convertir automáticamente una red Intranet en una red Internet pública eliminando todas las capas de seguridad y cifrado de datos para facilitar la velocidad de conexión.
+
+4. Respecto a la función de los servidores Proxy y los servidores de correo en una arquitectura web, ¿cuál de las siguientes afirmaciones describe correctamente una de sus funciones críticas?
+A) Un servidor Proxy inverso oculta la identidad y características de los servidores backend, actuando como punto único de entrada que puede gestionar el equilibrio de carga y la terminación SSL.
+B) Los servidores de correo utilizan exclusivamente el protocolo POP3 para el envío de mensajes entre diferentes dominios, reservando el protocolo SMTP únicamente para la recepción local en el cliente.
+C) La función principal de un servidor Proxy es almacenar registros jerárquicos de direcciones IP para traducir nombres de dominio, actuando como una copia de seguridad del sistema DNS.
+D) Los servidores de correo eliminan la necesidad de registros MX (Mail Exchanger) en el DNS, ya que descubren automáticamente la ruta de entrega mediante sondeos directos a las direcciones IP de destino.
+
+5. En el ciclo de vida de despliegue de una aplicación web, ¿cuál es la distinción crítica en cuanto al acceso y la estabilidad entre el entorno de desarrollo y el entorno de producción?
+A) El entorno de producción permite cambios constantes y no planificados por parte de cualquier desarrollador para fomentar la innovación rápida, mientras que el desarrollo está bloqueado y solo permite lecturas.
+B) El entorno de desarrollo está diseñado para ser inestable y sujeto a cambios frecuentes y pruebas individuales, mientras que el entorno de producción es el sistema live, altamente estable, con acceso restringido y cambios controlados mediante aprobaciones formales.
+C) No existe diferencia técnica entre ambos entornos; la distinción es solo administrativa, ya que ambos comparten la misma base de datos y configuración de servidor para ahorrar costes operativos.
+
+HOJA 3 (IMG_20260617_095805.jpg)
+D) El entorno de producción se utiliza exclusivamente para escribir y depurar nuevo código, mientras que el entorno de desarrollo es el único visible para los clientes y usuarios finales de la aplicación.
+
+6. Durante un periodo de observación de 720 horas (un mes), un servidor crítico experimentó 4 fallos. Los tiempos de inactividad totales sumaron 18 horas (reparaciones de 3, 5, 4 y 6 horas). ¿Cuál es el cálculo correcto del MTBF y del MTTR para este periodo?
+A) MTBF = 180 horas (720 / 4) y MTTR = 4,5 horas (18 / 4), ya que el MTBF se calcula sobre el tiempo total del calendario incluyendo las paradas.
+B) MTBF = 175,5 horas ((720 - 18) / 4) y MTTR = 4,5 horas (18 / 4), dado que el MTBF debe basarse únicamente en el tiempo real de funcionamiento (uptime) excluyendo el tiempo de reparación.
+C) MTBF = 171 horas ((720 - 18 - 30) / 4) y MTTR = 7,5 horas ((18 + 12) / 4), sumando tiempos de diagnóstico y espera no registrados explícitamente en las reparaciones activ.
+D) MTBF = 355,5 horas ((720 - 18) / 2) y MTTR = 9 horas (18 / 2), agrupando los fallos en pares consecutivos para suavizar la variabilidad estadística del mes.
+
+7. En el contexto de la identificación avanzada y la conservación de sesiones en aplicaciones web, ¿cuál es la función técnica principal de un certificado digital frente a un sistema de sesión basado únicamente en cookies?
+A) El certificado digital actúa como una cookie persistente almacenada en el navegador que se renueva automáticamente cada 24 horas sin intervención del servidor ni criptografía de clave pública.
+B) El certificado digital proporciona una autenticación mutua basada en infraestructura de clave pública (PKI), donde el cliente demuestra su identidad criptográficamente sin depender exclusivamente de secretos compartidos o tokens, almacenados en el lado del cliente, vulnerables a robos de sesión.
+C) El certificado digital sirve exclusivamente para cifrar el canal HTTPS (TLS), pero no interviene en el proceso de autenticación del usuario ni en la creación de la sesión, la cual debe gestionarse obligatoriamente mediante usuario y contraseña.
+D) El certificado digital reemplaza la necesidad de un servidor de sesiones al almacenar todo el estado de la aplicación y los datos de la base de datos directamente en el archivo del certificado instalado en el dispositivo del usuario.
+
+8. Respecto a los sistemas de Single Sign-on (SSO) y Single Sign-out en la conservación de sesiones web, ¿qué característica define correctamente su funcionamiento en un entorno de múltiples dominios o aplicaciones?
+
+HOJA 4 (IMG_20260617_095813.jpg)
+A) El SSO obliga al usuario a introducir sus credenciales en cada aplicación independiente, mientras que el Single Sign-out cierra solo la sesión de la última aplicación utilizada, dejando las demás activas por seguridad.
+B) El SSO funciona copiando las cookies de sesión de una aplicación a otra mediante scripts del lado del cliente, lo que permite el acceso único, pero hace imposible implementar un cierre de sesión global (Single Sign-out) debido a las políticas de seguridad del navegador.
+C) El SSO y el Single Sign-out son mecanismos que solo funcionan dentro de una misma Intranet con dominio único, siendo técnicamente inviable su implementación en arquitecturas web modernas que integran servicios en la nube o dominios externos diferentes.
+D) El SSO utiliza un proveedor de identidad centralizado para autenticar al usuario una sola vez y emitir tokens de confianza para todas las aplicaciones asociadas, mientras que el Single Sign-out propaga la señal de cierre de sesión desde el proveedor central para invalidar simultáneamente todos los tokens y sesiones derivados en las distintas aplicaciones.
+
+9. En el contexto del proceso de despliegue de aplicaciones web, ¿cuál es el objetivo principal de la fase de verificación inmediatamente después de la instalación en el entorno de producción?
+A) Compilar el código fuente y empaquetar los archivos en un contenedor ejecutable para su posterior transferencia al servidor mediante protocolos seguros.
+B) Realizar una copia de seguridad completa del entorno anterior para permitir una reversión inmediata (rollback) en caso de que la nueva versión falle durante las primeras horas de uso.
+C) Confirmar mediante pruebas automatizadas y monitoreo en tiempo real que la aplicación se ha instalado correctamente, que los servicios están respondiendo y que la funcionalidad crítica opera según lo esperado sin afectar la disponibilidad del usuario.
+D) Notificar a todos los usuarios finales mediante correo electrónico que el sistema estará indisponible durante las próximas 24 horas mientras se realizan ajustes de configuración y limpieza de caché.
+
+10. En el desarrollo de una aplicación financiera, se debe sustituir el dato real NIF: 23000T, IBAN: ES34 3433 4370 9002 8374 2102, Saldo: 10000€ para realizar pruebas en un entorno no seguro. ¿Cuál de las siguientes opciones presenta un conjunto de datos sintéticos correctamente generados que mantienen la validez algorítmica (formato correcto) pero garantizan la confidencialidad al no corresponder a ninguna persona real?
+A) NIF: 23000T, IBAN: ES34 3433 4370 9002 8374 2102, Saldo: 0€.
+B) NIF: 12345678Z, IBAN: ES12 0000 0000 0000 0000 0000, Saldo: 5000€.
+C) NIF: 87654321K, IBAN: ES99 9999 9999 9999 9999 9999, Saldo: 999999€.
+D) NIF: 45892103F, IBAN: ES62 2100 5478 3012 4567 8901, Saldo: 15430€.
+
+HOJA 5 (IMG_20260617_095825.jpg)
+11. En el contexto de un flujo de trabajo profesional con Git, ¿cuál es la distinción técnica fundamental entre crear una etiqueta (tag) y establecer una línea de base (baseline) mediante una rama de lanzamiento (release branch)?
+A) Una etiqueta es una rama mutable que permite seguir añadiendo commits de corrección directamente sobre ella, mientras que una línea de base es un puntero estático e inmutable que no permite fusiones posteriores.
+B) Una etiqueta actúa como un marcador estático e inmutable que apunta a un commit específico para congelar una versión histórica, mientras que una línea de base establecida mediante una rama de lanzamiento es un entorno activo y mutable donde se pueden aplicar correcciones y estabilizaciones antes de la fusión final.
+C) Ambos conceptos son idénticos técnicamente; el término "línea de base" se usa solo en documentación teórica, mientras que "etiqueta" es el comando práctico, pero ambos crean ramas temporales que se borran automáticamente tras la fusión.
+D) Una línea de base se crea exclusivamente con el comando git tag para marcar el inicio de un desarrollo, mientras que una etiqueta se refiere a la rama main o master que sirve como referencia constante para todas las fusiones de características.
+
+12. En el contexto del desarrollo de software, ¿cuál es la distinción técnica fundamental entre Git y GitHub que determina su función en el flujo de trabajo?
+A) Git es una plataforma de alojamiento en la nube con interfaz gráfica para gestionar proyectos, mientras que GitHub es el sistema de control de versiones de línea de comandos que se instala localmente en el ordenador del desarrollador.
+B) Git es un sistema de control de versiones distribuido que opera localmente en el equipo del desarrollador para gestionar el historial de cambios, mientras que GitHub es un servicio de alojamiento remoto basado en la nube que utiliza Git para facilitar la colaboración, el almacenamiento centralizado y la gestión de repositorios compartidos.
+C) Git y GitHub son sinónimos intercambiables; la única diferencia es que Git es la versión gratuita de código abierto y GitHub es la versión comercial de pago con más capacidades de almacenamiento.
+D) Git es un protocolo de red exclusivo para la transferencia de archivos grandes, mientras que GitHub es el software que se instala en el servidor local de la empresa para crear copias de seguridad automáticas de las carpetas del proyecto.
+
+13. En la arquitectura de un servidor web moderno (como Apache o Nginx), ¿cuál es la distinción funcional crítica entre el uso de módulos/extensiones estáticos y la implementación de servidores virtuales?
+
+HOJA 6 (IMG_20260617_095835.jpg)
+A) Los módulos permiten alojar múltiples dominios en una sola IP leyendo la cabecera Host, mientras que los servidores virtuales son bibliotecas de código que se cargan dinámicamente para añadir funcionalidades como cifrado SSL o compresión Gzip.
+B) Los módulos o extensiones son componentes de software que extienden las capacidades del núcleo del servidor (añadiendo soporte para lenguajes, seguridad o compresión), mientras que los servidores virtuales son una configuración lógica que permite al mismo proceso del servidor alojar y servir múltiples sitios web independientes (con distintos dominios, raíces de documento y logs) desde una única instancia.
+C) Los servidores virtuales se utilizan exclusivamente para equilibrar la carga entre múltiples servidores físicos, mientras que los módulos son archivos de configuración estáticos que definen las rutas de acceso a los directorios del sistema operativo sin ejecutar código adicional.
+D) No existe diferencia técnica; ambos términos son sinónimos que se refieren a la creación de subdominios dentro de un mismo archivo de configuración, donde "módulo" es el término usado en Windows y "servidor virtual" en Linux.
+
+14. En el diseño de una arquitectura de base de datos para un servicio crítico que requiere crecimiento continuo, ¿cuál es la implicación técnica directa de elegir una estrategia que consiste en migrar periódicamente la instancia a un servidor con mayor capacidad de CPU y RAM frente a una que consiste en incorporar nuevos nodos al clúster para distribuir la carga?
+A) La primera estrategia permite una expansión teóricamente ilimitada sin interrupciones del servicio, mientras que la segunda está restringida por el tamaño máximo de hardware disponible en el mercado y requiere paradas programadas para cada ampliación.
+B) La primera estrategia está diseñada exclusivamente para bases de datos NoSQL distribuidas que no soportan transacciones ACID, mientras que la segunda es el método estándar para bases de datos relacionales tradicionales que necesitan garantizar la integridad referencial en un solo servidor físico.
+C) Ambas estrategias son idénticas en cuanto a disponibilidad, ya que tanto mejorar el servidor existente como añadir nuevos nodos requieren obligatoriamente detener la base de datos completa y replicar manualmente los datos desde cero en cada paso del crecimiento.
+D) La primera estrategia (escalado vertical) simplifica la gestión al mantener los datos en un único nodo pero introduce un punto único de fallo y requiere tiempos de inactividad para las mejoras, mientras que la segunda (escalado horizontal) elimina el cuello de botella de hardware único y permite alta disponibilidad, aunque incrementa la complejidad de la consistencia de datos y el enrutamiento.
+
+15. Respecto a las características fundamentales del Sistema de Nombres de Dominio (DNS), ¿cuál de las siguientes afirmaciones describe correctamente su estructura y mecanismo de resolución?
+A) El DNS opera como una base de datos distribuida y jerárquica, donde la resolución de nombres se realiza mediante un proceso iterativo o recursivo que desciende desde los servidores raíz hasta los servidores autoritativos del dominio específico, sin depender de un único servidor centralizado.
+
+HOJA 7 (IMG_20260617_095840.jpg)
+B) El DNS funciona como un archivo plano y centralizado gestionado por una única organización internacional, donde todas las peticiones de resolución deben ser validadas manualmente por un administrador antes de devolver una dirección IP al cliente.
+C) El protocolo DNS utiliza exclusivamente el puerto TCP 53 para todas las consultas de resolución de nombres, descartando el uso de UDP debido a su falta de fiabilidad en el envío de paquetes pequeños entre servidores.
+D) La jerarquía del DNS se organiza de derecha a izquierda comenzando por el nombre del host y terminando en el dominio de nivel superior (TLD), de modo que "www.ejemplo.com" se resuelve primero buscando "www" en los servidores raíz antes de consultar por "com".
+
+Preguntas de desarrollo (esta parte es la mitad de la puntuación total del examen):
+1. Elaborar un cuadro comparativo que detalle las ventajas e inconvenientes principales de adoptar los modelos SaaS, PaaS e IaaS para el desarrollo de una aplicación web.
+En la respuesta, se debe estructurar la información claramente para cada modelo, destacando aspectos críticos como el nivel de control sobre la infraestructura, la carga operativa del equipo de desarrollo, la escalabilidad, la seguridad y el riesgo de dependencia del proveedor (vendor lock-in), con el fin de facilitar la toma de decisiones estratégicas para un equipo interdisciplinar.
+
+2. Sea la matriz de adyacencia entre nodos de un clúster, para el servicio de una base de datos distribuida:
+
+   A  B  C  D  E  F
+A  0  1  0  0  0  0
+B  1  0  1  0  0  0
+C  0  1  0  1  0  1
+D  0  0  1  0  0  0
+E  0  0  0  0  0  1
+F  0  0  1  0  1  0
+
+Hallar sus SPoF (Single Point of Failure / Punto Único de Fallo).
+
+Proponer la solución con un mínimo número de conexiones que evita los SPoF.
+
+Dibujar la solución y escribirla como matriz de adyacencia.
